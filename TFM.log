@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  22 JUN 2021 17:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  22 JUN 2021 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**thesis.tex
-(./thesis.tex
+**TFM.tex
+(./TFM.tex
 LaTeX2e <2021-06-01> patch level 1
 L3 programming layer <2021-06-18> (/home/leo/.TinyTeX/texmf-dist/tex/latex/base
 /book.cls
@@ -377,8 +377,8 @@ Package: amsthm 2020/05/29 v2.20.6
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count299
 \l__pdf_internal_box=\box57
-) (./thesis.aux)
-\openout1 = `thesis.aux'.
+) (./TFM.aux)
+\openout1 = `TFM.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 108.
 LaTeX Font Info:    ... okay on input line 108.
@@ -411,9 +411,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 108.
 LaTeX Info: Redefining \pageref on input line 108.
 LaTeX Info: Redefining \nameref on input line 108.
-(./thesis.out) (./thesis.out)
+(./TFM.out) (./TFM.out)
 \@outlinefile=\write3
-\openout3 = `thesis.out'.
+\openout3 = `TFM.out'.
 
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -532,9 +532,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 164--173
 
 [4
 
-] (./thesis.toc)
+] (./TFM.toc)
 \tf@toc=\write4
-\openout4 = `thesis.toc'.
+\openout4 = `TFM.toc'.
 
 [5
 
@@ -554,13 +554,13 @@ Chapter 2.
 [5
 
 ] [6]
-<thesis_files/figure-latex/mathplot-1.pdf, id=242, 364.36125pt x 254.9525pt>
-File: thesis_files/figure-latex/mathplot-1.pdf Graphic file (type pdf)
-<use thesis_files/figure-latex/mathplot-1.pdf>
-Package pdftex.def Info: thesis_files/figure-latex/mathplot-1.pdf  used on inpu
-t line 317.
+<TFM_files/figure-latex/mathplot-1.pdf, id=242, 364.36125pt x 254.9525pt>
+File: TFM_files/figure-latex/mathplot-1.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/mathplot-1.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/mathplot-1.pdf  used on input l
+ine 317.
 (pdftex.def)             Requested size: 364.37146pt x 254.95963pt.
-[7 <./thesis_files/figure-latex/mathplot-1.pdf>] [8]
+[7 <./TFM_files/figure-latex/mathplot-1.pdf>] [8]
 Chapter 3.
 [9
 
@@ -601,18 +601,18 @@ LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [19
 
-] (./thesis.aux)
-Package rerunfilecheck Info: File `thesis.out' has not changed.
+] (./TFM.aux)
+Package rerunfilecheck Info: File `TFM.out' has not changed.
 (rerunfilecheck)             Checksum: D61610954BD2A76383D722FC99376214;3102.
  ) 
 Here is how much of TeX's memory you used:
  10495 strings out of 480470
- 153116 string characters out of 5898952
- 468832 words of memory out of 5000000
+ 153032 string characters out of 5898952
+ 468817 words of memory out of 5000000
  27884 multiletter control sequences out of 15000+600000
  483696 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,11n,66p,642b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,11n,66p,639b,371s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/home/leo/.Tiny
 TeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.TinyTeX/texmf-dist/font
 s/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/
@@ -632,7 +632,7 @@ ts/type1/public/lm/lmro12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public
 /home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/leo/.Tiny
 TeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></home/leo/.TinyTeX/texmf-dist/
 fonts/type1/public/lm/lmtti10.pfb>
-Output written on thesis.pdf (24 pages, 576336 bytes).
+Output written on TFM.pdf (24 pages, 576333 bytes).
 PDF statistics:
  470 PDF objects out of 1000 (max. 8388607)
  389 compressed objects within 4 object streams

@@ -1,34 +1,32 @@
 ---
 ### Title page
 title: "Colocar el titulo del TFM aquí" # The main title of your thesis (not including possible subtitles)
-subtitle: |
-  | MÁSTER INTERUNIVERSITARIO EN MEJORA GENÉTICA ANIMAL 
-  |  Y BIOTECNOLOGÍA DE LA REPRODUCCIÓN
+subtitle: "Máster interuniversitario en mejora genética y biotecnología de la reproducción"
 # (can also be  omitted if you don't have a subtitle)
 author: "Jorge Leonardo López Martínez" # Your full name (including middle names if applicable)
 date: "Colocar aquí la fecha de la defensa" # Your defense date in Dutch: "[weekday] [day in numerics] [name of month] [year]"
 #aula: true # set to true if your defense is in the Aula; set to false/omit if it is in the Agnietenkapel
-#time: "14.00" # time of your defense (a 24h time, e.g. "14.00")
-birthplace: "Barcelona" # your place of birth, in Dutch
-country_of_birth: "España" # if your birthplace is not in the Netherlands, fill in the country as well (in Dutch). Omit otherwise!
+time: "colocar la hora aquí" # time of your defense (a 24h time, e.g. "14.00")
+#birthplace: "Barcelona" # your place of birth, in Dutch
+#country_of_birth: "España" # if your birthplace is not in the Netherlands, fill in the country as well (in Dutch). Omit otherwise!
 
 
 ### Colophon 
 # Can be skipped entirely, but if you define FUNDER, this will read: 
 # "The investigations in this thesis were supported by [a] GRANT [from] FUNDER"
-grant: "Starting grant (111-2-3)" # optional, otherwise this bit is omitted
-funder: "the Non-existent Organization for Space Exploration (NOSE)"
+#grant: "Starting grant (111-2-3)" # optional, otherwise this bit is omitted
+#funder: "the Non-existent Organization for Space Exploration (NOSE)"
 
 # This paragraph begins with "This thesis was typeset using (R) Markdown, \LaTeX\ and the \verb+bookdown+ R-package"
 # and is optionally followed by:
-ISBN: "xxx-xx-xxxx-xxx-x" # optional, otherwise this bit is omitted
-printing: "Acme Press, Inc." # optional, otherwise this bit is omitted
-cover: "Designed by Phil Henry Doctor" # optional, otherwise this bit is omitted
+#ISBN: "xxx-xx-xxxx-xxx-x" # optional, otherwise this bit is omitted
+#printing: "Acme Press, Inc." # optional, otherwise this bit is omitted
+#cover: "Designed by Phil Henry Doctor" # optional, otherwise this bit is omitted
 
 # Can be skipped entirely, but if you define THESIS_URL, this will read: 
 # "An online version of this thesis is available at THESIS_URL [,licensed under a LICENSE.]
-thesis_url: "https://lcreteig.github.io/amsterdown"
-license: "to-be-determined license" # optional, otherwise this bit is omitted
+thesis_url: "https://github.com/Leo4Luffy/TFM_UAB"
+license: "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" # optional, otherwise this bit is omitted
 
 
 ### Committee
@@ -37,36 +35,32 @@ license: "to-be-determined license" # optional, otherwise this bit is omitted
 promotores: 
 # for example:
 - title: prof. dr. # either "prof.dr" for full professors, or "dr." for others
-  initials: T.
-  surname: Zonnebloem
-  affiliation: Universiteit van Amsterdam
-- title: prof. dr.
-  initials: H.
-  surname: Jones
-  affiliation: University of Indiana
+  initials: M.
+  surname: Pérez-Enciso
+  affiliation: Centre for Research in Agricultural Genomics
 one_promotor: false # set to true if you have only 1 promotor. Then the heading will be "Promotor" (singular), instead of "Promotores".
 # Fill in each of your "copromotores" below, corresponding to the form you submitted to the graduate school.
 # If you don't have a copromotor, simply delete the fields ("copromotores" and its 4 subfields)
-copromotores:
-- title: dr. 
-  initials: W.
-  surname: Ho
-  affiliation: University of Gallifrey 
-one_copromotor: true # if true the heading will be "Copromotor" (singular), instead of "Copromotores" (assuming there is a copromotor)
+#copromotores:
+#- title: dr. 
+  #initials: W.
+  #surname: Ho
+  #affiliation: University of Gallifrey 
+#one_copromotor: true # if true the heading will be "Copromotor" (singular), instead of "Copromotores" (assuming there is a copromotor)
 # Fill in each of your committee members below, corresponding to the form you submitted to the graduate school.
 # Copy-paste the 4 subfields (starting with " - title:") as many times as you have committee members.
-members:
+#members:
 # for example: 
-- title: prof. dr.
-  initials: H.J.
-  surname: Farnsworth
-  affiliation: Mars University
-- title: prof. dr.
-  initials: J.I.Q.N.
-  surname: Frink
-  affiliation: University of Springfield
+#- title: prof. dr.
+  #initials: H.J.
+  #surname: Farnsworth
+  #affiliation: Mars University
+#- title: prof. dr.
+ # initials: J.I.Q.N.
+ # surname: Frink
+ # affiliation: University of Springfield
 # Finally, the (Dutch) name of your faculty, e.g. "Faculteit der Maatschappij- en Gedragswetenschappen"
-faculty: 
+#faculty: 
 
 ### Book settings
 documentclass: book # default LaTeX book class
