@@ -102,11 +102,13 @@ $if(babel-newcommands)$
   $babel-newcommands$
 $endif$
 \else
-  \usepackage{polyglossia}
-  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
-$for(polyglossia-otherlangs)$
-  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
-$endfor$
+\usepackage{polyglossia}
+  \setmainlanguage{spanish}
+  % Tabla en lugar de cuadro
+  \gappto\captionsspanish{\renewcommand{\tablename}{Tabla}  
+          \renewcommand{\listtablename}{Índice de tablas}}
+\else
+  \usepackage[spanish,es-tabla]{babel}
 \fi
 $endif$
 $if(natbib)$
@@ -272,7 +274,7 @@ $endfor$
 \setlength{\parskip}{\baselineskip} % add space between paragraphs
 \setlength\parindent{0pt} % no indents
 
-Esta tesis se escribio usando los paquetes de R (R) Markdown, \LaTeX\ y \verb+bookdown+.
+Esta tesis se escribio usando los paquetes de R (R) Markdown, \LaTeX\ , \verb+bookdown+  y \verb+amsterdown+.
 
 \vspace{\baselineskip}
 \includegraphics{_bookdown_files/CC-BY.png} \newline
@@ -297,13 +299,13 @@ $endif$
 el grado de Máster en Mejora Genética y\\
 Biotecnología de la Reproducción bajo la\\
 dirección del prof. dr. Miguel Pérez Enciso\\ % make sure this is the current rector magnificus
-\mbox{ante una comisión constituida por la Junta de Máster,}\\
+\mbox{ante una comisión constituida por la Junta del Máster,}\\
 para ser defendido en publico el\\
 $if(date)$$date$$else$[………]dag […date…] […month…] 20[..]$endif$, a las $if(time)$$time$$else$[…time…]$endif$  \\ }\par %
 \vspace{\baselineskip}
 {\Large $if(author)$$author$$else$[…given names in full…] [… surname…]$endif$}\par
 \vspace{\baselineskip}
-\includegraphics[width=80mm]{_bookdown_files/logo_crag.jpg} \newline
+\hfill\includegraphics[width=80mm]{_bookdown_files/logo_crag.png}\hspace*{\fill} \newline
 \end{center}
 
 %% Page IV: info on thesis committee %LCR
