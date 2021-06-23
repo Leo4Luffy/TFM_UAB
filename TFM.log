@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  23 JUN 2021 13:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  23 JUN 2021 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -353,58 +353,35 @@ Package: grffile 2019/11/11 v2.1 Extended file name support for graphics (legac
 y)
 Package grffile Info: This package is an empty stub for compatibility on input 
 line 40.
-) (/home/leo/.TinyTeX/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2020/05/29 v2.20.6
-\thm@style=\toks27
-\thm@bodyfont=\toks28
-\thm@headfont=\toks29
-\thm@notefont=\toks30
-\thm@headpunct=\toks31
-\thm@preskip=\skip57
-\thm@postskip=\skip58
-\thm@headsep=\skip59
-\dth@everypar=\toks32
-)
-\c@theorem=\count291
-\c@lemma=\count292
-\c@corollary=\count293
-\c@proposition=\count294
-\c@conjecture=\count295
-\c@definition=\count296
-\c@example=\count297
-\c@exercise=\count298
-\c@hypothesis=\count299
-(/home/leo/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count300
+\l__color_backend_stack_int=\count291
 \l__pdf_internal_box=\box57
 ) (./TFM.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
 )
 \openout1 = `TFM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 112.
-LaTeX Font Info:    ... okay on input line 112.
-Package hyperref Info: Link coloring OFF on input line 112.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+Package hyperref Info: Link coloring OFF on input line 95.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -412,17 +389,17 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/home/leo/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count301
+\c@section@level=\count292
 )
-LaTeX Info: Redefining \ref on input line 112.
-LaTeX Info: Redefining \pageref on input line 112.
-LaTeX Info: Redefining \nameref on input line 112.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
 (./TFM.out) (./TFM.out)
 \@outlinefile=\write3
 \openout3 = `TFM.out'.
 
-LaTeX Info: Redefining \. on input line 112.
-LaTeX Info: Redefining \% on input line 112.
+LaTeX Info: Redefining \. on input line 95.
+LaTeX Info: Redefining \% on input line 95.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -435,59 +412,59 @@ e
 
 {/home/leo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-33.
+16.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-33.
+16.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-133.
+116.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-133.
+116.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 133.
+(Font)              <10.95> on input line 116.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 133.
+(Font)              <8> on input line 116.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 133.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 133
+(Font)              <6> on input line 116.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 116
 .
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 133
+LaTeX Font Info:    Trying to load font information for U+msb on input line 116
 .
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-33.
+16.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<_bookdown_files/CC-BY.png, id=90, 97.0827pt x 33.9669pt>
+<_bookdown_files/CC-BY.png, id=82, 97.0827pt x 33.9669pt>
 File: _bookdown_files/CC-BY.png Graphic file (type png)
 <use _bookdown_files/CC-BY.png>
-Package pdftex.def Info: _bookdown_files/CC-BY.png  used on input line 136.
+Package pdftex.def Info: _bookdown_files/CC-BY.png  used on input line 119.
 (pdftex.def)             Requested size: 97.0854pt x 33.96783pt.
 
-Underfull \hbox (badness 1077) in paragraph at lines 136--141
+Underfull \hbox (badness 1077) in paragraph at lines 119--124
 \T1/lmr/m/n/10.95 Una ver-sión en línea de es-ta tesis es-ta disponible en []$h
 ttps : / / github . com /
  []
 
 
-Underfull \hbox (badness 6220) in paragraph at lines 136--141
+Underfull \hbox (badness 6220) in paragraph at lines 119--124
 \T1/lmr/m/n/10.95 Leo4Lu^^[y / TFM _ UAB$[], ba-jo la li-cen-cia Cre-ative Com-
 mons Attribution-
  []
@@ -495,46 +472,46 @@ mons Attribution-
 [2
 
  <./_bookdown_files/CC-BY.png>]
-<_bookdown_files/logo_uab.png, id=102, 758.835pt x 351.3125pt>
+<_bookdown_files/logo_uab.png, id=94, 758.835pt x 351.3125pt>
 File: _bookdown_files/logo_uab.png Graphic file (type png)
 <use _bookdown_files/logo_uab.png>
-Package pdftex.def Info: _bookdown_files/logo_uab.png  used on input line 146.
+Package pdftex.def Info: _bookdown_files/logo_uab.png  used on input line 129.
 (pdftex.def)             Requested size: 125.1908pt x 57.9587pt.
-<_bookdown_files/logo_upv.jpg, id=103, 1927.2pt x 1084.05pt>
+<_bookdown_files/logo_upv.jpg, id=95, 1927.2pt x 1084.05pt>
 File: _bookdown_files/logo_upv.jpg Graphic file (type jpg)
 <use _bookdown_files/logo_upv.jpg>
-Package pdftex.def Info: _bookdown_files/logo_upv.jpg  used on input line 146.
+Package pdftex.def Info: _bookdown_files/logo_upv.jpg  used on input line 129.
 (pdftex.def)             Requested size: 125.18417pt x 70.41609pt.
-<_bookdown_files/logo_ciheam.jpg, id=104, 436.63126pt x 287.0725pt>
+<_bookdown_files/logo_ciheam.jpg, id=96, 436.63126pt x 287.0725pt>
 File: _bookdown_files/logo_ciheam.jpg Graphic file (type jpg)
 <use _bookdown_files/logo_ciheam.jpg>
-Package pdftex.def Info: _bookdown_files/logo_ciheam.jpg  used on input line 14
-6.
+Package pdftex.def Info: _bookdown_files/logo_ciheam.jpg  used on input line 12
+9.
 (pdftex.def)             Requested size: 125.1874pt x 82.3071pt.
-<_bookdown_files/logo_crag.png, id=105, 711.3777pt x 284.7438pt>
+<_bookdown_files/logo_crag.png, id=97, 711.3777pt x 284.7438pt>
 File: _bookdown_files/logo_crag.png Graphic file (type png)
 <use _bookdown_files/logo_crag.png>
-Package pdftex.def Info: _bookdown_files/logo_crag.png  used on input line 162.
+Package pdftex.def Info: _bookdown_files/logo_crag.png  used on input line 145.
 
-(pdftex.def)             Requested size: 227.61295pt x 91.10684pt.
+(pdftex.def)             Requested size: 125.18765pt x 50.10898pt.
 [3
 
  <./_bookdown_files/logo_uab.png> <./_bookdown_files/logo_upv.jpg> <./_bookdown
 _files/logo_ciheam.jpg> <./_bookdown_files/logo_crag.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 170.
+(Font)              <12> on input line 153.
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--177
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
 
  []
 
 
-Overfull \hbox (50.2017pt too wide) in paragraph at lines 168--177
+Overfull \hbox (50.2017pt too wide) in paragraph at lines 151--160
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--177
+Underfull \hbox (badness 10000) in paragraph at lines 151--160
 
  []
 
@@ -543,8 +520,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 168--177
 ] (./TFM.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
 )
 \tf@toc=\write4
 \openout4 = `TFM.toc'.
@@ -553,132 +528,91 @@ LaTeX Info: Redefining \% on input line 23.
 
 ]
 Cap\'{\i }tulo 1.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 189.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 189.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 189.
-
-Underfull \hbox (badness 2134) in paragraph at lines 194--194
-[]\T1/lmr/bx/n/17.28 Socialist re-al-ism and mod-ern ob-jec-
- []
-
 [1
 
 
 ]
-LaTeX Info: Redefining \. on input line 229.
-LaTeX Info: Redefining \% on input line 229.
-[2]
-LaTeX Info: Redefining \. on input line 251.
-LaTeX Info: Redefining \% on input line 251.
-[3]
-LaTeX Info: Redefining \. on input line 268.
-LaTeX Info: Redefining \% on input line 268.
-[4]
 Cap\'{\i }tulo 2.
-[5
+[2
 
 ]
-LaTeX Info: Redefining \. on input line 307.
-LaTeX Info: Redefining \% on input line 307.
-[6]
-<TFM_files/figure-latex/mathplot-1.pdf, id=243, 364.36125pt x 254.9525pt>
-File: TFM_files/figure-latex/mathplot-1.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/mathplot-1.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/mathplot-1.pdf  used on input l
-ine 321.
-(pdftex.def)             Requested size: 364.37146pt x 254.95963pt.
-LaTeX Info: Redefining \. on input line 333.
-LaTeX Info: Redefining \% on input line 333.
-[7 <./TFM_files/figure-latex/mathplot-1.pdf>]
-LaTeX Info: Redefining \. on input line 335.
-LaTeX Info: Redefining \% on input line 335.
-[8]
+LaTeX Info: Redefining \. on input line 204.
+LaTeX Info: Redefining \% on input line 204.
+[3]
 Cap\'{\i }tulo 3.
-[9
+[4
 
 ]
-LaTeX Info: Redefining \. on input line 371.
-LaTeX Info: Redefining \% on input line 371.
-[10]
+LaTeX Info: Redefining \. on input line 232.
+LaTeX Info: Redefining \% on input line 232.
+[5]
 Cap\'{\i }tulo 4.
-[11
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 234.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 234.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 234.
+[6
 
 ]
 Ap\'{e}ndice A.
-<figures/uvalogo_regular_p_en.pdf, id=302, 526.00114pt x 57.04813pt>
+<figures/uvalogo_regular_p_en.pdf, id=180, 526.00114pt x 57.04813pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
-Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 3
-84.
+Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 2
+45.
 (pdftex.def)             Requested size: 390.0213pt x 42.30025pt.
 
-Overfull \hbox (17.64612pt too wide) in paragraph at lines 384--385
+Overfull \hbox (17.64612pt too wide) in paragraph at lines 245--246
 [][] 
  []
 
-[12
+[7
 
  <./figures/uvalogo_regular_p_en.pdf>]
 Ap\'{e}ndice B.
-[13
+[8
 
 ]
-LaTeX Info: Redefining \. on input line 453.
-LaTeX Info: Redefining \% on input line 453.
-[14] [15
+LaTeX Info: Redefining \. on input line 314.
+LaTeX Info: Redefining \% on input line 314.
+[9] [10
 
 
-] [16]
-LaTeX Info: Redefining \. on input line 553.
-LaTeX Info: Redefining \% on input line 553.
-[17
+] [11
 
-] [18
-
-] [19
+] [12
 
 ] (./TFM.aux
 LaTeX Info: Redefining \. on input line 22.
 LaTeX Info: Redefining \% on input line 22.
-LaTeX Info: Redefining \. on input line 90.
-LaTeX Info: Redefining \% on input line 90.
 )
 Package rerunfilecheck Info: File `TFM.out' has not changed.
-(rerunfilecheck)             Checksum: 45B8B6620D8F661822DDA14F9ED342FD;3110.
+(rerunfilecheck)             Checksum: 7EC3C89ABB19A34CDE291A2F3C9E5C8A;1895.
  ) 
 Here is how much of TeX's memory you used:
- 10764 strings out of 480470
- 156058 string characters out of 5898952
- 472787 words of memory out of 5000000
- 28157 multiletter control sequences out of 15000+600000
- 486116 words of font info for 84 fonts, out of 8000000 for 9000
+ 10567 strings out of 480470
+ 153039 string characters out of 5898952
+ 469824 words of memory out of 5000000
+ 28013 multiletter control sequences out of 15000+600000
+ 479800 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,11n,66p,637b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.TinyT
-eX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/f
-onts/enc/dvips/lm/lm-mathex.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/
-lm/lm-rm.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</
-home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/leo/.TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></home/leo/.TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmex10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
-lic/lm/lmmi12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pf
-b></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></home/leo/.Ti
-nyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></home/leo/.TinyTeX/texmf-dist
-/fonts/type1/public/lm/lmr17.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
-lic/lm/lmr7.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><
-/home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></home/leo/.Tiny
-TeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb></home/leo/.TinyTeX/texmf-dist/
-fonts/type1/public/lm/lmsy10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
-lic/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pf
-b></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></home/leo/.T
-inyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (24 pages, 631445 bytes).
+ 60i,8n,66p,536b,361s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</home/leo/.TinyT
+eX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/leo/.TinyTeX/texmf-dist/f
+onts/type1/public/lm/lmcsc10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
+lic/lm/lmr10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb
+></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></home/leo/.Tin
+yTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/leo/.TinyTeX/texmf-dist/f
+onts/type1/public/lm/lmr8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public
+/lm/lmri12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb>
+</home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/leo/.Tin
+yTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on TFM.pdf (17 pages, 543713 bytes).
 PDF statistics:
- 467 PDF objects out of 1000 (max. 8388607)
- 386 compressed objects within 4 object streams
- 108 named destinations out of 1000 (max. 500000)
- 196 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 175 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,29 @@
+# Titulo
+
+__Resumen__
+
+\noindent 
+Insert abstract.
+
+---
+
+\vspace*{\fill}
+\noindent
+_Possibly insert citation here._
+\newpage
+
+## Introducción {#intro2}
+
+
+
+## Metodos {#methods2}
+
+
+
+## Resultados {#results2}
+
+
+
+## Discusión {#discussion2}
+
+

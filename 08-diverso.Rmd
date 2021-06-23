@@ -1,4 +1,4 @@
-# Miscellaneous {-}
+# Varios {-}
 \chaptermark{Miscellaneous}
 
 Sometimes more chapters are added to the back matter, for instance:

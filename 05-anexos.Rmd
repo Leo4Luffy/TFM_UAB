@@ -1,6 +1,6 @@
 # (APPENDIX) Appendix {-}
 
-# Supplement to Chapter 2
+# Anexo del capitulo 2
 
 What's left to say? How about a nice image then?
 
@@ -9,7 +9,7 @@ What's left to say? How about a nice image then?
 knitr::include_graphics("figures/uvalogo_regular_p_en.jpg", auto_pdf = TRUE)
 ```
 
-# Supplement to Chapter 3
+# Anexo del capitulo 3
 
 And now for some tables:
 
