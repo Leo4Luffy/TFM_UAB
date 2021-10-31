@@ -32,7 +32,7 @@ And now for some tables:
 | 307| 1150| 36.99|     0|  
 | 307| 1200| 37.01|     0|  
 
-Table: (\#tab:beaver-2) Time series of the body temparature of a beaver. Source: @Reynolds1994
+Table: (\#tab:beaver-2) Time series of the body temparature of a beaver.
 
 ```{r beaver-1, echo=FALSE}
 # let the knitr package generate the table in markdown (from a data frame)
