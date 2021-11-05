@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  3 NOV 2021 11:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021) (preloaded format=pdflatex 2021.6.22)  5 NOV 2021 11:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,53 +539,56 @@ Cap\'{\i }tulo 2.
 LaTeX Info: Redefining \. on input line 203.
 LaTeX Info: Redefining \% on input line 203.
 [3]
-LaTeX Info: Redefining \. on input line 218.
-LaTeX Info: Redefining \% on input line 218.
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
 [4]
+LaTeX Info: Redefining \. on input line 220.
+LaTeX Info: Redefining \% on input line 220.
+[5]
 Cap\'{\i }tulo 3.
-[5
+[6
 
 ]
-LaTeX Info: Redefining \. on input line 246.
-LaTeX Info: Redefining \% on input line 246.
-[6]
+LaTeX Info: Redefining \. on input line 248.
+LaTeX Info: Redefining \% on input line 248.
+[7]
 Cap\'{\i }tulo 4.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 248.
+(Font)              <10> on input line 250.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 248.
+(Font)              <7> on input line 250.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 248.
-[7
+(Font)              <5> on input line 250.
+[8
 
 ]
 Ap\'{e}ndice A.
-<figures/uvalogo_regular_p_en.pdf, id=229, 526.00114pt x 57.04813pt>
+<figures/uvalogo_regular_p_en.pdf, id=241, 526.00114pt x 57.04813pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 2
-59.
+61.
 (pdftex.def)             Requested size: 390.0213pt x 42.30025pt.
 
-Overfull \hbox (17.64612pt too wide) in paragraph at lines 259--260
+Overfull \hbox (17.64612pt too wide) in paragraph at lines 261--262
 [][] 
  []
 
-[8
+[9
 
  <./figures/uvalogo_regular_p_en.pdf>]
 Ap\'{e}ndice B.
-[9
+[10
 
 ]
-LaTeX Info: Redefining \. on input line 328.
-LaTeX Info: Redefining \% on input line 328.
-[10] [11
+LaTeX Info: Redefining \. on input line 330.
+LaTeX Info: Redefining \% on input line 330.
+[11] [12
 
 
-] [12] [13
+] [13] [14
 
-] [14
+] [15
 
 ] (./TFM.aux
 LaTeX Info: Redefining \. on input line 22.
@@ -595,13 +598,13 @@ Package rerunfilecheck Info: File `TFM.out' has not changed.
 (rerunfilecheck)             Checksum: F6D24DB85F7DDCCF019C7E7CA8444E32;1951.
  ) 
 Here is how much of TeX's memory you used:
- 10585 strings out of 480470
- 153236 string characters out of 5898952
- 469835 words of memory out of 5000000
+ 10587 strings out of 480470
+ 153254 string characters out of 5898952
+ 469837 words of memory out of 5000000
  28013 multiletter control sequences out of 15000+600000
  479800 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,8n,66p,1027b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,8n,66p,1024b,374s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</home/leo/.TinyT
 eX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/leo/.TinyTeX/texmf-dist/f
 onts/type1/public/lm/lmcsc10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
@@ -612,10 +615,10 @@ onts/type1/public/lm/lmr8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public
 /lm/lmri12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmro12.pfb>
 </home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/leo/.Tin
 yTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on TFM.pdf (19 pages, 557010 bytes).
+Output written on TFM.pdf (20 pages, 558220 bytes).
 PDF statistics:
- 359 PDF objects out of 1000 (max. 8388607)
- 301 compressed objects within 4 object streams
- 80 named destinations out of 1000 (max. 500000)
+ 371 PDF objects out of 1000 (max. 8388607)
+ 312 compressed objects within 4 object streams
+ 82 named destinations out of 1000 (max. 500000)
  175 words of extra memory for PDF output out of 10000 (max. 10000000)
 
