@@ -3,9 +3,9 @@
 %
 % New additions to the template are marked with "LCR"
 
-%\documentclass[12pt,spanish,]{book} %LCR
+%\documentclass[11pt,spanish,]{book} %LCR
  % if not, force the oneside and a4paper options, which seem to be the only reasonable defaults
-\documentclass[12pt,spanish,a4paper,oneside,]{book} %LCR
+\documentclass[11pt,spanish,a4paper,oneside,]{book} %LCR
 
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
@@ -32,10 +32,14 @@
 
  %LCR
 \usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
             pdftitle={Colocar el titulo del TFM aquí},
             pdfauthor={Jorge Leonardo López Martínez},
-            pdfborder={0 0 0},
+            colorlinks=true,
+            linkcolor=cyan,
+            citecolor=Blue,
+            urlcolor=Blue,
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
@@ -126,9 +130,7 @@ bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inter
 \clearpage
 \thispagestyle{empty}
 \begin{center}
-\includegraphics[width=44mm]{_bookdown_files/logo_uab.png} \includegraphics[width=44mm]{_bookdown_files/logo_upv.jpg} \includegraphics[width=44mm]{_bookdown_files/logo_ciheam.jpg} \newline
-\vspace{\baselineskip}
-\Large\textit{Máster interuniversitario en mejora genética y biotecnología de la reproducción}\par
+\includegraphics[width=41mm]{_bookdown_files/logo_uab.png} \includegraphics[width=41mm]{_bookdown_files/logo_upv.jpg} \includegraphics[width=41mm]{_bookdown_files/logo_ciheam.jpg} \newline
 \vspace{\baselineskip}
 \Huge\textbf{Colocar el titulo del TFM aquí}\par
 \vspace{\baselineskip}
@@ -162,6 +164,7 @@ Director:
 
 
 {
+\hypersetup{linkcolor=black}
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
@@ -193,17 +196,17 @@ Insert abstract.
 
 La teoría de la genética en el estudio de caracteres cuantitativos se estableció hace más de un siglo cuando Ronald Fisher presentó un documento (Fisher \protect\hyperlink{ref-cite:1}{1918}) donde dio a conocer el desarrollo de la teoría del modelo infinitesimal, permitiendo con ello unificar dos de las escuelas de pensamiento que para ese entonces estaban en constante debate: la escuela de pensamiento Mendeliano, cuyo objetivo consistía en localizar y caracterizar factores de herencia, y la escuela de pensamiento biométrico, cuyo origen se remonta a Galton quien buscaba aplicar modelos biométricos con el fin de estudiar las relaciones entre parientes (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}).
 
-La teoría del modelo infinitesimal desarrollado por Fisher establece que la varianza genética de un carácter esta determinado por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución aditiva al fenotipo de dicho carácter (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Turelli \protect\hyperlink{ref-cite:9}{2017}). Naturalmente, los modelos usados en estudios de mejoramiento genético han sido concebidos en base a esta teoría (Villemereuil et~al. \protect\hyperlink{ref-cite:4}{2016}; Pérez-Enciso \protect\hyperlink{ref-cite:5}{2017}), siendo ejemplo de ello el mejor predictor lineal insesgado (BLUP, sus siglas en ingles) y el mejor predictor lineal insesgado genómico (GBLUP, sus siglas en ingles).
+La teoría del modelo infinitesimal desarrollado por Fisher establece que la varianza genética de un carácter esta determinado por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución aditiva al fenotipo de dicho carácter (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Turelli \protect\hyperlink{ref-cite:9}{2017}). Naturalmente, los modelos usados en estudios de mejoramiento genético han sido concebidos en base a esta teoría (Villemereuil et~al. \protect\hyperlink{ref-cite:4}{2016}; Pérez-Enciso \protect\hyperlink{ref-cite:5}{2017}), siendo ejemplo de ello el mejor predictor lineal insesgado (BLUP) y el mejor predictor lineal insesgado genómico (GBLUP).
 
-En las ciencias animales, el valor de cría estimado (EBV, sus siglas en ingles) se predice en función de un conjunto de modelos que relacionan el fenotipo de una población con la información de su pedigrí, mediante el uso del BLUP. No obstante, este método no es factible para poblaciones sin información de pedigrí o con una estructura poblacional compleja, como suele ser el caso de las plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Para el año 2001, Meuwissen, Hayes y Goddard propusieron un método innovador para predecir los valores de cría basado en marcadores de ADN en todo el genoma (GEBV, sus siglas en ingles), denominándose tiempo después como selección genómica (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}; Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), el cual permitió también superar las limitaciones que suponia el uso del BLUP para predecir los valores de cría en plantas.
+En las ciencias animales, el valor de cría estimado (EBV) se suele predecir en función de un conjunto de modelos que relacionan el fenotipo de una población con la información del pedigrí, mediante el uso del BLUP. No obstante, este método no es factible para poblaciones sin información de pedigrí o con una estructura poblacional compleja, como suele ser el caso de las plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Para el año 2001, Meuwissen, Hayes y Goddard propusieron un método innovador para predecir los valores de cría basado en marcadores de ADN en todo el genoma (GEBV), denominándose tiempo después como selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), el cual permitió también superar las limitaciones que suponia el uso del BLUP para predecir los valores de cría en plantas.
 
 Hoy en día, la selección genómica se considera como un método potencial para el mejoramiento genético en plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), ya que los ciclos reproductivos en estas suelen ser prolongados, por lo cual con el uso de la selección genómica es posible acelerar dichos ciclos reproductivos con el beneficio adicional de mejorar la tasa de ganancia genética anual por unidad de tiempo y costo (Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). Además, los datos sobre marcadores de ADN en todo el genoma están cada vez más disponibles para cultivos de relevancia agronómica (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
 
-El GBLUP es uno de los métodos más comunes de selección genómica (Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). De hecho, es el método más popular debido a su simplicidad al sustituir la matriz de relación de parentesco basado en pedigríes (Wright \protect\hyperlink{ref-cite:12}{1922}) por una matriz de relación basada en marcadores de ADN (Hayes, Visscher, y Goddard \protect\hyperlink{ref-cite:13}{2009}). Así mismo, el GBLUP predice los GEBV en comparación al BLUP con mayor precisión, debido a que estima mejor las relaciones entre individuos (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), por lo cual la matriz de las relaciones genómicas suele verse como un estimador mejorado de relaciones basadas en marcadores en lugar de pedigríes (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}).
+El GBLUP es uno de los métodos más comunes de selección genómica (Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). De hecho, es el método más popular debido a su simplicidad al sustituir la matriz de relación de parentesco basado en pedigríes (Wright \protect\hyperlink{ref-cite:12}{1922}) por una matriz de relación basada en marcadores de ADN (Hayes, Visscher, y Goddard \protect\hyperlink{ref-cite:13}{2009}). Así mismo, el GBLUP predice con mayor precisión los GEBV en comparación a los EBV del BLUP, debido a que se estima mejor las relaciones entre individuos (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), por lo cual la matriz de las relaciones genómicas suele verse como un estimador mejorado de relaciones basadas en marcadores en lugar de pedigríes (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}).
 
 En términos generales, la selección genómica es un proceso de tres pasos en el que los individuos, sobre la base de su información fenotípica y de pedigrí, son evaluados inicialmente mediante una evaluación genética tradicional (BLUP), y posteriormente a partir de los fenotipos corregidos o pseudo-fenotipos resultantes de esta evaluación genética inicial, es llevado a cabo un análisis genómico (GBLUP) de los individuos genotipados. Por último y en base a la información resultante, se calculan los GEBV por medio de un índice de selección (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}; Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
-Si bien el proceso anterior de selección genómica presenta ventajas como lo son (ESCRIBIR LAS VENTAJAS Y CITAR), a este también se le considera como un proceso torpe (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), tendente a cometer errores (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}) y con inconvenientes como la perdida de información y la difícultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar y Misztal (2009) simplificaron el proceso de varios pasos al desarrollar un método de evaluación genómica conjunta que usa la información fenotípica, de pedigrí y genómica, método que los mismos autores denominaron como selección genómica de un solo paso (comunmente llamado single step GBLUP o ssGBLUP).
+Si bien el proceso anterior de selección genómica presenta ventajas como lo son (ESCRIBIR LAS VENTAJAS Y CITAR), a este también se le considera como un proceso torpe (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), tendente a cometer errores (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}) y con inconvenientes como la perdida de información y la difícultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar y Misztal (2009) simplificaron el proceso de varios pasos al desarrollar un método de evaluación genómica conjunta que usa la información fenotípica, de pedigrí y genómica, método que los mismos autores denominaron como selección genómica de un solo paso (ssGBLUP).
 
 El ssGBLUP es hoy en día un método de uso rutinario para la evaluación genómica en animales, donde se ha demostrado que produce una predicción más precisa de los valores de cría en comparación a los métodos BLUP y GBLUP antes mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}). A pesar de esto, el uso del ssGBLUP para la selección genómica en plantas es más reciente y escaso (Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). Por tanto, el \textbf{objetivo}
 
