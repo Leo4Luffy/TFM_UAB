@@ -213,7 +213,36 @@ En el ssGBLUP se dispone de una matriz de parentesco genómica global de individ
 Al ser una forma de BLUP en el que la matriz de relación de parentesco es sustituida por la matriz de relación combinada (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Blasco \protect\hyperlink{ref-cite:21}{2021}), el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos (Blasco \protect\hyperlink{ref-cite:21}{2021}), además se adapta también a las herramientas informaticas ya desarrolladas en base al BLUP (Lourenco et~al. \protect\hyperlink{ref-cite:22}{2020}). Este hecho hace del ssGBLUP un método de uso rutinario para la evaluación genómica en animales, donde ha demostrado que produce una predicción más precisa de los valores de cría en comparación a los métodos BLUP y GBLUP antes mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}). No obstante, el uso del ssGBLUP para la selección genómica en plantas es más reciente y escaso (Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). En consecuencia, el \textbf{objetivo}
 
 \hypertarget{methods2}{%
-\section{Metodos}\label{methods2}}
+\section{Métodos}\label{methods2}}
+
+\hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
+\subsection{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
+
+Los conjuntos de datos genotípicos y fenotípicos usados en este estudio se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio donde se proporciona información sobre datos de genotipos y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}).
+
+En relación a los datos de genotipo,
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-2-1} \end{center}
+
+\begin{center}
+\textbf{Figura 2.1:} Estructura poblacional de datos de arroz. A saber, los puntos y las circuferencias de color representan los distintos grupos varietales de arroz: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+
+\end{center}
+
+En relación a los datos de fenotipo, en el conjunto de datos se proporcionaba información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Fig. 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que este mostró suficiente variación fenotípica.
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-3-1} \end{center}
+
+\begin{center}
+\textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+
+\end{center}
+
+\hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica}{%
+\subsection{Modelo para la predicción genómica}\label{modelo-para-la-predicciuxf3n-genuxf3mica}}
+
+\hypertarget{precisiuxf3n-de-la-predicciuxf3n-genuxf3mica-mediante-validaciuxf3n-cruzada}{%
+\subsection{Precisión de la predicción genómica mediante validación cruzada}\label{precisiuxf3n-de-la-predicciuxf3n-genuxf3mica-mediante-validaciuxf3n-cruzada}}
 
 \hypertarget{results2}{%
 \section{Resultados}\label{results2}}
@@ -264,73 +293,6 @@ Here's where you would write a summary of your thesis\footnote{You can also put 
 What's left to say? How about a nice image then?
 
 \includegraphics{figures/uvalogo_regular_p_en.pdf}
-
-\hypertarget{anexo-del-capitulo-3}{%
-\chapter{Anexo del capitulo 3}\label{anexo-del-capitulo-3}}
-
-And now for some tables:
-
-\begin{longtable}[]{@{}rrrr@{}}
-\caption{\label{tab:beaver-2} Time series of the body temparature of a beaver.}\tabularnewline
-\toprule
-day & time & temp & activ\tabularnewline
-\midrule
-\endfirsthead
-\toprule
-day & time & temp & activ\tabularnewline
-\midrule
-\endhead
-307 & 930 & 36.58 & 0\tabularnewline
-307 & 940 & 36.73 & 0\tabularnewline
-307 & 950 & 36.93 & 0\tabularnewline
-307 & 1000 & 37.15 & 0\tabularnewline
-307 & 1010 & 37.23 & 0\tabularnewline
-307 & 1020 & 37.24 & 0\tabularnewline
-307 & 1030 & 37.24 & 0\tabularnewline
-307 & 1040 & 36.90 & 0\tabularnewline
-307 & 1050 & 36.95 & 0\tabularnewline
-307 & 1100 & 36.89 & 0\tabularnewline
-307 & 1110 & 36.95 & 0\tabularnewline
-307 & 1120 & 37.00 & 0\tabularnewline
-307 & 1130 & 36.90 & 0\tabularnewline
-307 & 1140 & 36.99 & 0\tabularnewline
-307 & 1150 & 36.99 & 0\tabularnewline
-307 & 1200 & 37.01 & 0\tabularnewline
-\bottomrule
-\end{longtable}
-
-\begin{table}
-
-\caption{\label{tab:beaver-1}This is another beaver. Seems to be running slightly colder}
-\centering
-\begin{tabular}[t]{rrrr}
-\toprule
-day & time & temp & activ\\
-\midrule
-346 & 840 & 36.33 & 0\\
-346 & 850 & 36.34 & 0\\
-346 & 900 & 36.35 & 0\\
-346 & 910 & 36.42 & 0\\
-346 & 920 & 36.55 & 0\\
-\addlinespace
-346 & 930 & 36.69 & 0\\
-346 & 940 & 36.71 & 0\\
-346 & 950 & 36.75 & 0\\
-346 & 1000 & 36.81 & 0\\
-346 & 1010 & 36.88 & 0\\
-\addlinespace
-346 & 1020 & 36.89 & 0\\
-346 & 1030 & 36.91 & 0\\
-346 & 1040 & 36.85 & 0\\
-346 & 1050 & 36.89 & 0\\
-346 & 1100 & 36.89 & 0\\
-\addlinespace
-346 & 1110 & 36.67 & 0\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-The average body temperature of the 2nd beaver (Table \ref{tab:beaver-1}) is 36.7 (\emph{SD} = 0.22).
 
 \backmatter
 

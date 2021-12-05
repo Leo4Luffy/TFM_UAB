@@ -1,4 +1,11 @@
+```{r Paquetes usados, echo = FALSE}
+
+pacman::p_load(cowplot, magick)
+```
+
 # Titulo
+
+
 
 __Resumen__
 
@@ -32,11 +39,45 @@ En el ssGBLUP se dispone de una matriz de parentesco genómica global de individ
 
 Al ser una forma de BLUP en el que la matriz de relación de parentesco es sustituida por la matriz de relación combinada [@cite:17; @cite:15; @cite:21], el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos [@cite:21], además se adapta también a las herramientas informaticas ya desarrolladas en base al BLUP [@cite:22]. Este hecho hace del ssGBLUP un método de uso rutinario para la evaluación genómica en animales, donde ha demostrado que produce una predicción más precisa de los valores de cría en comparación a los métodos BLUP y GBLUP antes mencionados [@cite:14; @cite:19; @cite:18]. No obstante, el uso del ssGBLUP para la selección genómica en plantas es más reciente y escaso [@cite:19; @cite:11]. En consecuencia, el __objetivo__
 
-## Metodos {#methods2}
+## Métodos {#methods2}
+
+### Recurso vegetal y datos fenotípicos
+
+Los conjuntos de datos genotípicos y fenotípicos usados en este estudio se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio donde se proporciona información sobre datos de genotipos y de fenotipos de distintas variedades de arroz (_Oryza sativa L._).
+  
+En relación a los datos de genotipo, 
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Graf_PCA.png')
+```
+
+::: {.center data-latex=""}
+__Figura 2.1:__ Estructura poblacional de datos de arroz. A saber, los puntos y las circuferencias de color representan los distintos grupos varietales de arroz: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+:::
+
+En relación a los datos de fenotipo, en el conjunto de datos se proporcionaba información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Fig. 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que este mostró suficiente variación fenotípica. 
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Graf_feno.png')
+```
+
+::: {.center data-latex=""}
+__Figura 2.2:__ Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+:::
+
+### MOLCOANC
+
+### Modelo para la predicción genómica y validación cruzada
 
 
 
 ## Resultados {#results2}
+
+
+
+
 
 
 
