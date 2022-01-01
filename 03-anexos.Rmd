@@ -1,0 +1,43 @@
+# (APPENDIX) Appendix {-}
+
+# Anexo del capitulo 2
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Corr_ped1_1.000.png')
+ggdraw() + draw_image('figures/Corr_ped1_10.000.png')
+ggdraw() + draw_image('figures/Corr_ped1_100.000.png')
+```
+
+::: {.center data-latex=""}
+__Figura A.1:__ 
+:::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Corr_ped2_1.000.png')
+ggdraw() + draw_image('figures/Corr_ped2_10.000.png')
+ggdraw() + draw_image('figures/Corr_ped2_100.000.png')
+```
+
+::: {.center data-latex=""}
+__Figura A.2:__ 
+:::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Corr_ped3_1.000.png')
+ggdraw() + draw_image('figures/Corr_ped3_10.000.png')
+ggdraw() + draw_image('figures/Corr_ped3_100.000.png')
+```
+
+::: {.center data-latex=""}
+__Figura A.3:__ 
+:::
+
+What's left to say? How about a nice image then?
+
+```{r echo=FALSE}
+# this will display the .pdf in pdf output, and the .jpg in html output
+knitr::include_graphics("figures/uvalogo_regular_p_en.jpg", auto_pdf = TRUE)
+```

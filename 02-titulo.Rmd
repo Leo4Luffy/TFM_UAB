@@ -43,9 +43,9 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ### Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos genotípicos y fenotípicos usados en este estudio se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio donde se proporciona información sobre datos de genotipos y de fenotipos de distintas variedades de arroz (_Oryza sativa L._).
+Los conjuntos de datos usados en este estudio se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio que proporciona información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (_Oryza sativa L._), y que posteriormente fueron usado en un trabajo previo llevado a cabo por. 
   
-En relación a los datos de genotipo, 
+Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz,<!--los cuales según @cite:23, fue atribuido a diferentes orígenes geográficos---> de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
@@ -53,10 +53,10 @@ ggdraw() + draw_image('figures/Graf_PCA.png')
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.1:__ Estructura poblacional de datos de arroz. A saber, los puntos y las circuferencias de color representan los distintos grupos varietales de arroz: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+__Figura 2.1:__ Análisis de componentes principales en datos de arroz. A saber, los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
-En relación a los datos de fenotipo, en el conjunto de datos se proporcionaba información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Fig. 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que este mostró suficiente variación fenotípica. 
+En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
@@ -67,11 +67,16 @@ ggdraw() + draw_image('figures/Graf_feno.png')
 __Figura 2.2:__ Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
 :::
 
-### MOLCOANC
+En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC [@cite:24] con el fin de contar con esta información. Este software <!--crea una genealogía virtual para los fundadores de tal manera que la correlación entre el parentesco genealógico calculado a partir de ese pedigrí virtual tiene la correlación más alta con una matriz proporcionada (la de REA v0.2 en nuestro caso). La metodología es capaz de dar cuenta de cualquier relación conocida a priori (por ejemplo, un par de personas que comparten un padre) y de detectar incompatibilidades mendelianas en las familias propuestas. El número de generaciones por encima de los fundadores se estableció en tres, lo que proporcionó una correlación entre matrices de alrededor del 98%. Cada vez que se agrega un nuevo fundador a la población ex situ, la matriz de parentesco se reevalúa para acomodar las relaciones de la nueva incorporación.-->. (Figura 2.3).
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/Pedigríes.png')
+```
 
 ### Modelo para la predicción genómica y validación cruzada
 
-
+### Simulación
 
 ## Resultados {#results2}
 
