@@ -94,6 +94,10 @@
 % https://github.com/jgm/pandoc/issues/5801
 \renewcommand{\linethickness}{0.05em}
 
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
 
 %%%%%%%%%%%%% BEGIN DOCUMENT %%%%%%%%%%%%%
 \begin{document}
@@ -242,6 +246,11 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-4-1} \end{center}
 
+\begin{center}
+\textbf{Figura 2.3:} .
+
+\end{center}
+
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-validaciuxf3n-cruzada}{%
 \subsection{Modelo para la predicción genómica y validación cruzada}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-validaciuxf3n-cruzada}}
 
@@ -250,6 +259,25 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 
 \hypertarget{results2}{%
 \section{Resultados}\label{results2}}
+
+\hypertarget{fenotipo-y-heredabilidades}{%
+\subsection{Fenotipo y heredabilidades}\label{fenotipo-y-heredabilidades}}
+
+\begin{center}
+\textbf{Tabla 2.1:} Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
+
+\end{center}
+
+\captionsetup[table]{labelformat=empty,skip=1pt}
+\begin{longtable}{rrr}
+\toprule
+\multicolumn{3}{c}{RKHS} \\ 
+ \cmidrule(lr){1-3}
+Pedigrí 1 & Pedigrí 2 & Pedigrí 3 \\ 
+\midrule
+0.72 & 0.6 & 0.49 \\ 
+ \bottomrule
+\end{longtable}
 
 \hypertarget{discussion2}{%
 \section{Discusión}\label{discussion2}}
@@ -261,17 +289,6 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \hypertarget{anexo-del-capitulo-2}{%
 \chapter{Anexo del capitulo 2}\label{anexo-del-capitulo-2}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-5-1} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-5-2} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-5-3} \end{center}
-
-\begin{center}
-\textbf{Figura A.1:}
-
-\end{center}
-
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-6-1} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-6-2} \end{center}
@@ -279,7 +296,7 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-6-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.2:}
+\textbf{Figura A.1:}
 
 \end{center}
 
@@ -288,6 +305,17 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-7-2} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-7-3} \end{center}
+
+\begin{center}
+\textbf{Figura A.2:}
+
+\end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-2} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-3} \end{center}
 
 \begin{center}
 \textbf{Figura A.3:}
