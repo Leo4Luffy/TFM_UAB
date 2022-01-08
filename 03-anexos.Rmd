@@ -4,9 +4,9 @@
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/Corr_ped1_1.000.png')
-ggdraw() + draw_image('figures/Corr_ped1_10.000.png')
-ggdraw() + draw_image('figures/Corr_ped1_100.000.png')
+ggdraw() + draw_image('figures/Corr_ped1_1.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped1_10.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped1_100.000_bayes.png')
 ```
 
 ::: {.center data-latex=""}
@@ -15,9 +15,9 @@ __Figura A.1:__
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/Corr_ped2_1.000.png')
-ggdraw() + draw_image('figures/Corr_ped2_10.000.png')
-ggdraw() + draw_image('figures/Corr_ped2_100.000.png')
+ggdraw() + draw_image('figures/Corr_ped2_1.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped2_10.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped2_100.000_bayes.png')
 ```
 
 ::: {.center data-latex=""}
@@ -26,9 +26,9 @@ __Figura A.2:__
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/Corr_ped3_1.000.png')
-ggdraw() + draw_image('figures/Corr_ped3_10.000.png')
-ggdraw() + draw_image('figures/Corr_ped3_100.000.png')
+ggdraw() + draw_image('figures/Corr_ped3_1.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped3_10.000_bayes.png')
+ggdraw() + draw_image('figures/Corr_ped3_100.000_bayes.png')
 ```
 
 ::: {.center data-latex=""}

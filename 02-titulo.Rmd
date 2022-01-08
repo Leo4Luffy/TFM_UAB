@@ -1,11 +1,13 @@
 ```{r Paquetes usados, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext)
+font_add_google('Gochi Hand', 'gochi')
+showtext_auto()
 ```
 
 # Titulo
 
-
+<!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
 
 __Resumen__
 
@@ -78,7 +80,86 @@ ggdraw() + draw_image('figures/Pedigríes.png')
 __Figura 2.3:__ .
 :::
 
-### Modelo para la predicción genómica y validación cruzada
+### Modelo para la predicción genómica y habilidad predictiva
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
+
+Puntos <- data.frame(x = c(3.5, 6.1, 8.1), y = c(6.1, 5.4, 0.4))
+
+data.frame(
+  x = c(3.5:16.7), y = c(-7.0:6.2)
+  ) %>%
+  ggplot(aes(x, y)) +
+  geom_blank() +
+  annotate(geom = 'rect', xmin = 3.7, xmax = 5.9, ymin = 3.7, ymax = 5.9, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 4.8, y = 4.8, label = 'A', size = 6.4, colour = 'black') +
+  #annotate(geom = 'text', x = 2.6, y = 4.9, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
+  #annotate(geom = 'text', x = 2.6, y = 4.4, label = 'basadas en', family = 'gochi', size = 5.4, colour = 'black') +
+  #annotate(geom = 'text', x = 2.6, y = 3.9, label = 'datos de pedigrí', family = 'gochi', size = 5.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 6.3, xmax = 7.7, ymin = 3.8, ymax = 5.2, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 7.0, y = 4.5, label = 'G', size = 6.4, colour = 'black') +
+  #annotate(geom = 'text', x = 8.8, y = 4.9, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
+  #annotate(geom = 'text', x = 8.8, y = 4.4, label = 'basadas en', family = 'gochi', size = 5.4, colour = 'black') +
+  #annotate(geom = 'text', x = 8.8, y = 3.9, label = 'datos genómicos', family = 'gochi', size = 5.4, colour = 'black') +
+  
+  geom_curve(x = 4.8, xend = 5.0, y = 3.6, yend = 2.4, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
+  geom_curve(x = 7.0, xend = 6.4, y = 3.6, yend = 2.0, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 4.1, xmax = 6.3, ymin = 0.0, ymax = 2.2, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 0.1, ymax = 1.5, colour = 'black', fill = 'black', alpha = 0.6) +
+  annotate(geom = 'text', x = 4.5, y = 1.7, label = 'H', size = 6.4, colour = 'black') +
+  #annotate(geom = 'text', x = 3.3, y = 0.7, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
+  #annotate(geom = 'text', x = 3.3, y = 0.2, label = 'combinadas', family = 'gochi', size = 5.4, colour = 'black') +
+  
+  geom_curve(x = 6.4, xend = 6.8, y = 0.2, yend = 0.6, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
+  annotate(geom = 'text', x = 7.6, y = 1.1, label = 'ssGBLUP', size = 6.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
+  
+  annotate(geom = 'text', x = 3.5, y = 6.1, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 6.1, y = 5.4, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 8.1, y = 0.4, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 6, shape = 1, color = 'black') +
+  
+  annotate(geom = 'text', x = 9.5, y = 5.5, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 13.3, y = 5.5, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 9.5, y = 2.3, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 13.3, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 9.3, xmax = 9.6, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 9.6, xmax = 9.9, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 9.9, xmax = 10.2, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 10.5, xmax = 10.8, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 10.8, xmax = 11.1, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 11.1, xmax = 11.4, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 11.7, xmax = 12.0, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 12.0, xmax = 12.3, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 12.3, xmax = 12.6, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  
+  annotate(geom = 'rect', xmin = 13.1, xmax = 13.9, ymin = 4.2, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 14.0, xmax = 15.0, ymin = 4.0, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 15.1, xmax = 16.3, ymin = 3.8, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  
+  annotate(geom = 'rect', xmin = 9.3, xmax = 10.4, ymin = 1.35, ymax = 1.8, colour = 'black', fill = 'white') +
+  annotate(geom = 'rect', xmin = 9.3, xmax = 11.5, ymin = 0.75, ymax = 1.25, colour = 'black', fill = 'white') +
+  annotate(geom = 'rect', xmin = 9.3, xmax = 12.6, ymin = 0.15, ymax = 0.65, colour = 'black', fill = 'white') +
+  
+  annotate(geom = 'text', x = 9.84, y = 1.575, label = '10012210', size = 2.6, colour = 'black') +
+  annotate(geom = 'text', x = 10.35, y = 0.975, label = '1001221012021120', size = 2.6, colour = 'black') +
+  annotate(geom = 'text', x = 10.86, y = 0.375, label = '100122101202112001221011', size = 2.6, colour = 'black') +
+  theme_void() +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank())
+```
+
+::: {.center data-latex=""}
+__Figura 2.4:__ .
+:::
 
 ### Simulación
 
