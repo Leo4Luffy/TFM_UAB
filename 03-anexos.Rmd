@@ -7,6 +7,77 @@ pacman::p_load(tibble, gt, dplyr, tidyr)
 
 # Anexo del capitulo 2
 
+```{r, echo = TRUE, eval = FALSE}
+
+fn.mH <- function(ped, mG) { # Esta función recibe como argu-
+                             # mentos los datos con estructura 
+                             # (id | sire | dam | Gen (TRUE/FALSE)) 
+                             # y la matriz de relaciones genómicas.
+  
+  # 1. Se calcula la matriz de relaciones aditivas con base en 
+  # el pedigrí (A)
+  
+  ped_edit <- editPed( # Esta función ordena el pedigrí.
+    sire = ped$sire,
+    dam = ped$dam,
+    label = ped$id
+    )
+  pedi <- pedigree( # Aquí se usa la salida anterior (ya orde-
+                    # nado) y se crea un objeto de clase pedigree.
+    sire = ped_edit$sire,
+    dam = ped_edit$dam,
+    label = ped_edit$label
+    )
+  Matrix_A <- getA(ped = pedi) # Esto dara la matriz de relaciones
+                               # aditivas A.
+ 
+  # 2. De lo anterior (Matriz_A) se extraen las partes correspon-
+  # dientes a individuos no genotipados (1) y genotipados (2)
+  
+  # Individuos no genotipados:
+  A_11 <- Matrix_A[ped$Genotiped != 1, ped$Genotiped != 1]
+  # Individuos genotipados:
+  A_22 <- Matrix_A[ped$Genotiped == 1, ped$Genotiped == 1]
+  # Individuos no genotipados (en filas) y genotipados (en 
+  # columnas):
+  A_12 <- Matrix_A[ped$Genotiped != 1, ped$Genotiped == 1]
+  # Transpuesta de la anterior (individuos no genotipados en 
+  # columnas y genotipados en filas):
+  A_21 <- t(A_12)
+  
+  # 3. Se coloca el nombre de las filas y y de las columnas 
+  # de la matriz G según los individuos genotipados
+  
+  rownames(mG) <- ped$id[ped$Genotiped == 1]
+  colnames(mG) <- ped$id[ped$Genotiped == 1]
+  
+  # 4. Teniendo todos los componentes de la matriz H, se pro-
+  # cede a su construcción y a calcular su inversa
+  
+  H_11 <- A_11 - 
+    (A_12 %*% solve(A_22) %*% A_21) + 
+    (A_12 %*% solve(A_22) %*% mG %*% solve(A_22) %*% A_21)
+  H_12 <- A_12 %*% solve(A_22) %*% mG
+  H_21 <- t(H_12)
+  H_22 <- mG
+  
+  H_11_H_12 <- cbind(H_11, H_12)
+  H_21_H_22 <- cbind(H_21, H_22)
+  mH <- rbind(H_11_H_12, H_21_H_22)
+  
+  mH <- mH[order(as.numeric(rownames(mH))), 
+           order(as.numeric(colnames(mH)))]
+  mH <- Matrix(mH)
+  
+  # 5. Finalmente se indica retornar la inversa de la ma-
+  # triz H (mH_1)
+  
+  return(mH)
+  }
+```
+
+
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
 ggdraw() + draw_image('figures/Corr_ped1_1.000_bayes.png')

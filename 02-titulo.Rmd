@@ -82,7 +82,9 @@ __Figura 2.3:__ .
 
 ### Modelo para la predicción genómica y habilidad predictiva
 
-Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4):
+La predicción genómica se realizó utilizando el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP). 
+
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 1. Diferente información de pedigrí:
 
@@ -175,10 +177,10 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes conjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
+__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
 :::
 
-Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. Según @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
 ### Simulación
 

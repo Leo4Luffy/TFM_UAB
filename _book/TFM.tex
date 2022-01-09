@@ -53,6 +53,46 @@
 \else
   \usepackage[spanish,es-tabla]{babel}
 \fi
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs}
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -252,7 +292,9 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
 \subsection{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
 
-Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4):
+La predicción genómica se realizó utilizando el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
+
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -267,11 +309,11 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes conjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
+\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
 
 \end{center}
 
-Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. Según Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificadas como variedades mejoradas) se considero como faltante.
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
 \hypertarget{simulaciuxf3n}{%
 \subsection{Simulación}\label{simulaciuxf3n}}
@@ -321,16 +363,75 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \hypertarget{anexo-del-capitulo-2}{%
 \chapter{Anexo del capitulo 2}\label{anexo-del-capitulo-2}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-2} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-3} \end{center}
-
-\begin{center}
-\textbf{Figura A.1:}
-
-\end{center}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{fn.mH <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(ped, mG) \{ }\CommentTok{# Esta función recibe como argu-}
+                             \CommentTok{# mentos los datos con estructura }
+                             \CommentTok{# (id | sire | dam | Gen (TRUE/FALSE)) }
+                             \CommentTok{# y la matriz de relaciones genómicas.}
+  
+  \CommentTok{# 1. Se calcula la matriz de relaciones aditivas con base en }
+  \CommentTok{# el pedigrí (A)}
+  
+\NormalTok{  ped_edit <-}\StringTok{ }\KeywordTok{editPed}\NormalTok{( }\CommentTok{# Esta función ordena el pedigrí.}
+    \DataTypeTok{sire =}\NormalTok{ ped}\OperatorTok{$}\NormalTok{sire,}
+    \DataTypeTok{dam =}\NormalTok{ ped}\OperatorTok{$}\NormalTok{dam,}
+    \DataTypeTok{label =}\NormalTok{ ped}\OperatorTok{$}\NormalTok{id}
+\NormalTok{    )}
+\NormalTok{  pedi <-}\StringTok{ }\KeywordTok{pedigree}\NormalTok{( }\CommentTok{# Aquí se usa la salida anterior (ya orde-}
+                    \CommentTok{# nado) y se crea un objeto de clase pedigree.}
+    \DataTypeTok{sire =}\NormalTok{ ped_edit}\OperatorTok{$}\NormalTok{sire,}
+    \DataTypeTok{dam =}\NormalTok{ ped_edit}\OperatorTok{$}\NormalTok{dam,}
+    \DataTypeTok{label =}\NormalTok{ ped_edit}\OperatorTok{$}\NormalTok{label}
+\NormalTok{    )}
+\NormalTok{  Matrix_A <-}\StringTok{ }\KeywordTok{getA}\NormalTok{(}\DataTypeTok{ped =}\NormalTok{ pedi) }\CommentTok{# Esto dara la matriz de relaciones}
+                               \CommentTok{# aditivas A.}
+ 
+  \CommentTok{# 2. De lo anterior (Matriz_A) se extraen las partes correspon-}
+  \CommentTok{# dientes a individuos no genotipados (1) y genotipados (2)}
+  
+  \CommentTok{# Individuos no genotipados:}
+\NormalTok{  A_}\DecValTok{11}\NormalTok{ <-}\StringTok{ }\NormalTok{Matrix_A[ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{!=}\StringTok{ }\DecValTok{1}\NormalTok{, ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{!=}\StringTok{ }\DecValTok{1}\NormalTok{]}
+  \CommentTok{# Individuos genotipados:}
+\NormalTok{  A_}\DecValTok{22}\NormalTok{ <-}\StringTok{ }\NormalTok{Matrix_A[ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{, ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{]}
+  \CommentTok{# Individuos no genotipados (en filas) y genotipados (en }
+  \CommentTok{# columnas):}
+\NormalTok{  A_}\DecValTok{12}\NormalTok{ <-}\StringTok{ }\NormalTok{Matrix_A[ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{!=}\StringTok{ }\DecValTok{1}\NormalTok{, ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{]}
+  \CommentTok{# Transpuesta de la anterior (individuos no genotipados en }
+  \CommentTok{# columnas y genotipados en filas):}
+\NormalTok{  A_}\DecValTok{21}\NormalTok{ <-}\StringTok{ }\KeywordTok{t}\NormalTok{(A_}\DecValTok{12}\NormalTok{)}
+  
+  \CommentTok{# 3. Se coloca el nombre de las filas y y de las columnas }
+  \CommentTok{# de la matriz G según los individuos genotipados}
+  
+  \KeywordTok{rownames}\NormalTok{(mG) <-}\StringTok{ }\NormalTok{ped}\OperatorTok{$}\NormalTok{id[ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{]}
+  \KeywordTok{colnames}\NormalTok{(mG) <-}\StringTok{ }\NormalTok{ped}\OperatorTok{$}\NormalTok{id[ped}\OperatorTok{$}\NormalTok{Genotiped }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{]}
+  
+  \CommentTok{# 4. Teniendo todos los componentes de la matriz H, se pro-}
+  \CommentTok{# cede a su construcción y a calcular su inversa}
+  
+\NormalTok{  H_}\DecValTok{11}\NormalTok{ <-}\StringTok{ }\NormalTok{A_}\DecValTok{11} \OperatorTok{-}\StringTok{ }
+\StringTok{    }\NormalTok{(A_}\DecValTok{12} \OperatorTok{%*%}\StringTok{ }\KeywordTok{solve}\NormalTok{(A_}\DecValTok{22}\NormalTok{) }\OperatorTok{%*%}\StringTok{ }\NormalTok{A_}\DecValTok{21}\NormalTok{) }\OperatorTok{+}\StringTok{ }
+\StringTok{    }\NormalTok{(A_}\DecValTok{12} \OperatorTok{%*%}\StringTok{ }\KeywordTok{solve}\NormalTok{(A_}\DecValTok{22}\NormalTok{) }\OperatorTok{%*%}\StringTok{ }\NormalTok{mG }\OperatorTok{%*%}\StringTok{ }\KeywordTok{solve}\NormalTok{(A_}\DecValTok{22}\NormalTok{) }\OperatorTok{%*%}\StringTok{ }\NormalTok{A_}\DecValTok{21}\NormalTok{)}
+\NormalTok{  H_}\DecValTok{12}\NormalTok{ <-}\StringTok{ }\NormalTok{A_}\DecValTok{12} \OperatorTok{%*%}\StringTok{ }\KeywordTok{solve}\NormalTok{(A_}\DecValTok{22}\NormalTok{) }\OperatorTok{%*%}\StringTok{ }\NormalTok{mG}
+\NormalTok{  H_}\DecValTok{21}\NormalTok{ <-}\StringTok{ }\KeywordTok{t}\NormalTok{(H_}\DecValTok{12}\NormalTok{)}
+\NormalTok{  H_}\DecValTok{22}\NormalTok{ <-}\StringTok{ }\NormalTok{mG}
+  
+\NormalTok{  H_}\DecValTok{11}\NormalTok{_H_}\DecValTok{12}\NormalTok{ <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(H_}\DecValTok{11}\NormalTok{, H_}\DecValTok{12}\NormalTok{)}
+\NormalTok{  H_}\DecValTok{21}\NormalTok{_H_}\DecValTok{22}\NormalTok{ <-}\StringTok{ }\KeywordTok{cbind}\NormalTok{(H_}\DecValTok{21}\NormalTok{, H_}\DecValTok{22}\NormalTok{)}
+\NormalTok{  mH <-}\StringTok{ }\KeywordTok{rbind}\NormalTok{(H_}\DecValTok{11}\NormalTok{_H_}\DecValTok{12}\NormalTok{, H_}\DecValTok{21}\NormalTok{_H_}\DecValTok{22}\NormalTok{)}
+  
+\NormalTok{  mH <-}\StringTok{ }\NormalTok{mH[}\KeywordTok{order}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{rownames}\NormalTok{(mH))), }
+           \KeywordTok{order}\NormalTok{(}\KeywordTok{as.numeric}\NormalTok{(}\KeywordTok{colnames}\NormalTok{(mH)))]}
+\NormalTok{  mH <-}\StringTok{ }\KeywordTok{Matrix}\NormalTok{(mH)}
+  
+  \CommentTok{# 5. Finalmente se indica retornar la inversa de la ma-}
+  \CommentTok{# triz H (mH_1)}
+  
+  \KeywordTok{return}\NormalTok{(mH)}
+\NormalTok{  \}}
+\end{Highlighting}
+\end{Shaded}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
@@ -339,7 +440,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.2:}
+\textbf{Figura A.1:}
 
 \end{center}
 
@@ -350,7 +451,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.3:}
+\textbf{Figura A.2:}
 
 \end{center}
 
@@ -361,7 +462,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.4:}
+\textbf{Figura A.3:}
 
 \end{center}
 
@@ -372,7 +473,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.5:}
+\textbf{Figura A.4:}
 
 \end{center}
 
@@ -381,6 +482,17 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-2} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-3} \end{center}
+
+\begin{center}
+\textbf{Figura A.5:}
+
+\end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-2} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-3} \end{center}
 
 \begin{center}
 \textbf{Figura A.6:}
