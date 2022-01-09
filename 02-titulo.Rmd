@@ -55,7 +55,7 @@ ggdraw() + draw_image('figures/Graf_PCA.png')
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.1:__ Análisis de componentes principales en datos de arroz. A saber, los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+__Figura 2.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
@@ -82,6 +82,14 @@ __Figura 2.3:__ .
 
 ### Modelo para la predicción genómica y habilidad predictiva
 
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4):
+
+1. Diferente información de pedigrí:
+
+2. Diferentes densidades de SNPs:
+
+3. Distinta cantidad de individuos genotipados:
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
 Puntos <- data.frame(x = c(3.5, 6.1, 8.1), y = c(6.1, 5.4, 0.4))
@@ -106,9 +114,12 @@ data.frame(
   geom_curve(x = 4.8, xend = 5.0, y = 3.6, yend = 2.4, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   geom_curve(x = 7.0, xend = 6.4, y = 3.6, yend = 2.0, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   
-  annotate(geom = 'rect', xmin = 4.1, xmax = 6.3, ymin = 0.0, ymax = 2.2, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 0.1, ymax = 1.5, colour = 'black', fill = 'black', alpha = 0.6) +
-  annotate(geom = 'text', x = 4.5, y = 1.7, label = 'H', size = 6.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 4.1, xmax = 6.3, ymin = 0.0, ymax = 2.2, colour = 'black', fill = 'white') +
+  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 0.1, ymax = 1.5, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 1.6, ymax = 2.1, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 4.2, xmax = 4.7, ymin = 0.1, ymax = 1.5, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 4.2, xmax = 4.7, ymin = 1.6, ymax = 2.1, colour = 'red', fill = 'red', alpha = 0.2) +
+  annotate(geom = 'text', x = 5.2, y = 1.1, label = 'H', size = 6.4, colour = 'black') +
   #annotate(geom = 'text', x = 3.3, y = 0.7, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
   #annotate(geom = 'text', x = 3.3, y = 0.2, label = 'combinadas', family = 'gochi', size = 5.4, colour = 'black') +
   
@@ -151,15 +162,23 @@ data.frame(
   annotate(geom = 'text', x = 9.84, y = 1.575, label = '10012210', size = 2.6, colour = 'black') +
   annotate(geom = 'text', x = 10.35, y = 0.975, label = '1001221012021120', size = 2.6, colour = 'black') +
   annotate(geom = 'text', x = 10.86, y = 0.375, label = '100122101202112001221011', size = 2.6, colour = 'black') +
+  
+  annotate(geom = 'text', x = 14.75, y = 1.94, label = 'reml', size = 4.6, colour = 'black') +
+  annotate(geom = 'text', x = 14.25, y = 1.94, label = 'RKHS', size = 4.6, colour = 'black', angle = 90) +
+  
   theme_void() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank())
+        axis.title = element_blank()) -> Esquema_1
+
+knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ .
+__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes conjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
 :::
+
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. Según @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
 ### Simulación
 
@@ -184,6 +203,8 @@ tribble(
     )
 ```
 
+Los resultados del análisis de máxima verosimilitud restringida (REML) y... (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
 ggdraw() + draw_image('figures/Pred_ped1.png')
@@ -191,6 +212,9 @@ ggdraw() + draw_image('figures/Pred_ped2.png')
 ggdraw() + draw_image('figures/Pred_ped3.png')
 ```
 
+::: {.center data-latex=""}
+__Figura 2.5:__ .
+:::
 
 ## Discusión {#discussion2}
 

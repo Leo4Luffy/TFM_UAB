@@ -43,9 +43,7 @@
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
-  \usepackage[shorthands=off,dutch,main=spanish]{babel}
-  \newcommand{\textdutch}[2][]{\foreignlanguage{dutch}{#2}}
-  \newenvironment{dutch}[2][]{\begin{otherlanguage}{dutch}}{\end{otherlanguage}}
+  \usepackage[shorthands=off,main=spanish]{babel}
 \else
 \usepackage{polyglossia}
   \setmainlanguage{spanish}
@@ -229,7 +227,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-3-1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. A saber, los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+\textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 
 \end{center}
 
@@ -254,12 +252,26 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
 \subsection{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-6-1} \end{center}
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4):
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Diferente información de pedigrí:
+\item
+  Diferentes densidades de SNPs:
+\item
+  Distinta cantidad de individuos genotipados:
+\end{enumerate}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.4:} .
+\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes conjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
 
 \end{center}
+
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. Según Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificadas como variedades mejoradas) se considero como faltante.
 
 \hypertarget{simulaciuxf3n}{%
 \subsection{Simulación}\label{simulaciuxf3n}}
@@ -286,11 +298,18 @@ Pedigrí 1 & Pedigrí 2 & Pedigrí 3 \\
  \bottomrule
 \end{longtable}
 
+Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
+
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-2} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-3} \end{center}
+
+\begin{center}
+\textbf{Figura 2.5:} .
+
+\end{center}
 
 \hypertarget{discussion2}{%
 \section{Discusión}\label{discussion2}}
@@ -441,10 +460,6 @@ Pedigrí & Densidad & Método & Individuos genotipados & Precisión \\
  \bottomrule
 \end{longtable}
 
-What's left to say? How about a nice image then?
-
-\includegraphics{figures/uvalogo_regular_p_en.pdf}
-
 \backmatter
 
 \hypertarget{bibliografuxeda}{%
@@ -526,6 +541,9 @@ Villemereuil, P. de, H. Schielzeth, S. Nakagawa, y M. Morrissey. 2016. «General
 \leavevmode\hypertarget{ref-cite:12}{}%
 Wright, S. 1922. «Coefficients of inbreeding and relationship». \emph{The American Naturalist} 56: 330-38.
 
+\leavevmode\hypertarget{ref-cite:25}{}%
+Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice using genomicbest linear unbiased prediction». \emph{Proceedings of the National Academy of Sciences of the United States of America} 111 (34): 12456-61. \url{https://doi.org/10.1073/pnas.1413750111}.
+
 \endgroup
 
 \hypertarget{agradecimientos}{%
@@ -534,7 +552,7 @@ Wright, S. 1922. «Coefficients of inbreeding and relationship». \emph{The Amer
 
 \chaptermark{Acknowledgments}
 
-This section is optional, but theses typically include acknowledgments (\textdutch{\emph{dankwoord}} in Dutch) at the end. You may want to mix languages to thank people in their native tongue (though most Dutch speakers write it entirely in Dutch). But the standard language of the thesis template is English. You can switch temporarily by wrapping the text in language tags like so: \texttt{{[}Your\ Dutch\ text\ here{]}\{lang=nl\}}. This is important for things like hyphenation to work properly.
+\includegraphics{figures/uvalogo_regular_p_en.pdf}
 
 \backmatter
 

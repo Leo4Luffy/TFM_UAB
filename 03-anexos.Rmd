@@ -114,11 +114,3 @@ tribble(
   na.omit() %>%
   gt()
 ```
-
-
-What's left to say? How about a nice image then?
-
-```{r echo=FALSE}
-# this will display the .pdf in pdf output, and the .jpg in html output
-knitr::include_graphics("figures/uvalogo_regular_p_en.jpg", auto_pdf = TRUE)
-```
