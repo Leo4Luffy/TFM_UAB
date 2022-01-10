@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.9)  9 JAN 2022 13:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.1.9)  10 JAN 2022 10:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -604,222 +604,229 @@ Package pdftex.def Info: figures/Esquema_1.pdf  used on input line 309.
 LaTeX Info: Redefining \. on input line 313.
 LaTeX Info: Redefining \% on input line 313.
 [7 <./TFM_files/figure-latex/unnamed-chunk-5-1.pdf> <./figures/Esquema_1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-8-1.pdf, id=244, 469.755pt x 244.915pt>
+<TFM_files/figure-latex/unnamed-chunk-8-1.pdf, id=244, 469.755pt x 323.2075pt>
 File: TFM_files/figure-latex/unnamed-chunk-8-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-8-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-8-1.pdf  used on 
 input line 345.
-(pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
+(pdftex.def)             Requested size: 359.99934pt x 247.69185pt.
 LaTeX Info: Redefining \. on input line 345.
 LaTeX Info: Redefining \% on input line 345.
 [8]
-<TFM_files/figure-latex/unnamed-chunk-8-2.pdf, id=257, 469.755pt x 244.915pt>
-File: TFM_files/figure-latex/unnamed-chunk-8-2.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/unnamed-chunk-8-2.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-8-2.pdf  used on 
-input line 347.
+<TFM_files/figure-latex/unnamed-chunk-9-1.pdf, id=257, 469.755pt x 244.915pt>
+File: TFM_files/figure-latex/unnamed-chunk-9-1.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-9-1.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-9-1.pdf  used on 
+input line 354.
 (pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
-<TFM_files/figure-latex/unnamed-chunk-8-3.pdf, id=258, 469.755pt x 244.915pt>
-File: TFM_files/figure-latex/unnamed-chunk-8-3.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/unnamed-chunk-8-3.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-8-3.pdf  used on 
-input line 349.
+<TFM_files/figure-latex/unnamed-chunk-9-2.pdf, id=258, 469.755pt x 244.915pt>
+File: TFM_files/figure-latex/unnamed-chunk-9-2.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-9-2.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-9-2.pdf  used on 
+input line 356.
 (pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
-LaTeX Info: Redefining \. on input line 354.
-LaTeX Info: Redefining \% on input line 354.
+LaTeX Info: Redefining \. on input line 356.
+LaTeX Info: Redefining \% on input line 356.
 [9 <./TFM_files/figure-latex/unnamed-chunk-8-1.pdf> <./TFM_files/figure-latex/u
-nnamed-chunk-8-2.pdf> <./TFM_files/figure-latex/unnamed-chunk-8-3.pdf>]
-LaTeX Info: Redefining \. on input line 364.
-LaTeX Info: Redefining \% on input line 364.
-[10]
+nnamed-chunk-9-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-9-3.pdf, id=275, 469.755pt x 244.915pt>
+File: TFM_files/figure-latex/unnamed-chunk-9-3.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-9-3.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-9-3.pdf  used on 
+input line 358.
+(pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
+LaTeX Info: Redefining \. on input line 373.
+LaTeX Info: Redefining \% on input line 373.
+[10 <./TFM_files/figure-latex/unnamed-chunk-9-2.pdf> <./TFM_files/figure-latex/
+unnamed-chunk-9-3.pdf>]
 Ap\'{e}ndice A.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 368.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 377.
 [11
 
 ]
-<TFM_files/figure-latex/unnamed-chunk-11-1.pdf, id=294, 469.755pt x 307.1475pt>
-
-File: TFM_files/figure-latex/unnamed-chunk-11-1.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/unnamed-chunk-11-1.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-11-1.pdf  used on
- input line 436.
-(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 436.
-LaTeX Info: Redefining \% on input line 436.
-[12]
-<TFM_files/figure-latex/unnamed-chunk-11-2.pdf, id=299, 469.755pt x 307.1475pt>
-
-File: TFM_files/figure-latex/unnamed-chunk-11-2.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/unnamed-chunk-11-2.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-11-2.pdf  used on
- input line 438.
-(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-11-3.pdf, id=300, 469.755pt x 307.1475pt>
-
-File: TFM_files/figure-latex/unnamed-chunk-11-3.pdf Graphic file (type pdf)
-<use TFM_files/figure-latex/unnamed-chunk-11-3.pdf>
-Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-11-3.pdf  used on
- input line 440.
-(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 440.
-LaTeX Info: Redefining \% on input line 440.
-[13 <./TFM_files/figure-latex/unnamed-chunk-11-1.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-11-2.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-12-1.pdf, id=317, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-12-1.pdf, id=301, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-12-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-12-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-12-1.pdf  used on
- input line 447.
+ input line 445.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-12-2.pdf, id=318, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 445.
+LaTeX Info: Redefining \% on input line 445.
+[12]
+<TFM_files/figure-latex/unnamed-chunk-12-2.pdf, id=306, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-12-2.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-12-2.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-12-2.pdf  used on
- input line 449.
+ input line 447.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 449.
-LaTeX Info: Redefining \% on input line 449.
-[14 <./TFM_files/figure-latex/unnamed-chunk-11-3.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-12-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-12-3.pdf, id=337, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-12-3.pdf, id=307, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-12-3.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-12-3.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-12-3.pdf  used on
- input line 451.
+ input line 449.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-13-1.pdf, id=338, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 449.
+LaTeX Info: Redefining \% on input line 449.
+[13 <./TFM_files/figure-latex/unnamed-chunk-12-1.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-12-2.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-13-1.pdf, id=325, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-13-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-13-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-13-1.pdf  used on
- input line 458.
+ input line 456.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 458.
-LaTeX Info: Redefining \% on input line 458.
-[15 <./TFM_files/figure-latex/unnamed-chunk-12-2.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-12-3.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-13-2.pdf, id=355, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-13-2.pdf, id=326, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-13-2.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-13-2.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-13-2.pdf  used on
- input line 460.
+ input line 458.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-13-3.pdf, id=356, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 458.
+LaTeX Info: Redefining \% on input line 458.
+[14 <./TFM_files/figure-latex/unnamed-chunk-12-3.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-13-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-13-3.pdf, id=344, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-13-3.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-13-3.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-13-3.pdf  used on
- input line 462.
+ input line 460.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 462.
-LaTeX Info: Redefining \% on input line 462.
-[16 <./TFM_files/figure-latex/unnamed-chunk-13-1.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-13-2.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-14-1.pdf, id=373, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-14-1.pdf, id=345, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-14-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-14-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-14-1.pdf  used on
- input line 469.
+ input line 467.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-14-2.pdf, id=374, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 467.
+LaTeX Info: Redefining \% on input line 467.
+[15 <./TFM_files/figure-latex/unnamed-chunk-13-2.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-13-3.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-14-2.pdf, id=362, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-14-2.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-14-2.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-14-2.pdf  used on
- input line 471.
+ input line 469.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 471.
-LaTeX Info: Redefining \% on input line 471.
-[17 <./TFM_files/figure-latex/unnamed-chunk-13-3.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-14-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-14-3.pdf, id=391, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-14-3.pdf, id=363, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-14-3.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-14-3.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-14-3.pdf  used on
- input line 473.
+ input line 471.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-15-1.pdf, id=392, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 471.
+LaTeX Info: Redefining \% on input line 471.
+[16 <./TFM_files/figure-latex/unnamed-chunk-14-1.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-14-2.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-15-1.pdf, id=380, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-15-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-15-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-15-1.pdf  used on
- input line 480.
+ input line 478.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 480.
-LaTeX Info: Redefining \% on input line 480.
-[18 <./TFM_files/figure-latex/unnamed-chunk-14-2.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-14-3.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-15-2.pdf, id=409, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-15-2.pdf, id=381, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-15-2.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-15-2.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-15-2.pdf  used on
- input line 482.
+ input line 480.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-15-3.pdf, id=410, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 480.
+LaTeX Info: Redefining \% on input line 480.
+[17 <./TFM_files/figure-latex/unnamed-chunk-14-3.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-15-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-15-3.pdf, id=398, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-15-3.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-15-3.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-15-3.pdf  used on
- input line 484.
+ input line 482.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 484.
-LaTeX Info: Redefining \% on input line 484.
-[19 <./TFM_files/figure-latex/unnamed-chunk-15-1.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-15-2.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-16-1.pdf, id=427, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-16-1.pdf, id=399, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-16-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-16-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-16-1.pdf  used on
- input line 491.
+ input line 489.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-<TFM_files/figure-latex/unnamed-chunk-16-2.pdf, id=428, 469.755pt x 307.1475pt>
+LaTeX Info: Redefining \. on input line 489.
+LaTeX Info: Redefining \% on input line 489.
+[18 <./TFM_files/figure-latex/unnamed-chunk-15-2.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-15-3.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-16-2.pdf, id=416, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-16-2.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-16-2.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-16-2.pdf  used on
- input line 493.
+ input line 491.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 493.
-LaTeX Info: Redefining \% on input line 493.
-[20 <./TFM_files/figure-latex/unnamed-chunk-15-3.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-16-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-16-3.pdf, id=446, 469.755pt x 307.1475pt>
+<TFM_files/figure-latex/unnamed-chunk-16-3.pdf, id=417, 469.755pt x 307.1475pt>
 
 File: TFM_files/figure-latex/unnamed-chunk-16-3.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-16-3.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-16-3.pdf  used on
- input line 495.
+ input line 493.
 (pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
-LaTeX Info: Redefining \. on input line 573.
-LaTeX Info: Redefining \% on input line 573.
-[21 <./TFM_files/figure-latex/unnamed-chunk-16-2.pdf> <./TFM_files/figure-latex
-/unnamed-chunk-16-3.pdf>]
-LaTeX Info: Redefining \. on input line 573.
-LaTeX Info: Redefining \% on input line 573.
+LaTeX Info: Redefining \. on input line 493.
+LaTeX Info: Redefining \% on input line 493.
+[19 <./TFM_files/figure-latex/unnamed-chunk-16-1.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-16-2.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-17-1.pdf, id=434, 469.755pt x 307.1475pt>
+
+File: TFM_files/figure-latex/unnamed-chunk-17-1.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-17-1.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-17-1.pdf  used on
+ input line 500.
+(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
+<TFM_files/figure-latex/unnamed-chunk-17-2.pdf, id=435, 469.755pt x 307.1475pt>
+
+File: TFM_files/figure-latex/unnamed-chunk-17-2.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-17-2.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-17-2.pdf  used on
+ input line 502.
+(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
+LaTeX Info: Redefining \. on input line 502.
+LaTeX Info: Redefining \% on input line 502.
+[20 <./TFM_files/figure-latex/unnamed-chunk-16-3.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-17-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-17-3.pdf, id=453, 469.755pt x 307.1475pt>
+
+File: TFM_files/figure-latex/unnamed-chunk-17-3.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-17-3.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-17-3.pdf  used on
+ input line 504.
+(pdftex.def)             Requested size: 359.99934pt x 235.38419pt.
+LaTeX Info: Redefining \. on input line 582.
+LaTeX Info: Redefining \% on input line 582.
+[21 <./TFM_files/figure-latex/unnamed-chunk-17-2.pdf> <./TFM_files/figure-latex
+/unnamed-chunk-17-3.pdf>]
+LaTeX Info: Redefining \. on input line 582.
+LaTeX Info: Redefining \% on input line 582.
 [22]
-LaTeX Info: Redefining \. on input line 575.
-LaTeX Info: Redefining \% on input line 575.
+LaTeX Info: Redefining \. on input line 584.
+LaTeX Info: Redefining \% on input line 584.
 [23] [24
 
 
 ] [25]
-<figures/uvalogo_regular_p_en.pdf, id=499, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=506, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 6
-67.
+76.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 667--668
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 676--677
 [][] 
  []
 
@@ -838,10 +845,10 @@ Package rerunfilecheck Info: File `TFM.out' has not changed.
 (rerunfilecheck)             Checksum: 9D4913FA86572FA3C9A89AB476C194EF;1082.
  ) 
 Here is how much of TeX's memory you used:
- 13363 strings out of 480313
- 222214 string characters out of 5897468
- 524301 words of memory out of 5000000
- 30891 multiletter control sequences out of 15000+600000
+ 13372 strings out of 480313
+ 222646 string characters out of 5897468
+ 524318 words of memory out of 5000000
+ 30899 multiletter control sequences out of 15000+600000
  491148 words of font info for 87 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,8n,63p,1302b,468s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -858,10 +865,10 @@ X/texmf-dist/fonts/type1/public/lm/lmro10.pfb></home/leo/.TinyTeX/texmf-dist/fo
 nts/type1/public/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publi
 c/lm/lmtt10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pf
 b>
-Output written on TFM.pdf (31 pages, 3504402 bytes).
+Output written on TFM.pdf (31 pages, 3568430 bytes).
 PDF statistics:
- 588 PDF objects out of 1000 (max. 8388607)
- 414 compressed objects within 5 object streams
+ 595 PDF objects out of 1000 (max. 8388607)
+ 417 compressed objects within 5 object streams
  92 named destinations out of 1000 (max. 500000)
- 236 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
 

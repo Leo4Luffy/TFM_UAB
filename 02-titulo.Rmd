@@ -84,7 +84,7 @@ __Figura 2.3:__ .
 
 La predicción genómica se realizó utilizando el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP). 
 
-Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs, el número de individuos genotipados y el método estadístico, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 1. Diferente información de pedigrí:
 
@@ -94,7 +94,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
-Puntos <- data.frame(x = c(3.5, 6.1, 8.1), y = c(6.1, 5.4, 0.4))
+Puntos <- data.frame(x = c(3.5, 6.1), y = c(6.1, 5.4))
 
 data.frame(
   x = c(3.5:16.7), y = c(-7.0:6.2)
@@ -131,17 +131,17 @@ data.frame(
   annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
   annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
   annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
-  annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
+  #annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
   
   annotate(geom = 'text', x = 3.5, y = 6.1, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
   annotate(geom = 'text', x = 6.1, y = 5.4, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 8.1, y = 0.4, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  #annotate(geom = 'text', x = 8.1, y = 0.4, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
   geom_point(aes(x = x, y = y), data = Puntos, size = 6, shape = 1, color = 'black') +
   
   annotate(geom = 'text', x = 9.5, y = 5.5, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
   annotate(geom = 'text', x = 13.3, y = 5.5, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
   annotate(geom = 'text', x = 9.5, y = 2.3, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 13.3, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  #annotate(geom = 'text', x = 13.3, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 9.3, xmax = 9.6, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'rect', xmin = 9.6, xmax = 9.9, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
@@ -165,9 +165,6 @@ data.frame(
   annotate(geom = 'text', x = 10.35, y = 0.975, label = '1001221012021120', size = 2.6, colour = 'black') +
   annotate(geom = 'text', x = 10.86, y = 0.375, label = '100122101202112001221011', size = 2.6, colour = 'black') +
   
-  annotate(geom = 'text', x = 14.75, y = 1.94, label = 'reml', size = 4.6, colour = 'black') +
-  annotate(geom = 'text', x = 14.25, y = 1.94, label = 'RKHS', size = 4.6, colour = 'black', angle = 90) +
-  
   theme_void() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
@@ -177,7 +174,7 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs. El recuadro 3 representa los métodos estadísticos usado para llevar a cabo la predicción.
+__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs.
 :::
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
@@ -195,15 +192,26 @@ __Tabla 2.1:__ Estimaciones de heredabilidad para el caracter tiempo de floraci�
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
 tribble(
-  ~'Pedigrí 1', ~'Pedigrí 2', ~'Pedigrí 3',
-  0.72, 0.60, 0.49 
+  ~'Parámetros', ~'Pedigrí 1', ~'Pedigrí 2', ~'Pedigrí 3',
+  'Varianza aditiva', 0.49, 0.46, 0.57,
+  'Varianza ambiental', 0.11, 0.17, 0.13,
+  'Heredabilidad', 0.82, 0.73, 0.81
   ) %>%
   gt() %>%
   tab_spanner(
-    label = 'RKHS',
-    columns = c(1, 2, 3)
+    label = 'reml',
+    columns = c(2, 3, 4)
     )
 ```
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+ggdraw() + draw_image('figures/covarianza_heredabilidad.png')
+```
+
+::: {.center data-latex=""}
+__Figura 2.5:__ .
+:::
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y... (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
@@ -215,7 +223,7 @@ ggdraw() + draw_image('figures/Pred_ped3.png')
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.5:__ .
+__Figura 2.6:__ .
 :::
 
 ## Discusión {#discussion2}
