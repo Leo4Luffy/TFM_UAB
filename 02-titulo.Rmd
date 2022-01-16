@@ -45,8 +45,8 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ### Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos usados en este estudio se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio que proporciona información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (_Oryza sativa L._), y que posteriormente fueron usado en un trabajo previo llevado a cabo por. 
-  
+Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (_Oryza sativa L._). Posteriormente, dichos conjuntos de datos fueron usados por @cite:26, quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por @cite:26.
+
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz,<!--los cuales según @cite:23, fue atribuido a diferentes orígenes geográficos---> de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
@@ -82,7 +82,15 @@ __Figura 2.3:__ .
 
 ### Modelo para la predicción genómica y habilidad predictiva
 
-La predicción genómica se realizó utilizando el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP). 
+Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNPs con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
+
+\begin{equation}
+y = Za + e,
+\end{equation}
+
+donde $y$ representa el valor del fenotipo a predecir (tiempo de floración) y $Z$ es la matriz de incidencia que relaciona $a$ con $y$. El vector $a$ representa los valores genotípicos como se describen en el siguiente parrafo, y $e$ es el vector de residuos con una distribución que se asume normal con media igual a $0$ y matriz de covarianza $I\sigma^{2}_{e}$.
+
+En la ecuación (1), $a$
 
 Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 

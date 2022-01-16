@@ -260,7 +260,7 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 \hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
 \subsection{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
 
-Los conjuntos de datos usados en este estudio se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio que proporciona información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}), y que posteriormente fueron usado en un trabajo previo llevado a cabo por.
+Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}).
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
@@ -292,7 +292,13 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
 \subsection{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
 
-La predicción genómica se realizó utilizando el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
+Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNPs con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
+
+\begin{equation}
+y = Za + e,
+\end{equation}
+
+donde \(y\) representa el valor del fenotipo a predecir (tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(a\) con \(y\). El vector \(a\) representa los valores genotípicos como se describen en el siguiente parrafo, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\).
 
 Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
@@ -508,79 +514,6 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 
 \end{center}
 
-\begin{center}
-\textbf{Tabla A.1:}
-
-\end{center}
-
-\captionsetup[table]{labelformat=empty,skip=1pt}
-\begin{longtable}{llllr}
-\toprule
-Pedigrí & Densidad & Método & Individuos genotipados & Precisión \\ 
-\midrule
-1 & 100.000 & RKHS & 148 & 0.54 \\ 
-1 & 100.000 & RKHS & 298 & 0.53 \\ 
-1 & 100.000 & RKHS & 451 & 0.58 \\ 
-1 & 100.000 & reml & 148 & 0.53 \\ 
-1 & 100.000 & reml & 298 & 0.52 \\ 
-1 & 100.000 & reml & 451 & 0.58 \\ 
-1 & 10.000 & RKHS & 148 & 0.54 \\ 
-1 & 10.000 & RKHS & 298 & 0.52 \\ 
-1 & 10.000 & RKHS & 451 & 0.58 \\ 
-1 & 10.000 & reml & 148 & 0.53 \\ 
-1 & 10.000 & reml & 298 & 0.51 \\ 
-1 & 10.000 & reml & 451 & 0.58 \\ 
-1 & 1.000 & RKHS & 148 & 0.52 \\ 
-1 & 1.000 & RKHS & 298 & 0.43 \\ 
-1 & 1.000 & RKHS & 451 & 0.49 \\ 
-1 & 1.000 & reml & 148 & 0.51 \\ 
-1 & 1.000 & reml & 298 & 0.42 \\ 
-1 & 1.000 & reml & 451 & 0.50 \\ 
-2 & 100.000 & RKHS & 148 & 0.55 \\ 
-2 & 100.000 & RKHS & 298 & 0.55 \\ 
-2 & 100.000 & RKHS & 451 & 0.58 \\ 
-2 & 100.000 & reml & 148 & 0.55 \\ 
-2 & 100.000 & reml & 298 & 0.55 \\ 
-2 & 100.000 & reml & 451 & 0.58 \\ 
-2 & 10.000 & RKHS & 148 & 0.55 \\ 
-2 & 10.000 & RKHS & 298 & 0.53 \\ 
-2 & 10.000 & RKHS & 451 & 0.58 \\ 
-2 & 10.000 & reml & 148 & 0.55 \\ 
-2 & 10.000 & reml & 298 & 0.54 \\ 
-2 & 10.000 & reml & 451 & 0.58 \\ 
-2 & 1.000 & RKHS & 148 & 0.55 \\ 
-2 & 1.000 & RKHS & 298 & 0.46 \\ 
-2 & 1.000 & RKHS & 451 & 0.49 \\ 
-2 & 1.000 & reml & 148 & 0.54 \\ 
-2 & 1.000 & reml & 298 & 0.46 \\ 
-2 & 1.000 & reml & 451 & 0.50 \\ 
-3 & 100.000 & RKHS & 148 & 0.47 \\ 
-3 & 100.000 & RKHS & 298 & 0.52 \\ 
-3 & 100.000 & RKHS & 451 & 0.58 \\ 
-3 & 100.000 & reml & 148 & 0.47 \\ 
-3 & 100.000 & reml & 298 & 0.53 \\ 
-3 & 100.000 & reml & 451 & 0.58 \\ 
-3 & 10.000 & RKHS & 148 & 0.46 \\ 
-3 & 10.000 & RKHS & 298 & 0.52 \\ 
-3 & 10.000 & RKHS & 451 & 0.58 \\ 
-3 & 10.000 & reml & 148 & 0.46 \\ 
-3 & 10.000 & reml & 298 & 0.51 \\ 
-3 & 10.000 & reml & 451 & 0.58 \\ 
-3 & 1.000 & RKHS & 148 & 0.46 \\ 
-3 & 1.000 & RKHS & 298 & 0.44 \\ 
-3 & 1.000 & RKHS & 451 & 0.49 \\ 
-3 & 1.000 & reml & 148 & 0.46 \\ 
-3 & 1.000 & reml & 298 & 0.44 \\ 
-3 & 1.000 & reml & 451 & 0.50 \\ 
-1 & 0 & RKHS & 0 & 0.54 \\ 
-1 & 0 & reml & 0 & 0.54 \\ 
-2 & 0 & RKHS & 0 & 0.53 \\ 
-2 & 0 & reml & 0 & 0.53 \\ 
-3 & 0 & RKHS & 0 & 0.54 \\ 
-3 & 0 & reml & 0 & 0.54 \\ 
- \bottomrule
-\end{longtable}
-
 \backmatter
 
 \hypertarget{bibliografuxeda}{%
@@ -659,11 +592,14 @@ Turelli, M. 2017. «Prediction of Total Genetic Value Using Genome-Wide Dense Ma
 \leavevmode\hypertarget{ref-cite:4}{}%
 Villemereuil, P. de, H. Schielzeth, S. Nakagawa, y M. Morrissey. 2016. «General methods for evolutionary quantitative genetic inference from generalized mixed models». \emph{Genetics} 204: 1281-94.
 
+\leavevmode\hypertarget{ref-cite:26}{}%
+Vourlaki, I., R. Castanera, S. Ramos-Onsins, J. Casacuberta, y M. Pérez-Enciso. s.~f. «Transposable element polymorphisms improve prediction of complex agronomic traits in rice». \emph{Frontiers in Plant Science}.
+
 \leavevmode\hypertarget{ref-cite:12}{}%
 Wright, S. 1922. «Coefficients of inbreeding and relationship». \emph{The American Naturalist} 56: 330-38.
 
 \leavevmode\hypertarget{ref-cite:25}{}%
-Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice using genomicbest linear unbiased prediction». \emph{Proceedings of the National Academy of Sciences of the United States of America} 111 (34): 12456-61. \url{https://doi.org/10.1073/pnas.1413750111}.
+Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice using genomic best linear unbiased prediction». \emph{Proceedings of the National Academy of Sciences of the United States of America} 111 (34): 12456-61. \url{https://doi.org/10.1073/pnas.1413750111}.
 
 \endgroup
 

@@ -144,11 +144,7 @@ ggdraw() + draw_image('figures/Corr_ped3_100.000_reml.png')
 __Figura A.6:__ 
 :::
 
-::: {.center data-latex=""}
-__Tabla A.1:__ 
-:::
-
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+```{r, echo = FALSE, eval = FALSE, out.width = "100%", fig.align = 'center'}
 
 tribble(
   ~'Pedigrí', ~'0', ~'148', ~'298', ~'451', ~'Densidad', ~'Método',
