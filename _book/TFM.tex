@@ -260,7 +260,7 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 \hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
 \subsection{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
 
-Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}).
+Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
@@ -300,6 +300,8 @@ y = Za + e,
 
 donde \(y\) representa el valor del fenotipo a predecir (tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(a\) con \(y\). El vector \(a\) representa los valores genotípicos como se describen en el siguiente parrafo, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\).
 
+En la ecuación (1), \(a\)
+
 Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 \begin{enumerate}
@@ -315,7 +317,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 (arriba a la derecha) representa matrices G con distinta dimensión dado el número de individuos genotipados, mientras que el recuadro 2 (abajo a la izquierda) representa diferentes densidades de SNPs.
+\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNPs.
 
 \end{center}
 
@@ -323,6 +325,10 @@ Se uso el coeficiente de correlación entre los valores fenotípicos observados 
 
 \hypertarget{simulaciuxf3n}{%
 \subsection{Simulación}\label{simulaciuxf3n}}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_2} \end{center}
+
+Hola
 
 \hypertarget{results2}{%
 \section{Resultados}\label{results2}}
@@ -348,7 +354,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -357,11 +363,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-9-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-9-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-9-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -448,17 +454,6 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-2} \end{center}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-3} \end{center}
-
-\begin{center}
-\textbf{Figura A.1:}
-
-\end{center}
-
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-2} \end{center}
@@ -466,7 +461,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.2:}
+\textbf{Figura A.1:}
 
 \end{center}
 
@@ -477,7 +472,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.3:}
+\textbf{Figura A.2:}
 
 \end{center}
 
@@ -488,7 +483,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.4:}
+\textbf{Figura A.3:}
 
 \end{center}
 
@@ -499,7 +494,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-3} \end{center}
 
 \begin{center}
-\textbf{Figura A.5:}
+\textbf{Figura A.4:}
 
 \end{center}
 
@@ -508,6 +503,17 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-2} \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-3} \end{center}
+
+\begin{center}
+\textbf{Figura A.5:}
+
+\end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-1} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-2} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-3} \end{center}
 
 \begin{center}
 \textbf{Figura A.6:}
