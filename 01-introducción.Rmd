@@ -149,5 +149,12 @@ knitr::include_graphics('figures/Crono.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.1:__ Cronología de las disciplinas de la genética molecular y cuantitativa.
+__Figura 1.1:__ Cronología de las disciplinas de la genética molecular y cuantitativa. Figura adaptada de @cite:2.
 :::
+
+La genética cuantitativa se formo hace más de un siglo observando el efecto de los genes en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico de Galton. Dicha teoría (denominada como teoría del modelo infinitesimal) supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinado por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida fue adhiriéndose a la teoría del modelo infinitesimal. 
+
+
+
+## La selección genómica
+

@@ -108,7 +108,7 @@ data.frame(
   x = c(3.5:16.7), y = c(-7.0:6.2)
   ) %>%
   ggplot(aes(x, y)) +
-  geom_blank() +
+  #geom_blank() +
   annotate(geom = 'rect', xmin = 3.7, xmax = 5.9, ymin = 3.7, ymax = 5.9, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'text', x = 4.8, y = 4.8, label = 'A', size = 6.4, colour = 'black') +
   #annotate(geom = 'text', x = 2.6, y = 4.9, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
@@ -173,12 +173,12 @@ data.frame(
   annotate(geom = 'text', x = 10.35, y = 0.975, label = '1001221012021120', size = 2.6, colour = 'black') +
   annotate(geom = 'text', x = 10.86, y = 0.375, label = '100122101202112001221011', size = 2.6, colour = 'black') +
   
-  theme_void() +
+  theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) -> Esquema_1
+        axis.title = element_blank()) #-> Esquema_1
 
-knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
+#knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
@@ -202,7 +202,7 @@ data.frame(
   x = c(2.5:17.5), y = c(-7.0:8.0)
   ) %>%
   ggplot(aes(x, y)) +
-  geom_blank() +
+  #geom_blank() +
   annotate(geom = 'rect', xmin = 7.8, xmax = 12.2, ymin = 4.1, ymax = 5.6, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'text', x = 10.0, y = 5.2, label = 'Población fundadora', size = 4.4, colour = 'black') +
   annotate(geom = 'text', x = 10.0, y = 4.5, label = '(G, y)', size = 4.4, colour = 'black') +
@@ -242,15 +242,13 @@ data.frame(
   annotate(geom = 'text', x = 14.8, y = -0.25, label = '4', family = 'gochi', size = 5.8, colour = 'black') +
   geom_point(aes(x = x, y = y), data = Puntos, size = 6, shape = 1, color = 'black') +
   
-  theme_void() +
+  theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) -> Esquema_2
+        axis.title = element_blank()) #-> Esquema_2
 
-knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
+#knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 ```
-
-Hola
 
 ## Resultados {#results2}
 
