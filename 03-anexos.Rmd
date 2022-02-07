@@ -76,7 +76,7 @@ fn.mH <- function(ped, mG) { # Esta función recibe como argu-
   }
 ```
 
-
+<!--
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
@@ -181,3 +181,5 @@ tribble(
   na.omit() %>%
   gt()
 ```
+
+-->

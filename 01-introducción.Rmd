@@ -62,12 +62,13 @@ data.frame(
   annotate(geom = 'text', x = 1911, y = -1.8, label = 'prender como se he-', size = 2.4, colour = 'black') +
   annotate(geom = 'text', x = 1911, y = -2.2, label = 'redan los genes.', size = 2.4, colour = 'black') +
   
-  annotate(geom = 'rect', xmin = 1937, xmax = 1963, ymin = -0.7, ymax = -2.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 1937, xmax = 1963, ymin = -0.7, ymax = -2.9, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'segment', x = 1950, xend = 1950, y = -0.7, yend = 0.7, colour = 'yellow', linetype = 'dashed') +
   annotate(geom = 'text', x = 1950, y = -1.0, label = '1950', family = 'gochi', size = 3.4, colour = 'black') +
   annotate(geom = 'text', x = 1950, y = -1.4, label = 'Henderson deriva', size = 2.4, colour = 'black') +
   annotate(geom = 'text', x = 1950, y = -1.8, label = 'las ecuaciones', size = 2.4, colour = 'black') +
-  annotate(geom = 'text', x = 1950, y = -2.2, label = 'del modelo mixto.', size = 2.4, colour = 'black') +
+  annotate(geom = 'text', x = 1950, y = -2.2, label = 'del modelo mixto', size = 2.4, colour = 'black') +
+  annotate(geom = 'text', x = 1950, y = -2.6, label = 'y el BLUP.', size = 2.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 1920, xmax = 1960, ymin = 3.9, ymax = 4.5, colour = 'black', fill = 'black', alpha = 0.1) +
   geom_line(data = Linea_2, aes(x = x, y = y), size = 1.4) +
@@ -152,9 +153,64 @@ knitr::include_graphics('figures/Crono.pdf', auto_pdf = TRUE)
 __Figura 1.1:__ Cronología de las disciplinas de la genética molecular y cuantitativa. Figura adaptada de @cite:2.
 :::
 
-La genética cuantitativa se formo hace más de un siglo observando el efecto de los genes en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico de Galton. Dicha teoría (denominada como teoría del modelo infinitesimal) supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinado por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida fue adhiriéndose a la teoría del modelo infinitesimal. 
+La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida fue adhiriéndose a la teoría del modelo infinitesimal. 
 
+Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:7]. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a principio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, fue difícil ignorar el hecho de que el mismo desconocía la base física de la herencia (el ADN), y utilizaba una representación conceptual elemental de como la información genética era heredada (ambos progenitores debían aportar la mitad de la información genética a su descendencia) [@cite:15].
 
+En relación a la genética molecular, esta a diferencia de la genética cuantitativa surgió de observaciones directas [@cite:2].
 
 ## La selección genómica
 
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
+
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot(aes(x, y)) +
+  #geom_blank() +
+  
+  annotate(geom = 'rect', xmin = 3.0, xmax = 7.0, ymin = 7.0, ymax = 9.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 5.0, y = 8.355, label = 'Modelo de sele-', size = 5.0, colour = 'black') +
+  annotate(geom = 'text', x = 5.0, y = 7.625, label = 'cción genómica', size = 5.0, colour = 'black') +
+  geom_curve(x = 5.0, xend = 5.0, y = 6.8, yend = 6.0, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
+  annotate(geom = 'text', x = 2.1, y = 8.5, label = 'Fenotipo', size = 5.0, colour = 'black') +
+  geom_curve(x = 1.2, xend = 2.8, y = 8.2, yend = 8.2, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'solid') +
+  annotate(geom = 'text', x = 2.1, y = 7.77, label = 'Genotipo', size = 4.6, colour = 'black') +
+  geom_curve(x = 1.2, xend = 2.8, y = 7.47, yend = 7.47, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'solid') +
+  
+  annotate(geom = 'rect', xmin = 3.0, xmax = 7.0, ymin = 4.8, ymax = 5.8, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 5.0, y = 5.3, label = 'Predicción', size = 4.6, colour = 'black') +
+  geom_curve(x = 5.0, xend = 5.0, y = 4.6, yend = 3.8, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
+  annotate(geom = 'text', x = 2.1, y = 5.445, label = 'Genotipo', size = 4.6, colour = 'black') +
+  geom_curve(x = 1.2, xend = 2.8, y = 5.145, yend = 5.145, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'solid') +
+  
+  annotate(geom = 'rect', xmin = 5.5, xmax = 8.5, ymin = 2.6, ymax = 3.6, colour = 'green', fill = 'green', alpha = 0.2) +
+  annotate(geom = 'text', x = 7.0, y = 3.1, label = 'Selección', size = 5.0, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 4.0, xmax = 5.0, ymin = 2.0, ymax = 2.75, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 4.5, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
+  annotate(geom = 'text', x = 4.5, y = 3.35, label = 'Planta/a-', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 4.5, y = 3.05, label = 'nimal C', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 2.75, xmax = 3.75, ymin = 2.0, ymax = 3.25, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.25, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
+  annotate(geom = 'text', x = 3.25, y = 3.85, label = 'Planta/a-', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.25, y = 3.55, label = 'nimal B', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 1.5, xmax = 2.5, ymin = 2.0, ymax = 2.5, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 2.0, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
+  annotate(geom = 'text', x = 2.0, y = 3.1, label = 'Planta/a-', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 2.0, y = 2.8, label = 'nimal A', size = 4.4, colour = 'black') +
+  
+  scale_x_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(1.0, 9.5)) +
+  
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 14, face = 'bold')) #-> GS
+
+#knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
+```
+```
