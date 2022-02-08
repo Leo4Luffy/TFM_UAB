@@ -45,9 +45,9 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ### Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (_Oryza sativa L._). Posteriormente, dichos conjuntos de datos fueron usados por @cite:26, quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.<!-- Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por @cite:26.-->
+Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (_Oryza sativa L._). Posteriormente, dichos conjuntos de datos fueron usados por @cite:26, quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.<!-- Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por @cite:26.-->
 
-Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz,<!--los cuales según @cite:23, fue atribuido a diferentes orígenes geográficos---> de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz,<!--los cuales según @cite:23, fue atribuido a diferentes orígenes geográficos---> de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
@@ -82,7 +82,7 @@ __Figura 2.3:__ .
 
 ### Modelo para la predicción genómica y habilidad predictiva
 
-Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNPs con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
+Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNP con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
 
 \begin{equation}
 y = Za + e,
@@ -92,11 +92,11 @@ donde $y$ representa el valor del fenotipo a predecir (tiempo de floración) y $
 
 En la ecuación (1), $a$
 
-Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNP y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 1. Diferente información de pedigrí:
 
-2. Diferentes densidades de SNPs:
+2. Diferentes densidades de SNP:
 
 3. Distinta cantidad de individuos genotipados:
 
@@ -134,7 +134,7 @@ data.frame(
   #annotate(geom = 'text', x = 3.3, y = 0.2, label = 'combinadas', family = 'gochi', size = 5.4, colour = 'black') +
   
   geom_curve(x = 6.4, xend = 6.8, y = 0.2, yend = 0.6, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
-  annotate(geom = 'text', x = 7.6, y = 1.1, label = 'ssGBLUP', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 7.6, y = 1.1, label = 'ssGBLUP', size = 4.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
   annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
@@ -169,10 +169,12 @@ data.frame(
   annotate(geom = 'rect', xmin = 9.3, xmax = 11.5, ymin = 0.75, ymax = 1.25, colour = 'black', fill = 'white') +
   annotate(geom = 'rect', xmin = 9.3, xmax = 12.6, ymin = 0.15, ymax = 0.65, colour = 'black', fill = 'white') +
   
-  annotate(geom = 'text', x = 9.84, y = 1.575, label = '10012210', size = 2.6, colour = 'black') +
-  annotate(geom = 'text', x = 10.35, y = 0.975, label = '1001221012021120', size = 2.6, colour = 'black') +
-  annotate(geom = 'text', x = 10.86, y = 0.375, label = '100122101202112001221011', size = 2.6, colour = 'black') +
+  annotate(geom = 'text', x = 9.84, y = 1.575, label = '100122', size = 2.4, colour = 'black') +
+  annotate(geom = 'text', x = 10.38, y = 0.975, label = '10012210120211', size = 2.4, colour = 'black') +
+  annotate(geom = 'text', x = 10.90, y = 0.375, label = '1001221012021120012210', size = 2.4, colour = 'black') +
   
+  scale_x_continuous(limits = c(2.5, 17.7)) +
+  scale_y_continuous(limits = c(-1.0, 6.8)) +
   theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
@@ -182,7 +184,7 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNPs.
+__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNP.
 :::
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
@@ -227,7 +229,7 @@ data.frame(
   geom_curve(x = 10.0, xend = 10.0, y = 0.3, yend = -2.0, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   geom_curve(x = 10.8, xend = 10.2, y = -0.75, yend = -0.75, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   annotate(geom = 'rect', xmin = 11.0, xmax = 14.6, ymin = -1.25, ymax = -0.35, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  annotate(geom = 'text', x = 12.8, y = -0.75, label = 'Densidad de SNPs', size = 4.0, colour = 'black') +
+  annotate(geom = 'text', x = 12.8, y = -0.75, label = 'Densidad de SNP', size = 4.0, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 9.4, xmax = 11.0, ymin = -4.0, ymax = -2.2, colour = 'black', fill = 'white') +
   annotate(geom = 'rect', xmin = 9.9, xmax = 10.9, ymin = -3.9, ymax = -2.9, colour = 'black', fill = 'black', alpha = 0.4) +

@@ -126,7 +126,7 @@ data.frame(
   annotate(geom = 'rect', xmin = 2007, xmax = 2029, ymin = 7.4, ymax = 8.8, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
   annotate(geom = 'text', x = 2018, y = 8.5, label = '2000', family = 'gochi', size = 3.4, colour = 'black') +
   annotate(geom = 'text', x = 2018, y = 8.1, label = 'Se comercializa', size = 2.2, colour = 'black') +
-  annotate(geom = 'text', x = 2018, y = 7.7, label = 'los chips SNPs.', size = 2.2, colour = 'black') +
+  annotate(geom = 'text', x = 2018, y = 7.7, label = 'los chips SNP.', size = 2.2, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 1980, xmax = 2016, ymin = 2.8, ymax = 2.2, colour = 'black', fill = 'black', alpha = 0.1) +
   geom_line(data = Linea_5, aes(x = x, y = y), size = 1.4) +
@@ -153,12 +153,15 @@ knitr::include_graphics('figures/Crono.pdf', auto_pdf = TRUE)
 __Figura 1.1:__ Cronología de las disciplinas de la genética molecular y cuantitativa. Figura adaptada de @cite:2.
 :::
 
-La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida fue adhiriéndose a la teoría del modelo infinitesimal. 
+La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida que fue adhiriéndose a la teoría del modelo infinitesimal. 
 
-Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:7]. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a principio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, fue difícil ignorar el hecho de que el mismo desconocía la base física de la herencia (el ADN), y utilizaba una representación conceptual elemental de como la información genética era heredada (ambos progenitores debían aportar la mitad de la información genética a su descendencia) [@cite:15].
+Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:7]<!-- NOTA:  la forma habitual de resolver el BLUP hoy en día es mediante el uso de las ecuaciones del modelo mixto. -->. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a inicio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, hoy en día se reconoce que dicho procedimiento ignora la base física de la herencia (el ADN), y utiliza una representación conceptual elemental de como la información genética es heredada (esto es, ambos progenitores deben aportar la mitad de la información genética a su descendencia) [@cite:15].
 
-En relación a la genética molecular, esta a diferencia de la genética cuantitativa surgió de observaciones directas [@cite:2].
+En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilito a inicios de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables [@cite:30]. Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismo en el tamaño de los fragmentos de restricción (RFLP)<!-- NOTA: la RFLP es una técnica que se basa en la detección de fragmentos de ADN de distinto peso molecular (por digestión con la enzima de restricción). --> y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
 
+<!--
+El rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia y aportó gran cantidad de datos que pudieron integrarse a los modelos de genética cuantitativa [@cite:21].
+-->
 ## La selección genómica
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
@@ -189,18 +192,18 @@ data.frame(
   
   annotate(geom = 'rect', xmin = 4.0, xmax = 5.0, ymin = 2.0, ymax = 2.75, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 4.5, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
-  annotate(geom = 'text', x = 4.5, y = 3.35, label = 'Planta/a-', size = 4.4, colour = 'black') +
-  annotate(geom = 'text', x = 4.5, y = 3.05, label = 'nimal C', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 4.5, y = 3.35, label = 'Planta /', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 4.5, y = 3.05, label = 'animal C', size = 4.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 2.75, xmax = 3.75, ymin = 2.0, ymax = 3.25, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 3.25, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
-  annotate(geom = 'text', x = 3.25, y = 3.85, label = 'Planta/a-', size = 4.4, colour = 'black') +
-  annotate(geom = 'text', x = 3.25, y = 3.55, label = 'nimal B', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.25, y = 3.85, label = 'Planta /', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.25, y = 3.55, label = 'animal B', size = 4.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 1.5, xmax = 2.5, ymin = 2.0, ymax = 2.5, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 2.0, y = 2.25, label = 'GEV', family = 'gochi', size = 4.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.0, y = 3.1, label = 'Planta/a-', size = 4.4, colour = 'black') +
-  annotate(geom = 'text', x = 2.0, y = 2.8, label = 'nimal A', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 2.0, y = 3.1, label = 'Planta /', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 2.0, y = 2.8, label = 'animal A', size = 4.4, colour = 'black') +
   
   scale_x_continuous(limits = c(0.0, 10.0)) +
   scale_y_continuous(limits = c(1.0, 9.5)) +
@@ -209,8 +212,12 @@ data.frame(
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         axis.title = element_blank(),
-        plot.title = element_text(size = 14, face = 'bold')) #-> GS
+        plot.title = element_text(size = 14, face = 'bold')) -> GS
 
-#knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 ```
 ```
+
+::: {.center data-latex=""}
+__Figura 1.2:__ . Figura adaptada de @cite:7.
+:::
