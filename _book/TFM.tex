@@ -230,17 +230,26 @@ La genética cuantitativa se formo hace más de un siglo en ausencia directa de 
 
 Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a inicio de la década de 1950 contribuyó a su desarrollo (Freeman \protect\hyperlink{ref-cite:28}{1991}; Searle \protect\hyperlink{ref-cite:29}{1991}; Schaeffer \protect\hyperlink{ref-cite:27}{1991}). A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, hoy en día se reconoce que dicho procedimiento ignora la base física de la herencia (el ADN), y utiliza una representación conceptual elemental de como la información genética es heredada (esto es, ambos progenitores deben aportar la mitad de la información genética a su descendencia) (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}).
 
-En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilito a inicios de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}). Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismo en el tamaño de los fragmentos de restricción (RFLP) y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
+En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}). Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP) y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
+
+Al representar las diferencias en el ADN heredado por dos individuos (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), mediante el uso de marcadores de ADN se abrió la posibilidad de obtener una predicción más precisa de los EBV (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Campos et~al. \protect\hyperlink{ref-cite:31}{2013}), comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores (Campos et~al. \protect\hyperlink{ref-cite:31}{2013}), los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL , permitió el descubrimiento de genes asociados a diferencias genéticas entre individuos dado un fenotipo (Campos et~al. \protect\hyperlink{ref-cite:31}{2013}; Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}).
+
+Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en un método conocido como selección asistida por marcadores (MAS) (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y utilizados para aumentar la respuesta genética de caracteres cuantitativos importantes en la agricultura (Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) describen la MAS (Figura 1.2) como un proceso de tres pasos, en el cual se detecta uno o varios QTL que posteriormente permiten encontrar el gen responsable de la variación genética que más adelante al ser seleccionado aumenta la frecuencia del alelo favorable.
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-46-1} \end{center}
+
+\begin{center}
+\textbf{Figura 1.2:}
+
+\end{center}
 
 \hypertarget{la-selecciuxf3n-genuxf3mica}{%
 \section{La selección genómica}\label{la-selecciuxf3n-genuxf3mica}}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/GS} \end{center}
 
-```
-
 \begin{center}
-\textbf{Figura 1.2:} . Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.3:} Principio de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el fenotipo de los individuos en una población de prueba con datos genotípicos. Por último, los fenotipos predichos se usan en la selección. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
@@ -287,11 +296,11 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 \hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
 \subsection{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
 
-Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNPs y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNPs a procedimientos de control de calidad, en los que fueron eliminados loci de SNPs con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.
+Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.
 
-Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNPs (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-6-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-49-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
@@ -300,7 +309,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-7-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-50-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
@@ -309,7 +318,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-51-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -319,7 +328,7 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
 \subsection{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
 
-Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNPs con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
+Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNP con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
 
 \begin{equation}
 y = Za + e,
@@ -329,14 +338,14 @@ donde \(y\) representa el valor del fenotipo a predecir (tiempo de floración) y
 
 En la ecuación (1), \(a\)
 
-Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNPs y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
+Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNP y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
   Diferente información de pedigrí:
 \item
-  Diferentes densidades de SNPs:
+  Diferentes densidades de SNP:
 \item
   Distinta cantidad de individuos genotipados:
 \end{enumerate}
@@ -344,7 +353,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNPs.
+\textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNP.
 
 \end{center}
 
@@ -379,7 +388,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-55-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -388,11 +397,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-56-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-56-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-56-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -500,6 +509,9 @@ Blasco, A. 2021. \emph{Mejora genética animal}. 1st edition. EDITORIAL SÍNTESI
 \leavevmode\hypertarget{ref-cite:3}{}%
 Blasco, A., y M. A. Toro. 2014. «A short critical history of the application of genomics to animal breeding». \emph{Livestock Science} 166: 4-9.
 
+\leavevmode\hypertarget{ref-cite:31}{}%
+Campos, G. de los, J. H. Hickey, R. Pong-Wong, H. D. Daetwyler, y M. P. L. Calus. 2013. «Whole-genome regression and prediction methods applied to plant and animal breeding». \emph{Genetics} 193: 327-45. \url{https://doi.org/10.1534/genetics.112.143313}.
+
 \leavevmode\hypertarget{ref-cite:10}{}%
 Desta, Z. A., y R. Ortiz. 2014. «Genomic selection: genome-wide prediction in plant improvement». \emph{Trends in Plant Science} 19 (9): 592-601.
 
@@ -516,16 +528,19 @@ Freeman, A. E. 1991. «C. R. Henderson: contributions to the dairy industry». \
 Hayes, B. J., P. M. Visscher, y M. E. Goddard. 2009. «Increased accuracy of artificial selection by using the realized relationship matrix». \emph{Genetics Research} 91: 47-60.
 
 \leavevmode\hypertarget{ref-cite:20}{}%
-Imai, A., T. Kuniga, T. Yoshioka, K. Nonaka, N. Mitani, H. Fukamachi, N. Hiehata, M. Yamamoto, y T. Hayashi. 2019. «Single-step genomic prediction of fruit-quality traits using phenotypic records of non-genotyped relatives in citrus». \emph{PLoS ONE} 14 (8). \url{https://doi.org/https://doi.org/10.1371/journal.pone.0221880}.
+Imai, A., T. Kuniga, T. Yoshioka, K. Nonaka, N. Mitani, H. Fukamachi, N. Hiehata, M. Yamamoto, y T. Hayashi. 2019. «Single-step genomic prediction of fruit-quality traits using phenotypic records of non-genotyped relatives in citrus». \emph{PLoS ONE} 14 (8). \url{https://doi.org/10.1371/journal.pone.0221880}.
 
 \leavevmode\hypertarget{ref-cite:11}{}%
 Jurcic, E. J., P. V. Villalba, P. S. Pathauer, D. A. Palazzini, G. P. J. Oberschelp, L. Harrand, M. N. Garcia, et~al. 2021. «Genomic selection: genome-wide prediction in plant improvement». \emph{Trends in Plant Science} 127: 176-89.
+
+\leavevmode\hypertarget{ref-cite:32}{}%
+Kyselova, J., L. Tichý, y K. Jochová. 2021. «The role of molecular genetics in animal breeding: a minireview». \emph{Czech Journal of Animal Science} 66 (4): 107-11. \url{https://doi.org/10.17221/251/2020-CJAS}.
 
 \leavevmode\hypertarget{ref-cite:17}{}%
 Legarra, A., I. Aguilar, y I. Misztal. 2009. «A relationship matrix including full pedigree and genomic information». \emph{Journal of Dairy Science} 92: 4656-63. \url{https://doi.org/10.3168/jds.2009-2061}.
 
 \leavevmode\hypertarget{ref-cite:15}{}%
-Legarra, A., O. F. Christensen, I. Aguilar, y I. Misztal. 2014. «Single Step, a general approach for genomic selection». \emph{Livestock Science}. \url{https://doi.org/http://dx.doi.org/10.1016/j.livsci.2014.04.029}.
+Legarra, A., O. F. Christensen, I. Aguilar, y I. Misztal. 2014. «Single Step, a general approach for genomic selection». \emph{Livestock Science}. \url{https://doi.org/10.1016/j.livsci.2014.04.029}.
 
 \leavevmode\hypertarget{ref-cite:30}{}%
 Legarra, A., D. Lourenco, y Z. G. Vitezica. 2018. \emph{Bases for genomic prediction}.
