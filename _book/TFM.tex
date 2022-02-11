@@ -222,7 +222,7 @@ La historia de la genética tanto cuantitativa como molecular se remonta a la co
 \begin{center}\includegraphics[width=1\linewidth]{figures/Crono} \end{center}
 
 \begin{center}
-\textbf{Figura 1.1:} Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos de genética cuantitativa y molecular permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de Nelson, Pettersson, y Carlborg (\protect\hyperlink{ref-cite:2}{2012}).
+\textbf{Figura 1.1:} Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de Nelson, Pettersson, y Carlborg (\protect\hyperlink{ref-cite:2}{2012}).
 
 \end{center}
 
@@ -234,7 +234,7 @@ En otro orden de ideas, el rápido desarrollo de la genética molecular a partir
 
 Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), abrieron la posibilidad de obtener una predicción más precisa de los EBV (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL, permitió el descubrimiento de genes asociados a diferencias genéticas entre individuos dado un fenotipo (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}).
 
-Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y utilizados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica (Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar la frecuencia del alelo favorable (Figura 1.2).
+Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y utilizados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica (Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) describen la MAS como un proceso en el cual se detectan los genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar la frecuencia del alelo favorable (Figura 1.2).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/MAS} \end{center}
 
@@ -245,19 +245,26 @@ Tanto en animales como en plantas, el interés principal en el mapeo de QTL cons
 
 Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología, al no detectar marcadores de ADN con efectos genéticos menores (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}; Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
 
-Finalmente, en el año 2001, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa.
+Finalmente, en el año 2001, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta nueva alternativa se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos obtenidos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa, permitiendo así el análisis de caracteres complejos en el marco de efectos del modelo infinitesimal.
 
 \hypertarget{la-selecciuxf3n-genuxf3mica}{%
 \section{La selección genómica}\label{la-selecciuxf3n-genuxf3mica}}
 
+Se denomina como selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para llevar a cabo la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o simplemente GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi et~al. (\protect\hyperlink{ref-cite:33}{2020}) describen este método como un proceso de dos pasos en el cual se usan grandes cantidades de marcadores de ADN (teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores) para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Posteriormente, el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el cual se lleva a cabo la selección (Figuras 1.3). En este sentido, la selección genómica suele ser vista también como una forma de MAS en la que se seleccionan individuos en base al GEBV en lugar de pocos QTL (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}).
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/GS} \end{center}
 
 \begin{center}
-\textbf{Figura 1.3:} Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el fenotipo de los individuos en una población de prueba con datos genotípicos. Por último, los fenotipos predichos se usan en la selección. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.3:} Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los GEBV predichos se usan en la selección. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-25-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
+
+\begin{center}
+\textbf{Figura 1.4:} . Figura adaptada de delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}).
+
+\end{center}
 
 \hypertarget{titulo}{%
 \chapter{Titulo}\label{titulo}}
@@ -306,7 +313,7 @@ Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.z
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-27-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
@@ -315,7 +322,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-28-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
@@ -324,7 +331,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-29-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -394,7 +401,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-33-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -403,11 +410,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-34-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-34-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-34-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -509,6 +516,9 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \setlength{\parskip}{0pt}
 
 \hypertarget{refs}{}
+\leavevmode\hypertarget{ref-cite:33}{}%
+Ahmadi, N., J. Bartholomé, T. V. Cao, y C. Grenier. 2020. \emph{Quantitative genetics, genomics and plant breeding}. 2nd edition. \url{https://doi.org/10.1079/9781789240214.0243}.
+
 \leavevmode\hypertarget{ref-cite:21}{}%
 Blasco, A. 2021. \emph{Mejora genética animal}. 1st edition. EDITORIAL SÍNTESIS, S. A.
 
