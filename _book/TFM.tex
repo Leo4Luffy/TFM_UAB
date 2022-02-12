@@ -230,7 +230,7 @@ La genética cuantitativa se formo hace más de un siglo en ausencia directa de 
 
 Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a inicio de la década de 1950 contribuyó a su desarrollo (Freeman \protect\hyperlink{ref-cite:28}{1991}; Searle \protect\hyperlink{ref-cite:29}{1991}; Schaeffer \protect\hyperlink{ref-cite:27}{1991}). A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, hoy en día se reconoce que dicho procedimiento ignora la base física de la herencia (el ADN), y utiliza una representación conceptual elemental de como la información genética es heredada (esto es, ambos progenitores deben aportar la mitad de la información genética a su descendencia) (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}).
 
-En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}). Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP) y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
+Por otro lado, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}). Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP) y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
 
 Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), abrieron la posibilidad de obtener una predicción más precisa de los EBV (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL, permitió el descubrimiento de genes asociados a diferencias genéticas entre individuos dado un fenotipo (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}).
 
@@ -239,7 +239,7 @@ Tanto en animales como en plantas, el interés principal en el mapeo de QTL cons
 \begin{center}\includegraphics[width=1\linewidth]{figures/MAS} \end{center}
 
 \begin{center}
-\textbf{Figura 1.2:} Esquema de la selección asistida por marcadores. En la selección asistida por marcadores, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}).
+\textbf{Figura 1.2:} Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}).
 
 \end{center}
 
@@ -250,19 +250,31 @@ Finalmente, en el año 2001, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref
 \hypertarget{la-selecciuxf3n-genuxf3mica}{%
 \section{La selección genómica}\label{la-selecciuxf3n-genuxf3mica}}
 
-Se denomina como selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para llevar a cabo la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o simplemente GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi et~al. (\protect\hyperlink{ref-cite:33}{2020}) describen este método como un proceso de dos pasos en el cual se usan grandes cantidades de marcadores de ADN (teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores) para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Posteriormente, el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el cual se lleva a cabo la selección (Figuras 1.3). En este sentido, la selección genómica suele ser vista también como una forma de MAS en la que se seleccionan individuos en base al GEBV en lugar de pocos QTL (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}).
+Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi et~al. (\protect\hyperlink{ref-cite:33}{2020}) describen este método como un proceso de dos pasos en el cual se usan grandes cantidades de marcadores de ADN para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el cual se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos en base al GEBV en lugar de pocos QTL (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/GS} \end{center}
 
 \begin{center}
-\textbf{Figura 1.3:} Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los GEBV predichos se usan en la selección. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.3:} Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-8-1} \end{center}
+El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica (Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}). Al contar con tal cantidad de marcadores, se garantiza que algunos de ellos estén asociados (o en desequilibrio de ligamiento) con el QTL (Meuwissen, Hayes, y Goddard \protect\hyperlink{ref-cite:8}{2001}), con lo cual dicho marcador representa al QTL aún cuando el mismo no tiene efecto biológico sobre el carácter (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}; Grinberg, Orhobor, y King \protect\hyperlink{ref-cite:35}{2020}).
+
+\hypertarget{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}{%
+\subsection{Métodos estadísticos en la selección genómica}\label{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/Mod_GS} \end{center}
 
 \begin{center}
 \textbf{Figura 1.4:} . Figura adaptada de delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}).
+
+\end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/Mod_ML} \end{center}
+
+\begin{center}
+\textbf{Figura 1.5:} . Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
@@ -313,7 +325,7 @@ Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.z
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-9-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
@@ -322,7 +334,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
@@ -331,7 +343,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -401,7 +413,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -410,11 +422,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -539,6 +551,9 @@ Fisher, R. A. 1918. «The correlaction between relatives under the supposition o
 
 \leavevmode\hypertarget{ref-cite:28}{}%
 Freeman, A. E. 1991. «C. R. Henderson: contributions to the dairy industry». \emph{Journal of Dairy Science} 74 (11): 4045-51. \url{https://doi.org/10.3168/jds.S0022-0302(91)78600-1}.
+
+\leavevmode\hypertarget{ref-cite:35}{}%
+Grinberg, N. F., O. I. Orhobor, y R. D. King. 2020. «An evaluation of machine-learning for predicting phenotype: studies in yeast, rice, and wheat». \emph{Machine Learning} 109: 251-77. \url{https://doi.org/10.1007/s10994-019-05848-5}.
 
 \leavevmode\hypertarget{ref-cite:13}{}%
 Hayes, B. J., P. M. Visscher, y M. E. Goddard. 2009. «Increased accuracy of artificial selection by using the realized relationship matrix». \emph{Genetics Research} 91: 47-60.
