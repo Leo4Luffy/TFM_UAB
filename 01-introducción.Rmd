@@ -157,11 +157,11 @@ La genética cuantitativa se formo hace más de un siglo en ausencia directa de 
 
 Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:7]<!-- NOTA:  la forma habitual de resolver el BLUP hoy en día es mediante el uso de las ecuaciones del modelo mixto. -->. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a inicio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, hoy en día se reconoce que dicho procedimiento ignora la base física de la herencia (el ADN), y utiliza una representación conceptual elemental de como la información genética es heredada (esto es, ambos progenitores deben aportar la mitad de la información genética a su descendencia) [@cite:15].
 
-Por otro lado, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables [@cite:30]. Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP)<!-- NOTA: la RFLP es una técnica que se basa en la detección de fragmentos de ADN de distinto peso molecular (por digestión con la enzima de restricción). --> y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.<!-- NOTA: ¿Por qué los SNP son los más usado? Una razón importante es que los SNP son abundantes, ya que se encuentran en todo el genoma. Otra razón es la ubicación en el ADN: se encuentran en intrones, exones, promotores, potenciadores o regiones intergénicas. Además, los SNP ahora son baratos y fáciles de genotipar de manera automatizada y de alto rendimiento porque son binarios. -->
+En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables [@cite:30]. Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP)<!-- NOTA: la RFLP es una técnica que se basa en la detección de fragmentos de ADN de distinto peso molecular (por digestión con la enzima de restricción). --> y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.<!-- NOTA: ¿Por qué los SNP son los más usado? Una razón importante es que los SNP son abundantes, ya que se encuentran en todo el genoma. Otra razón es la ubicación en el ADN: se encuentran en intrones, exones, promotores, potenciadores o regiones intergénicas. Además, los SNP ahora son baratos y fáciles de genotipar de manera automatizada y de alto rendimiento porque son binarios. -->
 
-Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos [@cite:15], abrieron la posibilidad de obtener una predicción más precisa de los EBV [@cite:14; @cite:31], comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores [@cite:31], los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL<!-- NOTA: un QTL es un gen que está asociado con la variación en un fenotipo. -->, permitió el descubrimiento de genes asociados a diferencias genéticas entre individuos dado un fenotipo [@cite:31; @cite:30].
+Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos [@cite:15], abrieron la posibilidad de obtener una predicción más precisa de los EBV [@cite:14; @cite:31], comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores [@cite:31], los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL<!-- NOTA: un QTL es un gen que está asociado con la variación en un fenotipo. -->, permitió identificar la genética subyacente a la variación fenotípica de un carácter [@cite:31; @cite:30; @cite:36].
 
-Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y utilizados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan los genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar la frecuencia del alelo favorable (Figura 1.2).
+Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar la frecuencia del alelo favorable (Figura 1.2).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -232,13 +232,13 @@ knitr::include_graphics('figures/MAS.pdf', auto_pdf = TRUE)
 __Figura 1.2:__ Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de @cite:6.
 :::
 
-Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología, al no detectar marcadores de ADN con efectos genéticos menores [@cite:3; @cite:10; @cite:32; @cite:7]. Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
+Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología al no detectar marcadores de ADN con efectos genéticos menores [@cite:3; @cite:10; @cite:32; @cite:7]. Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
 
 Finalmente, en el año 2001, @cite:8 presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta nueva alternativa se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos obtenidos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa, permitiendo así el análisis de caracteres complejos en el marco de efectos del modelo infinitesimal.
 
 ## La selección genómica
 
-Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). @cite:3 y @cite:33 describen este método como un proceso de dos pasos en el cual se usan grandes cantidades de marcadores de ADN <!--(teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores)--> para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el cual se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos en base al GEBV en lugar de pocos QTL [@cite:6].
+Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). @cite:3 y @cite:33 describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN <!--(teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores)--> para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos según el GEBV en lugar de pocos QTL [@cite:6].
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -305,7 +305,7 @@ knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 __Figura 1.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7.
 :::
 
-El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad de marcadores, se garantiza que algunos de ellos estén asociados (o en desequilibrio de ligamiento) con el QTL [@cite:8], con lo cual dicho marcador representa al QTL aún cuando el mismo no tiene efecto biológico sobre el carácter [@cite:30; @cite:35].
+El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto biológico sobre el carácter, a partir de este hecho biológico si que se garantizaría una asociación (real no observada) entre el QTL y el carácter [@cite:30; @cite:35; @cite:36].
 
 ### Métodos estadísticos en la selección genómica
 
@@ -444,8 +444,8 @@ data.frame(
         axis.ticks = element_blank(),
         axis.title = element_blank()) -> Mod_ML
 
-Punto_1 <- data.frame(x = c(0.5, 0.5, 0.5), y = c(8.0, 5.5, 3.0))
-Punto_2 <- data.frame(x = c(3.0, 3.0, 3.0, 3.0), y = c(9.25, 6.75, 4.25, 1.75))
+Punto_1 <- data.frame(x = c(0.5, 0.5, 0.5), y = c(10.0, 5.5, 1.0))
+Punto_2 <- data.frame(x = c(3.0, 3.0, 3.0, 3.0), y = c(12.25, 7.75, 3.25, -0.5))
 Punto_3 <- data.frame(x = 5.5, y = 5.5)
 
 data.frame(
@@ -454,48 +454,48 @@ data.frame(
   ggplot(aes(x, y)) +
   #geom_blank() +
   
-  geom_point(aes(x = x, y = y), data = Punto_1, size = 11.6, shape = 21, color = 'cyan', fill = 'cyan', alpha = 0.4) +
-  geom_point(aes(x = x, y = y), data = Punto_2, size = 11.6, shape = 21, color = 'red', fill = 'red', alpha = 0.4) +
-  geom_point(aes(x = x, y = y), data = Punto_3, size = 11.6, shape = 21, color = 'black', fill = 'black', alpha = 0.4) +
+  geom_point(aes(x = x, y = y), data = Punto_1, size = 11.6, shape = 21, color = 'yellow', fill = 'yellow', alpha = 0.4) +
+  geom_point(aes(x = x, y = y), data = Punto_2, size = 11.6, shape = 21, color = 'cyan', fill = 'cyan', alpha = 0.4) +
+  geom_point(aes(x = x, y = y), data = Punto_3, size = 11.6, shape = 21, color = 'red', fill = 'red', alpha = 0.4) +
   
-  geom_curve(x = -0.5, xend = 0.0, y = 8.0, yend = 8.0, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
-  annotate(geom = 'text', x = -0.8, y = 8.0, label = 'SNP 1', family = 'gochi', size = 3.5, colour = 'black', angle = 90) +
+  geom_curve(x = -0.5, xend = 0.0, y = 10.5, yend = 10.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
+  annotate(geom = 'text', x = -0.8, y = 10.5, label = 'SNP 1', family = 'gochi', size = 3.8, colour = 'black', angle = 90) +
   
   geom_curve(x = -0.5, xend = 0.0, y = 5.5, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
-  annotate(geom = 'text', x = -0.8, y = 5.5, label = 'SNP 2', family = 'gochi', size = 3.5, colour = 'black', angle = 90) +
+  annotate(geom = 'text', x = -0.8, y = 5.5, label = 'SNP 2', family = 'gochi', size = 3.8, colour = 'black', angle = 90) +
   
-  geom_curve(x = -0.5, xend = 0.0, y = 3.0, yend = 3.0, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
-  annotate(geom = 'text', x = -0.8, y = 3.0, label = 'SNP 3', family = 'gochi', size = 3.5, colour = 'black', angle = 90) +
+  geom_curve(x = -0.5, xend = 0.0, y = 1.0, yend = 1.0, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
+  annotate(geom = 'text', x = -0.8, y = 1.0, label = 'SNP 3', family = 'gochi', size = 3.8, colour = 'black', angle = 90) +
   
   geom_curve(x = 6.0, xend = 6.5, y = 5.5, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.8, color = 'black', curvature = 0.0, linetype = 'twodash') +
   annotate(geom = 'text', x = 6.8, y = 5.5, label = 'Fenotipo', family = 'gochi', size = 4.2, colour = 'black', angle = 90) +
   
-  annotate(geom = 'text', x = 0.5, y = 1.4, label = 'Entrada', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 3.0, y = 0.15, label = 'Oculta', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 5.5, y = 3.9, label = 'Salida', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 0.5, y = -1.4, label = 'Entrada', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 3.0, y = -2.85, label = 'Oculta', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 5.5, y = 2.9, label = 'Salida', size = 3.8, colour = 'black') +
   
-  geom_curve(x = 0.8, xend = 2.7, y = 8.0, yend = 9.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 8.0, yend = 6.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 8.0, yend = 4.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 8.0, yend = 1.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 10.5, yend = 12.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 10.5, yend = 7.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 10.5, yend = 3.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 10.5, yend = -0.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
-  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 9.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 6.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 4.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 1.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 12.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 7.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = 3.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 5.5, yend = -0.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
-  geom_curve(x = 0.8, xend = 2.7, y = 3.0, yend = 9.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 3.0, yend = 6.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 3.0, yend = 4.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 0.8, xend = 2.7, y = 3.0, yend = 1.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 1.0, yend = 12.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 1.0, yend = 7.75, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 1.0, yend = 3.25, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 0.8, xend = 2.7, y = 1.0, yend = -0.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
-  geom_curve(x = 3.3, xend = 5.2, y = 9.25, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 3.3, xend = 5.2, y = 6.75, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 3.3, xend = 5.2, y = 4.25, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
-  geom_curve(x = 3.3, xend = 5.2, y = 1.25, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.4, color = 'black', curvature = 0.0) +
+  geom_curve(x = 3.3, xend = 5.2, y = 12.25, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 3.3, xend = 5.2, y = 7.75, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 3.3, xend = 5.2, y = 3.25, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 3.3, xend = 5.2, y = -0.5, yend = 5.5, arrow = arrow(length = unit(0.1, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
-  scale_x_continuous(limits = c(-1.65, 7.55)) +
-  scale_y_continuous(limits = c(-1.0, 11.0)) +
+  scale_x_continuous(limits = c(-1.05, 6.95)) +
+  scale_y_continuous(limits = c(-3.75, 14.0)) +
   
   theme_bw() +
   theme(axis.text = element_blank(),
@@ -510,3 +510,4 @@ knitr::include_graphics('figures/Mod_ML.pdf', auto_pdf = TRUE)
 ::: {.center data-latex=""}
 __Figura 1.5:__ . Figura adaptada de @cite:7.
 :::
+
