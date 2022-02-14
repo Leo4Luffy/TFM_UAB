@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(dplyr, ggplot2, showtext, patchwork)
+pacman::p_load(dplyr, ggplot2, showtext, patchwork, latex2exp)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -161,7 +161,7 @@ En otro orden de ideas, el rápido desarrollo de la genética molecular a partir
 
 Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos [@cite:15], abrieron la posibilidad de obtener una predicción más precisa de los EBV [@cite:14; @cite:31], comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores [@cite:31], los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL<!-- NOTA: un QTL es un gen que está asociado con la variación en un fenotipo. -->, permitió identificar la genética subyacente a la variación fenotípica de un carácter [@cite:31; @cite:30; @cite:36].
 
-Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar la frecuencia del alelo favorable (Figura 1.2).
+Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar su frecuencia (Figura 1.2).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -234,7 +234,7 @@ __Figura 1.2:__ Esquema de la MAS. En la MAS, los fenotipos y genotipos de la po
 
 Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología al no detectar marcadores de ADN con efectos genéticos menores [@cite:3; @cite:10; @cite:32; @cite:7]. Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
 
-Finalmente, en el año 2001, @cite:8 presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta nueva alternativa se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos obtenidos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa, permitiendo así el análisis de caracteres complejos en el marco de efectos del modelo infinitesimal.
+Finalmente, en el año 2001, Theodorus Meuwissen, Ben Hayes y Michael Goddard presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta nueva alternativa se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos obtenidos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa, permitiendo así el análisis de caracteres complejos en el marco de efectos del modelo infinitesimal.
 
 ## La selección genómica
 
@@ -305,10 +305,76 @@ knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 __Figura 1.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7.
 :::
 
-El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto biológico sobre el carácter, a partir de este hecho biológico si que se garantizaría una asociación (real no observada) entre el QTL y el carácter [@cite:30; @cite:35; @cite:36].
+El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto biológico sobre el carácter, a partir de este hecho biológico si que se garantizaría una asociación (no observada) entre el QTL y el carácter [@cite:30; @cite:35; @cite:36].
 
 ### Métodos estadísticos en la selección genómica
 
+Al publicar su propuesta innovadora de selección genómica, @cite:8 dieron a conocer también la forma en como la misma podía resolverse. La idea consistió en representar la relación entre el fenotipo y el genotipo mediante un modelo de regresión lineal (Figura 1.4), que luego podía usarse para predecir el GEBV de los individuos [@cite:6; @cite:31].
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
+
+Gen_1 <- data.frame(
+  x = c(0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.55, 0.55, 0.55, 0.55, 0.55, 0.55, 0.6, 0.6, 0.6, 0.6, 0.65, 0.65), y = c(0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.45, 0.5, 0.55, 0.6, 0.5, 0.55), Genotipos = '0'
+  )
+
+Gen_2 <- data.frame(
+  x = c(1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.05, 1.05, 1.05, 1.05, 1.05, 1.05, 1.1, 1.1, 1.1, 1.1, 1.15, 1.15), y = c(0.95, 1.0, 1.05, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.4, 1.45, 1.5, 1.1, 1.15, 1.2, 1.25, 1.3, 1.35, 1.15, 1.2, 1.25, 1.3, 1.2, 1.25), Genotipos = '1'
+  )
+
+Gen_1_Gen_2 <- bind_rows(Gen_1, Gen_2)
+
+ggplot(data = Gen_1_Gen_2, aes(x = x, y = y, colour = Genotipos, fill = Genotipos)) +
+  
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.52, ymin = 0.225, ymax = 0.325, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.57, ymin = 0.325, ymax = 0.425, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.67, ymin = 0.425, ymax = 0.525, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.67, ymin = 0.525, ymax = 0.625, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.57, ymin = 0.625, ymax = 0.725, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.49, xmax = 0.52, ymin = 0.725, ymax = 0.825, colour = 'black', fill = 'white', linetype = 'dashed') +
+  
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.02, ymin = 0.925, ymax = 1.025, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.07, ymin = 1.025, ymax = 1.125, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.17, ymin = 1.125, ymax = 1.225, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.17, ymin = 1.225, ymax = 1.325, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.07, ymin = 1.325, ymax = 1.425, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 0.99, xmax = 1.02, ymin = 1.425, ymax = 1.525, colour = 'black', fill = 'white', linetype = 'dashed') +
+  
+  annotate(geom = 'segment', x = 0.25, xend = 1.35, y = 0.3, yend = 1.5, colour = 'black', size = 1.4) +
+  
+  geom_point(alpha = 0.5, size = 3.4) +
+  
+  annotate(geom = 'text', x = 1.50, y = 1.44, label = TeX('$y_{i} = \\mu 1_{n} + x_{i1}g_{1}$'), size = 4.8) +
+  
+  scale_colour_manual(values = c('yellow', 'cyan')) +
+  scale_fill_manual(values = c('yellow', 'cyan')) +
+  
+  labs(x = 'Genotipo', y = 'Fenotipo') +
+  
+  scale_x_continuous(limits = c(0.20, 1.75)) +
+  scale_y_continuous(limits = c(0.15, 1.65)) +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_text(size = 14,face = 'bold'),
+        legend.background = element_rect(color = 'gray34', fill = 'white', size = 0.4, linetype = 'dashed'),
+        legend.position = c(0.84, 0.24),
+        legend.title = element_text(size = 14, face = 'bold'),
+        legend.text = element_text(size = 14)) -> Mod_RL
+
+knitr::include_graphics('figures/Mod_RL.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 1.4:__ . Figura adaptada de @cite:6.
+:::
+
+La expresión se presenta a continuación
+
+\begin{equation}
+y_{i} = \mu 1_{n} + \sum_{j = 1}^{p}x_{ij}g_{j}+e_{i},
+\end{equation}
+
+donde 
 
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
@@ -403,7 +469,7 @@ knitr::include_graphics('figures/Mod_GS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.4:__ . Figura adaptada de @cite:31.
+__Figura 1.5:__ . Figura adaptada de @cite:31.
 :::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
@@ -508,6 +574,6 @@ knitr::include_graphics('figures/Mod_ML.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.5:__ . Figura adaptada de @cite:7.
+__Figura 1.6:__ . Figura adaptada de @cite:7.
 :::
 
