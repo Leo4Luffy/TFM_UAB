@@ -9,6 +9,10 @@ showtext_auto()
 
 # Revisión de literatura
 
+## Principios de mejora genética en plantas y animales
+
+
+
 ## Breve historia hacia la selección genómica
 
 La historia de la genética tanto cuantitativa como molecular se remonta a la contribución de muchas personas (Figura 1.1), hecho que permitió la conexión entre ambas disciplinas y el desarrollo de lo que hoy en día se conoce como selección genómica.
@@ -309,7 +313,7 @@ El uso de decenas de miles de marcadores de ADN es una de las características f
 
 ### Métodos estadísticos en la selección genómica
 
-Al publicar su propuesta innovadora de selección genómica, @cite:8 dieron a conocer también la forma en como la misma podía resolverse. La idea consistió en representar la relación entre el fenotipo y el genotipo mediante un modelo de regresión lineal (Figura 1.4), que luego podía usarse para predecir el GEBV de los individuos [@cite:6; @cite:31].
+En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica [@cite:6; @cite:31].
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -343,7 +347,7 @@ ggplot(data = Gen_1_Gen_2, aes(x = x, y = y, colour = Genotipos, fill = Genotipo
   
   geom_point(alpha = 0.5, size = 3.4) +
   
-  annotate(geom = 'text', x = 1.50, y = 1.44, label = TeX('$y_{i} = \\mu 1_{n} + x_{i1}g_{1}$'), size = 4.8) +
+  annotate(geom = 'text', x = 1.51, y = 1.44, label = TeX('$y_{i} = \\mu + x_{i1}g_{1}$'), size = 4.8) +
   
   scale_colour_manual(values = c('yellow', 'cyan')) +
   scale_fill_manual(values = c('yellow', 'cyan')) +
@@ -365,17 +369,26 @@ knitr::include_graphics('figures/Mod_RL.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.4:__ . Figura adaptada de @cite:6.
+__Figura 1.4:__ Relación genotipo-fenotipo de individuos (circulos amarillo y azul) <!--en una población de entrenamiento -->para un solo marcador. $Y_{i}$ y $x_{i1}$ denotan los fenotipos y genotipos, y $\mu$ y $g_{i}$ son los parámetros a determinar. Los genotipos bialélicos se codifican como 0 y 1, y los fenotipos se distribuyen de acuerdo a una normal. Figura adaptada de @cite:6.
 :::
 
-La expresión se presenta a continuación
+Dicha relación genotipo-fenotipo se puede expresar de la forma:
 
 \begin{equation}
-y_{i} = \mu 1_{n} + \sum_{j = 1}^{p}x_{ij}g_{j}+e_{i},
+y_{i} = \mu + \sum_{j = 1}^{p}x_{ij}g_{j} + e_{i},
 \end{equation}
 
-donde 
+donde $i$ ($1, 2, 3, …, n$) representa a los individuos, $j$ ($1, 2, 3, …, p$) corresponde a los marcadores, $y_{i}$ denota el fenotipo para el *i*-ésimo individuo, $\mu$ corresponde a la media de la población, $x_{ij}$ representa al genotipo del *j*-ésimo marcador en el *i*-ésimo individuo, $g_{j}$ corresponde al efecto del *j*-ésimo marcador en el fenotipo, y $e_{i}$ es el término del error. <!--Aquí, $\mu$ y $g_{j}$ son los parámetros a determinar, y esto se realiza por mínimos cuadrados.-->
 
+Así mismo, el modelo anterior se puede expresar en notación matricial como:
+
+\begin{equation}
+y = Xg + e,
+\end{equation}
+
+donde $y$ es un vector de longitud igual al número de individuos ($1, 2, 3, …, n$) que representa al fenotipo, $X$ es una matriz que indica si el marcador es homocigoto dominante, heterocigoto u homocigoto recesivo (por ejemplo, 2 si es homocigoto dominante, 1 si es heterocigoto y 0 si es homocigoto recesivo), $g$ corresponde al efecto del marcador en el fenotipo y $e$ es el término del error. Luego el GEBV se puede predecir como $\hat{g} = (X'X)^{- 1}X'y$ mediante mínimos cuadrados<!--, buscando así que dicha predicción sea próxima al verdadero valor ($g$)-->.
+
+Sin embargo, al usar decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño [@cite:6; @cite:31; @cite:7], hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, se han introducido distintos métodos estadísticos de selección genómica para superar con ello los inconvenientes en el uso del modelo de regresión lineal (Figura 1.5).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -392,15 +405,18 @@ data.frame(
   annotate(geom = 'segment', x = 5.0, xend = 2.5, y = 7.5, yend = 7.5, colour = 'black') +
   annotate(geom = 'segment', x = 5.0, xend = 7.5, y = 7.5, yend = 7.5, colour = 'black') +
   annotate(geom = 'segment', x = 2.5, xend = 2.5, y = 7.5, yend = 7.0, colour = 'black') +
-  annotate(geom = 'rect', xmin = 0.15, xmax = 4.85, ymin = 6.4, ymax = 7.0, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'text', x = 2.5, y = 6.7, label = 'Enfoque penalizado', size = 3.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 0.15, xmax = 4.85, ymin = 6.0, ymax = 7.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 2.5, y = 6.7, label = 'Modelo lineal', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 2.5, y = 6.3, label = 'mixto', size = 3.4, colour = 'black') +
   annotate(geom = 'segment', x = 7.5, xend = 7.5, y = 7.5, yend = 7.0, colour = 'black') +
   annotate(geom = 'rect', xmin = 5.15, xmax = 9.85, ymin = 6.4, ymax = 7.0, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'text', x = 7.5, y = 6.7, label = 'Enfoque bayesiano', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 7.5, y = 6.7, label = 'Bayesiano', size = 3.4, colour = 'black') +
   
-  annotate(geom = 'segment', x = 1.25, xend = 1.25, y = 6.4, yend = 5.7, colour = 'black') +
-  geom_curve(x = 1.25, xend = 1.75, y = 5.7, yend = 5.7, arrow = arrow(length = unit(0.1, 'inch')), size = 0.2, color = 'black', curvature = 0.0, linetype = 'solid') +
-  annotate(geom = 'text', x = 2.8, y = 5.7, label = 'GBLUP', size = 3.4, colour = 'black') +
+  annotate(geom = 'segment', x = 1.25, xend = 1.25, y = 6.0, yend = 4.7, colour = 'black') +
+  geom_curve(x = 1.25, xend = 1.75, y = 5.3, yend = 5.3, arrow = arrow(length = unit(0.1, 'inch')), size = 0.2, color = 'black', curvature = 0.0, linetype = 'solid') +
+  annotate(geom = 'text', x = 2.8, y = 5.3, label = 'rrBLUP', size = 3.4, colour = 'black') +
+  geom_curve(x = 1.25, xend = 1.75, y = 4.7, yend = 4.7, arrow = arrow(length = unit(0.1, 'inch')), size = 0.2, color = 'black', curvature = 0.0, linetype = 'solid') +
+  annotate(geom = 'text', x = 2.8, y = 4.7, label = 'GBLUP', size = 3.4, colour = 'black') +
   
   annotate(geom = 'segment', x = 6.25, xend = 6.25, y = 6.4, yend = 3.9, colour = 'black') +
   geom_curve(x = 6.25, xend = 6.75, y = 5.7, yend = 5.7, arrow = arrow(length = unit(0.1, 'inch')), size = 0.2, color = 'black', curvature = 0.0, linetype = 'solid') +
@@ -463,14 +479,16 @@ ggplot() +
         axis.title = element_blank(),
         plot.title = element_text(size = 10, face = 'bold')) -> Dist_4
 
-(Mod_GS) | ( ( Dist_1 | Dist_2 ) / ( Dist_3 | Dist_4 ) ) -> Mod_GS 
+(Mod_GS) | ( ( Dist_1 | Dist_2 ) / ( Dist_3 | Dist_4 ) ) #-> Mod_GS 
 
-knitr::include_graphics('figures/Mod_GS.pdf', auto_pdf = TRUE)
+#knitr::include_graphics('figures/Mod_GS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.5:__ . Figura adaptada de @cite:31.
+__Figura 1.5:__ . Figura adaptada de @cite:31 y de @cite:7.
 :::
+
+Los modelos Bayesianos propuestos por @cite:8
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
