@@ -147,8 +147,8 @@ data.frame(
   geom_point(aes(x = x, y = y), data = Puntos, size = 6, shape = 1, color = 'black') +
   
   annotate(geom = 'text', x = 9.5, y = 5.5, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 13.3, y = 5.5, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 9.5, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 13.3, y = 5.5, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  annotate(geom = 'text', x = 9.5, y = 2.3, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
   #annotate(geom = 'text', x = 13.3, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 9.3, xmax = 9.6, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
@@ -178,13 +178,13 @@ data.frame(
   theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) -> Esquema_1
+        axis.title = element_blank()) #-> Esquema_1
 
-knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
+#knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa matrices G con distinta dimensión dado el número de individuos genotipados. El recuadro 3 representa diferentes densidades de SNP.
+__Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa diferentes densidades de SNP. El recuadro 3 representa matrices G con distinta dimensión dado el número de individuos genotipados.
 :::
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
@@ -214,7 +214,7 @@ data.frame(
   geom_curve(x = 5.8, xend = 7.6, y = 6.9, yend = 5.35, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 12.0, xmax = 16.4, ymin = 6.4, ymax = 8.0, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  annotate(geom = 'text', x = 14.2, y = 7.6, label = 'Localización de QTNs', size = 4.0, colour = 'black') +
+  annotate(geom = 'text', x = 14.2, y = 7.6, label = 'Localización de QTN', size = 4.0, colour = 'black') +
   annotate(geom = 'text', x = 14.2, y = 6.8, label = 'y efectos', size = 4.0, colour = 'black') +
   geom_curve(x = 14.2, xend = 12.4, y = 6.1, yend = 5.35, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   
@@ -247,9 +247,9 @@ data.frame(
   theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) -> Esquema_2
+        axis.title = element_blank()) #-> Esquema_2
 
-knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
+#knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 ```
 
 ## Resultados {#results2}
