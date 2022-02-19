@@ -3,9 +3,11 @@
 pacman::p_load(tibble, gt, dplyr, tidyr)
 ```
 
+<!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
+
 # (APPENDIX) Appendix {-}
 
-## Anexo de los capitulos 1 y 2
+# Anexo de los capitulos 1 y 2
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -90,8 +92,8 @@ data.frame(
   ggplot(aes(x, y)) +
   #geom_blank() +
   
-  geom_point(aes(x = x, y = y), data = Puntos, size = 11.6, shape = 21, color = 'cyan', fill = 'cyan', alpha = 0.2) +
-  geom_point(aes(x = x, y = y), data = Cuadros, size = 11.6, shape = 22, color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 11.6, shape = 21, color = 'black', fill = 'black', alpha = 0.4) +
+  geom_point(aes(x = x, y = y), data = Cuadros, size = 11.6, shape = 22, color = 'black', fill = 'black', alpha = 0.4) +
   
   annotate(geom = 'segment', x = 0.25, xend = 0.25, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
   annotate(geom = 'segment', x = 0.75, xend = 0.75, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +

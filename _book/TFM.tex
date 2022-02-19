@@ -267,7 +267,7 @@ El uso de decenas de miles de marcadores de ADN es una de las características f
 \hypertarget{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Métodos estadísticos en la selección genómica}\label{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}}
 
-En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}, @cite:37).
+En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Crossa et~al. \protect\hyperlink{ref-cite:37}{2017}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_RL} \end{center}
 
@@ -290,26 +290,32 @@ Así mismo, el modelo anterior se puede expresar en notación matricial como:
 y = Zg + e,
 \end{equation}
 
-donde \(y\) es un vector de longitud igual al número de individuos (\(1, 2, 3, …, n\)) que representa al fenotipo, \(Z\) es una matriz que indica si el marcador es homocigoto dominante, heterocigoto u homocigoto recesivo (por ejemplo, 2 si es homocigoto dominante, 1 si es heterocigoto y 0 si es homocigoto recesivo), \(g\) es un vectores un vector de efectos del marcador en el fenotipo (tratados aquí como efectos fijos), y \(e\) es el término del error. Luego el GEBV se puede predecir como \(\hat{g} = (Z'Z)^{- 1} Z'y\) mediante mínimos cuadrados.
+donde \(y\) es un vector de longitud igual al número de individuos (\(1, 2, 3, …, n\)) que representa al fenotipo, \(Z\) es una matriz que indica si el marcador es homocigoto dominante, heterocigoto u homocigoto recesivo (por ejemplo, 2 si es homocigoto dominante, 1 si es heterocigoto y 0 si es homocigoto recesivo), \(g\) es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos fijos), y \(e\) es el término del error. Luego el GEBV se puede predecir como \(\hat{g} = (Z'Z)^{- 1} Z'y\) mediante mínimos cuadrados.
 
-Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}), hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, se han desarrollado distintos métodos estadísticos de selección genómica para superar con ello los inconvenientes en el uso del modelo de regresión lineal (Figura 1.5).
+Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}), hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, la selección genómica brinda la oportunidad de enfrentar el problema del p grande y n pequeño por medio del uso de modelos de regresión lineal alternativos (Figura 1.5).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_GS} \end{center}
 
 \begin{center}
-\textbf{Figura 1.5:} . Figura adaptada de delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}) y de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.5:} Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}) y de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
-Cuando Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) propusieron por primera vez la teoría de la selección genómica, proporcionaron también una serie de métodos para resolver el problema mencionado en el parrafo anterior. Uno de estos métodos es el mejor predictor lineal insesgado por regresión de crestas (rrBLUP), el cual se puede expresar como un modelo lineal mixto:
+Al proponer la teoría de la selección genómica, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) proporcionaron también una serie de métodos estadísticos como solución al problema planteado en el párrafo anterior, esto es, el mejor predictor lineal insesgado por regresión de crestas (rrBLUP), y los métodos Bayesianos BayesA y BayesB.
+
+En relación al rrBLUP, este se puede expresar como un modelo lineal mixto:
 
 \begin{equation}
 y = Xb + Zg + e,
 \end{equation}
 
-donde \(y\), \(Z\) y \(e\) denotan los mismos términos del modelo (1.2), \(g\) es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos aleatorios), \(X\) es una matriz que indica los efectos fijos y \(b\) es un vector de efector fijos. Luego la predicción del GEBV se realiza a partir de \(\hat{g} = (Z'Z + I \lambda)^{- 1} Z'y\), donde \(I\) es una matriz identidad y \(\lambda\) es un factor de penalización que se agrega a la diagonal de \(Z'Z\), y permite estimar cualquier número de efectos de marcador. Dicho factor de penalización se estima por máxima verosimilitud restringida (REML) como \(\frac{\sigma^{2}_{e}} {\sigma^{2}_{g}}\) , donde \(\sigma^{2}_{g}\) es la varianza del efecto del marcador y \(\sigma^{2}_{e}\) es la varianza del error residual. Con rrBLUP, se reducen todos los efectos hacia cero por igual, lo que corresponde al supuesto de que todos los marcadores tienen una varianza común y son normalmente distribuidos (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
+donde \(y\), \(Z\) y \(e\) denotan los mismos términos del modelo (1.2), \(g\) es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos aleatorios), \(X\) es una matriz que indica los efectos fijos y \(b\) es un vector de efector fijos. Luego la predicción del GEBV se realiza a partir de \(\hat{g} = (Z'Z + I \lambda)^{- 1} Z'y\), donde \(I\) es una matriz identidad y \(\lambda\) es un factor de penalización que se agrega a la diagonal de \(Z'Z\), y permite estimar cualquier número de efectos de marcador. Dicho factor de penalización se estima por máxima verosimilitud restringida (REML) como \(\frac{\sigma^{2}_{e}} {\sigma^{2}_{g}}\) , donde \(\sigma^{2}_{g}\) es la varianza del efecto del marcador y \(\sigma^{2}_{e}\) es la varianza del error residual. En el rrBLUP, se asume que todos los marcadores explican cantidades iguales de variación genética (esto es, varianza común para el efecto del marcador) y supone que sus efectos son normalmente distribuidos (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
 
-Otro de los métodos propuesto por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) corresponde los métodos Bayesianos.
+Con respecto a los métodos Bayesianos, estos, a diferencia del método anterior, no asumen una distribución normal de los efectos de los marcadores, sino que en su lugar permiten que una parte de dichos marcadores tengan efectos importantes sobre el carácter, permitiendo así efectos diferentes (Medina et~al. \protect\hyperlink{ref-cite:38}{2021}).
+
+Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se diferencian en los distintos supuestos sobre los efectos del marcador y sus distribuciones. De acuerdo a Blasco (\protect\hyperlink{ref-cite:21}{2021}), en BayesA se supone que los efectos de los marcadores se distribuyen de acuerdo a una distribución t de Student en lugar de una normal, permitiendo así que algunos marcadores tengan efectos grandes, otros medianos y otros pequeños. En cuanto a BayesB, este presenta los mismos supuestos de BayesA, sin embargo, a diferencia de este último, en BayesB se permite que una parte de los marcadores no tengan efecto alguno sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). De la misma manera, BayesA y BayesB se diferencian en el procedimiento de estimación: BayesA utiliza el método de cadenas de Markov Monte Carlo (MCMC) para \ldots{} (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
+
+Sobre la base de los dos modelos de regresión Bayesianos propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo en BayesC, se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_ML} \end{center}
 
@@ -365,7 +371,7 @@ Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.z
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-10-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
@@ -374,7 +380,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
@@ -383,7 +389,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -415,7 +421,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
   Distinta cantidad de individuos genotipados:
 \end{enumerate}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa diferentes densidades de SNP. El recuadro 3 representa matrices G con distinta dimensión dado el número de individuos genotipados.
@@ -427,7 +433,7 @@ Se uso el coeficiente de correlación entre los valores fenotípicos observados 
 \hypertarget{estudio-de-simulaciuxf3n}{%
 \subsection{Estudio de simulación}\label{estudio-de-simulaciuxf3n}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 \hypertarget{results2}{%
 \section{Resultados}\label{results2}}
@@ -453,7 +459,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -462,11 +468,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -508,7 +514,8 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
     \DataTypeTok{label =}\NormalTok{ ped_edit}\OperatorTok{$}\NormalTok{label}
 \NormalTok{    )}
 \NormalTok{  Matrix_A <-}\StringTok{ }\NormalTok{pedigreemm}\OperatorTok{::}\KeywordTok{getA}\NormalTok{(}\DataTypeTok{ped =}\NormalTok{ pedi) }\CommentTok{# Esto dara la matriz}
-                               \CommentTok{#  de relaciones aditivas A.}
+                                           \CommentTok{# de relaciones adi-}
+                                           \CommentTok{# tivas A.}
  
   \CommentTok{# 2. De lo anterior (Matriz_A) se extraen las partes correspon-}
   \CommentTok{# dientes a individuos no genotipados (1) y genotipados (2)}
@@ -554,6 +561,8 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \NormalTok{  \}}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-21-1} \end{center}
 
 \backmatter
 
@@ -624,6 +633,9 @@ Legarra, A., D. Lourenco, y Z. G. Vitezica. 2018. \emph{Bases for genomic predic
 \leavevmode\hypertarget{ref-cite:22}{}%
 Lourenco, D., A. Legarra, S. Tsuruta, Y. Masuda, I. Aguilar, y I. Misztal. 2020. «Single-step genomic evaluations from theory to practice: using SNP chips and sequence data in BLUPF90». \emph{Genes} 11: 790. \url{https://doi.org/doi:10.3390/genes11070790}.
 
+\leavevmode\hypertarget{ref-cite:38}{}%
+Medina, C. A., H. Kaur, I. Ray, y L. X. Yu. 2021. «Strategies to Increase Prediction Accuracy in Genomic Selection of Complex Traits in Alfalfa (Medicago sativa L.)». \emph{Cells} 10 (12). \url{https://doi.org/10.3390/cells10123372}.
+
 \leavevmode\hypertarget{ref-cite:8}{}%
 Meuwissen, T. H. E., B. J. Hayes, y M. E. Goddard. 2001. «Prediction of Total Genetic Value Using Genome-Wide Dense Marker Maps». \emph{Genetics} 157: 1819-29.
 
@@ -656,6 +668,9 @@ Schaeffer, L. R. 1991. «C. R. Henderson: contributions to predicting genetic me
 
 \leavevmode\hypertarget{ref-cite:29}{}%
 Searle, S. R. 1991. «C. R. Henderson, the statistician; and his contributions to variance components estimation». \emph{Journal of Dairy Science} 74 (11): 4035-44. \url{https://doi.org/10.3168/jds.S0022-0302(91)78599-8}.
+
+\leavevmode\hypertarget{ref-cite:34}{}%
+Tan, C., C. Bian, D. Yang, N. Li, Z. Wu, y X. Hu. 2017. «Application of genomic selection in farm animal breeding». \emph{Hereditas} 39 (11): 1033-45. \url{https://doi.org/10.16288/j.yczz.17-286}.
 
 \leavevmode\hypertarget{ref-cite:7}{}%
 Tong, H., y Z. Nikoloski. 2021. «Machine learning approaches for crop improvement: leveraging phenotypic and genotypic big data». \emph{Journal of Plant Physiology} 257: 153354. \url{https://doi.org/10.1016/j.jplph.2020.153354}.
