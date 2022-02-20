@@ -1,5 +1,5 @@
 ---
-title: "Evaluación de la predicción genómica single-step en plantas"
+title: "Evaluación de la predicción genómica de un solo paso en plantas"
 subtitle: "Máster interuniversitario en mejora genética y biotecnología de la reproducción"
 author: "Jorge Leonardo López Martínez"
 date: "Colocar aquí la fecha de la defensa"

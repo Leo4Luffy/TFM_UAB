@@ -81,40 +81,4 @@ fn.mH <- function(ped, mG) { # Esta función recibe como argu-
   }
 ```
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
-Puntos <- data.frame(x = c(0.25, 1.25, 2.5, 3.5, 0.5, 2.75, 1.0, 1.5625), y = c(3.75, 3.75, 3.75, 3.75, 2.75, 2.75, 1.75, 0.75))
-Cuadros <- data.frame(x = c(0.75, 1.75, 3.0, 4.0, 1.5, 3.75, 3.25, 2.125, 2.75), y = c(3.75, 3.75, 3.75, 3.75, 2.75, 2.75, 1.75, 1.75, 0.75))
-
-data.frame(
-  x = c(0.0:4.0), y = c(0.0:4.0)
-  ) %>%
-  ggplot(aes(x, y)) +
-  #geom_blank() +
-  
-  geom_point(aes(x = x, y = y), data = Puntos, size = 11.6, shape = 21, color = 'black', fill = 'black', alpha = 0.4) +
-  geom_point(aes(x = x, y = y), data = Cuadros, size = 11.6, shape = 22, color = 'black', fill = 'black', alpha = 0.4) +
-  
-  annotate(geom = 'segment', x = 0.25, xend = 0.25, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 0.75, xend = 0.75, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 0.25, xend = 0.5, y = 3.2, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 0.75, xend = 0.5, y = 3.2, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 0.5, xend = 0.5, y = 3.2, yend = 2.85, colour = 'black', size = 0.8, linetype = 'dashed') +
-  
-  annotate(geom = 'segment', x = 1.25, xend = 1.25, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 1.75, xend = 1.75, y = 3.55, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 1.25, xend = 1.5, y = 3.2, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 1.75, xend = 1.5, y = 3.2, yend = 3.2, colour = 'black', size = 0.8, linetype = 'dashed') +
-  annotate(geom = 'segment', x = 1.5, xend = 1.5, y = 3.2, yend = 2.85, colour = 'black', size = 0.8, linetype = 'dashed') +
-  
-  scale_x_continuous(limits = c(0.0, 4.25)) +
-  scale_y_continuous(limits = c(0.25, 4.0)) +
-  
-  theme_bw() +
-  theme(axis.text = element_blank(),
-        axis.ticks = element_blank(),
-        axis.title = element_blank(),
-        plot.title = element_text(size = 14, face = 'bold')) #-> ssGBLUP
-
-#knitr::include_graphics('figures/mA.pdf', auto_pdf = TRUE)
-```

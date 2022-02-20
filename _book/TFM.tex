@@ -34,7 +34,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Evaluación de la predicción genómica single-step en plantas},
+            pdftitle={Evaluación de la predicción genómica de un solo paso en plantas},
             pdfauthor={Jorge Leonardo López Martínez},
             colorlinks=true,
             linkcolor=cyan,
@@ -147,7 +147,7 @@
 
 \vspace*{\drop}
 \begin{center}
-\Huge \textsc{Evaluación de la predicción genómica single-step en plantas}
+\Huge \textsc{Evaluación de la predicción genómica de un solo paso en plantas}
 \end{center}
 
 %% Page II: Colophon %LCR
@@ -174,7 +174,7 @@ bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inter
 \begin{center}
 \includegraphics[width=41mm]{_bookdown_files/logo_uab.png} \includegraphics[width=41mm]{_bookdown_files/logo_upv.jpg} \includegraphics[width=41mm]{_bookdown_files/logo_ciheam.jpg} \newline
 \vspace{\baselineskip}
-\Huge{Evaluación de la predicción genómica single-step en plantas}\par
+\Huge{Evaluación de la predicción genómica de un solo paso en plantas}\par
 \vspace{\baselineskip}
 \linespread{1.3}{\normalsize Tesis académica para obtener\\
 el grado de Máster en Mejora Genética y\\
@@ -311,16 +311,25 @@ y = Xb + Zg + e,
 
 donde \(y\), \(Z\) y \(e\) denotan los mismos términos del modelo (1.2), \(g\) es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos aleatorios), \(X\) es una matriz que indica los efectos fijos y \(b\) es un vector de efector fijos. Luego la predicción del GEBV se realiza a partir de \(\hat{g} = (Z'Z + I \lambda)^{- 1} Z'y\), donde \(I\) es una matriz identidad y \(\lambda\) es un factor de penalización que se agrega a la diagonal de \(Z'Z\), y permite estimar cualquier número de efectos de marcador. Dicho factor de penalización se estima por máxima verosimilitud restringida (REML) como \(\frac{\sigma^{2}_{e}} {\sigma^{2}_{g}}\) , donde \(\sigma^{2}_{g}\) es la varianza del efecto del marcador y \(\sigma^{2}_{e}\) es la varianza del error residual. En el rrBLUP, se asume que todos los marcadores explican cantidades iguales de variación genética (esto es, varianza común para el efecto del marcador) y supone que sus efectos son normalmente distribuidos (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
 
-Con respecto a los métodos Bayesianos, estos, a diferencia del método anterior, no asumen una distribución normal de los efectos de los marcadores, sino que en su lugar permiten que una parte de dichos marcadores tengan efectos importantes sobre el carácter, permitiendo así efectos diferentes (Medina et~al. \protect\hyperlink{ref-cite:38}{2021}).
+Con respecto a los métodos Bayesianos, estos, a diferencia del método anterior, no asumen una distribución normal de los efectos de los marcadores, sino que en su lugar permiten que una parte de dichos marcadores tengan efectos importantes sobre el carácter, permitiendo así efectos del marcador diferentes (Medina et~al. \protect\hyperlink{ref-cite:38}{2021}).
 
 Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se diferencian en los distintos supuestos sobre los efectos del marcador y sus distribuciones. De acuerdo a Blasco (\protect\hyperlink{ref-cite:21}{2021}), en BayesA se supone que los efectos de los marcadores se distribuyen de acuerdo a una distribución t de Student en lugar de una normal, permitiendo así que algunos marcadores tengan efectos grandes, otros medianos y otros pequeños. En cuanto a BayesB, este presenta los mismos supuestos de BayesA, sin embargo, a diferencia de este último, en BayesB se permite que una parte de los marcadores no tengan efecto alguno sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). De la misma manera, BayesA y BayesB se diferencian en el procedimiento de estimación: BayesA utiliza el método de cadenas de Markov Monte Carlo (MCMC) para \ldots{} (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
 
 Sobre la base de los dos modelos de regresión Bayesianos propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo en BayesC, se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
 
+Siguiendo la misma línea de Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), VanRaden (\protect\hyperlink{ref-cite:39}{2007}) propuso un método donde la predicción se obtiene en base a relaciones genómicas (esto es, la proporción de alelos compartidos entre individuos) en lugar de la relación de parentesco basados en pedigríes. A esta se le denomino como el mejor predictor lineal insesgado genómico (GBLUP).
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/Ped} \end{center}
+
+\begin{center}
+\textbf{Figura 1.6:} .
+
+\end{center}
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_ML} \end{center}
 
 \begin{center}
-\textbf{Figura 1.6:} . Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.7:} . Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
@@ -562,8 +571,6 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-21-1} \end{center}
-
 \backmatter
 
 \hypertarget{bibliografuxeda}{%
@@ -589,7 +596,7 @@ Blasco, A. 2021. \emph{Mejora genética animal}. 1st edition. EDITORIAL SÍNTESI
 Blasco, A., y M. A. Toro. 2014. «A short critical history of the application of genomics to animal breeding». \emph{Livestock Science} 166: 4-9.
 
 \leavevmode\hypertarget{ref-cite:37}{}%
-Crossa, J., P. Pérez-Rodríguez, J. Cuevas, O. Montesinos-López, D. Jarquín, G. delosCampos, J. Burgueño, et~al. 2017. «Genomic selection in plant breeding: methods, models, and perspectives». \emph{Trends in Plant Science}. \url{https://doi.org/10.1016/j.tplants.2017.08.011}.
+Crossa, J., P. Pérez-Rodríguez, J. Cuevas, O. Montesinos-López, D. Jarquín, G. delosCampos, J. Burgueño, et~al. 2017. «Genomic selection in plant breeding: methods, models, and perspectives». \emph{Trends in Plant Science}, 961-75. \url{https://doi.org/10.1016/j.tplants.2017.08.011}.
 
 \leavevmode\hypertarget{ref-cite:31}{}%
 delosCampos, G., J. H. Hickey, R. Pong-Wong, H. D. Daetwyler, y M. P. L. Calus. 2013. «Whole-genome regression and prediction methods applied to plant and animal breeding». \emph{Genetics} 193: 327-45. \url{https://doi.org/10.1534/genetics.112.143313}.
@@ -677,6 +684,9 @@ Tong, H., y Z. Nikoloski. 2021. «Machine learning approaches for crop improveme
 
 \leavevmode\hypertarget{ref-cite:9}{}%
 Turelli, M. 2017. «Prediction of Total Genetic Value Using Genome-Wide Dense Marker Maps». \emph{Theoretical Population Biology} 118: 46-49.
+
+\leavevmode\hypertarget{ref-cite:39}{}%
+VanRaden, P. M. 2007. «Efficient methods to compute genomic predictions». \emph{Journal of Dairy Science} 91: 4414-23.
 
 \leavevmode\hypertarget{ref-cite:4}{}%
 Villemereuil, P. de, H. Schielzeth, S. Nakagawa, y M. Morrissey. 2016. «General methods for evolutionary quantitative genetic inference from generalized mixed models». \emph{Genetics} 204: 1281-94.
