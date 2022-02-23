@@ -317,14 +317,37 @@ Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por Meuwissen,
 
 Sobre la base de los dos modelos de regresión Bayesianos propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo en BayesC, se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
 
-Siguiendo la misma línea de Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), VanRaden (\protect\hyperlink{ref-cite:39}{2007}) propuso un método donde la predicción se obtiene en base a relaciones genómicas (esto es, la proporción de alelos compartidos entre individuos) en lugar de la relación de parentesco basados en pedigríes. A esta se le denomino como el mejor predictor lineal insesgado genómico (GBLUP).
+Un modelo de regresión equivalente al rrGBLUP, denominado como mejor predictor lineal insesgado genómico (GBLUP), fue propuesto por VanRaden (\protect\hyperlink{ref-cite:39}{2007}). En el GBLUP, se utiliza una matriz de relación basada en marcadores de ADN (denominada como matriz G) en lugar de la matriz de relación basado en pedigríes (denominada como matriz A) del BLUP descrito por Henderson (\protect\hyperlink{ref-cite:41}{1975}). Luego la predicción del GEBV se realiza mediante un modelo lineal mixto, cuyas ecuaciones son:
+
+\begin{equation}
+\begin{bmatrix}
+X'X & X'Z \\
+Z'X & Z'Z + G^{-1} \lambda
+\end{bmatrix}
+\begin{bmatrix}
+\hat{b} \\
+\hat{g}
+\end{bmatrix}
+=
+\begin{bmatrix}
+X'y \\
+Z'y
+\end{bmatrix}
+,
+\end{equation}
+
+donde \(X\), \(Z\), \(b\), \(g\) y \(\lambda\) denotan los mismos términos de los modelos (1.2) y (1.3), y \(G^{-1}\) corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores estan normalmente distribuidos
+
+La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según Blasco (\protect\hyperlink{ref-cite:21}{2021}), el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual no refleja el porcentaje real de genes identicos entre dos individuos emparentados. Caso contrario al parentesco derivado al usar la matriz G cuyo parentesco es observado, debido a lo cual si evidencia de forma precisa el parentesco real entre dos individuos (Figura 1.6).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Ped} \end{center}
 
 \begin{center}
-\textbf{Figura 1.6:} .
+\textbf{Figura 1.6:} Parentesco observado entre individuos emparentados.
 
 \end{center}
+
+En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP no es necesario usar una población de entrenamiento para estimar el efecto del marcador de ADN y luego predecir el GEBV. En su lugar, en el GBLUP se pueden colocar directamente a los individuos fenotipados y no fenotipados en el mismo modelo, y al mismo tiempo predecir su GEBV, y calcular su precisión (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}). En cuanto a la velocidad de calculo, el GBLUP es mucho más rápido que los método Bayesianos, por lo que es más adecuado para obtener rápidamente el GEBV.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_ML} \end{center}
 
@@ -380,7 +403,7 @@ Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.z
 
 Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-11-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
@@ -389,7 +412,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-12-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
@@ -398,7 +421,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-13-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -430,7 +453,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
   Distinta cantidad de individuos genotipados:
 \end{enumerate}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-14-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-16-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa diferentes densidades de SNP. El recuadro 3 representa matrices G con distinta dimensión dado el número de individuos genotipados.
@@ -442,7 +465,7 @@ Se uso el coeficiente de correlación entre los valores fenotípicos observados 
 \hypertarget{estudio-de-simulaciuxf3n}{%
 \subsection{Estudio de simulación}\label{estudio-de-simulaciuxf3n}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-15-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
 
 \hypertarget{results2}{%
 \section{Resultados}\label{results2}}
@@ -468,7 +491,7 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
  \bottomrule
 \end{longtable}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-17-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
@@ -477,11 +500,11 @@ Heredabilidad & 0.82 & 0.73 & 0.81 \\
 
 Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-3} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-3} \end{center}
 
 \begin{center}
 \textbf{Figura 2.6:} .
@@ -495,8 +518,11 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \appendix}
 
 
-\hypertarget{anexo-de-los-capitulos-1-y-2}{%
-\chapter{Anexo de los capitulos 1 y 2}\label{anexo-de-los-capitulos-1-y-2}}
+\hypertarget{anexos-del-capitulo-2}{%
+\chapter{Anexos del capitulo 2}\label{anexos-del-capitulo-2}}
+
+\hypertarget{funciuxf3n-para-el-calculo-de-la-matriz-de-relaciuxf3n-combinada}{%
+\section{Función para el calculo de la matriz de relación combinada}\label{funciuxf3n-para-el-calculo-de-la-matriz-de-relaciuxf3n-combinada}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -618,6 +644,9 @@ Grinberg, N. F., O. I. Orhobor, y R. D. King. 2020. «An evaluation of machine-l
 
 \leavevmode\hypertarget{ref-cite:13}{}%
 Hayes, B. J., P. M. Visscher, y M. E. Goddard. 2009. «Increased accuracy of artificial selection by using the realized relationship matrix». \emph{Genetics Research} 91: 47-60.
+
+\leavevmode\hypertarget{ref-cite:41}{}%
+Henderson, C. R. 1975. «Best linear unbiased estimation and prediction under a selection model». \emph{Biometrics} 31: 423-47.
 
 \leavevmode\hypertarget{ref-cite:20}{}%
 Imai, A., T. Kuniga, T. Yoshioka, K. Nonaka, N. Mitani, H. Fukamachi, N. Hiehata, M. Yamamoto, y T. Hayashi. 2019. «Single-step genomic prediction of fruit-quality traits using phenotypic records of non-genotyped relatives in citrus». \emph{PLoS ONE} 14 (8). \url{https://doi.org/10.1371/journal.pone.0221880}.
