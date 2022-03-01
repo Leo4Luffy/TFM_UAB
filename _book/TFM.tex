@@ -336,9 +336,9 @@ Z'y
 ,
 \end{equation}
 
-donde \(X\), \(Z\), \(b\), \(g\) y \(\lambda\) denotan los mismos términos de los modelos (1.2) y (1.3), y \(G^{-1}\) corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores estan normalmente distribuidos
+donde \(X\), \(Z\), \(b\), \(g\) y \(\lambda\) denotan los mismos términos de los modelos (1.2) y (1.3), y \(G^{-1}\) corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores están normalmente distribuidos.
 
-La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según Blasco (\protect\hyperlink{ref-cite:21}{2021}), el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual no refleja el porcentaje real de genes identicos entre dos individuos emparentados. Caso contrario al parentesco derivado al usar la matriz G cuyo parentesco es observado, debido a lo cual si evidencia de forma precisa el parentesco real entre dos individuos (Figura 1.6).
+La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según Blasco (\protect\hyperlink{ref-cite:21}{2021}), el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, caso contrario al parentesco derivado al usar la matriz G que es observado, debido a lo cual si puede evidenciar de forma precisa el parentesco real entre dos individuos (Figura 1.6).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Ped} \end{center}
 
@@ -347,7 +347,13 @@ La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la mat
 
 \end{center}
 
-En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP no es necesario usar una población de entrenamiento para estimar el efecto del marcador de ADN y luego predecir el GEBV. En su lugar, en el GBLUP se pueden colocar directamente a los individuos fenotipados y no fenotipados en el mismo modelo, y al mismo tiempo predecir su GEBV, y calcular su precisión (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}). En cuanto a la velocidad de calculo, el GBLUP es mucho más rápido que los método Bayesianos, por lo que es más adecuado para obtener rápidamente el GEBV.
+En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP no es necesario usar una población de entrenamiento para estimar el efecto del marcador de ADN y luego predecir el GEBV. En su lugar, en el GBLUP se pueden colocar directamente a los individuos con fenotipo y sin fenotipo en el mismo modelo, y al mismo tiempo predecir su GEBV, y calcular su precisión (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}). En cuanto a la velocidad de calculo, el GBLUP es mucho más rápido que los método Bayesianos, por lo que es más adecuado para obtener rápidamente el GEBV. Sin embargo, los métodos Bayesianos permiten incorporar al modelo información previa proveniente de múltiples estudios, siendo esto una ventaja de los mismos sobre otros métodos como el GBLUP. En tal sentido, delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}) proporcionan algunos ejemplos sobre que tipo de información se podría incorporar a los efectos previos asignado a los marcadores, por mencionar algunos de ellos, la ubicación del marcador en el genoma, si dicha ubicación corresponde a una región codificante o no, y si el marcador esta en una región del genoma que alberga genes que pueden afectar una carácter de interés.
+
+\hypertarget{de-un-proceso-de-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}{%
+\subsection{De un proceso de selección genómica de múltiples pasos a un solo paso}\label{de-un-proceso-de-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}}
+
+\hypertarget{subtitulo-sobre-ml-y-dl}{%
+\subsection{SUBTITULO SOBRE ML Y DL}\label{subtitulo-sobre-ml-y-dl}}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_ML} \end{center}
 
