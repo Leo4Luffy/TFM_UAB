@@ -798,15 +798,20 @@ Tras la domesticación de animales y el cultivo de plantas, la especie humana co
 Triangulo <- data.frame(x = c(0.5, 7.5, 4.0), y = c(0.5, 0.5, 7.5))
 Punto <- data.frame(x = 4.0, y = 5.8)
 
-ggplot() +
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot() +
   #geom_blank() +
   
   geom_polygon(data = Triangulo, aes(x = x, y = y), color = 'yellow', fill = 'yellow', alpha = 0.1) +
   
   geom_point(aes(x = x, y = y), data = Punto, size = 34.6, shape = 1, color = 'black') +
   
+  geom_curve(x = 5.15, xend = 5.0, y = 4.975, yend = 4.925, arrow = arrow(length = unit(0.08, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   annotate(geom = 'rect', xmin = 3.0, xmax = 5.0, ymin = 4.45, ymax = 5.05, colour = 'black', fill = 'white') +
   annotate(geom = 'text', x = 4.0, y = 4.75, label = 'Selección', family = 'gochi', size = 3.2, colour = 'black') +
+  
   annotate(geom = 'rect', xmin = 1.0, xmax = 3.0, ymin = 6.05, ymax = 5.45, colour = 'black', fill = 'white') +
   annotate(geom = 'text', x = 2.0, y = 5.75, label = 'Selección', family = 'gochi', size = 3.2, colour = 'black') +
   annotate(geom = 'rect', xmin = 1.5, xmax = 3.5, ymin = 7.05, ymax = 6.45, colour = 'black', fill = 'white') +
@@ -835,30 +840,30 @@ data.frame(
   ggplot() +
   #geom_blank() +
   
-  annotate(geom = 'text', x = 0.75, y = 11.5, label = 'Año', family = 'gochi', size = 3.2, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 10.5, label = '1', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 9.5, label = '2', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 8.5, label = '3', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 7.5, label = '4', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 6.5, label = '5', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 5.5, label = '6', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 4.5, label = '7', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 3.5, label = '8', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 2.5, label = '9', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 0.75, y = 1.5, label = '0', family = 'gochi', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 11.5, label = 'Año', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 10.5, label = '1', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 9.5, label = '2', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 8.5, label = '3', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 7.5, label = '4', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 6.5, label = '5', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 5.5, label = '6', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 4.5, label = '7', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 3.5, label = '8', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 2.5, label = '9', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 0.75, y = 1.5, label = '0', size = 3.2, colour = 'black') +
   
-  annotate(geom = 'text', x = 2.75, y = 11.5, label = 'Generación', family = 'gochi', size = 3.2, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 9.5, label = 'f1', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 8.5, label = 'f2', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 7.5, label = 'f3', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 6.5, label = 'f4', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 5.5, label = 'f5', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 4.5, label = 'f6', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 3.5, label = 'f7', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 2.5, label = 'f8', family = 'gochi', size = 3.8, colour = 'black') +
-  annotate(geom = 'text', x = 2.75, y = 1.5, label = 'f9', family = 'gochi', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 11.5, label = 'Generación', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 9.5, label = 'F1', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 8.5, label = 'F2', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 7.5, label = 'F3', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 6.5, label = 'F4', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 5.5, label = 'F5', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 4.5, label = 'F6', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 3.5, label = 'F7', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 2.5, label = 'F8', size = 3.2, colour = 'black') +
+  annotate(geom = 'text', x = 2.75, y = 1.5, label = 'F9', size = 3.2, colour = 'black') +
   
-  annotate(geom = 'text', x = 5.75, y = 10.5, label = 'P1 x P2', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 5.75, y = 10.5, label = 'P1 x P2', family = 'gochi', size = 3.4, colour = 'black') +
   annotate(geom = 'rect', xmin = 4.75, xmax = 6.75, ymin = 9.25, ymax = 9.75, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
   annotate(geom = 'rect', xmin = 3.75, xmax = 7.75, ymin = 8.25, ymax = 8.75, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
   annotate(geom = 'rect', xmin = 4.05, xmax = 8.05, ymin = 7.25, ymax = 7.75, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
@@ -914,9 +919,9 @@ data.frame(
   geom_curve(x = 7.9, xend = 7.8, y = 2.25, yend = 1.75, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'segment', x = 9.0, xend = 9.0, y = 1.5, yend = 10.5, colour = 'black', linetype = 'dashed', size = 0.4) +
-  geom_curve(x = 9.0, xend = 6.5, y = 10.5, yend = 10.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
-  geom_curve(x = 8.15, xend = 9.0, y = 1.5, yend = 1.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
-  geom_curve(x = 8.15, xend = 9.0, y = 3.5, yend = 3.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 9.0, xend = 7.0, y = 10.5, yend = 10.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 8.2, xend = 9.0, y = 1.5, yend = 1.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 8.25, xend = 9.0, y = 3.5, yend = 3.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
   geom_curve(x = 8.15, xend = 9.0, y = 6.5, yend = 6.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'text', x = 9.5, y = 6.0, label = 'Núcleos de selección', size = 3.4, colour = 'black', angle = 90) +
