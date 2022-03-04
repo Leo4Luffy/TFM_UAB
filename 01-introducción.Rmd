@@ -698,11 +698,11 @@ data.frame(
   geom_point(aes(x = x, y = y), data = Puntos, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
   annotate(geom = 'text', x = 3.1, y = 3.0, label = 'BLUP', size = 4.6, angle = 90, colour = 'black') +
   
-  geom_curve(x = 7.1, xend = 8.6, y = 2.825, yend = 2.825, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  geom_curve(x = 7.1, xend = 8.6, y = 2.825, yend = 2.825, arrow = arrow(length = unit(0.08, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
   annotate(geom = 'text', x = 9.4, y = 2.825, label = 'EBV', size = 4.8, colour = 'black') +
   
   scale_x_continuous(limits = c(1.0, 11.0)) +
-  scale_y_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(0.45, 10.0)) +
   
   theme_bw() +
   labs(title = 'BLUP') +
@@ -711,14 +711,52 @@ data.frame(
         axis.title = element_blank(),
         plot.title = element_text(size = 11, face = 'bold')) -> ablup
 
+Punto <- data.frame(x = c(8.025, 8.025), y = c(7.4, 1.4))
+Puntos <- data.frame(x = c(8.025, 7.725, 8.325, 7.825, 8.225), y = c(9.0, 9.0, 9.0, 8.6, 8.6))
+Puntos_2 <- data.frame(x = c(8.025, 7.725, 8.325, 7.825, 8.225), y = c(3.0, 3.0, 3.0, 2.6, 2.6))
+
 data.frame(
-  x = c(0.0:10.0), y = c(0.0:10.0)
+  x = c(6.225, 6.225), y = c(6.7, 0.5)
   ) %>%
-  ggplot() +
+  ggplot(aes(x0 = x, y0 = y, r = 0.8)) +
   #geom_blank() +
   
-  scale_x_continuous(limits = c(0.0, 10.0)) +
-  scale_y_continuous(limits = c(0.0, 10.0)) +
+  annotate(geom = 'rect', xmin = 0.5, xmax = 2.75, ymin = 6.0, ymax = 9.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 1.625, y = 7.75, label = 'A', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 0.0, y = 7.75, label = 'Matriz A', size = 3.6, angle = 90, colour = 'black') +
+  
+  geom_curve(x = 3.05, xend = 4.45, y = 7.75, yend = 7.75, arrow = arrow(length = unit(0.05, 'inch')), size = 0.2, color = 'black', curvature = 0.0) +
+  annotate(geom = 'rect', xmin = 5.225, xmax = 7.225, ymin = 9.2, ymax = 7.2, colour = 'black', fill = 'black', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 6.125, xmax = 6.325, ymin = 7.2, ymax = 6.7, colour = 'black', fill = 'black', alpha = 0.7) +
+  geom_circle(aes(x0 = x, y0 = y, r = 0.2), colour = 'black', fill = 'black', alpha = 0.7, size = 0.8) +
+  annotate(geom = 'text', x = 4.85, y = 7.75, label = 'BLUP', size = 2.8, angle = 90, colour = 'black') +
+  annotate(geom = 'rect', xmin = 7.525, xmax = 8.525, ymin = 6.65, ymax = 9.4, colour = 'black', fill = 'black', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Punto, size = 1.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  
+  geom_curve(x = 8.825, xend = 10.325, y = 7.75, yend = 7.75, arrow = arrow(length = unit(0.08, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  annotate(geom = 'text', x = 11.35, y = 7.75, label = 'EBV', size = 3.8, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 0.75, xmax = 2.25, ymin = 0.5, ymax = 2.5, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 1.5, y = 1.5, label = 'G', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 0.25, y = 1.5, label = 'Matriz G', size = 3.6, angle = 90, colour = 'black') +
+  annotate(geom = 'rect', xmin = 5.225, xmax = 7.225, ymin = 3.2, ymax = 1.2, colour = 'black', fill = 'black', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 6.125, xmax = 6.325, ymin = 1.2, ymax = 0.7, colour = 'black', fill = 'black', alpha = 0.7) +
+  annotate(geom = 'text', x = 4.85, y = 1.5, label = 'GBLUP', size = 2.8, angle = 90, colour = 'black') +
+  annotate(geom = 'rect', xmin = 7.525, xmax = 8.525, ymin = 0.65, ymax = 3.4, colour = 'black', fill = 'black', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Punto, size = 1.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  geom_point(aes(x = x, y = y), data = Puntos_2, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  
+  geom_curve(x = 8.825, xend = 10.125, y = 1.5, yend = 1.5, arrow = arrow(length = unit(0.08, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  annotate(geom = 'text', x = 11.45, y = 1.5, label = 'GEBV', size = 3.8, colour = 'black') +
+  geom_curve(x = 2.45, xend = 4.45, y = 1.5, yend = 1.5, arrow = arrow(length = unit(0.05, 'inch')), size = 0.2, color = 'black', curvature = 0.0) +
+  geom_curve(x = 11.15, xend = 6.425, y = 7.25, yend = 3.5, arrow = arrow(length = unit(0.05, 'inch')), size = 0.2, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'text', x = 11.45, y = 5.75, label = 'Pseudo', size = 3.8, colour = 'black') +
+  annotate(geom = 'text', x = 11.45, y = 4.95, label = 'observaciones', size = 3.8, colour = 'black') +
+  
+  scale_x_continuous(limits = c(-1.0, 15.01)) +
+  scale_y_continuous(limits = c(-1.5, 11.0)) +
   
   theme_bw() +
   labs(title = 'GBLUP') +
@@ -727,14 +765,46 @@ data.frame(
         axis.title = element_blank(),
         plot.title = element_text(size = 11, face = 'bold')) -> gblup
 
+Punto <- data.frame(x = 6.3, y = 0.8)
+Puntos <- data.frame(x = c(6.3, 6.0, 6.6, 6.15, 6.45), y = c(1.8, 1.8, 1.8, 1.4, 1.4))
+
 data.frame(
-  x = c(0.0:10.0), y = c(0.0:10.0)
+  x = 4.5, y = 0.5
   ) %>%
-  ggplot() +
+  ggplot(aes(x0 = x, y0 = y, r = 0.8)) +
   #geom_blank() +
   
-  scale_x_continuous(limits = c(0.0, 10.0)) +
-  scale_y_continuous(limits = c(0.0, 10.0)) +
+  annotate(geom = 'rect', xmin = 1.5, xmax = 4.25, ymin = 7.5, ymax = 9.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 2.875, y = 8.5, label = 'A', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 1.1, y = 8.5, label = 'Matriz A', size = 4.6, angle = 90, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 7.0, xmax = 8.75, ymin = 7.75, ymax = 9.0, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 7.875, y = 8.375, label = 'G', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.6, y = 8.375, label = 'Matriz G', size = 4.6, angle = 90, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 1.5, xmax = 4.25, ymin = 3.75, ymax = 5.75, colour = 'black', fill = 'white', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 2.3, xmax = 4.05, ymin = 3.95, ymax = 5.05, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 1.1, y = 4.75, label = 'Matriz H', size = 4.6, angle = 90, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 3.5, xmax = 5.5, ymin = 1.8, ymax = 0.8, colour = 'black', fill = 'black', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 4.4, xmax = 4.6, ymin = 0.8, ymax = 0.5, colour = 'black', fill = 'black', alpha = 0.7) +
+  geom_circle(aes(x0 = x, y0 = y, r = 0.2), colour = 'black', fill = 'black', alpha = 0.7, size = 0.7) +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.8, ymin = 0.3, ymax = 2.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Punto, size = 1.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  annotate(geom = 'text', x = 3.1, y = 1.0, label = 'ssGBLUP', size = 4.6, angle = 90, colour = 'black') +
+  
+  geom_curve(x = 7.1, xend = 8.2, y = 1.0, yend = 1.0, arrow = arrow(length = unit(0.08, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  annotate(geom = 'text', x = 9.4, y = 1.2, label = 'EBV', size = 4.8, colour = 'black') +
+  annotate(geom = 'text', x = 9.4, y = 0.8, label = 'GEBV', size = 4.8, colour = 'black') +
+  
+  geom_curve(x = 2.875, xend = 2.875, y = 7.3, yend = 6.05, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
+  geom_curve(x = 7.875, xend = 4.55, y = 7.45, yend = 4.75, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
+  geom_curve(x = 2.875, xend = 3.95, y = 3.45, yend = 2.1, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
+  
+  scale_x_continuous(limits = c(0.45, 10.45)) +
+  scale_y_continuous(limits = c(0.0, 9.5)) +
   
   theme_bw() +
   labs(title = 'ssGBLUP') +
@@ -743,9 +813,9 @@ data.frame(
         axis.title = element_blank(),
         plot.title = element_text(size = 11, face = 'bold')) -> ssgblup
 
-(ablup / gblup) | (ssgblup) #-> Mej_anim_plant
+(ablup / gblup) | (ssgblup) -> BLUPs
 
-#knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/BLUPs.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
