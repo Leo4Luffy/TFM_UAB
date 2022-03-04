@@ -674,13 +674,89 @@ En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP n
 
 ### De la selección genómica de múltiples pasos a un solo paso
 
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
+Punto <- data.frame(x = 6.3, y = 2.2)
+Puntos <- data.frame(x = c(6.3, 6.0, 6.6, 6.15, 6.45), y = c(3.8, 3.8, 3.8, 3.4, 3.4))
 
-### SUBTITULO SOBRE ML Y DL
+data.frame(
+  x = 4.5, y = 1.5
+  ) %>%
+  ggplot(aes(x0 = x, y0 = y, r = 0.8)) +
+  #geom_blank() +
+  
+  annotate(geom = 'rect', xmin = 2.5, xmax = 4.75, ymin = 6.0, ymax = 9.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.625, y = 7.75, label = 'A', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 2.1, y = 7.75, label = 'Matriz A', size = 4.6, angle = 90, colour = 'black') +
+  geom_curve(x = 3.625, xend = 4.5, y = 5.7, yend = 4.3, arrow = arrow(length = unit(0.05, 'inch')), size = 0.2, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 3.5, xmax = 5.5, ymin = 4.0, ymax = 2.0, colour = 'black', fill = 'black', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 4.4, xmax = 4.6, ymin = 2.0, ymax = 1.5, colour = 'black', fill = 'black', alpha = 0.7) +
+  geom_circle(aes(x0 = x, y0 = y, r = 0.2), colour = 'black', fill = 'black', alpha = 0.7, size = 0.8) +
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.8, ymin = 1.45, ymax = 4.2, colour = 'black', fill = 'black', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Punto, size = 1.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  annotate(geom = 'text', x = 3.1, y = 3.0, label = 'BLUP', size = 4.6, angle = 90, colour = 'black') +
+  
+  geom_curve(x = 7.1, xend = 8.6, y = 2.825, yend = 2.825, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  annotate(geom = 'text', x = 9.4, y = 2.825, label = 'EBV', size = 4.8, colour = 'black') +
+  
+  scale_x_continuous(limits = c(1.0, 11.0)) +
+  scale_y_continuous(limits = c(0.0, 10.0)) +
+  
+  theme_bw() +
+  labs(title = 'BLUP') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> ablup
+
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot() +
+  #geom_blank() +
+  
+  scale_x_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(0.0, 10.0)) +
+  
+  theme_bw() +
+  labs(title = 'GBLUP') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> gblup
+
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot() +
+  #geom_blank() +
+  
+  scale_x_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(0.0, 10.0)) +
+  
+  theme_bw() +
+  labs(title = 'ssGBLUP') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> ssgblup
+
+(ablup / gblup) | (ssgblup) #-> Mej_anim_plant
+
+#knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 1.7:__ ..
+:::
 
 <!--
-DEPRONTO ESTO LO PUEDO COLOCAR CUANDO HABLE DEL ML Y DL. Todos los enfoques de regresión mencionados anteriormente asumen una relación lineal entre los marcadores de todo el genoma y los rasgos fenotípicos. Por tanto, capturan los efectos aditivos de los marcadores de todo el genoma y son adecuados para la predicción de rasgos fenotípicos en poblaciones consanguíneas.
--->
+### Machine learning y deep learning
+
+
+NOTA: DEPRONTO ESTO LO PUEDO COLOCAR CUANDO HABLE DEL ML Y DL. Todos los enfoques de regresión mencionados anteriormente asumen una relación lineal entre los marcadores de todo el genoma y los rasgos fenotípicos. Por tanto, capturan los efectos aditivos de los marcadores de todo el genoma y son adecuados para la predicción de rasgos fenotípicos en poblaciones consanguíneas.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -786,6 +862,8 @@ knitr::include_graphics('figures/Mod_ML.pdf', auto_pdf = TRUE)
 ::: {.center data-latex=""}
 __Figura 1.7:__ . Figura adaptada de @cite:7.
 :::
+
+-->
 
 ## Breve descripción de la mejora genética en arroz (*Oryza sativa L.*)
 
