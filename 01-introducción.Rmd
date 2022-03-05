@@ -822,6 +822,10 @@ knitr::include_graphics('figures/BLUPs.pdf', auto_pdf = TRUE)
 __Figura 1.7:__ ..
 :::
 
+### Factores que pueden afectar la habilidad predictiva de la selección genómica
+
+
+
 <!--
 ### Machine learning y deep learning
 
@@ -939,7 +943,13 @@ __Figura 1.7:__ . Figura adaptada de @cite:7.
 
 ### La mejora genética en animales y plantas
 
-Tras la domesticación de animales y el cultivo de plantas, la especie humana consiguió producir animales y plantas mejoradas. Esto a partir de la selección artificial. La clave del éxito de los antiguos domesticadores y cultivadores consistió en cruzar individuos portadores de caracteres deseables, al comprender que sus descendientes podrían heredar estas características, pese a que para esos tiempos se desconocían los mecanismos biológicos subyacentes a la herencia [@cite:43]. Hoy en día, al proceso de mejorar los caracteres fenotípicos deseables en animales y plantas mediante selección artificial, se le conoce como mejora genética [@cite:7], siendo la misma reconocida como una intrincada integración de ciencia y practicidad [@cite:42].
+Tras la domesticación de animales y el cultivo de plantas, la especie humana consiguió producir animales y plantas mejoradas. Esto a partir de la selección artificial. La clave del éxito de los antiguos domesticadores y cultivadores consistió en cruzar individuos portadores de caracteres deseables, al comprender que sus descendientes podrían heredar estas características, pese a que para esos tiempos se desconocían los mecanismos biológicos subyacentes a la herencia [@cite:43]. Hoy en día, se conoce como mejora genética al proceso de mejorar los caracteres fenotípicos deseables en animales y plantas mediante selección artificial [@cite:7], siendo la misma reconocida como una intrincada integración de ciencia y practicidad [@cite:42].
+
+A pesar de las similitudes conceptuales en la mejora genética de animales y plantas, los métodos de mejora usados han divergido. En plantas, los mejoradores genéticos han utilizado principalmente la MAS con el fin de identificar e incorporar genes beneficiosos. Por lo tanto, aquellos genes (generalmente pocos) con efectos moderados a grandes se han explotado más ampliamente en plantas que en animales. Por otra parte, en animales la mayoría de caracteres económicamente importantes son cuantitativos y complejos, hecho que obligo a los mejoradores genéticos a utilizar enfoques biométricos para determinar el EBV mediante la combinación de información fenotípica y de pedigrí (propiamente el BLUP), y con ello tomar las decisiones de selección [@cite:44]. En este último aspecto, @cite:6 y @cite:7 señalan que el BLUP no es factible para poblaciones sin información de pedigrí o con una estructura poblacional compleja, como suele ser el caso de las plantas.
+<!--
+Otra diferencia entre animales y plantas señalada por los mismos autores [@cite:44], son los caracteres limitados por el sexo. En animales pueden presentarse caracteres que no se pueden medir en un individuo (por ejemplo, la producción de leche en los machos), por lo cual se suele utilizar la información de sus familiares para predecir su fenotipo. Por lo contrario, en plantas no se presenta este problema de los caracteres limitados por el sexo.
+-->
+
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
