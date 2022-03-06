@@ -941,15 +941,11 @@ __Figura 1.7:__ . Figura adaptada de @cite:7.
 
 ## Breve descripción de la mejora genética en arroz (*Oryza sativa L.*)
 
-### La mejora genética en animales y plantas
+### La mejora genética en animales y en plantas
 
 Tras la domesticación de animales y el cultivo de plantas, la especie humana consiguió producir animales y plantas mejoradas. Esto a partir de la selección artificial. La clave del éxito de los antiguos domesticadores y cultivadores consistió en cruzar individuos portadores de caracteres deseables, al comprender que sus descendientes podrían heredar estas características, pese a que para esos tiempos se desconocían los mecanismos biológicos subyacentes a la herencia [@cite:43]. Hoy en día, se conoce como mejora genética al proceso de mejorar los caracteres fenotípicos deseables en animales y plantas mediante selección artificial [@cite:7], siendo la misma reconocida como una intrincada integración de ciencia y practicidad [@cite:42].
 
-A pesar de las similitudes conceptuales en la mejora genética de animales y plantas, los métodos de mejora usados han divergido. En plantas, los mejoradores genéticos han utilizado principalmente la MAS con el fin de identificar e incorporar genes beneficiosos. Por lo tanto, aquellos genes (generalmente pocos) con efectos moderados a grandes se han explotado más ampliamente en plantas que en animales. Por otra parte, en animales la mayoría de caracteres económicamente importantes son cuantitativos y complejos, hecho que obligo a los mejoradores genéticos a utilizar enfoques biométricos para determinar el EBV mediante la combinación de información fenotípica y de pedigrí (propiamente el BLUP), y con ello tomar las decisiones de selección [@cite:44]. En este último aspecto, @cite:6 y @cite:7 señalan que el BLUP no es factible para poblaciones sin información de pedigrí o con una estructura poblacional compleja, como suele ser el caso de las plantas.
-<!--
-Otra diferencia entre animales y plantas señalada por los mismos autores [@cite:44], son los caracteres limitados por el sexo. En animales pueden presentarse caracteres que no se pueden medir en un individuo (por ejemplo, la producción de leche en los machos), por lo cual se suele utilizar la información de sus familiares para predecir su fenotipo. Por lo contrario, en plantas no se presenta este problema de los caracteres limitados por el sexo.
--->
-
+En términos generales, la mejora genética se puede organizar en tres procesos, siendo estos la producción de variación genética, la selección entre la variación y la multiplicación para uso comercial (Figura 1.8).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -981,8 +977,14 @@ data.frame(
   
   annotate(geom = 'text', x = 0.25, y = 5.75, label = 'Núcleos de selección', size = 3.4, colour = 'black', angle = 90) +
   annotate(geom = 'text', x = 0.25, y = 2.475, label = 'Multiplicadoras', size = 3.4, colour = 'black', angle = 90) +
+  
+  annotate(geom = 'segment', x = 7.6, xend = 7.6, y = 4.45, yend = 7.5, colour = 'black', linetype = 'solid', size = 0.4) +
+  annotate(geom = 'text', x = 7.9, y = 5.975, label = 'Población mejorada', size = 3.4, colour = 'black', angle = 90) +
+  
+  annotate(geom = 'segment', x = 7.6, xend = 7.6, y = 4.05, yend = 0.5, colour = 'black', linetype = 'solid', size = 0.4) +
+  annotate(geom = 'text', x = 7.9, y = 2.425, label = 'Desarrollo de producto', size = 3.4, colour = 'black', angle = 90) +
 
-  scale_x_continuous(limits = c(-0.25, 8.25)) +
+  scale_x_continuous(limits = c(-0.25, 8.35)) +
   scale_y_continuous(limits = c(0.0, 8.0)) +
   
   theme_bw() +
@@ -1083,8 +1085,14 @@ data.frame(
   geom_curve(x = 8.15, xend = 9.0, y = 6.5, yend = 6.5, arrow = arrow(length = unit(0.05, 'inch')), linetype = 'dashed', size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'text', x = 9.5, y = 6.0, label = 'Núcleos de selección', size = 3.4, colour = 'black', angle = 90) +
-
-  scale_x_continuous(limits = c(0.0, 10.25)) +
+  
+  annotate(geom = 'segment', x = 0.48, xend = 0.48, y = 10.7, yend = 9.3, colour = 'black', linetype = 'solid', size = 0.4) +
+  annotate(geom = 'text', x = 0.04, y = 10.0, label = 'Población mejorada', size = 3.4, colour = 'black', angle = 90) +
+  
+  annotate(geom = 'segment', x = 0.48, xend = 0.48, y = 8.7, yend = 1.3, colour = 'black', linetype = 'solid', size = 0.4) +
+  annotate(geom = 'text', x = 0.04, y = 5.0, label = 'Desarrollo de producto', size = 3.4, colour = 'black', angle = 90) +
+  
+  scale_x_continuous(limits = c(-0.4, 10.25)) +
   scale_y_continuous(limits = c(1.0, 12.0)) +
   
   theme_bw() +
@@ -1104,6 +1112,12 @@ knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
 __Figura 1.8:__ Enfoques de mejora genética en animales y plantas. Figura adaptada de @cite:44.
 :::
 
+El primer requisito en la mejora genética, como se mencionó en el párrafo anterior, consiste en producir variación genética de los caracteres que se desean a mejorar. Tanto en animales como en plantas, la producción de variación genética se da a través del apareamiento de individuos cuya expresión de caracteres es deseable [@cite:42]. De esta forma, mediante el proceso natural de reproducción sexual, se puede obtener una descendencia que contiene genes de interés heredados de los dos progenitores.
+
+Una vez producida la variación genética, es necesario seleccionar individuos con mejor expresión de caracteres. Tanto en animales como en plantas, la selección se lleva a cabo de forma recurrente (en los denominados núcleos de selección) con la finalidad de aumentar la frecuencia de genes favorables. Sin embargo, los métodos de selección históricamente usados han sido distintos. Por un lado, en plantas se ha utilizado principalmente la MAS con el fin de identificar e incorporar genes beneficiosos, lo cual ha favorecido que genes (generalmente pocos) con efectos moderados a grandes hallan sido explotados más ampliamente en plantas que en animales. Por otro lado, en animales la mayoría de caracteres económicamente importantes han sido cuantitativos y complejos, lo cual obligo a los mejoradores genéticos a utilizar enfoques biométricos para predecir el EBV mediante la combinación de información fenotípica y de pedigrí (propiamente el BLUP), y con ello tomar las decisiones de selección [@cite:44].
+
+Finalmente, al aumentar la frecuencia de genes deseables, es necesario multiplicar o difundir el mérito genético medio obtenido de la población mejorada, y así facilitar que en las granjas comerciales los agricultores produzcan los caracteres mejorados [@cite:21]. Según @cite:44, una diferencia importante entre la mejora genética de animales y plantas, es que en animales la mejora difundida a las granjas comerciales no se recicla a los núcleos de selección, mientras que en plantas, al darle importancia a la selección de productos mejorados en forma de variedades vegetales, dichas variedades pueden ser usadas como progenitores en un ciclo nuevo de cultivo.
 <!--
-Un primer requisito de cualquier programa de mejoramiento es producir variación genética en los caracteres que se van a mejorar. Una vez que se produce la variación genética, es necesario seleccionar los tipos deseados, que tienen una mejor expresión de caracteres particulares o combinación de caracteres. Una vez identificados, los tipos seleccionados deben estabilizarse y propagarse/multiplicarse para uso comercial.
+Otra diferencia entre animales y plantas señalada por los mismos autores [@cite:44], son los caracteres limitados por el sexo. En animales pueden presentarse caracteres que no se pueden medir en un individuo (por ejemplo, la producción de leche en los machos), por lo cual se suele utilizar la información de sus familiares para predecir su fenotipo. Por lo contrario, en plantas no se presenta este problema de los caracteres limitados por el sexo.
 -->
+
