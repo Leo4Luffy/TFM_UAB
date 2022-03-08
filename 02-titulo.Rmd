@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -51,7 +51,7 @@ Mediante un análisis de componentes principales realizado sobre los datos de ge
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/Graf_PCA.png')
+knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
@@ -62,7 +62,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/Graf_feno.png')
+knitr::include_graphics('figures/Graf_feno.png', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
@@ -277,24 +277,255 @@ tribble(
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
-ggdraw() + draw_image('figures/covarianza_heredabilidad.png')
+# Pedigrí 1 (Bayesiano) ----
+
+varU_ped_1 <- read_delim(here('figures', 'varU_ped1.txt'), delim = '\t') %>%
+  mutate(varU = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varE_ped_1 <- read_delim(here('figures', 'varE_ped1.txt'), delim = '\t') %>%
+  mutate(varE = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+h2_ped_1 <- read_delim(here('figures', 'h2_ped1.txt'), delim = '\t') %>%
+  mutate(h2 = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varU_ped1 <- ggplot(data = varU_ped_1, aes(x = varU)) +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.4) +
+  labs(title = 'Pedigrí 1 - Var(a)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 13, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+varE_ped1 <- ggplot(data = varE_ped_1, aes(x = varE)) +
+  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.4) +
+  labs(title = 'Pedigrí 1 - Var(e)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 13, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+h2_ped1 <- ggplot(data = h2_ped_1, aes(x = h2)) +
+  geom_density(color = 'red', fill = 'red', alpha = 0.4) +
+  labs(title = 'Pedigrí 1 - h2', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 13, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+(varU_ped1 | varE_ped1 | h2_ped1)
+
+#ggdraw() + draw_image('figures/covarianza_heredabilidad.png')
 ```
 
 ::: {.center data-latex=""}
 __Figura 2.5:__ .
 :::
 
-Los resultados del análisis de máxima verosimilitud restringida (REML) y... (RKHS) bajo el modelo aditivo se observan en la Figura 2.5.
+Los resultados del análisis de máxima verosimilitud restringida (REML) y... (RKHS) bajo el modelo aditivo se observan en la Figura 2.6.
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
-ggdraw() + draw_image('figures/Pred_ped1.png')
-ggdraw() + draw_image('figures/Pred_ped2.png')
-ggdraw() + draw_image('figures/Pred_ped3.png')
+Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 1'
+    )
+
+Cor_ped_1_est %>%
+  ggplot(data = .,aes(x = Densidad, y = Correlación, fill = Genotipados, colour = Genotipados)) +
+  geom_col(data = Cor_ped_1_est, position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = Correlación - des, ymax = Correlación + des), data = Cor_ped_1_est, width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_wrap(~ Enfoque) +
+  labs(y = 'Precisión de la predicción', x = 'Densidad del marcador', title = 'Pedigrí uno') +
+  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 14, face = 'bold'),
+    legend.title = element_text(size = 14, face = 'bold'),
+    legend.text = element_text(size = 13),
+    plot.title = element_text(size = 13, face = 'bold'),
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 13, colour = 'black', face = 'bold')
+    ) -> Cor_ped_1_est_graf
+
+Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 2'
+    )
+
+Cor_ped_2_est %>%
+  ggplot(data = .,aes(x = Densidad, y = Correlación, fill = Genotipados, colour = Genotipados)) +
+  geom_col(data = Cor_ped_2_est, position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = Correlación - des, ymax = Correlación + des), data = Cor_ped_2_est, width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_wrap(~ Enfoque) +
+  labs(y = 'Precisión de la predicción', x = 'Densidad del marcador', title = 'Pedigrí dos') +
+  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 14, face = 'bold'),
+    legend.title = element_text(size = 14, face = 'bold'),
+    legend.text = element_text(size = 13),
+    plot.title = element_text(size = 13, face = 'bold'),
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 13, colour = 'black', face = 'bold')
+    ) -> Cor_ped_2_est_graf
+
+Cor_ped_3_est <- read_delim(here('figures', 'Ped3_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 3'
+    )
+
+Cor_ped_3_est %>%
+  ggplot(data = .,aes(x = Densidad, y = Correlación, fill = Genotipados, colour = Genotipados)) +
+  geom_col(data = Cor_ped_3_est, position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = Correlación - des, ymax = Correlación + des), data = Cor_ped_3_est, width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_wrap(~ Enfoque) +
+  labs(y = 'Precisión de la predicción', x = 'Densidad del marcador', title = 'Pedigrí tres') +
+  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 14),
+    axis.title = element_text(size = 14, face = 'bold'),
+    legend.title = element_text(size = 14, face = 'bold'),
+    legend.text = element_text(size = 13),
+    plot.title = element_text(size = 13, face = 'bold'),
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 13, colour = 'black', face = 'bold')
+    ) -> Cor_ped_3_est_graf
+
+bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est) %>%
+  ggplot(data = .,aes(x = Densidad, y = Correlación, fill = Genotipados, colour = Genotipados)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = Correlación - des, ymax = Correlación + des), width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_grid(vars(Pedigrí), vars(Enfoque)) +
+  labs(y = 'Precisión de la predicción', x = 'Densidad del marcador') +
+  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold'),
+    legend.title = element_text(size = 11, face = 'bold'),
+    legend.text = element_text(size = 11),
+    legend.position = 'top',
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 10, colour = 'black', face = 'bold')
+    ) -> Cor_Bay_Pen
+
+knitr::include_graphics('figures/Cor_Bay_Pen.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
 __Figura 2.6:__ .
+:::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+Cor_F2_est <- read_delim(here('figures', 'Ped_F2.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F2',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+    )
+
+Cor_F3_est <- read_delim(here('figures', 'Ped_F3.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F3',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+  )
+
+bind_rows(Cor_F2_est, Cor_F3_est) %>%
+  ggplot(data = .,aes(x = Densidad, y = Media, fill = Genotipados, colour = Genotipados)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = Media - Desvio, ymax = Media + Desvio), width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_grid(vars(Pedigrí), vars(Predicción)) +
+  labs(y = 'Precisión de la predicción', x = 'Densidad del marcador') +
+  scale_colour_manual(values = c('yellow', 'cyan', 'red', 'black')) +
+  scale_fill_manual(values = c('yellow', 'cyan', 'red', 'black')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold'),
+    legend.title = element_text(size = 11, face = 'bold'),
+    legend.text = element_text(size = 11),
+    legend.position = 'top',
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 10, colour = 'black', face = 'bold')
+    ) -> Cor_F2_F3
+
+knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 2.7:__ .
 :::
 
 ## Discusión {#discussion2}

@@ -674,6 +674,8 @@ En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP n
 
 ### De la selección genómica de múltiples pasos a un solo paso
 
+
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
 Punto <- data.frame(x = 6.3, y = 2.2)
@@ -1121,21 +1123,30 @@ Justo después de aumentar la frecuencia de genes deseables, es necesario multip
 Otra diferencia entre animales y plantas señalada por los mismos autores [@cite:44], son los caracteres limitados por el sexo. En animales pueden presentarse caracteres que no se pueden medir en un individuo (por ejemplo, la producción de leche en los machos), por lo cual se suele utilizar la información de sus familiares para predecir su fenotipo. Por lo contrario, en plantas no se presenta este problema de los caracteres limitados por el sexo.
 -->
 
-Por otro lado, desde el momento en que la selección genómica fue propuesta por @cite:8, se adapto rápidamente a la mejora genética de animales, principalmente al sector ganadero. Sin embargo, el uso de la selección genómica en plantas ha sido lento y son varias las razones de ello [@cite:44]:
+Por otro lado, desde el momento en que la selección genómica fue propuesta por @cite:8, se adapto rápidamente a la mejora genética en animales, principalmente al sector ganadero. Sin embargo, el uso de la selección genómica en plantas se ha quedado atrás [@cite:46] y son varias las razones de ello:
 
-1- Los métodos de mejora genética en animales y en plantas han divergido a lo largo de los años, lo cual ha implicado que se requiera de tiempo para que los avances y las contribuciones realizadas en un campo se trasladen al otro.
+1- Los métodos de mejora genética en animales y en plantas han divergido a lo largo de los años, lo cual implica que se requiera de tiempo para que los avances y las contribuciones realizadas en un campo se trasladen al otro [@cite:44].
 
 2- El genoma de muchas especies de plantas es más compleja al genoma de los animales. Los animales al ser individuos diploides, aportan a la descendencia solo uno de sus dos alelos, por lo cual es más fácil predecir en ellos cuan efectiva sera la selección, al suponer que de los distintos componentes de la varianza genética solo se heredara la varianza debido a efectos aditivos (esto es, la heredabilidad en el sentido estricto). Caso contrario sucede en las plantas cuya respuesta a la selección puede implicar, en caso de que la especie sea poliploide o se haya propagado de forma vegetativa, otros tipos de interacción como la dominancia entre dos alelos [@cite:43].<!-- La situación se vuelve más complicada cuando se introducen los sistemas reproductivos más complejos de las plantas. Considere más a fondo la situación de mejoramiento de la papa descrita anteriormente. Una planta de patata puede cruzarse sexualmente para generar una progenie exogámica, que puede someterse a una selección basada en el fenotipo, un concepto similar a un esquema de cría de animales. Sin embargo, la utilidad de un toro de ganado seleccionado en un programa de reproducción lechera radica en su capacidad de aparearse con madres para generar hijas que puedan usarse en la producción lechera. Por lo tanto, su valor genético realmente está determinado por sus efectos genéticos aditivos, porque todas sus hijas portan solo uno de sus alelos. Por el contrario, si un mejorador de papa identifica una planta particularmente superior, esa planta puede propagarse vegetativamente mediante esquejes de tubérculos, y los agricultores pueden usar esos pedazos de tubérculos en la producción. Por tanto, la respuesta a la selección en este caso implica todo el genotipo de la planta que se propaga clonalmente, incluidos todos sus efectos aditivos y de dominancia. Entonces, la respuesta a esta selección es una función de la heredabilidad en sentido amplio, no la heredabilidad en sentido estricto en este caso. -->
 
-3- Varios mejoradores genéticos de plantas argumentan que se pueden obtener algunos de los beneficios esperados de la selección genómica a través del uso de otros métodos.
+3- Varios mejoradores genéticos de plantas argumentan que se pueden obtener algunos de los beneficios esperados de la selección genómica a través del uso de otros métodos [@cite:44].
 
-4- Es costoso invertir en infraestructura computacional y de registro tanto de los datos genotípicos como fenotípicos requeridos para implementar efectivamente la selección genómica.
+4- Es costoso invertir en infraestructura computacional y de registro tanto de datos genotípicos como fenotípicos requeridos para implementar la selección genómica. El tamaño de las poblaciones en la cría de animales son mucho más pequeños que la mayoría de poblaciones en la cría de plantas. Si bien los costos de genotipado por individuo son cada vez más bajos, el costo total de genotipado al considerar todas las plantas es aún hoy en día demasiado alto para la mayoría de programas de mejora genética en plantas [@cite:46].
 
-En la literatura científica (Tabla1.1) se afirma el enorme potencial de la selección genómica para mejorar el mérito genético medio por selección en un programa de mejoramiento genético. A pesar de las diferencias en la mejora genética de animales y de plantas, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica. Por lo tanto, es de esperar que los mejoradores genéticos de animales y de plantas se beneficien del trabajo conjunto para solucionar aquellos problemas que les son comunes.
+Pese a lo anterior, en la literatura científica (Tabla1.1) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica. Por lo tanto, es de esperar que los mejoradores genéticos de animales y de plantas se beneficien del trabajo conjunto para solucionar aquellos problemas que les son comunes.
 
 ::: {.center data-latex=""}
 __Tabla 1.1:__ .
 :::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+
+tribble(
+  ~'Especie', ~'Carácter', ~'Habilidad predictiva', ~'Modelo', ~'Referencia',
+  '', '', '', '', ''
+  ) %>%
+  gt()
+```
 
 ### Relevancia de la mejora genética en arroz
 

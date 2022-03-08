@@ -83,4 +83,373 @@ fn.mH <- function(ped, mG) { # Esta función recibe como argu-
   }
 ```
 
+## Habilidad predictiva
 
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 1'
+    )
+
+Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 2'
+    )
+
+Cor_ped_3_est <- read_delim(here('figures', 'Ped3_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 3'
+    )
+
+Cor_ped <- bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est)
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 1') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 1',
+    subtitle = '751 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 2') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 2',
+    subtitle = '1661 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 3') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 3',
+    subtitle = '2451 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+```
+
+## Habilidad predictiva
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+Cor_F2_est <- read_delim(here('figures', 'Ped_F2.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F2',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+    )
+
+Cor_F3_est <- read_delim(here('figures', 'Ped_F3.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F3',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+  )
+
+Cor_F2_F3 <- bind_rows(Cor_F2_est, Cor_F3_est)
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 1') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 1',
+    subtitle = '2061 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 2') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 2',
+    subtitle = '2071 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 3') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 3',
+    subtitle = '2091 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 4') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 4',
+    subtitle = '2131 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+```
