@@ -289,7 +289,9 @@ h2_ped_1 <- read_delim(here('figures', 'h2_ped1.txt'), delim = '\t') %>%
   mutate(h2 = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
 
 varU_ped1 <- ggplot(data = varU_ped_1, aes(x = varU)) +
-  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.4) +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.48, y = 15, label = TeX('$(0.36; 0.51)$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.48, y = 13, label = TeX('$\\bar{x} = 0.43$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - Var(a)', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
@@ -301,25 +303,29 @@ varU_ped1 <- ggplot(data = varU_ped_1, aes(x = varU)) +
     )
 
 varE_ped1 <- ggplot(data = varE_ped_1, aes(x = varE)) +
-  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.4) +
+  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.20, y = 25, label = TeX('$(0.13; 0.23)$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.20, y = 23, label = TeX('$\\bar{x} = 0.16$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - Var(e)', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
     axis.text.x = element_text(size = 12, face = 'bold'),
     axis.title.x = element_text(size = 13, face = 'bold'),
-    axis.text.y = element_blank(),
+    #axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     plot.title = element_text(size = 10, face = 'bold')
     )
 
 h2_ped1 <- ggplot(data = h2_ped_1, aes(x = h2)) +
   geom_density(color = 'red', fill = 'red', alpha = 0.4) +
+  annotate(geom = 'text', x = 0.77, y = 15, label = TeX('$(0.62; 0.79)$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.72$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - h2', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
     axis.text.x = element_text(size = 12, face = 'bold'),
     axis.title.x = element_text(size = 13, face = 'bold'),
-    axis.text.y = element_blank(),
+    #axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     plot.title = element_text(size = 10, face = 'bold')
     )

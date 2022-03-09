@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.23)  8 MAR 2022 09:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.2.23)  9 MAR 2022 05:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,181 +615,293 @@ Package pdftex.def Info: figures/Ped.pdf  used on input line 343.
 LaTeX Info: Redefining \. on input line 351.
 LaTeX Info: Redefining \% on input line 351.
 [9 <./figures/Ped.pdf>]
-<figures/BLUPs.pdf, id=324, 446.66875pt x 302.12875pt>
+<figures/BLUPs.pdf, id=333, 446.66875pt x 302.12875pt>
 File: figures/BLUPs.pdf Graphic file (type pdf)
 <use figures/BLUPs.pdf>
-Package pdftex.def Info: figures/BLUPs.pdf  used on input line 355.
+Package pdftex.def Info: figures/BLUPs.pdf  used on input line 357.
 (pdftex.def)             Requested size: 360.00719pt x 243.51048pt.
-LaTeX Info: Redefining \. on input line 372.
-LaTeX Info: Redefining \% on input line 372.
-[10 <./figures/BLUPs.pdf>]
-<figures/Mej_Anim_Plan.pdf, id=347, 446.66875pt x 302.12875pt>
+LaTeX Info: Redefining \. on input line 357.
+LaTeX Info: Redefining \% on input line 357.
+[10]
+LaTeX Info: Redefining \. on input line 376.
+LaTeX Info: Redefining \% on input line 376.
+[11 <./figures/BLUPs.pdf>]
+<figures/Mej_Anim_Plan.pdf, id=371, 446.66875pt x 302.12875pt>
 File: figures/Mej_Anim_Plan.pdf Graphic file (type pdf)
 <use figures/Mej_Anim_Plan.pdf>
-Package pdftex.def Info: figures/Mej_Anim_Plan.pdf  used on input line 375.
+Package pdftex.def Info: figures/Mej_Anim_Plan.pdf  used on input line 379.
 (pdftex.def)             Requested size: 360.00719pt x 243.51048pt.
-LaTeX Info: Redefining \. on input line 380.
-LaTeX Info: Redefining \% on input line 380.
-[11 <./figures/Mej_Anim_Plan.pdf>]
-LaTeX Info: Redefining \. on input line 393.
-LaTeX Info: Redefining \% on input line 393.
-[12]
-LaTeX Info: Redefining \. on input line 418.
-LaTeX Info: Redefining \% on input line 418.
+LaTeX Info: Redefining \. on input line 384.
+LaTeX Info: Redefining \% on input line 384.
+[12 <./figures/Mej_Anim_Plan.pdf>]
+LaTeX Info: Redefining \. on input line 397.
+LaTeX Info: Redefining \% on input line 397.
 [13]
+LaTeX Info: Redefining \. on input line 422.
+LaTeX Info: Redefining \% on input line 422.
+[14]
 Cap\'{\i }tulo 2.
-[14
+[15
 
 ]
-LaTeX Info: Redefining \. on input line 445.
-LaTeX Info: Redefining \% on input line 445.
-[15]
-LaTeX Info: Redefining \. on input line 453.
-LaTeX Info: Redefining \% on input line 453.
+LaTeX Info: Redefining \. on input line 449.
+LaTeX Info: Redefining \% on input line 449.
 [16]
+LaTeX Info: Redefining \. on input line 457.
+LaTeX Info: Redefining \% on input line 457.
+[17]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 460.
+(Font)              <9> on input line 464.
 
-Overfull \hbox (14.93681pt too wide) in paragraph at lines 460--460
+Overfull \hbox (14.93681pt too wide) in paragraph at lines 464--464
 [][][][][]$\T1/lmr/m/n/9 https : / / snp-[]seek . irri . org / index . zul ; js
 essionid = DD991975FDC4F320BE3C33ED056D0363$[][]| 
  []
 
-<figures/Graf_PCA.png, id=468, 715.17188pt x 489.32813pt>
+<figures/Graf_PCA.png, id=487, 715.17188pt x 489.32813pt>
 File: figures/Graf_PCA.png Graphic file (type png)
 <use figures/Graf_PCA.png>
-Package pdftex.def Info: figures/Graf_PCA.png  used on input line 464.
+Package pdftex.def Info: figures/Graf_PCA.png  used on input line 468.
 (pdftex.def)             Requested size: 359.99675pt x 246.31355pt.
-LaTeX Info: Redefining \. on input line 468.
-LaTeX Info: Redefining \% on input line 468.
-[17 <./figures/Graf_PCA.png (PNG copy)>]
-<figures/Graf_feno.png, id=482, 715.17188pt x 489.32813pt>
+LaTeX Info: Redefining \. on input line 472.
+LaTeX Info: Redefining \% on input line 472.
+[18 <./figures/Graf_PCA.png (PNG copy)>]
+<figures/Graf_feno.png, id=501, 715.17188pt x 489.32813pt>
 File: figures/Graf_feno.png Graphic file (type png)
 <use figures/Graf_feno.png>
-Package pdftex.def Info: figures/Graf_feno.png  used on input line 473.
+Package pdftex.def Info: figures/Graf_feno.png  used on input line 477.
 (pdftex.def)             Requested size: 359.99675pt x 246.31355pt.
-<TFM_files/figure-latex/unnamed-chunk-18-1.pdf, id=484, 469.755pt x 244.915pt>
+<TFM_files/figure-latex/unnamed-chunk-18-1.pdf, id=503, 469.755pt x 244.915pt>
 File: TFM_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-18-1.pdf  used on
- input line 482.
+ input line 486.
 (pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
-LaTeX Info: Redefining \. on input line 482.
-LaTeX Info: Redefining \% on input line 482.
-[18 <./figures/Graf_feno.png (PNG copy)>]
-<TFM_files/figure-latex/unnamed-chunk-19-1.pdf, id=490, 456.70625pt x 312.16624
+LaTeX Info: Redefining \. on input line 486.
+LaTeX Info: Redefining \% on input line 486.
+[19 <./figures/Graf_feno.png (PNG copy)>]
+<TFM_files/figure-latex/unnamed-chunk-19-1.pdf, id=509, 456.70625pt x 312.16624
 pt>
 File: TFM_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-19-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-19-1.pdf  used on
- input line 514.
+ input line 518.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 514.
-LaTeX Info: Redefining \% on input line 514.
-[19 <./TFM_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-20-1.pdf, id=508, 456.70625pt x 312.16624
+LaTeX Info: Redefining \. on input line 518.
+LaTeX Info: Redefining \% on input line 518.
+[20 <./TFM_files/figure-latex/unnamed-chunk-18-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-20-1.pdf, id=528, 456.70625pt x 312.16624
 pt>
 File: TFM_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-20-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-20-1.pdf  used on
- input line 526.
+ input line 530.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 526.
-LaTeX Info: Redefining \% on input line 526.
-[20 <./TFM_files/figure-latex/unnamed-chunk-19-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-22-1.pdf, id=524, 469.755pt x 323.2075pt>
+LaTeX Info: Redefining \. on input line 530.
+LaTeX Info: Redefining \% on input line 530.
+[21 <./TFM_files/figure-latex/unnamed-chunk-19-1.pdf>]
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 564--564
+[]\T1/lmtt/m/n/10.95 ## -- Column specification -------------------------------
+-------------[] 
+ []
 
+
+Overfull \hbox (42.41135pt too wide) in paragraph at lines 564--564
+[]\T1/lmtt/m/n/10.95 ## dbl (10): value...1, value...2, value...3, value...4, v
+alue...5,...[] 
+ []
+
+
+Overfull \hbox (65.40628pt too wide) in paragraph at lines 570--570
+[]\T1/lmtt/m/n/10.95 ## i Use `spec()` to retrieve the full column specificatio
+n for this data.[] 
+ []
+
+
+Overfull \hbox (122.89362pt too wide) in paragraph at lines 570--570
+[]\T1/lmtt/m/n/10.95 ## i Specify the column types or set `show_col_types = FAL
+SE` to quiet this message.[] 
+ []
+
+LaTeX Info: Redefining \. on input line 574.
+LaTeX Info: Redefining \% on input line 574.
+[22 <./TFM_files/figure-latex/unnamed-chunk-20-1.pdf>]
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 580--580
+[]\T1/lmtt/m/n/10.95 ## -- Column specification -------------------------------
+-------------[] 
+ []
+
+
+Overfull \hbox (42.41135pt too wide) in paragraph at lines 580--580
+[]\T1/lmtt/m/n/10.95 ## dbl (10): value...1, value...2, value...3, value...4, v
+alue...5,...[] 
+ []
+
+
+Overfull \hbox (65.40628pt too wide) in paragraph at lines 586--586
+[]\T1/lmtt/m/n/10.95 ## i Use `spec()` to retrieve the full column specificatio
+n for this data.[] 
+ []
+
+
+Overfull \hbox (122.89362pt too wide) in paragraph at lines 586--586
+[]\T1/lmtt/m/n/10.95 ## i Specify the column types or set `show_col_types = FAL
+SE` to quiet this message.[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 596--596
+[]\T1/lmtt/m/n/10.95 ## -- Column specification -------------------------------
+-------------[] 
+ []
+
+
+Overfull \hbox (42.41135pt too wide) in paragraph at lines 596--596
+[]\T1/lmtt/m/n/10.95 ## dbl (10): value...1, value...2, value...3, value...4, v
+alue...5,...[] 
+ []
+
+
+Overfull \hbox (65.40628pt too wide) in paragraph at lines 602--602
+[]\T1/lmtt/m/n/10.95 ## i Use `spec()` to retrieve the full column specificatio
+n for this data.[] 
+ []
+
+
+Overfull \hbox (122.89362pt too wide) in paragraph at lines 602--602
+[]\T1/lmtt/m/n/10.95 ## i Specify the column types or set `show_col_types = FAL
+SE` to quiet this message.[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+
+Overfull \hbox (48.16008pt too wide) in paragraph at lines 622--622
+[]\T1/lmtt/m/n/10.95 ## Warning in is.na(x): is.na() aplicado a un objeto que n
+o es (lista o[] 
+ []
+
+<TFM_files/figure-latex/unnamed-chunk-22-1.pdf, id=561, 451.6875pt x 302.12875p
+t>
 File: TFM_files/figure-latex/unnamed-chunk-22-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-22-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-22-1.pdf  used on
- input line 552.
-(pdftex.def)             Requested size: 359.99934pt x 247.69185pt.
-LaTeX Info: Redefining \. on input line 552.
-LaTeX Info: Redefining \% on input line 552.
-[21 <./TFM_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<figures/Cor_Bay_Pen.pdf, id=543, 460.72125pt x 308.15125pt>
+ input line 624.
+(pdftex.def)             Requested size: 360.0203pt x 240.81357pt.
+LaTeX Info: Redefining \. on input line 624.
+LaTeX Info: Redefining \% on input line 624.
+[23]
+<figures/Cor_Bay_Pen.pdf, id=566, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen.pdf>
-Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 561.
+Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 633.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-<figures/Cor_F2_F3.pdf, id=544, 460.72125pt x 308.15125pt>
+<figures/Cor_F2_F3.pdf, id=567, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
-Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 568.
+Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 640.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 568.
-LaTeX Info: Redefining \% on input line 568.
-[22 <./TFM_files/figure-latex/unnamed-chunk-22-1.pdf> <./figures/Cor_Bay_Pen.pd
+LaTeX Info: Redefining \. on input line 640.
+LaTeX Info: Redefining \% on input line 640.
+[24 <./TFM_files/figure-latex/unnamed-chunk-22-1.pdf> <./figures/Cor_Bay_Pen.pd
 f>]
-LaTeX Info: Redefining \. on input line 583.
-LaTeX Info: Redefining \% on input line 583.
-[23 <./figures/Cor_F2_F3.pdf>]
+LaTeX Info: Redefining \. on input line 655.
+LaTeX Info: Redefining \% on input line 655.
+[25 <./figures/Cor_F2_F3.pdf>]
 Ap\'{e}ndice A.
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 590.
-[24
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 662.
+[26
 
 ]
-LaTeX Info: Redefining \. on input line 697.
-LaTeX Info: Redefining \% on input line 697.
-[25]
-LaTeX Info: Redefining \. on input line 731.
-LaTeX Info: Redefining \% on input line 731.
-[26]
+LaTeX Info: Redefining \. on input line 769.
+LaTeX Info: Redefining \% on input line 769.
+[27]
 LaTeX Info: Redefining \. on input line 803.
 LaTeX Info: Redefining \% on input line 803.
-[27]
-LaTeX Info: Redefining \. on input line 871.
-LaTeX Info: Redefining \% on input line 871.
 [28]
-LaTeX Info: Redefining \. on input line 907.
-LaTeX Info: Redefining \% on input line 907.
+LaTeX Info: Redefining \. on input line 875.
+LaTeX Info: Redefining \% on input line 875.
 [29]
-Underfull \hbox (badness 1205) in paragraph at lines 952--954
+LaTeX Info: Redefining \. on input line 943.
+LaTeX Info: Redefining \% on input line 943.
+[30]
+LaTeX Info: Redefining \. on input line 979.
+LaTeX Info: Redefining \% on input line 979.
+[31]
+Underfull \hbox (badness 1205) in paragraph at lines 1024--1026
  [][]\T1/lmr/m/n/10.95 Grinberg, N. F., O. I. Orho-bor, y R. D. King. 2020. ^^S
 An eval-u-a-
  []
 
 
-Underfull \hbox (badness 6542) in paragraph at lines 952--954
+Underfull \hbox (badness 6542) in paragraph at lines 1024--1026
  \T1/lmr/m/n/10.95 tion of machine-learning for pre-dict-ing phe-no-type: stud-
 ies in
  []
 
 
-Underfull \hbox (badness 3260) in paragraph at lines 952--954
+Underfull \hbox (badness 3260) in paragraph at lines 1024--1026
  \T1/lmr/m/n/10.95 yeast, rice, and wheat^^T. \T1/lmr/m/it/10.95 Ma-chine Learn
 -ing \T1/lmr/m/n/10.95 109: 251-77. [][]$https :
  []
 
-[30
+[32
 
 
 ]
-Underfull \hbox (badness 2884) in paragraph at lines 988--990
+Underfull \hbox (badness 2884) in paragraph at lines 1060--1062
  \T1/lmr/m/n/10.95 In-crease Pre-dic-tion Ac-cu-ra-cy in Ge-nom-ic Se-lec-tion 
 of Com-plex
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 988--990
+Underfull \hbox (badness 3646) in paragraph at lines 1060--1062
  \T1/lmr/m/n/10.95 Traits in Al-fal-fa (Med-ica-go sati-va L.)^^T. \T1/lmr/m/it
 /10.95 Cells \T1/lmr/m/n/10.95 10 (12). [][]$https :
  []
 
-[31] [32] [33]
-<figures/uvalogo_regular_p_en.pdf, id=675, 433.62pt x 389.5353pt>
+[33] [34] [35]
+<figures/uvalogo_regular_p_en.pdf, id=701, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-059.
+131.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1059--1060
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1131--1132
 [][] 
  []
 
-[34
+[36
 
  <./figures/uvalogo_regular_p_en.pdf>] (./TFM.aux
 LaTeX Info: Redefining \. on input line 22.
@@ -799,13 +911,13 @@ Package rerunfilecheck Info: File `TFM.out' has not changed.
 (rerunfilecheck)             Checksum: 25022B0B03DE3CFF075F4425C6C83265;2541.
  ) 
 Here is how much of TeX's memory you used:
- 13394 strings out of 480238
- 218245 string characters out of 5895918
+ 13396 strings out of 480238
+ 218259 string characters out of 5895918
  516261 words of memory out of 5000000
  30950 multiletter control sequences out of 15000+600000
  556977 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,9n,63p,1302b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,9n,63p,1603b,479s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.TinyT
 eX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/f
 onts/enc/dvips/lm/lm-rm.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
@@ -827,10 +939,10 @@ eX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fo
 nts/type1/public/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publi
 c/lm/lmtt10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pf
 b>
-Output written on TFM.pdf (39 pages, 3738870 bytes).
+Output written on TFM.pdf (41 pages, 3875864 bytes).
 PDF statistics:
- 811 PDF objects out of 1000 (max. 8388607)
- 665 compressed objects within 7 object streams
- 154 named destinations out of 1000 (max. 500000)
+ 837 PDF objects out of 1000 (max. 8388607)
+ 690 compressed objects within 7 object streams
+ 156 named destinations out of 1000 (max. 500000)
  231 words of extra memory for PDF output out of 10000 (max. 10000000)
 

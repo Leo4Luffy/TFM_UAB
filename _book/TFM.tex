@@ -352,12 +352,16 @@ En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP n
 \hypertarget{de-la-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}{%
 \subsection{De la selección genómica de múltiples pasos a un solo paso}\label{de-la-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}}
 
+Para implementar los métodos de selección genómica mencionados anteriormente (rrBLUP, BayesA-B-C, LASSO Bayesiano y GBLUP), es necesario disponer de información genotípica y fenotípica ya que los modelos estadísticos generalmente se construyen en base a esta información. Esta situación puede ser desventajosa al momento de implementar la selección genómica, ya que por lo general no todos los individuos pueden genotiparse y en ocasiones (principalmente en animales) no se tienen valores fenotípicos para caracteres de interés (por ejemplo, la producción de leche en machos) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}; Blasco \protect\hyperlink{ref-cite:21}{2021}). Como solución al problema de la falta de fenotipos, VanRaden (\protect\hyperlink{ref-cite:39}{2007}), con la implementación del GBLUP, propuso asignarle pseudo-fenotipos o valores de-regresados (estos son, valores fenotípicos estimados a partir de los EBV) a aquellos individuos con fenotipos faltantes, basándose en la información de sus parientes, permitiendo de esta forma implementar la selección genómica combinando los EBV y los genotipos a través de múltiples pasos (Figura 1.7) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}; Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/BLUPs} \end{center}
 
 \begin{center}
-\textbf{Figura 1.7:} ..
+\textbf{Figura 1.7:} Esquema de comparación de los métodos BLUP, GBLUP y ssGBLUP. El GBLUP es un proceso de tres pasos en el que los individuos, con base en su información fenotípica y de pedigrí, son evaluados inicialmente mediante el BLUP. Luego, a partir de los pseudo-fenotipos resultantes de esta evaluación genética inicial, se lleva a cabo un análisis genómico de los individuos genotipados mediante el GBLUP.
 
 \end{center}
+
+Empero, esta forma de implementar la selección genómica en múltiples pasos es tendente a cometer errores (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar, y Misztal (\protect\hyperlink{ref-cite:17}{2009}) simplificaron el proceso de varios pasos al desarrollar un método de selección genómica, en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su EBV (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}), método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
 \hypertarget{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Factores que pueden afectar la habilidad predictiva de la selección genómica}\label{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}}
@@ -548,6 +552,74 @@ Varianza ambiental & 0.11 & 0.17 & 0.13 \\
 Heredabilidad & 0.82 & 0.73 & 0.81 \\ 
  \bottomrule
 \end{longtable}
+
+\begin{verbatim}
+## Rows: 10000 Columns: 10
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------
+## Delimiter: "\t"
+## dbl (10): value...1, value...2, value...3, value...4, value...5,...
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{verbatim}
+## Rows: 10000 Columns: 10
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------
+## Delimiter: "\t"
+## dbl (10): value...1, value...2, value...3, value...4, value...5,...
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{verbatim}
+## Rows: 10000 Columns: 10
+\end{verbatim}
+
+\begin{verbatim}
+## -- Column specification --------------------------------------------
+## Delimiter: "\t"
+## dbl (10): value...1, value...2, value...3, value...4, value...5,...
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## i Use `spec()` to retrieve the full column specification for this data.
+## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+
+## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
+## vector) de tipo 'expression
+\end{verbatim}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-22-1} \end{center}
 
@@ -776,7 +848,7 @@ Genotipados & Media & Desvío & Media & Desvíó \\
 \toprule
  & \multicolumn{2}{c}{F2} & \multicolumn{2}{c}{F3} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-Genotipados & Media & Desvío & Media & Desvíó \\ 
+Genotipados & Media & Desvío & Media & Desvío \\ 
 \midrule
 \multicolumn{1}{l}{Densidad 0} \\ 
 \midrule
@@ -810,7 +882,7 @@ F2 & 0.581 & 0.097 & 0.568 & 0.090 \\
 \toprule
  & \multicolumn{2}{c}{F2} & \multicolumn{2}{c}{F3} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-Genotipados & Media & Desvío & Media & Desvíó \\ 
+Genotipados & Media & Desvío & Media & Desvío \\ 
 \midrule
 \multicolumn{1}{l}{Densidad 0} \\ 
 \midrule
@@ -844,7 +916,7 @@ F2 & 0.590 & 0.093 & 0.576 & 0.092 \\
 \toprule
  & \multicolumn{2}{c}{F2} & \multicolumn{2}{c}{F3} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-Genotipados & Media & Desvío & Media & Desvíó \\ 
+Genotipados & Media & Desvío & Media & Desvío \\ 
 \midrule
 \multicolumn{1}{l}{Densidad 0} \\ 
 \midrule
@@ -878,7 +950,7 @@ F2 & 0.607 & 0.052 & 0.581 & 0.049 \\
 \toprule
  & \multicolumn{2}{c}{F2} & \multicolumn{2}{c}{F3} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
-Genotipados & Media & Desvío & Media & Desvíó \\ 
+Genotipados & Media & Desvío & Media & Desvío \\ 
 \midrule
 \multicolumn{1}{l}{Densidad 0} \\ 
 \midrule
