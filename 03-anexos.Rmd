@@ -60,7 +60,7 @@ fn.mH <- function(ped, mG) { # Esta función recibe como argu-
   colnames(mG) <- ped$id[ped$Genotiped == 1]
   
   # 4. Teniendo todos los componentes de la matriz H, se pro-
-  # cede a su construcción y a calcular su inversa
+  # cede a su construcción
   
   H_11 <- A_11 - 
     (A_12 %*% solve(A_22) %*% A_21) + 
