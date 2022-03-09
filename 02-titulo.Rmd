@@ -260,22 +260,37 @@ data.frame(
 __Tabla 2.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
 :::
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
 
 tribble(
-  ~'Parámetros', ~'Pedigrí 1', ~'Pedigrí 2', ~'Pedigrí 3',
-  'Varianza aditiva', 0.49, 0.46, 0.57,
-  'Varianza ambiental', 0.11, 0.17, 0.13,
-  'Heredabilidad', 0.82, 0.73, 0.81
+  ~'Parámetros', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
+  'Varianza aditiva', 0.43, 0.50, 0.56, NA, NA, NA,
+  'Varianza ambiental', 0.16, 0.14, 0.11, NA, NA, NA,
+  'Heredabilidad', 0.72, 0.78, 0.83, NA, NA, NA
   ) %>%
   gt() %>%
+  cols_label(
+    Pedigrí_a = 'Ped. 1',
+    Pedigrí_b = 'Ped. 2',
+    Pedigrí_c = 'Ped. 3'
+  ) %>%
   tab_spanner(
-    label = 'reml',
+    label = 'Bayesiano',
     columns = c(2, 3, 4)
+    ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(5, 6, 7)
+    ) %>%
+  tab_footnote(
+    footnote = 'Ped. 1 indica Pedigrí 1',
+    locations = cells_column_labels(
+      columns = 'Ped. 1'
     )
+  )
 ```
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
 # Pedigrí 1 (Bayesiano) ----
 
@@ -290,13 +305,13 @@ h2_ped_1 <- read_delim(here('figures', 'h2_ped1.txt'), delim = '\t') %>%
 
 varU_ped1 <- ggplot(data = varU_ped_1, aes(x = varU)) +
   geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 0.48, y = 15, label = TeX('$(0.36; 0.51)$'), size = 4.8) +
-  annotate(geom = 'text', x = 0.48, y = 13, label = TeX('$\\bar{x} = 0.43$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.48, y = 15, label = TeX('$|0.36; 0.51|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.48, y = 13, label = TeX('$\\bar{x} = 0.43$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - Var(a)', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
-    axis.text.x = element_text(size = 12, face = 'bold'),
-    axis.title.x = element_text(size = 13, face = 'bold'),
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
     axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     plot.title = element_text(size = 10, face = 'bold')
@@ -304,35 +319,141 @@ varU_ped1 <- ggplot(data = varU_ped_1, aes(x = varU)) +
 
 varE_ped1 <- ggplot(data = varE_ped_1, aes(x = varE)) +
   geom_density(color = 'cyan', fill = 'cyan', alpha = 0.2) +
-  annotate(geom = 'text', x = 0.20, y = 25, label = TeX('$(0.13; 0.23)$'), size = 4.8) +
-  annotate(geom = 'text', x = 0.20, y = 23, label = TeX('$\\bar{x} = 0.16$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.20, y = 25, label = TeX('$|0.13; 0.23|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.20, y = 23, label = TeX('$\\bar{x} = 0.16$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - Var(e)', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
-    axis.text.x = element_text(size = 12, face = 'bold'),
-    axis.title.x = element_text(size = 13, face = 'bold'),
-    #axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     plot.title = element_text(size = 10, face = 'bold')
     )
 
 h2_ped1 <- ggplot(data = h2_ped_1, aes(x = h2)) +
   geom_density(color = 'red', fill = 'red', alpha = 0.4) +
-  annotate(geom = 'text', x = 0.77, y = 15, label = TeX('$(0.62; 0.79)$'), size = 4.8) +
-  annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.72$'), size = 4.8) +
+  annotate(geom = 'text', x = 0.65, y = 15, label = TeX('$|0.62; 0.79|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.72$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - h2', x = 'Valor estimado', y = ' ') +
   theme_bw() +
   theme(
-    axis.text.x = element_text(size = 12, face = 'bold'),
-    axis.title.x = element_text(size = 13, face = 'bold'),
-    #axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
     axis.ticks.y = element_blank(),
     plot.title = element_text(size = 10, face = 'bold')
     )
 
-(varU_ped1 | varE_ped1 | h2_ped1)
+# Pedigrí 2 (Bayesiano) ----
 
-#ggdraw() + draw_image('figures/covarianza_heredabilidad.png')
+varU_ped_2 <- read_delim(here('figures', 'varU_ped2.txt'), delim = '\t') %>%
+  mutate(varU = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varE_ped_2 <- read_delim(here('figures', 'varE_ped2.txt'), delim = '\t') %>%
+  mutate(varE = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+h2_ped_2 <- read_delim(here('figures', 'h2_ped2.txt'), delim = '\t') %>%
+  mutate(h2 = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varU_ped2 <- ggplot(data = varU_ped_2, aes(x = varU)) +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.43, y = 14, label = TeX('$|0.40; 0.58|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.48, y = 13, label = TeX('$\\bar{x} = 0.50$'), size = 4.8) +
+  labs(title = 'Pedigrí 2 - Var(a)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+varE_ped2 <- ggplot(data = varE_ped_2, aes(x = varE)) +
+  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.17, y = 24, label = TeX('$|0.10; 0.19|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.20, y = 23, label = TeX('$\\bar{x} = 0.14$'), size = 4.8) +
+  labs(title = 'Pedigrí 2 - Var(e)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+h2_ped2 <- ggplot(data = h2_ped_2, aes(x = h2)) +
+  geom_density(color = 'red', fill = 'red', alpha = 0.4) +
+  annotate(geom = 'text', x = 0.72, y = 14, label = TeX('$|0.69; 0.85|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.78$'), size = 4.8) +
+  labs(title = 'Pedigrí 2 - h2', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+# Pedigrí 3 (Bayesiano) ----
+
+varU_ped_3 <- read_delim(here('figures', 'varU_ped3.txt'), delim = '\t') %>%
+  mutate(varU = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varE_ped_3 <- read_delim(here('figures', 'varE_ped3.txt'), delim = '\t') %>%
+  mutate(varE = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+h2_ped_3 <- read_delim(here('figures', 'h2_ped3.txt'), delim = '\t') %>%
+  mutate(h2 = (value...1 + value...2 + value...3 + value...4 + value...5 + value...6 + value...7 + value...8 + value...9 + value...10)/10)
+
+varU_ped3 <- ggplot(data = varU_ped_3, aes(x = varU)) +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.475, y = 14, label = TeX('$|0.35; 0.65|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.48, y = 13, label = TeX('$\\bar{x} = 0.56$'), size = 4.8) +
+  labs(title = 'Pedigrí 3 - Var(a)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+varE_ped3 <- ggplot(data = varE_ped_3, aes(x = varE)) +
+  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 0.14, y = 24, label = TeX('$|0.08; 0.16|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.20, y = 23, label = TeX('$\\bar{x} = 0.11$'), size = 4.8) +
+  labs(title = 'Pedigrí 3 - Var(e)', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 9, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+h2_ped3 <- ggplot(data = h2_ped_3, aes(x = h2)) +
+  geom_density(color = 'red', fill = 'red', alpha = 0.4) +
+  annotate(geom = 'text', x = 0.786, y = 14, label = TeX('$|0.76; 0.89|$'), size = 3.2) +
+  #annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.83$'), size = 4.8) +
+  labs(title = 'Pedigrí 3 - h2', x = 'Valor estimado', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    plot.title = element_text(size = 10, face = 'bold')
+    )
+
+(varU_ped1 | varE_ped1 | h2_ped1) / (varU_ped2 | varE_ped2 | h2_ped2) / (varU_ped3 | varE_ped3 | h2_ped3) -> covar_h2
+
+knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}

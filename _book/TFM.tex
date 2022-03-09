@@ -365,9 +365,9 @@ Empero, esta forma de implementar la selección genómica en múltiples pasos es
 
 En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matiz A) entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de pseudo-fenotipos (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
-El proceso de construcción de la matriz H es simple pero poderoso. De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí. Dicho proceso se observa a continuación:
+El proceso de construcción de la matriz H es simple. De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí. Dicho proceso se observa a continuación:
 
-Al ser una forma de BLUP o GBLUP en el que la matriz A y G, respectivamente, es sustituida por la matriz H (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Blasco \protect\hyperlink{ref-cite:21}{2021}), el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos (Blasco \protect\hyperlink{ref-cite:21}{2021}), además se adapta también a las herramientas informaticas ya desarrolladas en base al BLUP y GBLUP (Lourenco et~al. \protect\hyperlink{ref-cite:22}{2020}). Este hecho hace del ssGBLUP un método de uso rutinario para la selección genómica, donde ha demostrado que produce una predicción más precisa en comparación a ambos métodos antes mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
+Al ser una forma de BLUP o GBLUP en el que la matriz A y G, respectivamente, es sustituida por la matriz H (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Blasco \protect\hyperlink{ref-cite:21}{2021}), el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos (Blasco \protect\hyperlink{ref-cite:21}{2021}), además se adapta también a las herramientas informáticas ya desarrolladas en base al BLUP y GBLUP (Lourenco et~al. \protect\hyperlink{ref-cite:22}{2020}). Este hecho hace del ssGBLUP un método de uso rutinario para la selección genómica, donde ha demostrado que produce una predicción más precisa en comparación a los métodos BLUP y GBLUP ya mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
 \hypertarget{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Factores que pueden afectar la habilidad predictiva de la selección genómica}\label{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}}
@@ -547,87 +547,23 @@ Se uso el coeficiente de correlación entre los valores fenotípicos observados 
 \end{center}
 
 \captionsetup[table]{labelformat=empty,skip=1pt}
-\begin{longtable}{lrrr}
+\begin{longtable}{lrrrccc}
 \toprule
- & \multicolumn{3}{c}{reml} \\ 
- \cmidrule(lr){2-4}
-Parámetros & Pedigrí 1 & Pedigrí 2 & Pedigrí 3 \\ 
+ & \multicolumn{3}{c}{Bayesiano} & \multicolumn{3}{c}{Penalizado} \\ 
+ \cmidrule(lr){2-4} \cmidrule(lr){5-7}
+Parámetros & Ped. 1\textsuperscript{1} & Ped. 2 & Ped. 3 & Ped. 1 & Ped. 2 & Ped. 3 \\ 
 \midrule
-Varianza aditiva & 0.49 & 0.46 & 0.57 \\ 
-Varianza ambiental & 0.11 & 0.17 & 0.13 \\ 
-Heredabilidad & 0.82 & 0.73 & 0.81 \\ 
+Varianza aditiva & 0.43 & 0.50 & 0.56 & NA & NA & NA \\ 
+Varianza ambiental & 0.16 & 0.14 & 0.11 & NA & NA & NA \\ 
+Heredabilidad & 0.72 & 0.78 & 0.83 & NA & NA & NA \\ 
  \bottomrule
 \end{longtable}
+\vspace{-5mm}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}Ped. 1 indica Pedigrí 1 \\ 
+\end{minipage}
 
-\begin{verbatim}
-## Rows: 10000 Columns: 10
-\end{verbatim}
-
-\begin{verbatim}
-## -- Column specification --------------------------------------------
-## Delimiter: "\t"
-## dbl (10): value...1, value...2, value...3, value...4, value...5,...
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
-\end{verbatim}
-
-\begin{verbatim}
-## Rows: 10000 Columns: 10
-\end{verbatim}
-
-\begin{verbatim}
-## -- Column specification --------------------------------------------
-## Delimiter: "\t"
-## dbl (10): value...1, value...2, value...3, value...4, value...5,...
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
-\end{verbatim}
-
-\begin{verbatim}
-## Rows: 10000 Columns: 10
-\end{verbatim}
-
-\begin{verbatim}
-## -- Column specification --------------------------------------------
-## Delimiter: "\t"
-## dbl (10): value...1, value...2, value...3, value...4, value...5,...
-\end{verbatim}
-
-\begin{verbatim}
-## 
-## i Use `spec()` to retrieve the full column specification for this data.
-## i Specify the column types or set `show_col_types = FALSE` to quiet this message.
-\end{verbatim}
-
-\begin{verbatim}
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-
-## Warning in is.na(x): is.na() aplicado a un objeto que no es (lista o
-## vector) de tipo 'expression
-\end{verbatim}
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-22-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2} \end{center}
 
 \begin{center}
 \textbf{Figura 2.5:} .
