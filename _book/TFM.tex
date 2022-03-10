@@ -195,7 +195,7 @@
 \setlength{\fboxsep}{.8em}
 
 \newenvironment{blackbox}{
-  \definecolor{shadecolor}{rgb}{141, 132, 127}  % cyan
+  %\definecolor{shadecolor}{rgb}{0, 0, 0}  % black
   \color{black}
   \begin{shaded}}
  {\end{shaded}}
@@ -468,10 +468,21 @@ Empero, esta forma de implementar la selección genómica en múltiples pasos es
 
 En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matiz A) entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de pseudo-fenotipos (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
-El proceso de construcción de la matriz H es simple (Bloque 1.1). De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
+El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
 \begin{infobox}
-\textbf{Bloque 1.1}
+\textbf{Recuadro 1.1}
+
+Sabiendo que la matriz \(H\) equivale a:
+
+\begin{align*}
+\begin{bmatrix}
+var(g_{1}) & cov(g_{1}, g_{2}) \\ 
+cov(g_{2}, g_{1}) & var(g_{2)} 
+\end{bmatrix}
+\end{align*}
+
+El desarrollo de las ecuaciones que conducen a la matriz \(H\) se explican a continuación.
 
 Partiendo de un modelo GBLUP en el que no se incluyen efectos fijos, \(y = Zg + e\), un modelo en el cual se incluyen tanto individuos genotipados como no genotipados puede ser de la forma:
 
@@ -484,25 +495,53 @@ donde \(g_{1}\) corresponde a los individuos no genotipados, y \(g_{2}\) a los i
 Para estimar el parentesco genómico de los individuos no genotipados, sus valores de cría (\(g_{1}\)) se predicen a partir de los valores de cría de los individuos que si lo están (\(g_{2}\)), con base en la expresión:
 
 \begin{align*}
-a_{1} = cov(a_{1}, a_{2}) \times \left[ var(a_{2} \right]^{-1} \times a_{2} + e
+g_{1} = cov(g_{1}, g_{2}) \times \left[ var(g_{2} \right]^{-1} \times g_{2} + e
 \end{align*}
 
 Sabiendo que la matriz de parentesco en base al pedigrí (\(A\)) puede descomponerse como \(\begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix}\), donde \(A_{11}\) y \(A_{22}\) corresponden, respectivamente, a las matrices de parentesco en base al pedigrí de los individuos no genotipados y genotipados (o bien, la varianza de sus respectivos valores de cría), y \(A_{12}\) = \(A_{21}\) corresponden a la matriz de parentesco en base al pedigrí entre individuos genotipados y no genotipados (o bien, la covarianza de sus valores de cría), la expresión anterior puede reescribirse de la siguiente forma:
 
 \begin{align*}
-a_{1} = A_{12} \times A_{22}^{-1} \times a_{2} + e
+g_{1} = A_{12} \times A_{22}^{-1} \times g_{2} + e
 \end{align*}
 
 Luego la expresión anterior en términos de varianza:
 
 \begin{align*}
-var(a_{1}) = var(A_{12} \times A_{22}^{-1} \times a_{2}) + var(e)
+var(g_{1}) = var(A_{12} \times A_{22}^{-1} \times g_{2}) + var(e)
 \end{align*}
 
-Con un poco de algebra, la expresión anterior pasa a ser:
+Con un poco de algebra, finalmete se tendía la expresión correspondiente a \(var(g_{1})\):
 
 \begin{align*}
-var(a_{1}) = A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21}
+var(g_{1}) = A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21}
+\end{align*}
+
+En relación a la expresión \(var(g_{2})\), esta sería igual a:
+
+\begin{align*}
+var(g_{2}) = G
+\end{align*}
+
+Por último, la expresión \(cov(g_{1}, g_{2})\), equivaldría a:
+
+\begin{align*}
+cov(g_{1}, g_{2}) = cov(A_{12} \times A_{22}^{-1} \times g_{2} + e, g_{2})
+\end{align*}
+
+Qué con un poco de algebra, equilvadría a:
+
+\begin{align*}
+cov(g_{1}, g_{2}) = A_{12} \times A_{22}^{-1} \times G
+\end{align*}
+
+Finalmente, la matriz que contiene las relaciones conjuntas de individuos genotipados y no genotipados sería:
+
+\begin{align*}
+H =
+\begin{bmatrix}
+A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21} & A_{12} \times A_{22}^{-1} \times G \\ 
+G \times A_{22}^{-1} \times A_{12}' & G 
+\end{bmatrix}
 \end{align*}
 
 \end{infobox}
