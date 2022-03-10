@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.9)  9 MAR 2022 14:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.9)  10 MAR 2022 08:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -381,35 +381,125 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
-)) (/home/leo/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)) (/home/leo/.TinyTeX/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+(/home/leo/.TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count299
+\Gm@cntv=\count300
+\c@Gm@tempcnt=\count301
+\Gm@bindingoffset=\dimen181
+\Gm@wd@mp=\dimen182
+\Gm@odd@mp=\dimen183
+\Gm@even@mp=\dimen184
+\Gm@layoutwidth=\dimen185
+\Gm@layoutheight=\dimen186
+\Gm@layouthoffset=\dimen187
+\Gm@layoutvoffset=\dimen188
+\Gm@dimlist=\toks27
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2019/12/05 v0.12 Display of landscape pages in PDF (HO)
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
+File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
+\BKM@id=\count302
+)) (/home/leo/.TinyTeX/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip58
+\enit@outerparindent=\dimen189
+\enit@toks=\toks28
+\enit@inbox=\box58
+\enit@count@id=\count303
+\enitdp@description=\count304
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2021/10/31 v2.13 LaTeX color extensions (UK)
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 227.
+LaTeX Info: Redefining \color on input line 711.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1352.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1356.
+Package xcolor Info: Model `RGB' extended on input line 1368.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1370.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1371.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
+)) (/home/leo/.TinyTeX/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2022/01/29 v0.5u Insert pages of external PDF documents (AM)
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count305
+\calc@Bcount=\count306
+\calc@Adimen=\dimen190
+\calc@Bdimen=\dimen191
+\calc@Askip=\skip59
+\calc@Bskip=\skip60
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count307
+\calc@Cskip=\skip61
+) (/home/leo/.TinyTeX/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2020/10/14 v3.0a eso-pic (RN)
+\ESO@tempdima=\dimen192
+\ESO@tempdimb=\dimen193
+)
+\AM@pagewidth=\dimen194
+\AM@pageheight=\dimen195
+\AM@fboxrule=\dimen196
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2022/01/29 v0.5u Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count308
+\AM@pagebox=\box59
+\AM@global@opts=\toks29
+\AM@pagecnt=\count309
+\AM@toc@title=\toks30
+\c@AM@survey=\count310
+\AM@templatesizebox=\box60
+)
+\longtablewidth=\skip62
+(/home/leo/.TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count299
-\l__pdf_internal_box=\box58
+\l__color_backend_stack_int=\count311
+\l__pdf_internal_box=\box61
 ) (./TFM.aux
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
 )
 \openout1 = `TFM.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 141.
-LaTeX Font Info:    ... okay on input line 141.
-Package hyperref Info: Link coloring ON on input line 141.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 244.
+LaTeX Font Info:    ... okay on input line 244.
+Package hyperref Info: Link coloring ON on input line 244.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
@@ -417,17 +507,13 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/home/leo/.TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count300
+\c@section@level=\count312
 )
-LaTeX Info: Redefining \ref on input line 141.
-LaTeX Info: Redefining \pageref on input line 141.
-LaTeX Info: Redefining \nameref on input line 141.
-(./TFM.out) (./TFM.out)
-\@outlinefile=\write4
-\openout4 = `TFM.out'.
-
-LaTeX Info: Redefining \. on input line 141.
-LaTeX Info: Redefining \% on input line 141.
+LaTeX Info: Redefining \ref on input line 244.
+LaTeX Info: Redefining \pageref on input line 244.
+LaTeX Info: Redefining \nameref on input line 244.
+LaTeX Info: Redefining \. on input line 244.
+LaTeX Info: Redefining \% on input line 244.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -438,79 +524,107 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* pass: disregarded the geometry package!
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=360.0pt
+* \textheight=595.80026pt
+* \oddsidemargin=46.0pt
+* \evensidemargin=46.0pt
+* \topmargin=22.0pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=11.0pt
+* \footskip=27.46295pt
+* \marginparwidth=53.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
 [1
 
 
 {/home/leo/.TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-62.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 2
+65.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-62.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 2
+65.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-162.
+265.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-162.
+265.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 162.
+(Font)              <10> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 162.
+(Font)              <7> on input line 265.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 162.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 162
+(Font)              <5> on input line 265.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 265
 .
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 162
+LaTeX Font Info:    Trying to load font information for U+msb on input line 265
 .
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-62.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
+65.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-<_bookdown_files/CC-BY.png, id=70, 97.0827pt x 33.9669pt>
+<_bookdown_files/CC-BY.png, id=10, 97.0827pt x 33.9669pt>
 File: _bookdown_files/CC-BY.png Graphic file (type png)
 <use _bookdown_files/CC-BY.png>
-Package pdftex.def Info: _bookdown_files/CC-BY.png  used on input line 165.
+Package pdftex.def Info: _bookdown_files/CC-BY.png  used on input line 268.
 (pdftex.def)             Requested size: 97.0854pt x 33.96783pt.
 [2
 
  <./_bookdown_files/CC-BY.png>]
-<_bookdown_files/logo_uab.png, id=82, 758.835pt x 351.3125pt>
+<_bookdown_files/logo_uab.png, id=22, 758.835pt x 351.3125pt>
 File: _bookdown_files/logo_uab.png Graphic file (type png)
 <use _bookdown_files/logo_uab.png>
-Package pdftex.def Info: _bookdown_files/logo_uab.png  used on input line 175.
+Package pdftex.def Info: _bookdown_files/logo_uab.png  used on input line 278.
 (pdftex.def)             Requested size: 116.64558pt x 54.00258pt.
-<_bookdown_files/logo_upv.jpg, id=83, 1927.2pt x 1084.05pt>
+<_bookdown_files/logo_upv.jpg, id=23, 1927.2pt x 1084.05pt>
 File: _bookdown_files/logo_upv.jpg Graphic file (type jpg)
 <use _bookdown_files/logo_upv.jpg>
-Package pdftex.def Info: _bookdown_files/logo_upv.jpg  used on input line 175.
+Package pdftex.def Info: _bookdown_files/logo_upv.jpg  used on input line 278.
 (pdftex.def)             Requested size: 116.65623pt x 65.61913pt.
-<_bookdown_files/logo_ciheam.jpg, id=84, 436.63126pt x 287.0725pt>
+<_bookdown_files/logo_ciheam.jpg, id=24, 436.63126pt x 287.0725pt>
 File: _bookdown_files/logo_ciheam.jpg Graphic file (type jpg)
 <use _bookdown_files/logo_ciheam.jpg>
-Package pdftex.def Info: _bookdown_files/logo_ciheam.jpg  used on input line 17
-5.
+Package pdftex.def Info: _bookdown_files/logo_ciheam.jpg  used on input line 27
+8.
 (pdftex.def)             Requested size: 116.65279pt x 76.69586pt.
-<_bookdown_files/logo_crag.png, id=85, 711.3777pt x 284.7438pt>
+<_bookdown_files/logo_crag.png, id=25, 711.3777pt x 284.7438pt>
 File: _bookdown_files/logo_crag.png Graphic file (type png)
 <use _bookdown_files/logo_crag.png>
-Package pdftex.def Info: _bookdown_files/logo_crag.png  used on input line 189.
+Package pdftex.def Info: _bookdown_files/logo_crag.png  used on input line 292.
 
 (pdftex.def)             Requested size: 125.18765pt x 50.10898pt.
 [3
@@ -518,23 +632,23 @@ Package pdftex.def Info: _bookdown_files/logo_crag.png  used on input line 189.
  <./_bookdown_files/logo_uab.png> <./_bookdown_files/logo_upv.jpg> <./_bookdown
 _files/logo_ciheam.jpg> <./_bookdown_files/logo_crag.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 197.
+(Font)              <10.95> on input line 300.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 197.
+(Font)              <8> on input line 300.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 197.
+(Font)              <6> on input line 300.
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--204
+Underfull \hbox (badness 10000) in paragraph at lines 298--307
 
  []
 
 
-Overfull \hbox (52.59535pt too wide) in paragraph at lines 195--204
+Overfull \hbox (52.59535pt too wide) in paragraph at lines 298--307
 [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--204
+Underfull \hbox (badness 10000) in paragraph at lines 298--307
 
  []
 
@@ -544,313 +658,336 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--204
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@toc=\write5
-\openout5 = `TFM.toc'.
+\tf@toc=\write4
+\openout4 = `TFM.toc'.
 
 [5
 
 ]
 Cap\'{\i }tulo 1.
-<figures/Crono.pdf, id=120, 456.70625pt x 313.17pt>
+<figures/Crono.pdf, id=75, 456.70625pt x 313.17pt>
 File: figures/Crono.pdf Graphic file (type pdf)
 <use figures/Crono.pdf>
-Package pdftex.def Info: figures/Crono.pdf  used on input line 222.
+Package pdftex.def Info: figures/Crono.pdf  used on input line 325.
 (pdftex.def)             Requested size: 360.01347pt x 246.86638pt.
 [1
 
 
  <./figures/Crono.pdf>]
-LaTeX Info: Redefining \. on input line 236.
-LaTeX Info: Redefining \% on input line 236.
+LaTeX Info: Redefining \. on input line 339.
+LaTeX Info: Redefining \% on input line 339.
 [2]
-<figures/MAS.pdf, id=172, 456.70625pt x 312.16624pt>
+<figures/MAS.pdf, id=127, 456.70625pt x 312.16624pt>
 File: figures/MAS.pdf Graphic file (type pdf)
 <use figures/MAS.pdf>
-Package pdftex.def Info: figures/MAS.pdf  used on input line 239.
+Package pdftex.def Info: figures/MAS.pdf  used on input line 342.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 247.
-LaTeX Info: Redefining \% on input line 247.
+LaTeX Info: Redefining \. on input line 350.
+LaTeX Info: Redefining \% on input line 350.
 [3 <./figures/MAS.pdf>]
-<figures/GS.pdf, id=200, 456.70625pt x 312.16624pt>
+<figures/GS.pdf, id=154, 456.70625pt x 312.16624pt>
 File: figures/GS.pdf Graphic file (type pdf)
 <use figures/GS.pdf>
-Package pdftex.def Info: figures/GS.pdf  used on input line 258.
+Package pdftex.def Info: figures/GS.pdf  used on input line 361.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 258.
-LaTeX Info: Redefining \% on input line 258.
+LaTeX Info: Redefining \. on input line 361.
+LaTeX Info: Redefining \% on input line 361.
 [4]
-<figures/Mod_RL.pdf, id=219, 460.72125pt x 315.1775pt>
+<figures/Mod_RL.pdf, id=173, 460.72125pt x 315.1775pt>
 File: figures/Mod_RL.pdf Graphic file (type pdf)
 <use figures/Mod_RL.pdf>
-Package pdftex.def Info: figures/Mod_RL.pdf  used on input line 272.
+Package pdftex.def Info: figures/Mod_RL.pdf  used on input line 375.
 (pdftex.def)             Requested size: 360.00085pt x 246.2751pt.
-LaTeX Info: Redefining \. on input line 272.
-LaTeX Info: Redefining \% on input line 272.
+LaTeX Info: Redefining \. on input line 375.
+LaTeX Info: Redefining \% on input line 375.
 [5 <./figures/GS.pdf>]
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 285.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 388.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 285.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 388.
 
 
-LaTeX Warning: Command \textellipsis invalid in math mode on input line 293.
+LaTeX Warning: Command \textellipsis invalid in math mode on input line 396.
 
-LaTeX Info: Redefining \. on input line 294.
-LaTeX Info: Redefining \% on input line 294.
+LaTeX Info: Redefining \. on input line 397.
+LaTeX Info: Redefining \% on input line 397.
 [6 <./figures/Mod_RL.pdf>]
-<figures/Mod_GS.pdf, id=262, 446.66875pt x 302.12875pt>
+<figures/Mod_GS.pdf, id=217, 446.66875pt x 302.12875pt>
 File: figures/Mod_GS.pdf Graphic file (type pdf)
 <use figures/Mod_GS.pdf>
-Package pdftex.def Info: figures/Mod_GS.pdf  used on input line 297.
+Package pdftex.def Info: figures/Mod_GS.pdf  used on input line 400.
 (pdftex.def)             Requested size: 360.00719pt x 243.51048pt.
-LaTeX Info: Redefining \. on input line 310.
-LaTeX Info: Redefining \% on input line 310.
+LaTeX Info: Redefining \. on input line 413.
+LaTeX Info: Redefining \% on input line 413.
 [7 <./figures/Mod_GS.pdf>]
-LaTeX Info: Redefining \. on input line 321.
-LaTeX Info: Redefining \% on input line 321.
+LaTeX Info: Redefining \. on input line 424.
+LaTeX Info: Redefining \% on input line 424.
 [8]
-<figures/Ped.pdf, id=303, 456.70625pt x 312.16624pt>
+<figures/Ped.pdf, id=258, 456.70625pt x 312.16624pt>
 File: figures/Ped.pdf Graphic file (type pdf)
 <use figures/Ped.pdf>
-Package pdftex.def Info: figures/Ped.pdf  used on input line 343.
+Package pdftex.def Info: figures/Ped.pdf  used on input line 446.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 351.
-LaTeX Info: Redefining \% on input line 351.
+LaTeX Info: Redefining \. on input line 454.
+LaTeX Info: Redefining \% on input line 454.
 [9 <./figures/Ped.pdf>]
-<figures/BLUPs.pdf, id=334, 446.66875pt x 302.12875pt>
+<figures/BLUPs.pdf, id=288, 446.66875pt x 302.12875pt>
 File: figures/BLUPs.pdf Graphic file (type pdf)
 <use figures/BLUPs.pdf>
-Package pdftex.def Info: figures/BLUPs.pdf  used on input line 357.
+Package pdftex.def Info: figures/BLUPs.pdf  used on input line 460.
 (pdftex.def)             Requested size: 360.00719pt x 243.51048pt.
-LaTeX Info: Redefining \. on input line 357.
-LaTeX Info: Redefining \% on input line 357.
+LaTeX Info: Redefining \. on input line 460.
+LaTeX Info: Redefining \% on input line 460.
 [10]
-LaTeX Info: Redefining \. on input line 367.
-LaTeX Info: Redefining \% on input line 367.
+LaTeX Info: Redefining \. on input line 470.
+LaTeX Info: Redefining \% on input line 470.
 [11 <./figures/BLUPs.pdf>]
-LaTeX Info: Redefining \. on input line 385.
-LaTeX Info: Redefining \% on input line 385.
-[12]
-<figures/Mej_Anim_Plan.pdf, id=397, 446.66875pt x 302.12875pt>
+<figures/exam.png, id=328, 100.375pt x 100.375pt>
+File: figures/exam.png Graphic file (type png)
+<use figures/exam.png>
+Package pdftex.def Info: figures/exam.png  used on input line 474.
+(pdftex.def)             Requested size: 32.84969pt x 32.84969pt.
+LaTeX Info: Redefining \. on input line 508.
+LaTeX Info: Redefining \% on input line 508.
+[12 <./figures/exam.png>]
+LaTeX Info: Redefining \. on input line 522.
+LaTeX Info: Redefining \% on input line 522.
+[13]
+<figures/Mej_Anim_Plan.pdf, id=358, 446.66875pt x 302.12875pt>
 File: figures/Mej_Anim_Plan.pdf Graphic file (type pdf)
 <use figures/Mej_Anim_Plan.pdf>
-Package pdftex.def Info: figures/Mej_Anim_Plan.pdf  used on input line 385.
+Package pdftex.def Info: figures/Mej_Anim_Plan.pdf  used on input line 525.
 (pdftex.def)             Requested size: 360.00719pt x 243.51048pt.
-LaTeX Info: Redefining \. on input line 396.
-LaTeX Info: Redefining \% on input line 396.
-[13 <./figures/Mej_Anim_Plan.pdf>]
-LaTeX Info: Redefining \. on input line 409.
-LaTeX Info: Redefining \% on input line 409.
-[14]
-LaTeX Info: Redefining \. on input line 428.
-LaTeX Info: Redefining \% on input line 428.
+LaTeX Info: Redefining \. on input line 535.
+LaTeX Info: Redefining \% on input line 535.
+[14 <./figures/Mej_Anim_Plan.pdf>]
+LaTeX Info: Redefining \. on input line 548.
+LaTeX Info: Redefining \% on input line 548.
 [15]
+LaTeX Info: Redefining \. on input line 568.
+LaTeX Info: Redefining \% on input line 568.
+[16]
 Cap\'{\i }tulo 2.
-[16
+[17
 
 ]
-LaTeX Info: Redefining \. on input line 455.
-LaTeX Info: Redefining \% on input line 455.
-[17]
-LaTeX Info: Redefining \. on input line 463.
-LaTeX Info: Redefining \% on input line 463.
+LaTeX Info: Redefining \. on input line 595.
+LaTeX Info: Redefining \% on input line 595.
 [18]
+LaTeX Info: Redefining \. on input line 603.
+LaTeX Info: Redefining \% on input line 603.
+[19]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 470.
+(Font)              <9> on input line 610.
 
-Overfull \hbox (14.93681pt too wide) in paragraph at lines 470--470
+Overfull \hbox (14.93681pt too wide) in paragraph at lines 610--610
 [][][][][]$\T1/lmr/m/n/9 https : / / snp-[]seek . irri . org / index . zul ; js
 essionid = DD991975FDC4F320BE3C33ED056D0363$[][]| 
  []
 
-<figures/Graf_PCA.png, id=506, 715.17188pt x 489.32813pt>
+<figures/Graf_PCA.png, id=468, 715.17188pt x 489.32813pt>
 File: figures/Graf_PCA.png Graphic file (type png)
 <use figures/Graf_PCA.png>
-Package pdftex.def Info: figures/Graf_PCA.png  used on input line 474.
+Package pdftex.def Info: figures/Graf_PCA.png  used on input line 614.
 (pdftex.def)             Requested size: 359.99675pt x 246.31355pt.
-LaTeX Info: Redefining \. on input line 478.
-LaTeX Info: Redefining \% on input line 478.
-[19 <./figures/Graf_PCA.png (PNG copy)>]
-<figures/Graf_feno.png, id=519, 715.17188pt x 489.32813pt>
+LaTeX Info: Redefining \. on input line 618.
+LaTeX Info: Redefining \% on input line 618.
+[20 <./figures/Graf_PCA.png (PNG copy)>]
+<figures/Graf_feno.png, id=482, 715.17188pt x 489.32813pt>
 File: figures/Graf_feno.png Graphic file (type png)
 <use figures/Graf_feno.png>
-Package pdftex.def Info: figures/Graf_feno.png  used on input line 483.
+Package pdftex.def Info: figures/Graf_feno.png  used on input line 623.
 (pdftex.def)             Requested size: 359.99675pt x 246.31355pt.
-<TFM_files/figure-latex/unnamed-chunk-18-1.pdf, id=521, 469.755pt x 244.915pt>
+<TFM_files/figure-latex/unnamed-chunk-18-1.pdf, id=484, 469.755pt x 244.915pt>
 File: TFM_files/figure-latex/unnamed-chunk-18-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-18-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-18-1.pdf  used on
- input line 492.
+ input line 632.
 (pdftex.def)             Requested size: 359.99934pt x 187.69194pt.
-LaTeX Info: Redefining \. on input line 492.
-LaTeX Info: Redefining \% on input line 492.
-[20 <./figures/Graf_feno.png (PNG copy)>]
-<TFM_files/figure-latex/unnamed-chunk-19-1.pdf, id=528, 456.70625pt x 312.16624
+LaTeX Info: Redefining \. on input line 632.
+LaTeX Info: Redefining \% on input line 632.
+[21 <./figures/Graf_feno.png (PNG copy)>]
+<TFM_files/figure-latex/unnamed-chunk-19-1.pdf, id=490, 456.70625pt x 312.16624
 pt>
 File: TFM_files/figure-latex/unnamed-chunk-19-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-19-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-19-1.pdf  used on
- input line 524.
+ input line 664.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 524.
-LaTeX Info: Redefining \% on input line 524.
-[21 <./TFM_files/figure-latex/unnamed-chunk-18-1.pdf>]
-<TFM_files/figure-latex/unnamed-chunk-20-1.pdf, id=546, 456.70625pt x 312.16624
+LaTeX Info: Redefining \. on input line 664.
+LaTeX Info: Redefining \% on input line 664.
+[22 <./TFM_files/figure-latex/unnamed-chunk-18-1.pdf>]
+<TFM_files/figure-latex/unnamed-chunk-20-1.pdf, id=508, 456.70625pt x 312.16624
 pt>
 File: TFM_files/figure-latex/unnamed-chunk-20-1.pdf Graphic file (type pdf)
 <use TFM_files/figure-latex/unnamed-chunk-20-1.pdf>
 Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-20-1.pdf  used on
- input line 536.
+ input line 676.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 536.
-LaTeX Info: Redefining \% on input line 536.
-[22 <./TFM_files/figure-latex/unnamed-chunk-19-1.pdf>]
-Overfull \hbox (2.83324pt too wide) in alignment at lines 550--560
+LaTeX Info: Redefining \. on input line 676.
+LaTeX Info: Redefining \% on input line 676.
+[23 <./TFM_files/figure-latex/unnamed-chunk-19-1.pdf>]
+Overfull \hbox (2.83324pt too wide) in alignment at lines 690--700
  [] [] [] [] [] [] [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 563--564
+Underfull \hbox (badness 10000) in paragraph at lines 703--704
 
  []
 
 
-Overfull \hbox (17.0pt too wide) in paragraph at lines 562--565
+Overfull \hbox (17.0pt too wide) in paragraph at lines 702--705
 []$[]$ 
  []
 
-<figures/covar_h2.pdf, id=561, 448.67625pt x 303.1325pt>
+<figures/covar_h2.pdf, id=523, 448.67625pt x 303.1325pt>
 File: figures/covar_h2.pdf Graphic file (type pdf)
 <use figures/covar_h2.pdf>
-Package pdftex.def Info: figures/covar_h2.pdf  used on input line 566.
+Package pdftex.def Info: figures/covar_h2.pdf  used on input line 706.
 (pdftex.def)             Requested size: 360.0095pt x 243.22789pt.
-LaTeX Info: Redefining \. on input line 566.
-LaTeX Info: Redefining \% on input line 566.
-[23 <./TFM_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<figures/Cor_Bay_Pen.pdf, id=581, 460.72125pt x 308.15125pt>
+LaTeX Info: Redefining \. on input line 706.
+LaTeX Info: Redefining \% on input line 706.
+[24 <./TFM_files/figure-latex/unnamed-chunk-20-1.pdf>]
+<figures/Cor_Bay_Pen.pdf, id=542, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen.pdf>
-Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 575.
+Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 715.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-<figures/Cor_F2_F3.pdf, id=582, 460.72125pt x 308.15125pt>
+<figures/Cor_F2_F3.pdf, id=543, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
-Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 582.
+Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 722.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 582.
-LaTeX Info: Redefining \% on input line 582.
-[24 <./figures/covar_h2.pdf> <./figures/Cor_Bay_Pen.pdf>]
-LaTeX Info: Redefining \. on input line 597.
-LaTeX Info: Redefining \% on input line 597.
-[25 <./figures/Cor_F2_F3.pdf>]
+LaTeX Info: Redefining \. on input line 722.
+LaTeX Info: Redefining \% on input line 722.
+[25 <./figures/covar_h2.pdf> <./figures/Cor_Bay_Pen.pdf>]
+LaTeX Info: Redefining \. on input line 737.
+LaTeX Info: Redefining \% on input line 737.
+[26 <./figures/Cor_F2_F3.pdf>]
 Ap\'{e}ndice A.
+
+Package xcolor Warning: Incompatible color definition on input line 742.
+
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 604.
-[26
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 744.
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+[27
 
 ]
-LaTeX Info: Redefining \. on input line 711.
-LaTeX Info: Redefining \% on input line 711.
-[27]
-LaTeX Info: Redefining \. on input line 745.
-LaTeX Info: Redefining \% on input line 745.
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+
+Package xcolor Warning: Incompatible color definition on input line 813.
+
+LaTeX Info: Redefining \. on input line 851.
+LaTeX Info: Redefining \% on input line 851.
 [28]
-LaTeX Info: Redefining \. on input line 817.
-LaTeX Info: Redefining \% on input line 817.
-[29]
 LaTeX Info: Redefining \. on input line 885.
 LaTeX Info: Redefining \% on input line 885.
+[29]
+LaTeX Info: Redefining \. on input line 957.
+LaTeX Info: Redefining \% on input line 957.
 [30]
-LaTeX Info: Redefining \. on input line 921.
-LaTeX Info: Redefining \% on input line 921.
+LaTeX Info: Redefining \. on input line 1025.
+LaTeX Info: Redefining \% on input line 1025.
 [31]
-Underfull \hbox (badness 1205) in paragraph at lines 966--968
+LaTeX Info: Redefining \. on input line 1061.
+LaTeX Info: Redefining \% on input line 1061.
+[32]
+Underfull \hbox (badness 1205) in paragraph at lines 1106--1108
  [][]\T1/lmr/m/n/10.95 Grinberg, N. F., O. I. Orho-bor, y R. D. King. 2020. ^^S
 An eval-u-a-
  []
 
 
-Underfull \hbox (badness 6542) in paragraph at lines 966--968
+Underfull \hbox (badness 6542) in paragraph at lines 1106--1108
  \T1/lmr/m/n/10.95 tion of machine-learning for pre-dict-ing phe-no-type: stud-
 ies in
  []
 
 
-Underfull \hbox (badness 3260) in paragraph at lines 966--968
+Underfull \hbox (badness 3260) in paragraph at lines 1106--1108
  \T1/lmr/m/n/10.95 yeast, rice, and wheat^^T. \T1/lmr/m/it/10.95 Ma-chine Learn
 -ing \T1/lmr/m/n/10.95 109: 251-77. [][]$https :
  []
 
-[32
+[33
 
 
 ]
-Underfull \hbox (badness 2884) in paragraph at lines 1002--1004
+Underfull \hbox (badness 2884) in paragraph at lines 1142--1144
  \T1/lmr/m/n/10.95 In-crease Pre-dic-tion Ac-cu-ra-cy in Ge-nom-ic Se-lec-tion 
 of Com-plex
  []
 
 
-Underfull \hbox (badness 3646) in paragraph at lines 1002--1004
+Underfull \hbox (badness 3646) in paragraph at lines 1142--1144
  \T1/lmr/m/n/10.95 Traits in Al-fal-fa (Med-ica-go sati-va L.)^^T. \T1/lmr/m/it
 /10.95 Cells \T1/lmr/m/n/10.95 10 (12). [][]$https :
  []
 
-[33] [34] [35]
-<figures/uvalogo_regular_p_en.pdf, id=715, 433.62pt x 389.5353pt>
+[34] [35] [36]
+<figures/uvalogo_regular_p_en.pdf, id=677, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-073.
+213.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1073--1074
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1213--1214
 [][] 
  []
 
-[36
+[37
 
  <./figures/uvalogo_regular_p_en.pdf>] (./TFM.aux
-LaTeX Info: Redefining \. on input line 22.
-LaTeX Info: Redefining \% on input line 22.
-)
-Package rerunfilecheck Info: File `TFM.out' has not changed.
-(rerunfilecheck)             Checksum: 25022B0B03DE3CFF075F4425C6C83265;2541.
- ) 
+LaTeX Info: Redefining \. on input line 23.
+LaTeX Info: Redefining \% on input line 23.
+) ) 
 Here is how much of TeX's memory you used:
- 13396 strings out of 480236
- 218049 string characters out of 5895862
- 516391 words of memory out of 5000000
- 30952 multiletter control sequences out of 15000+600000
+ 15777 strings out of 480236
+ 256212 string characters out of 5895862
+ 566681 words of memory out of 5000000
+ 33287 multiletter control sequences out of 15000+600000
  556977 words of font info for 88 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,9n,63p,1661b,469s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.TinyT
-eX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/f
-onts/enc/dvips/lm/lm-rm.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/l
-m-mathsy.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}</
-home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/leo/.TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/leo/.TinyTeX/texmf-dist/f
-onts/type1/public/lm/lmcsc10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
-lic/lm/lmex10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.p
-fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></home/leo/.T
-inyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/leo/.TinyTeX/texmf-dis
-t/fonts/type1/public/lm/lmr10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pu
-blic/lm/lmr12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pf
-b></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/leo/.Tin
-yTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/leo/.TinyTeX/texmf-dist/f
-onts/type1/public/lm/lmr8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public
-/lm/lmr9.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></
-home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></home/leo/.TinyT
-eX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fo
-nts/type1/public/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publi
-c/lm/lmtt10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pf
-b>
-Output written on TFM.pdf (41 pages, 4159477 bytes).
+ 60i,11n,63p,1661b,514s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.Tiny
+TeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/leo/.TinyTeX/texmf-dist/
+fonts/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips
+/lm/lm-rm.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}<
+/home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></home/leo/.Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></home/leo/.TinyTeX/texmf-dist/
+fonts/type1/public/lm/lmcsc10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pu
+blic/lm/lmex10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi10.
+pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi6.pfb></home/leo/.
+TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi8.pfb></home/leo/.TinyTeX/texmf-di
+st/fonts/type1/public/lm/lmr10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/p
+ublic/lm/lmr12.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.p
+fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb></home/leo/.Ti
+nyTeX/texmf-dist/fonts/type1/public/lm/lmr7.pfb></home/leo/.TinyTeX/texmf-dist/
+fonts/type1/public/lm/lmr8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publi
+c/lm/lmr9.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb><
+/home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmro10.pfb></home/leo/.Tiny
+TeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></home/leo/.TinyTeX/texmf-dist/
+fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publ
+ic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pf
+b></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
+Output written on TFM.pdf (42 pages, 4169662 bytes).
 PDF statistics:
- 852 PDF objects out of 1000 (max. 8388607)
- 704 compressed objects within 8 object streams
- 156 named destinations out of 1000 (max. 500000)
- 231 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 864 PDF objects out of 1000 (max. 8388607)
+ 711 compressed objects within 8 object streams
+ 157 named destinations out of 1000 (max. 500000)
+ 236 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -828,10 +828,76 @@ Empero, esta forma de implementar la selección genómica en múltiples pasos es
 
 En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matiz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del calculo posterior de pseudo-fenotipos [@cite:18].
 
-El proceso de construcción de la matriz H es simple. De acuerdo a @cite:31, el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí. Dicho proceso se observa a continuación:
+El proceso de construcción de la matriz H es simple (Bloque 1.1). De acuerdo a @cite:31, el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
+<!--
 
+```{=latex}
+\blandscape
+```
 
+-->
+
+:::: {.infobox data-latex=""}
+
+**Bloque 1.1**
+
+Partiendo de un modelo GBLUP en el que no se incluyen efectos fijos, $y = Zg + e$, un modelo en el cual se incluyen tanto individuos genotipados como no genotipados puede ser de la forma:
+
+\begin{align*}
+y = Z \left[ \frac{g_{1}}{g_{2}} \right] + e,
+\end{align*}
+
+donde $g_{1}$ corresponde a los individuos no genotipados, y $g_{2}$ a los individuos genotipados. Esto es, el vector efectos del marcador en el fenotipo o valores de cría ($g$) es dividido en dos partes, una con los valores de cría de los individuos no genotipados ($g_{1}$) y otra con los valores de cría de los individuos genotipados ($g_{2}$).
+
+Para estimar el parentesco genómico de los individuos no genotipados, sus valores de cría ($g_{1}$) se predicen a partir de los valores de cría de los individuos que si lo están ($g_{2}$), con base en la expresión:
+
+\begin{align*}
+a_{1} = cov(a_{1}, a_{2}) \times \left[ var(a_{2} \right]^{-1} \times a_{2} + e
+\end{align*}
+
+<!--
+NOTA: para entender la expresión anterior se debe recordar la ecuación de regresión, la cual permite predecir una variable dependiente (y) en función de una variable independiente (x), o bien, predecir el valor aditivo de un toro en función del rendimiento lechero de sus hijas.
+
+Para el caso del ssGBLUP, en el que se pretende predecir el valor aditivo de los individuos no genotipados (g1) en función de los individuos genotipados (g2), la ecuación de regresión, así como su expresión, serían de la siguiente forma:
+
+\begin{align*}
+b_{a_{1}, a_{2}} = \frac{\sigma_{a_{1}, a_{2}}}{\sigma_{a_{2}}^{2}} = \sigma_{a_{1}, a_{2}} \times \left[ \sigma_{a_{2}}^{2}^{-1} \right]
+\end{align*}
+
+Luego:
+
+\begin{align*}
+a_{1} = \sigma_{a_{1}, a_{2}} \times \left[ \sigma_{a_{2}}^{2} \right]^{-1} \times a_{2} + e
+\end{align*}
+-->
+
+Sabiendo que la matriz de parentesco en base al pedigrí ($A$) puede descomponerse como $\begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix}$, donde $A_{11}$ y $A_{22}$ corresponden, respectivamente, a las matrices de parentesco en base al pedigrí de los individuos no genotipados y genotipados (o bien, la varianza de sus respectivos valores  de cría), y $A_{12}$ = $A_{21}$ corresponden a la matriz de parentesco en base al pedigrí entre individuos genotipados y no genotipados (o bien, la covarianza de sus valores de cría), la expresión anterior puede reescribirse de la siguiente forma:
+
+\begin{align*}
+a_{1} = A_{12} \times A_{22}^{-1} \times a_{2} + e
+\end{align*}
+
+Luego la expresión anterior en términos de varianza:
+
+\begin{align*}
+var(a_{1}) = var(A_{12} \times A_{22}^{-1} \times a_{2}) + var(e)
+\end{align*}
+
+Con un poco de algebra, la expresión anterior pasa a ser:
+
+\begin{align*}
+var(a_{1}) = A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21}
+\end{align*}
+
+::::
+<!--
+
+```{=latex}
+\newpage
+\elandscape
+```
+-->
 Al ser una forma de BLUP o GBLUP en el que la matriz A y G, respectivamente, es sustituida por la matriz H [@cite:17; @cite:15; @cite:21], el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos [@cite:21], además se adapta también a las herramientas informáticas ya desarrolladas en base al BLUP y GBLUP [@cite:22]. Este hecho hace del ssGBLUP un método de uso rutinario para la selección genómica, donde ha demostrado que produce una predicción más precisa en comparación a los métodos BLUP y GBLUP ya mencionados [@cite:14; @cite:19; @cite:18].
 
 <!--

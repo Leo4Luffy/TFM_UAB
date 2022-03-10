@@ -39,7 +39,7 @@ biblio-style: "apa"
 output:
   # settings for html output
   bookdown::gitbook:
-    #css: css/style.css
+    #css: style.css
     config:
       toc: 
         #this text will print on top ("before") or at the bottom ("after") of the table of contents
@@ -52,6 +52,8 @@ output:
   bookdown::pdf_book: 
     template: template.tex
     keep_tex: yes
+    includes:
+            in_header: header.tex
     #pandoc_args: [ "--csl", "apa.csl" ] # download the citation style of your choice from https://www.zotero.org/styles, then fill in here
 indent: true # indent new paragraphs, instead of leaving whitespace
 links-as-notes: true # in the pdf, print hyperlink URLS as footnotes (as they can't be clicked on)
