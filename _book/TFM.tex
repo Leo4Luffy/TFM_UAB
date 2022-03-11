@@ -192,7 +192,7 @@
 
 \usepackage{color}
 \usepackage{framed}
-\setlength{\fboxsep}{.8em}
+\setlength{\fboxsep}{.4em}
 
 \newenvironment{blackbox}{
   %\definecolor{shadecolor}{rgb}{0, 0, 0}  % black
@@ -205,7 +205,7 @@
   \begin{itemize}
   \renewcommand{\labelitemi}{
     \raisebox{-.7\height}[0pt][0pt]{
-      {\setkeys{Gin}{width=3em,keepaspectratio}
+      {\setkeys{Gin}{width=2em,keepaspectratio}
         \includegraphics{figures/exam.png}}
     }
   }
@@ -356,7 +356,7 @@ Finalmente, en el año 2001, Theodorus Meuwissen, Ben Hayes y Michael Goddard pr
 \hypertarget{definiciuxf3n-de-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Definición de la selección genómica}\label{definiciuxf3n-de-la-selecciuxf3n-genuxf3mica}}
 
-Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi et~al. (\protect\hyperlink{ref-cite:33}{2020}) describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos según el GEBV en lugar de pocos QTL (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}).
+Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi, Bartholomé, Cao, et~al. (\protect\hyperlink{ref-cite:33}{2020}\protect\hyperlink{ref-cite:33}{a}) describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos según el GEBV en lugar de pocos QTL (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/GS} \end{center}
 
@@ -482,12 +482,12 @@ cov(g_{2}, g_{1}) & var(g_{2)}
 \end{bmatrix}
 \end{align*}
 
-El desarrollo de las ecuaciones que conducen a la matriz \(H\) se explican a continuación.
+El desarrollo de las ecuaciones que conducen a la matriz \(H\) y su posterior uso dentro de las ecuaciones del modelo mixto se explican a continuación.
 
 Partiendo de un modelo GBLUP en el que no se incluyen efectos fijos, \(y = Zg + e\), un modelo en el cual se incluyen tanto individuos genotipados como no genotipados puede ser de la forma:
 
 \begin{align*}
-y = Z \left[ \frac{g_{1}}{g_{2}} \right] + e,
+y = Z \begin{bmatrix} g_{1} \\ g_{2} \end{bmatrix} + e,
 \end{align*}
 
 donde \(g_{1}\) corresponde a los individuos no genotipados, y \(g_{2}\) a los individuos genotipados. Esto es, el vector efectos del marcador en el fenotipo o valores de cría (\(g\)) es dividido en dos partes, una con los valores de cría de los individuos no genotipados (\(g_{1}\)) y otra con los valores de cría de los individuos genotipados (\(g_{2}\)).
@@ -544,12 +544,33 @@ G \times A_{22}^{-1} \times A_{12}' & G
 \end{bmatrix}
 \end{align*}
 
+Una vez obtenida la matriz H, se obtiene su inversa (\(H^{-1}\)), y el modelo de selección genómica se puede resolver mediante un modelo lineal mixto:
+
+\begin{align*}
+\begin{bmatrix}
+X'X & X'Z \\
+Z'X & Z'Z + H^{-1} \lambda
+\end{bmatrix}
+\begin{bmatrix}
+\hat{b} \\
+\hat{g}
+\end{bmatrix}
+=
+\begin{bmatrix}
+X'y \\
+Z'y
+\end{bmatrix}
+,
+\end{align*}
+
 \end{infobox}
 
 Al ser una forma de BLUP o GBLUP en el que la matriz A y G, respectivamente, es sustituida por la matriz H (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Blasco \protect\hyperlink{ref-cite:21}{2021}), el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos (Blasco \protect\hyperlink{ref-cite:21}{2021}), además se adapta también a las herramientas informáticas ya desarrolladas en base al BLUP y GBLUP (Lourenco et~al. \protect\hyperlink{ref-cite:22}{2020}). Este hecho hace del ssGBLUP un método de uso rutinario para la selección genómica, donde ha demostrado que produce una predicción más precisa en comparación a los métodos BLUP y GBLUP ya mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
 \hypertarget{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Factores que pueden afectar la habilidad predictiva de la selección genómica}\label{factores-que-pueden-afectar-la-habilidad-predictiva-de-la-selecciuxf3n-genuxf3mica}}
+
+La precisión con la que se predice el GEBV es el factor más importante que determina el éxito de la selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}). Dicha precisión se suele evaluar como la correlación entre el GEBV predicho y el valor fenotípico real u observado, lo que se denomina como habilidad predictiva (Ahmadi, Bartholomé, Cao, et~al. \protect\hyperlink{ref-cite:45}{2020}\protect\hyperlink{ref-cite:45}{b}). Así mismo, la habilidad predictiva de la selección genómica depende de las características de los datos genotípicos utilizados, esto es, el número de individuos genotipados y la densidad del marcador (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
 
 \hypertarget{breve-descripciuxf3n-de-la-mejora-genuxe9tica-en-arroz}{%
 \section{Breve descripción de la mejora genética en arroz}\label{breve-descripciuxf3n-de-la-mejora-genuxe9tica-en-arroz}}
@@ -1113,7 +1134,10 @@ F2 & 0.585 & 0.050 & 0.569 & 0.051 \\
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-cite:33}{}%
-Ahmadi, N., J. Bartholomé, T. V. Cao, y C. Grenier. 2020. \emph{Quantitative genetics, genomics and plant breeding}. 2nd edition. \url{https://doi.org/10.1079/9781789240214.0243}.
+Ahmadi, N., J. Bartholomé, T. V. Cao, y C. Grenier. 2020a. \emph{Quantitative genetics, genomics and plant breeding}. 2nd edition. \url{https://doi.org/10.1079/9781789240214.0243}.
+
+\leavevmode\hypertarget{ref-cite:45}{}%
+Ahmadi, N., J. Bartholomé, T V. Cao, y C. Grenier. 2020b. \emph{Genomic selection in rice: empirical results and implications for breeding}. 2nd edition. CAB International.
 
 \leavevmode\hypertarget{ref-cite:21}{}%
 Blasco, A. 2021. \emph{Mejora genética animal}. 1st edition. EDITORIAL SÍNTESIS, S. A.

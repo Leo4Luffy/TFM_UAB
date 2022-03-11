@@ -851,12 +851,12 @@ cov(g_{2}, g_{1}) & var(g_{2)}
 \end{bmatrix}
 \end{align*}
 
-El desarrollo de las ecuaciones que conducen a la matriz $H$ se explican a continuación.
+El desarrollo de las ecuaciones que conducen a la matriz $H$ y su posterior uso dentro de las ecuaciones del modelo mixto se explican a continuación.
 
 Partiendo de un modelo GBLUP en el que no se incluyen efectos fijos, $y = Zg + e$, un modelo en el cual se incluyen tanto individuos genotipados como no genotipados puede ser de la forma:
 
 \begin{align*}
-y = Z \left[ \frac{g_{1}}{g_{2}} \right] + e,
+y = Z \begin{bmatrix} g_{1} \\ g_{2} \end{bmatrix} + e,
 \end{align*}
 
 donde $g_{1}$ corresponde a los individuos no genotipados, y $g_{2}$ a los individuos genotipados. Esto es, el vector efectos del marcador en el fenotipo o valores de cría ($g$) es dividido en dos partes, una con los valores de cría de los individuos no genotipados ($g_{1}$) y otra con los valores de cría de los individuos genotipados ($g_{2}$).
@@ -929,6 +929,24 @@ G \times A_{22}^{-1} \times A_{12}' & G
 \end{bmatrix}
 \end{align*}
 
+Una vez obtenida la matriz H, se obtiene su inversa ($H^{-1}$), y el modelo de selección genómica se puede resolver mediante un modelo lineal mixto:
+
+\begin{align*}
+\begin{bmatrix}
+X'X & X'Z \\
+Z'X & Z'Z + H^{-1} \lambda
+\end{bmatrix}
+\begin{bmatrix}
+\hat{b} \\
+\hat{g}
+\end{bmatrix}
+=
+\begin{bmatrix}
+X'y \\
+Z'y
+\end{bmatrix}
+,
+\end{align*}
 ::::
 <!--
 
@@ -939,11 +957,9 @@ G \times A_{22}^{-1} \times A_{12}' & G
 -->
 Al ser una forma de BLUP o GBLUP en el que la matriz A y G, respectivamente, es sustituida por la matriz H [@cite:17; @cite:15; @cite:21], el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos [@cite:21], además se adapta también a las herramientas informáticas ya desarrolladas en base al BLUP y GBLUP [@cite:22]. Este hecho hace del ssGBLUP un método de uso rutinario para la selección genómica, donde ha demostrado que produce una predicción más precisa en comparación a los métodos BLUP y GBLUP ya mencionados [@cite:14; @cite:19; @cite:18].
 
-<!--
-En los métodos propuestos (Aguilar et al. 2010; Christensen y Lund 2010) la relación genómica estándar calculada usando la matrix, G, se reemplaza con una matriz, G, genotipos observados (del subconjunto de individuos genotipados ) e información genealógica (que se supone que incluye a todos los individuos con fenotipos o genotipos o ambas fuentes de información genotípica a la que se propaga la información). En ..., la información genotípica se propaga a las relaciones de individuos sin genotipo, utilizando un procedimiento de regresión lineal que predice implícitamente los genotipos no observados como combinaciones lineales de genotipos observados con coeficientes de regresión derivados de las relaciones de pedigrí.
--->
-
 ### Factores que pueden afectar la habilidad predictiva de la selección genómica
+
+La precisión con la que se predice el GEBV es el factor más importante que determina el éxito de la selección genómica [@cite:6]. Dicha precisión se suele evaluar como la correlación entre el GEBV predicho y el valor fenotípico real u observado, lo que se denomina como habilidad predictiva [@cite:45]. Así mismo, la habilidad predictiva de la selección genómica depende de las características de los datos genotípicos utilizados, esto es, el número de individuos genotipados y la densidad del marcador [@cite:7].
 
 
 
