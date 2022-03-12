@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(dplyr, ggplot2, showtext, patchwork, latex2exp, gt, ggforce)
+pacman::p_load(dplyr, ggplot2, showtext, patchwork, latex2exp, gt, ggforce, here, fmsb, readr, tidyr)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -1287,3 +1287,106 @@ tribble(
 
 ### Relevancia de la mejora genética en arroz
 
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, message = FALSE, warning=FALSE}
+
+Arroz <- read_delim(here('figures', 'datos_arroz_2.csv'), delim = ',')
+
+Arroz_2 <- Arroz %>%
+  mutate(
+    Elemento = recode(
+    .x = Elemento,
+    'Alimentos' = 'Uso alimentario',
+    'Elaboración' = 'Uso alimentario',
+    'Exportaciones - Canditad' = 'Exportación',
+    'Pienso' = 'Elaboración de pienso',
+    'Producción' = 'Producción',
+    'Semillas' = 'Uso como semilla',
+    'Otro uso (no alimentario)' = 'Otro uso'
+    )
+  ) %>%
+  select(Elemento, Año, Valor, Unidad) %>%
+  group_by(Elemento) %>%
+  summarise(Total = sum(Valor)) %>%
+  ungroup() %>%
+  pivot_wider(names_from = Elemento, values_from = Total) %>%
+  select(-Producción)
+
+Arroz_3 <- tribble(
+  ~'Elaboración de pienso', ~'Exportación', ~'Otro uso', ~'Uso alimentario', ~'Uso como semilla',
+  9413749, 	9413749, 	9413749, 	9413749, 	9413749,
+  0, 0, 0, 0, 0
+  ) # Se crea este conjunto de datos ya que se necesita, para hacer el gráfico de radar, la primera fila con el máximo valor (esto es, la producción total en miles de toneladas de arroz) y en la segunda fila el mínimo valor.
+
+Arroz_4 <- bind_rows(Arroz_3, Arroz_2)
+
+#radarchart(df = Arroz_4) # NOTA: El gráfico radar lo saque de este tutorial: https://www.datanovia.com/en/blog/beautiful-radar-chart-in-r-using-fmsb-and-ggplot-packages/
+
+Graf_radar <- function(data,
+                       color = 'yellow',
+                       vlabels = colnames(data), 
+                       vlcex = 2.4,
+                       caxislabels = NULL, title = NULL, ...){
+  radarchart(
+    data, axistype = 1,
+    # Diseño del poligono
+    pcol = color, pfcol = scales::alpha(color, 0.4), plwd = 3.4, plty = 1.4,
+    # Diseño de las líneas
+    cglcol = 'grey', cglty = 1.4, cglwd = 2.8,
+    # Diseño de los ejes
+    axislabcol = 'grey', 
+    # Diseño de las variables
+    vlcex = vlcex, vlabels = vlabels,
+    caxislabels = caxislabels, title = title, ...
+    )
+  }
+
+#Graf_arroz_1 <- Graf_radar(data = Arroz_4)
+
+Arroz_5 <- read_delim(here('figures', 'datos_arroz.csv'), delim = ',')
+
+Graf_arroz_2 <- Arroz_5 %>%
+  select(Elemento, Año, Valor, Unidad) %>%
+  filter(Elemento == 'Producción') %>%
+  group_by(Elemento, Año) %>%
+  summarise(Total = sum(Valor, na.rm = TRUE)) %>%
+  ungroup() %>%
+  ggplot(data = ., aes(x = Año, y = Total, colour = Elemento, fill = Elemento)) +
+  geom_area(alpha = 0.2, position = position_dodge(0.8), size = 1.2) +
+  labs(title = 'Evolución de la producción de arroz') +
+  scale_color_manual(values = c('yellow', 'cyan')) +
+  scale_fill_manual(values = c('yellow', 'cyan')) +
+  theme_bw() +
+  theme(
+    legend.position = 'none',
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(size = 10),
+    axis.ticks.y = element_blank(),
+    axis.title = element_blank(),
+    plot.title = element_text(size = 11, face = 'bold')
+    )
+
+a <- data.frame(
+  x = c(1:10), y = c(1:10)
+  ) %>%
+  ggplot(aes(x, y)) +
+  geom_blank() +
+  labs(title = 'Distintos usos del arroz') +
+  theme_bw() +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold'))
+
+Graf_arroz_1 <- readPNG(here('figures', 'Graf_arroz_1.png'), native = TRUE)
+
+b <- a + 
+  inset_element(p = Graf_arroz_1,
+                left = 0.01,
+                bottom = 0.01,
+                right = 0.99,
+                top = 0.99)
+
+(Graf_arroz_2 | b) -> Graf_arroz
+
+knitr::include_graphics('figures/Graf_arroz.pdf', auto_pdf = TRUE)
+```
