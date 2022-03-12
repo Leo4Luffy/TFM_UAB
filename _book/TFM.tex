@@ -314,6 +314,20 @@ Director:
 \tableofcontents
 }
 \mainmatter
+\hypertarget{resumen}{%
+\chapter{Resumen}\label{resumen}}
+
+\noindent 
+Insert abstract.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\vspace*{\fill}
+
+\noindent
+\emph{Possibly insert citation here.}
+\newpage
+
 \hypertarget{revisiuxf3n-de-literatura}{%
 \chapter{Revisión de literatura}\label{revisiuxf3n-de-literatura}}
 
@@ -473,7 +487,7 @@ El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo 
 \begin{infobox}
 \textbf{Recuadro 1.1}
 
-Sabiendo que la matriz \(H\) equivale a:
+Conociendo que la matriz \(H\) equivale a:
 
 \begin{align*}
 \begin{bmatrix}
@@ -574,7 +588,7 @@ La precisión con la que se predice el GEBV es el factor más importante que det
 
 En relación a la densidad del marcador, hoy en día se conoce que la habilidad predictiva de la selección genómica disminuye a menor número de marcadores de ADN en desequilibrio de ligamiento con el QTL (Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Ahmadi, Bartholomé, Cao, et~al. \protect\hyperlink{ref-cite:45}{2020}\protect\hyperlink{ref-cite:45}{b}). Así mismo, los estudios de simulación indican que a mayor número de marcadores se mejora la habilidad predictiva de la selección genómica (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Sin embargo, el aumento de la precisión puede alcanzar su limite a medida que se aumenta la densidad del marcador (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}; Crossa et~al. \protect\hyperlink{ref-cite:37}{2017}; Ahmadi, Bartholomé, Cao, et~al. \protect\hyperlink{ref-cite:45}{2020}\protect\hyperlink{ref-cite:45}{b}), por lo cual se recomienda mediante simulación evaluar el efecto del número de marcadores de ADN en la precisión de la predicción, antes de implementar la selección genómica en escenarios prácticos (Pérez-Enciso, Ramírez-Ayala, y Zingaretti \protect\hyperlink{ref-cite:47}{2020}).
 
-En cuanto al número de individuos genotipados, la habilidad predictiva de la selección genómica es mayor a medida que aumenta su proporción. Esto lo evidencia Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}), Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}), y Desta y Ortiz (\protect\hyperlink{ref-cite:10}{2014}), quienes coinciden en afirmar que mayor tamaño de la población de entrenamiento, más mayor sera la precisión de la predicción del GEBV.
+En cuanto al número de individuos genotipados, la habilidad predictiva de la selección genómica es mayor a medida que aumenta su proporción. Esto lo evidencian Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}), Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}), y Desta y Ortiz (\protect\hyperlink{ref-cite:10}{2014}), quienes coinciden en afirmar que a mayor tamaño de la población de entrenamiento, mayor sera la precisión de la predicción del GEBV.
 
 \hypertarget{breve-descripciuxf3n-de-la-mejora-genuxe9tica-en-arroz}{%
 \section{Breve descripción de la mejora genética en arroz}\label{breve-descripciuxf3n-de-la-mejora-genuxe9tica-en-arroz}}
@@ -628,48 +642,14 @@ Especie & Carácter & Habilidad predictiva & Modelo & Referencia \\
 \hypertarget{relevancia-de-la-mejora-genuxe9tica-en-arroz}{%
 \subsection{Relevancia de la mejora genética en arroz}\label{relevancia-de-la-mejora-genuxe9tica-en-arroz}}
 
-\hypertarget{titulo}{%
-\chapter{Titulo}\label{titulo}}
+\hypertarget{objetivos}{%
+\chapter{Objetivos}\label{objetivos}}
 
-\textbf{Resumen}
-
-\noindent 
-Insert abstract.
-
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
-
-\vspace*{\fill}
-
-\noindent
-\emph{Possibly insert citation here.}
-\newpage
-
-\hypertarget{intro2}{%
-\section{Introducción}\label{intro2}}
-
-La teoría de la genética en el estudio de caracteres cuantitativos se estableció hace más de un siglo cuando Ronald Fisher presentó un documento (Fisher \protect\hyperlink{ref-cite:1}{1918}) donde dio a conocer el desarrollo de la teoría del modelo infinitesimal, permitiendo con ello unificar dos de las escuelas de pensamiento que para ese entonces estaban en constante debate: la escuela de pensamiento Mendeliano, cuyo objetivo consistía en localizar y caracterizar factores de herencia, y la escuela de pensamiento biométrico, cuyo origen se remonta a Galton quien buscaba aplicar modelos biométricos con el fin de estudiar las relaciones entre parientes (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}).
-
-La teoría del modelo infinitesimal desarrollado por Fisher establece que la varianza genética de un carácter esta determinado por un gran número de factores Mendelianos, cada uno de los cuales tiene una pequeña contribución aditiva al fenotipo de dicho carácter (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Turelli \protect\hyperlink{ref-cite:9}{2017}). Naturalmente, los modelos usados en estudios de mejoramiento genético han sido concebidos en base a esta teoría (Villemereuil et~al. \protect\hyperlink{ref-cite:4}{2016}; Pérez-Enciso \protect\hyperlink{ref-cite:5}{2017}), siendo ejemplo de ello el mejor predictor lineal insesgado (BLUP) y el mejor predictor lineal insesgado genómico (GBLUP).
-
-En las ciencias animales, el valor de cría estimado (EBV) se suele predecir en función de un conjunto de modelos que relacionan el fenotipo de una población con la información del pedigrí, mediante el uso del BLUP. No obstante, este método no es factible para poblaciones sin información de pedigrí o con una estructura poblacional compleja, como suele ser el caso de las plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Para el año 2001, Meuwissen, Hayes y Goddard propusieron un método innovador para predecir los valores de cría basado en marcadores de ADN (GEBV), denominándose tiempo después como selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), el cual permitió también superar las limitaciones que suponía el uso del BLUP para predecir los valores de cría en plantas.
-
-Hoy en día, la selección genómica se considera como un método potencial para el mejoramiento genético en plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), ya que sus ciclos reproductivos suelen ser prolongados, por lo cual con el uso de la selección genómica es posible acelerar dichos ciclos reproductivos con el beneficio adicional de mejorar la tasa de ganancia genética anual por unidad de tiempo y costo (Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). Además, los datos sobre marcadores de ADN en todo el genoma están cada vez más disponibles para cultivos de relevancia agronómica (Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}).
-
-El GBLUP es uno de los métodos más comunes de selección genómica (Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). De hecho, es el método más popular debido a su simplicidad al sustituir la matriz de relación de parentesco basado en pedigríes (Wright \protect\hyperlink{ref-cite:12}{1922}) por una matriz de relación basada en marcadores de ADN (Hayes, Visscher, y Goddard \protect\hyperlink{ref-cite:13}{2009}). Así mismo, el GBLUP predice con mayor precisión los GEBV en comparación a los EBV del BLUP, debido a que con el primero se estima mejor las relaciones entre individuos (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), por lo cual la matriz de las relaciones genómicas suele verse como un estimador mejorado de las relaciones basadas en marcadores en lugar de pedigríes (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}).
-
-En términos generales, la selección genómica es un proceso de tres pasos en el que los individuos, sobre la base de su información fenotípica y de pedigrí, son evaluados inicialmente mediante una evaluación genética tradicional por medio del BLUP, y posteriormente a partir de los fenotipos corregidos o pseudo-fenotipos resultantes de esta evaluación genética inicial, es llevado a cabo un análisis genómico de los individuos genotipados mediante el GBLUP. Por último y en base a la información generada, se calculan los GEBV por medio de un índice de selección (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}; Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
-
-Como no todos los individuos pueden genotiparse, la selección genómica se lleva a cabo a partir del proceso anterior de tres pasos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}). Sin embargo, este proceso es tendente a cometer errores (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), además de presentar inconvenientes como son la perdida de información y la difícultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar, y Misztal (\protect\hyperlink{ref-cite:17}{2009}) simplificaron el proceso de varios pasos al desarrollar un método de selección genómica, en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir sus valores de cría (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}), método el cual se denomino como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
-
-En el ssGBLUP se dispone de una matriz de parentesco genómica global de individuos genotipados y no genotipados, denominada como matriz de relación combinada o matriz H. Esta matriz se obtiene combinando información de la relación genómica entre individuos genotipados, e información de pedigrí entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de tres pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de fenotipos corregidos y la construcción del índice de selección mencionado previamente (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
-
-Al ser una forma de BLUP en el que la matriz de relación de parentesco es sustituida por la matriz de relación combinada (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Blasco \protect\hyperlink{ref-cite:21}{2021}), el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos (Blasco \protect\hyperlink{ref-cite:21}{2021}), además se adapta también a las herramientas informaticas ya desarrolladas en base al BLUP (Lourenco et~al. \protect\hyperlink{ref-cite:22}{2020}). Este hecho hace del ssGBLUP un método de uso rutinario para la evaluación genómica en animales, donde ha demostrado que produce una predicción más precisa de los valores de cría en comparación a los métodos BLUP y GBLUP antes mencionados (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}). No obstante, el uso del ssGBLUP para la selección genómica en plantas es más reciente y escaso (Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). En consecuencia, el \textbf{objetivo}
-
-\hypertarget{methods2}{%
-\section{Métodos}\label{methods2}}
+\hypertarget{materiales-y-muxe9todos}{%
+\chapter{Materiales y métodos}\label{materiales-y-muxe9todos}}
 
 \hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
-\subsection{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
+\section{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
 
 Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.
 
@@ -693,7 +673,7 @@ En relación a los datos de fenotipo, el conjunto de datos proporciono informaci
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-18-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-19-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.3:} .
@@ -701,7 +681,7 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \end{center}
 
 \hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
-\subsection{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
+\section{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
 
 Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNP con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
 
@@ -725,7 +705,7 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
   Distinta cantidad de individuos genotipados:
 \end{enumerate}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-19-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
 \begin{center}
 \textbf{Figura 2.4:} Esquema del calculo de la matriz H a partir de las matrices A y G, con base en diferentes subconjuntos de datos. El recuadro 1 representa los tres pedigríes con diferentes número de individuos y que posteriormente se usaron para el calculo de la matriz A. El recuadro 2 representa diferentes densidades de SNP. El recuadro 3 representa matrices G con distinta dimensión dado el número de individuos genotipados.
@@ -735,15 +715,15 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
 \hypertarget{estudio-de-simulaciuxf3n}{%
-\subsection{Estudio de simulación}\label{estudio-de-simulaciuxf3n}}
+\section{Estudio de simulación}\label{estudio-de-simulaciuxf3n}}
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-21-1} \end{center}
 
-\hypertarget{results2}{%
-\section{Resultados}\label{results2}}
+\hypertarget{resultados-y-discusiuxf3n}{%
+\chapter{Resultados y discusión}\label{resultados-y-discusiuxf3n}}
 
-\hypertarget{fenotipo-y-heredabilidad}{%
-\subsection{Fenotipo y heredabilidad}\label{fenotipo-y-heredabilidad}}
+\hypertarget{results3}{%
+\section{Fenotipo y heredabilidad}\label{results3}}
 
 \begin{center}
 \textbf{Tabla 2.1:} Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
@@ -790,15 +770,15 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 
 \end{center}
 
-\hypertarget{discussion2}{%
-\section{Discusión}\label{discussion2}}
+\hypertarget{conclusiones}{%
+\chapter{Conclusiones}\label{conclusiones}}
 
 \hypertarget{appendix-appendix}{%
 \appendix}
 
 
-\hypertarget{anexos-del-capitulo-2}{%
-\chapter{Anexos del capitulo 2}\label{anexos-del-capitulo-2}}
+\hypertarget{anexos}{%
+\chapter{Anexos}\label{anexos}}
 
 \hypertarget{funciuxf3n-para-el-calculo-de-la-matriz-de-relaciuxf3n-combinada}{%
 \section{Función para el calculo de la matriz de relación combinada}\label{funciuxf3n-para-el-calculo-de-la-matriz-de-relaciuxf3n-combinada}}
@@ -1164,17 +1144,11 @@ Desta, Z. A., y R. Ortiz. 2014. «Genomic selection: genome-wide prediction in p
 \leavevmode\hypertarget{ref-cite:24}{}%
 Fernández, J., y M. Toro. 2006. «A new method to estimate relatedness from molecular markers». \emph{Molecular Ecology} 15: 1657-67.
 
-\leavevmode\hypertarget{ref-cite:1}{}%
-Fisher, R. A. 1918. «The correlaction between relatives under the supposition of Mendelian inheritance». \emph{Transactions of the Royal Society of Edinburgh} 52: 399-433.
-
 \leavevmode\hypertarget{ref-cite:28}{}%
 Freeman, A. E. 1991. «C. R. Henderson: contributions to the dairy industry». \emph{Journal of Dairy Science} 74 (11): 4045-51. \url{https://doi.org/10.3168/jds.S0022-0302(91)78600-1}.
 
 \leavevmode\hypertarget{ref-cite:35}{}%
 Grinberg, N. F., O. I. Orhobor, y R. D. King. 2020. «An evaluation of machine-learning for predicting phenotype: studies in yeast, rice, and wheat». \emph{Machine Learning} 109: 251-77. \url{https://doi.org/10.1007/s10994-019-05848-5}.
-
-\leavevmode\hypertarget{ref-cite:13}{}%
-Hayes, B. J., P. M. Visscher, y M. E. Goddard. 2009. «Increased accuracy of artificial selection by using the realized relationship matrix». \emph{Genetics Research} 91: 47-60.
 
 \leavevmode\hypertarget{ref-cite:41}{}%
 Henderson, C. R. 1975. «Best linear unbiased estimation and prediction under a selection model». \emph{Biometrics} 31: 423-47.
@@ -1227,9 +1201,6 @@ Nakaya, A., y S. N. Isobe. 2012. «Will genomic selection be a practical method 
 \leavevmode\hypertarget{ref-cite:2}{}%
 Nelson, R. M., M. E. Pettersson, y Ö. Carlborg. 2012. «A century after Fisher: time for a new paradigm in quantitative genetics». \emph{Trends in Genetics} 29 (9): 669-76.
 
-\leavevmode\hypertarget{ref-cite:5}{}%
-Pérez-Enciso, M. 2017. «Animal breeding learning from machine learning». \emph{Journal of Animal Breeding and Genetics} 134: 85-86.
-
 \leavevmode\hypertarget{ref-cite:47}{}%
 Pérez-Enciso, M., L. Ramírez-Ayala, y L. M. Zingaretti. 2020. «SeqBreed: a python tool to evaluate genomic prediction in complex scenarios». \emph{Genetion Selection Evolution} 52 (7). \url{https://doi.org/10.1186/s12711-020-0530-2}.
 
@@ -1257,17 +1228,11 @@ Turelli, M. 2017. «Prediction of Total Genetic Value Using Genome-Wide Dense Ma
 \leavevmode\hypertarget{ref-cite:39}{}%
 VanRaden, P. M. 2007. «Efficient methods to compute genomic predictions». \emph{Journal of Dairy Science} 91: 4414-23.
 
-\leavevmode\hypertarget{ref-cite:4}{}%
-Villemereuil, P. de, H. Schielzeth, S. Nakagawa, y M. Morrissey. 2016. «General methods for evolutionary quantitative genetic inference from generalized mixed models». \emph{Genetics} 204: 1281-94.
-
 \leavevmode\hypertarget{ref-cite:26}{}%
 Vourlaki, I., R. Castanera, S. Ramos-Onsins, J. Casacuberta, y M. Pérez-Enciso. s.~f. «Transposable element polymorphisms improve prediction of complex agronomic traits in rice». \emph{Frontiers in Plant Science}.
 
 \leavevmode\hypertarget{ref-cite:46}{}%
 Wang, J., J. Crossa, y J. Gai. 2020. «Quantitative genetic studies with applications in plant breeding in the omics era». \emph{The Crop Journal} 8: 683-87. \url{https://doi.org/10.1016/j.cj.2020.09.001}.
-
-\leavevmode\hypertarget{ref-cite:12}{}%
-Wright, S. 1922. «Coefficients of inbreeding and relationship». \emph{The American Naturalist} 56: 330-38.
 
 \leavevmode\hypertarget{ref-cite:25}{}%
 Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice using genomic best linear unbiased prediction». \emph{Proceedings of the National Academy of Sciences of the United States of America} 111 (34): 12456-61. \url{https://doi.org/10.1073/pnas.1413750111}.

@@ -1,0 +1,10 @@
+```{r, echo = FALSE}
+
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr)
+font_add_google('Gochi Hand', 'gochi')
+showtext_auto()
+```
+
+<!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
+
+# Conclusiones

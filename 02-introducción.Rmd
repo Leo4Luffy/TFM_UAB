@@ -842,7 +842,7 @@ El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo 
 
 __Recuadro 1.1__
 
-Sabiendo que la matriz $H$ equivale a:
+Conociendo que la matriz $H$ equivale a:
 
 \begin{align*}
 \begin{bmatrix}
@@ -963,7 +963,7 @@ La precisión con la que se predice el GEBV es el factor más importante que det
 
 En relación a la densidad del marcador, hoy en día se conoce que la habilidad predictiva de la selección genómica disminuye a menor número de marcadores de ADN en desequilibrio de ligamiento con el QTL <!-- NOTA: el desequilibrio de ligamiento entre los marcadores y el QTL es el factor clave del exito de la selecció genómica. Como la selección genómica se basa en el desequilibrio de ligamiento entre el marcador de ADN y el QTL, es necesario gran cantidad de marcadores para garantizar que si haya una asociación con el QTL. --> [@cite:10; @cite:45]. Así mismo, los estudios de simulación indican que a mayor número de marcadores se mejora la habilidad predictiva de la selección genómica [@cite:7]. Sin embargo, el aumento de la precisión puede alcanzar su limite a medida que se aumenta la densidad del marcador [@cite:3; @cite:37; @cite:45], por lo cual se recomienda mediante simulación evaluar el efecto del número de marcadores de ADN en la precisión de la predicción, antes de implementar la selección genómica en escenarios prácticos [@cite:47].
 
-En cuanto al número de individuos genotipados, la habilidad predictiva de la selección genómica es mayor a medida que aumenta su proporción. Esto lo evidencian @cite:6, @cite:3, y @cite:10, quienes coinciden en afirmar que mayor tamaño de la población de entrenamiento, mayor sera la precisión de la predicción del GEBV.
+En cuanto al número de individuos genotipados, la habilidad predictiva de la selección genómica es mayor a medida que aumenta su proporción. Esto lo evidencian @cite:6, @cite:3, y @cite:10, quienes coinciden en afirmar que a mayor tamaño de la población de entrenamiento, mayor sera la precisión de la predicción del GEBV.
 
 <!--
 ### Machine learning y deep learning

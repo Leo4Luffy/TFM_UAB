@@ -7,7 +7,7 @@ pacman::p_load(tibble, gt, dplyr, tidyr)
 
 # (APPENDIX) Appendix {-}
 
-# Anexos del capitulo  2
+# Anexos
 
 ## Función para el calculo de la matriz de relación combinada
 
