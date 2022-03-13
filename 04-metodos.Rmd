@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, scales)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -33,29 +33,286 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ## Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (_Oryza sativa L._). Posteriormente, dichos conjuntos de datos fueron usados por @cite:26, quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.<!-- Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por @cite:26.-->
+Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363) , el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los datos de genotipado de SNP fueron sometidos a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se consideró eliminar loci de SNP con una frecuencia del alelo menor de menos de 0.05.
 
-Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz,<!--los cuales según @cite:23, fue atribuido a diferentes orígenes geográficos---> de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 4.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo el estudio una vez la misma fue el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
+
+# 1. Se importan los archivos de datos.
+
+m_dist <- read_table(here('figures', 'PCA_IND.mdist'), col_names = FALSE) %>%
+  select(-X739)
+
+ind <- tibble(id = read_table(here('figures', 'PCA_IND.mdist.id'), col_names = FALSE)[, 2]) # Se extrajo el nombre de los individuos.
+
+esp <- read_delim(here('figures', 'all.phenotypes.csv'), delim = ',') %>%
+  select(SNPsubsp) # Se extrajo el nombre de las especies (ADM, ARO, AUS, IND y JAP).
+
+# 2. Se calculan los componentes principales en función del escalado multidimensional.
+
+mds_poblacion <- cmdscale(d = m_dist, eig = TRUE, k = 5)
+
+# 3. Se extraen los vectores propios.
+
+vec_propios <- cbind(esp, ind, mds_poblacion$points)
+
+# 4. Se calcula la proporción de la variación explicada por cada valor propio (por los dos primeros componentes principales).
+
+porc_propio <- round(((mds_poblacion$eig) / sum(mds_poblacion$eig)) * 100, digits = 2)
+
+porc_propio_2 <- porc_propio %>%
+  as.tibble() %>%
+  slice(1:12) %>%
+  rowid_to_column(var = 'componente') %>%
+  mutate(componente = as.factor(componente))
+
+# 5. Se visualizan los resultados mediante componentes principales.
+
+graf_bar <- ggplot(data = porc_propio_2, aes(x = componente, y = value)) +
+  geom_bar(stat = 'identity', color = 'gray34', fill = 'gray34', alpha = 0.4) +
+  #theme_transparent() +
+  labs(
+   x = 'Componente principal',
+   y = 'Variación acumulada (%)'
+   ) +
+  theme(
+    axis.text.x = element_text(face = 'bold', size = 7),
+    axis.text.y = element_text(face = 'bold', size = 7, angle = 90),
+    axis.title = element_text(face = 'bold', size = 8)
+    )
+
+Graf_PCA <- ggplot(data = vec_propios, mapping = aes(x = `1`, y = `2`, color = SNPsubsp, fill = SNPsubsp)) +
+  geom_point(alpha = 0.2, size = 4.4) +
+  stat_ellipse(aes(color = SNPsubsp), type = 't') +
+  geom_hline(yintercept = 0, linetype = 'dotted') +
+  geom_vline(xintercept = 0, linetype = 'dotted') +
+  scale_color_manual(values = c('yellow', 'black', 'red', 'cyan', 'green')) +
+  scale_fill_manual(values = c('yellow', 'black', 'red', 'cyan', 'green')) +
+  labs(
+   x = paste0('Primer componente (',porc_propio[1],' %)'),
+   y = paste0('Segundo componente (',porc_propio[2], '%)'),
+   col = 'Variedades de arroz', fill = 'Variedades de arroz'
+   ) +
+  theme_bw() +
+  theme(
+    legend.background = element_rect(color = 'gray34', fill = 'white', size = 0.4, linetype = 'dashed'),
+    legend.position = c(0.18, 0.24),
+    legend.text = element_text(size = 11),
+    legend.title = element_text(face = 'bold', size = 11),
+    axis.text = element_text(face = 'bold', size = 11),
+    axis.title = element_text(face = 'bold', size = 12)
+    ) #+
+  #annotation_custom(
+    #ggplotGrob(x = graf_bar), 
+    #xmin = -0.10, xmax = -0.02, 
+    #ymin = -0.08, ymax = -0.17
+    #)
 
 knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+__Figura 4.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
-En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
+En relación a los datos de fenotipo, el conjunto de datos proporcionó información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 4.2), siendo seleccionada para la predicción posterior utilizando los modelos de selección genómica el carácter tiempo de floración, ya que en este se observo suficiente variación fenotípica.
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE, warning = FALSE}
+
+Fenotipos <- read_delim(here('figures', 'all.phenotypes.csv'), delim = ',')
+
+# Trillabilidad de la panícula (término descriptivo para la facilidad con la que se extrae el grano de la panícula durante la trilla) ----
+
+Rasgo_1 <- Fenotipos %>%
+  mutate(panicle.threshability = as.factor(panicle.threshability)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = panicle.threshability)) +
+  geom_bar(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  labs(x = 'Trillabilidad de\n la panícula', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Tiempo de floración ----
+
+Rasgo_2 <- Fenotipos %>%
+  na.omit() %>%
+  ggplot(data = ., aes(x = Time.to.flowering..from.sowing)) +
+  geom_density(color = 'black', fill = 'black', alpha = 0.2) +
+  labs(x = 'Tiempo de\n floración', y = 'Densidad') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 6, face = 'bold'),
+    axis.text.y = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 13, face = 'bold')
+    )
+
+# Daño de la sal ----
+
+Rasgo_3 <- Fenotipos %>%
+  mutate(Salt.injury.at.EC12 = as.factor(Salt.injury.at.EC12)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = Salt.injury.at.EC12)) +
+  geom_bar(color = 'green', fill = 'green', alpha = 0.2) +
+  labs(x = 'Daño de la sal', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Longitud de la hoja ----
+
+Rasgo_4 <- Fenotipos %>%
+  mutate(leaf.length = as.factor(leaf.length)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = leaf.length)) +
+  geom_bar(color = 'red', fill = 'red', alpha = 0.2) +
+  labs(x = 'Longitud de\n la hoja', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Fuerza del culmo ----
+
+Rasgo_5 <- Fenotipos %>%
+  mutate(culm.strength = as.factor(culm.strength)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = culm.strength)) +
+  geom_bar(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  labs(x = 'Fuerza del culmo', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Senescencia de la hoja ----
+
+Rasgo_6 <- Fenotipos %>%
+  mutate(leaf.senescence = as.factor(leaf.senescence)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = leaf.senescence)) +
+  geom_bar(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  labs(x = 'Senescencia de\n la hoja', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Ángulo de la hoja bandera ----
+
+Rasgo_7 <- Fenotipos %>%
+  mutate(flag.leaf.angle = as.factor(flag.leaf.angle)) %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = flag.leaf.angle)) +
+  geom_bar(color = 'red', fill = 'red', alpha = 0.2) +
+  labs(x = 'Ángulo de la\n hoja bandera', y = 'Número de observaciones') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 11, face = 'bold')
+    )
+
+# Longitud del grano ----
+
+Rasgo_8 <- Fenotipos %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = grain.length)) +
+  geom_density(color = 'green', fill = 'green', alpha = 0.2) +
+  scale_x_continuous(labels = label_number(accuracy = 0.1)) +
+  labs(x = 'Longitud del\n grano', y = 'Densidad') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 6, face = 'bold'),
+    axis.text.y = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 13, face = 'bold')
+    )
+
+# Ancho del grano ----
+
+Rasgo_9 <- Fenotipos %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = grain.width)) +
+  geom_density(color = 'black', fill = 'black', alpha = 0.2) +
+  labs(x = 'Ancho del\n grano', y = 'Densidad') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 6, face = 'bold'),
+    axis.text.y = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 13, face = 'bold')
+    )
+
+# Peso del grano ----
+
+Rasgo_10 <- Fenotipos %>%
+  na.omit() %>%
+  ggplot(data =., aes(x = Grain.weight)) +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  scale_x_continuous(labels = label_number(accuracy = 0.1)) +
+  labs(x = 'Peso del grano', y = 'Densidad') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 6, face = 'bold'),
+    axis.text.y = element_text(size = 12, face = 'bold'),
+    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.y = element_text(size = 13, face = 'bold')
+    )
+
+(Rasgo_1 | Rasgo_2 | Rasgo_3 | Rasgo_4 | Rasgo_5) / (Rasgo_6 | Rasgo_7 | Rasgo_8 | Rasgo_9 | Rasgo_10) -> Graf_feno
 
 knitr::include_graphics('figures/Graf_feno.png', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.2:__ Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+__Figura 4.2:__ Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
 :::
+
+## Selección basada en información de pedigrí e información genómica
+
+Para llevar a cabo la predicción usando el mejor predictor lineal insesgado (BLUP) en individuos no genotipados y el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
+
+\begin{equation}
+y = 1_{n} \mu + Zg + e,
+\end{equation}
+
+donde $y$ representa el valor del fenotipo a predecir (es decir, el tiempo de floración) y $Z$ es la matriz de incidencia que relaciona $g$ con $y$. $1_{n}$ es un vector de unos, $\mu$ es la media de la población, el vector $g$ representa los efectos aleatorios genéticos aditivos, y $e$ es el vector de residuos con una distribución que se asume normal con media igual a $0$ y matriz de covarianza $I\sigma^{2}_{e}$.
+
+En la ecuación anterior (4.1), se asume que $g$ sigue una distribución normal con media igual a $0$ y matriz de covarianza $A\sigma^{2}_{g}$ en el modelo BLUP, donde $A$ representa la matriz de parentesco basada en información de pedigrí, y $\sigma^{2}_{g}$ es la varianza genética aditiva.
+
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A descrita anteriormente y de la matriz de parentesco basado en marcadores de ADN (o matriz G) [@cite:16], y se define de la siguiente manera:
+
+\begin{equation}
+H =
+\begin{bmatrix}
+A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
+G A_{22}^{-1} A_{12}' & G 
+\end{bmatrix}
+,
+\end{equation}
+
+donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y los subíndices $1$ y $2$ representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumo un valor de 0.05.
+
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función `R` usada para construir la matriz H. 
+
+## Habilidad predictiva, subconjuntos de datos y simulación de pedigríes ancestrales
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC [@cite:24] con el fin de contar con esta información. Este software <!--crea una genealogía virtual para los fundadores de tal manera que la correlación entre el parentesco genealógico calculado a partir de ese pedigrí virtual tiene la correlación más alta con una matriz proporcionada (la de REA v0.2 en nuestro caso). La metodología es capaz de dar cuenta de cualquier relación conocida a priori (por ejemplo, un par de personas que comparten un padre) y de detectar incompatibilidades mendelianas en las familias propuestas. El número de generaciones por encima de los fundadores se estableció en tres, lo que proporcionó una correlación entre matrices de alrededor del 98%. Cada vez que se agrega un nuevo fundador a la población ex situ, la matriz de parentesco se reevalúa para acomodar las relaciones de la nueva incorporación.-->. (Figura 2.3).
 
@@ -67,18 +324,6 @@ ggdraw() + draw_image('figures/Pedigríes.png')
 ::: {.center data-latex=""}
 __Figura 2.3:__ .
 :::
-
-## Modelo para la predicción genómica y habilidad predictiva
-
-Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNP con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
-
-\begin{equation}
-y = Za + e,
-\end{equation}
-
-donde $y$ representa el valor del fenotipo a predecir (tiempo de floración) y $Z$ es la matriz de incidencia que relaciona $a$ con $y$. El vector $a$ representa los valores genotípicos como se describen en el siguiente parrafo, y $e$ es el vector de residuos con una distribución que se asume normal con media igual a $0$ y matriz de covarianza $I\sigma^{2}_{e}$.
-
-En la ecuación (1), $a$
 
 Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNP y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
@@ -164,7 +409,7 @@ __Figura 2.4:__ Esquema del calculo de la matriz H a partir de las matrices A y 
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
-## Estudio de simulación
+## Habilidad predictiva, subconjuntos de datos y simulación de fenotipos y genotipos
 
 <!--Evaluación de la precisión con simulaciones por ordenador
 Investigamos la precisión para predecir el rendimiento fenotípico realizando simulaciones por computadora basadas en los datos de marcadores de nuestro estudio. 

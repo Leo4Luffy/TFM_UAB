@@ -826,7 +826,7 @@ __Figura 1.7:__ Esquema de comparación del BLUP, GBLUP y ssGBLUP. El GBLUP es u
 
 Empero, esta forma de implementar la selección genómica en múltiples pasos es tendente a cometer errores [@cite:14], además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos [@cite:17; @cite:15]. Conscientes de esto, @cite:17 simplificaron el proceso de varios pasos al desarrollar un método de selección genómica, en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su EBV o GEBV [@cite:20; @cite:11], método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
-En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matiz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del calculo posterior de pseudo-fenotipos [@cite:18].
+En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del calculo posterior de pseudo-fenotipos [@cite:18].
 
 El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a @cite:31, el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
@@ -886,19 +886,19 @@ a_{1} = \sigma_{a_{1}, a_{2}} \times \left[ \sigma_{a_{2}}^{2} \right]^{-1} \tim
 Sabiendo que la matriz de parentesco en base al pedigrí ($A$) puede descomponerse como $\begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix}$, donde $A_{11}$ y $A_{22}$ corresponden, respectivamente, a las matrices de parentesco en base al pedigrí de los individuos no genotipados y genotipados (o bien, la varianza de sus respectivos valores  de cría), y $A_{12}$ = $A_{21}$ corresponden a la matriz de parentesco en base al pedigrí entre individuos genotipados y no genotipados (o bien, la covarianza de sus valores de cría), la expresión anterior puede reescribirse de la siguiente forma:
 
 \begin{align*}
-g_{1} = A_{12} \times A_{22}^{-1} \times g_{2} + e
+g_{1} = A_{12} A_{22}^{-1} g_{2} + e
 \end{align*}
 
 Luego la expresión anterior en términos de varianza:
 
 \begin{align*}
-var(g_{1}) = var(A_{12} \times A_{22}^{-1} \times g_{2}) + var(e)
+var(g_{1}) = var(A_{12} A_{22}^{-1} g_{2}) + var(e)
 \end{align*}
 
 Con un poco de algebra, finalmete se tendía la expresión correspondiente a $var(g_{1})$:
 
 \begin{align*}
-var(g_{1}) = A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21}
+var(g_{1}) = A_{11} + A_{12} A_{22}^{-1} (G - A_{22}) A_{22}^{-1} A_{21}
 \end{align*}
 
 En relación a la expresión $var(g_{2})$, esta sería igual a:
@@ -910,13 +910,13 @@ var(g_{2}) = G
 Por último, la expresión $cov(g_{1}, g_{2})$, equivaldría a:
 
 \begin{align*}
-cov(g_{1}, g_{2}) = cov(A_{12} \times A_{22}^{-1} \times g_{2} + e, g_{2})
+cov(g_{1}, g_{2}) = cov(A_{12} A_{22}^{-1} g_{2} + e, g_{2})
 \end{align*}
 
 Qué con un poco de algebra, equilvadría a:
 
 \begin{align*}
-cov(g_{1}, g_{2}) = A_{12} \times A_{22}^{-1} \times G
+cov(g_{1}, g_{2}) = A_{12} A_{22}^{-1} G
 \end{align*}
 
 Finalmente, la matriz que contiene las relaciones conjuntas de individuos genotipados y no genotipados sería:
@@ -924,9 +924,10 @@ Finalmente, la matriz que contiene las relaciones conjuntas de individuos genoti
 \begin{align*}
 H =
 \begin{bmatrix}
-A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21} & A_{12} \times A_{22}^{-1} \times G \\ 
-G \times A_{22}^{-1} \times A_{12}' & G 
+A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
+G A_{22}^{-1} A_{12}' & G 
 \end{bmatrix}
+,
 \end{align*}
 
 Una vez obtenida la matriz H, se obtiene su inversa ($H^{-1}$), y el modelo de selección genómica se puede resolver mediante un modelo lineal mixto:
@@ -1390,3 +1391,7 @@ b <- a +
 
 knitr::include_graphics('figures/Graf_arroz.pdf', auto_pdf = TRUE)
 ```
+
+::: {.center data-latex=""}
+__Figura 1.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa L._)--> a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura - [FAOSTAT](http://faostat.fao.org/) para desarrollar estas figuras.
+:::

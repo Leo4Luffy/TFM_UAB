@@ -34,7 +34,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Evaluación de la predicción genómica de un solo paso en plantas},
+            pdftitle={Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción},
             pdfauthor={Jorge Leonardo López Martínez},
             colorlinks=true,
             linkcolor=cyan,
@@ -250,7 +250,7 @@
 
 \vspace*{\drop}
 \begin{center}
-\Huge \textsc{Evaluación de la predicción genómica de un solo paso en plantas}
+\Huge \textsc{Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción}
 \end{center}
 
 %% Page II: Colophon %LCR
@@ -277,7 +277,7 @@ bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inter
 \begin{center}
 \includegraphics[width=41mm]{_bookdown_files/logo_uab.png} \includegraphics[width=41mm]{_bookdown_files/logo_upv.jpg} \includegraphics[width=41mm]{_bookdown_files/logo_ciheam.jpg} \newline
 \vspace{\baselineskip}
-\Huge{Evaluación de la predicción genómica de un solo paso en plantas}\par
+\Huge{Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción}\par
 \vspace{\baselineskip}
 \linespread{1.3}{\normalsize Tesis académica para obtener\\
 el grado de Máster en Mejora Genética y\\
@@ -480,7 +480,7 @@ Para implementar los métodos de selección genómica mencionados anteriormente 
 
 Empero, esta forma de implementar la selección genómica en múltiples pasos es tendente a cometer errores (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar, y Misztal (\protect\hyperlink{ref-cite:17}{2009}) simplificaron el proceso de varios pasos al desarrollar un método de selección genómica, en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su EBV o GEBV (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}), método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
-En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matiz A) entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de pseudo-fenotipos (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
+En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de pseudo-fenotipos (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
 El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
@@ -515,19 +515,19 @@ g_{1} = cov(g_{1}, g_{2}) \times \left[ var(g_{2} \right]^{-1} \times g_{2} + e
 Sabiendo que la matriz de parentesco en base al pedigrí (\(A\)) puede descomponerse como \(\begin{bmatrix} A_{11} & A_{12} \\ A_{21} & A_{22} \end{bmatrix}\), donde \(A_{11}\) y \(A_{22}\) corresponden, respectivamente, a las matrices de parentesco en base al pedigrí de los individuos no genotipados y genotipados (o bien, la varianza de sus respectivos valores de cría), y \(A_{12}\) = \(A_{21}\) corresponden a la matriz de parentesco en base al pedigrí entre individuos genotipados y no genotipados (o bien, la covarianza de sus valores de cría), la expresión anterior puede reescribirse de la siguiente forma:
 
 \begin{align*}
-g_{1} = A_{12} \times A_{22}^{-1} \times g_{2} + e
+g_{1} = A_{12} A_{22}^{-1} g_{2} + e
 \end{align*}
 
 Luego la expresión anterior en términos de varianza:
 
 \begin{align*}
-var(g_{1}) = var(A_{12} \times A_{22}^{-1} \times g_{2}) + var(e)
+var(g_{1}) = var(A_{12} A_{22}^{-1} g_{2}) + var(e)
 \end{align*}
 
 Con un poco de algebra, finalmete se tendía la expresión correspondiente a \(var(g_{1})\):
 
 \begin{align*}
-var(g_{1}) = A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21}
+var(g_{1}) = A_{11} + A_{12} A_{22}^{-1} (G - A_{22}) A_{22}^{-1} A_{21}
 \end{align*}
 
 En relación a la expresión \(var(g_{2})\), esta sería igual a:
@@ -539,13 +539,13 @@ var(g_{2}) = G
 Por último, la expresión \(cov(g_{1}, g_{2})\), equivaldría a:
 
 \begin{align*}
-cov(g_{1}, g_{2}) = cov(A_{12} \times A_{22}^{-1} \times g_{2} + e, g_{2})
+cov(g_{1}, g_{2}) = cov(A_{12} A_{22}^{-1} g_{2} + e, g_{2})
 \end{align*}
 
 Qué con un poco de algebra, equilvadría a:
 
 \begin{align*}
-cov(g_{1}, g_{2}) = A_{12} \times A_{22}^{-1} \times G
+cov(g_{1}, g_{2}) = A_{12} A_{22}^{-1} G
 \end{align*}
 
 Finalmente, la matriz que contiene las relaciones conjuntas de individuos genotipados y no genotipados sería:
@@ -553,9 +553,10 @@ Finalmente, la matriz que contiene las relaciones conjuntas de individuos genoti
 \begin{align*}
 H =
 \begin{bmatrix}
-A_{11} + A_{12} \times A_{22}^{-1} \times G - A_{22} \times A_{22}^{-1} \times A_{21} & A_{12} \times A_{22}^{-1} \times G \\ 
-G \times A_{22}^{-1} \times A_{12}' & G 
+A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
+G A_{22}^{-1} A_{12}' & G 
 \end{bmatrix}
+,
 \end{align*}
 
 Una vez obtenida la matriz H, se obtiene su inversa (\(H^{-1}\)), y el modelo de selección genómica se puede resolver mediante un modelo lineal mixto:
@@ -644,6 +645,11 @@ Especie & Carácter & Habilidad predictiva & Modelo & Referencia \\
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_arroz} \end{center}
 
+\begin{center}
+\textbf{Figura 1.9:} Evolución de la producción y uso del arroz a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura - \href{http://faostat.fao.org/}{FAOSTAT} para desarrollar estas figuras.
+
+\end{center}
+
 \hypertarget{objetivos}{%
 \chapter{Objetivos}\label{objetivos}}
 
@@ -653,25 +659,58 @@ Especie & Carácter & Habilidad predictiva & Modelo & Referencia \\
 \hypertarget{recurso-vegetal-y-datos-fenotuxedpicos}{%
 \section{Recurso vegetal y datos fenotípicos}\label{recurso-vegetal-y-datos-fenotuxedpicos}}
 
-Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database}, el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). Posteriormente, dichos conjuntos de datos fueron usados por Vourlaki et~al. (\protect\hyperlink{ref-cite:26}{s.~f.}), quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.
+Los conjuntos de datos se obtuvieron del \href{https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363}{Rice SNP-Seek Database} , el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). En un estudio previo a este (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}), los datos de genotipado de SNP fueron sometidos a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se consideró eliminar loci de SNP con una frecuencia del alelo menor de menos de 0.05.
 
-Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 2.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo este estudio una vez la misma era el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.
+
+Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 4.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo el estudio una vez la misma fue el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA} \end{center}
 
 \begin{center}
-\textbf{Figura 2.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan distintos grupos varietales: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
+\textbf{Figura 4.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 
 \end{center}
 
-En relación a los datos de fenotipo, el conjunto de datos proporciono información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 2.2), siendo seleccionada para este estudio el carácter tiempo de floración ya que en este se obervo suficiente variación fenotípica.
+En relación a los datos de fenotipo, el conjunto de datos proporcionó información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 4.2), siendo seleccionada para la predicción posterior utilizando los modelos de selección genómica el carácter tiempo de floración, ya que en este se observo suficiente variación fenotípica.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_feno} \end{center}
 
 \begin{center}
-\textbf{Figura 2.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+\textbf{Figura 4.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
 
 \end{center}
+
+\hypertarget{selecciuxf3n-basada-en-informaciuxf3n-de-pedigruxed-e-informaciuxf3n-genuxf3mica}{%
+\section{Selección basada en información de pedigrí e información genómica}\label{selecciuxf3n-basada-en-informaciuxf3n-de-pedigruxed-e-informaciuxf3n-genuxf3mica}}
+
+Para llevar a cabo la predicción usando el mejor predictor lineal insesgado (BLUP) en individuos no genotipados y el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
+
+\begin{equation}
+y = 1_{n} \mu + Zg + e,
+\end{equation}
+
+donde \(y\) representa el valor del fenotipo a predecir (es decir, el tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(g\) con \(y\). \(1_{n}\) es un vector de unos, \(\mu\) es la media de la población, el vector \(g\) representa los efectos aleatorios genéticos aditivos, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\).
+
+En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información de pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
+
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A descrita anteriormente y de la matriz de parentesco basado en marcadores de ADN (o matriz G) (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
+
+\begin{equation}
+H =
+\begin{bmatrix}
+A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
+G A_{22}^{-1} A_{12}' & G 
+\end{bmatrix}
+,
+\end{equation}
+
+donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de la matriz A, y los subíndices \(1\) y \(2\) representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y \(nSNP\) representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumo un valor de 0.05.
+
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función \texttt{R} usada para construir la matriz H.
+
+\hypertarget{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-pedigruxedes-ancestrales}{%
+\section{Habilidad predictiva, subconjuntos de datos y simulación de pedigríes ancestrales}\label{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-pedigruxedes-ancestrales}}
 
 En lo que respecta a la información de pedigrí, esta no estaba disponible. Por ello, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información. Este software . (Figura 2.3).
 
@@ -681,19 +720,6 @@ En lo que respecta a la información de pedigrí, esta no estaba disponible. Por
 \textbf{Figura 2.3:} .
 
 \end{center}
-
-\hypertarget{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}{%
-\section{Modelo para la predicción genómica y habilidad predictiva}\label{modelo-para-la-predicciuxf3n-genuxf3mica-y-habilidad-predictiva}}
-
-Para llevar a cabo la predicción genómica mediante el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), se eliminaron los loci de SNP con una frecuencia del alelo menor de menos de 0.05. La predicción genómica se realizó mediante el siguiente modelo con los datos descritos anteriormente:
-
-\begin{equation}
-y = Za + e,
-\end{equation}
-
-donde \(y\) representa el valor del fenotipo a predecir (tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(a\) con \(y\). El vector \(a\) representa los valores genotípicos como se describen en el siguiente parrafo, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\).
-
-En la ecuación (1), \(a\)
 
 Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de entrenamiento, el número de datos de genotipado de SNP y el número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 2.4) con la siguientes características:
 
@@ -716,8 +742,8 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
 
-\hypertarget{estudio-de-simulaciuxf3n}{%
-\section{Estudio de simulación}\label{estudio-de-simulaciuxf3n}}
+\hypertarget{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-fenotipos-y-genotipos}{%
+\section{Habilidad predictiva, subconjuntos de datos y simulación de fenotipos y genotipos}\label{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-fenotipos-y-genotipos}}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_2} \end{center}
 
