@@ -7,7 +7,6 @@ showtext_auto()
 
 <!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
 
-# Materiales y métodos
 <!--
 ## Introducción {#intro2}
 
@@ -29,6 +28,9 @@ En el ssGBLUP se dispone de una matriz de parentesco genómica global de individ
 
 Al ser una forma de BLUP en el que la matriz de relación de parentesco es sustituida por la matriz de relación combinada [@cite:17; @cite:15; @cite:21], el ssGBLUP se puede adecuar con facilidad a caracteres múltiples y maternos [@cite:21], además se adapta también a las herramientas informaticas ya desarrolladas en base al BLUP [@cite:22]. Este hecho hace del ssGBLUP un método de uso rutinario para la evaluación genómica en animales, donde ha demostrado que produce una predicción más precisa de los valores de cría en comparación a los métodos BLUP y GBLUP antes mencionados [@cite:14; @cite:19; @cite:18]. No obstante, el uso del ssGBLUP para la selección genómica en plantas es más reciente y escaso [@cite:19; @cite:11]. En consecuencia, el __objetivo__
 -->
+
+# Materiales y métodos
+
 ## Recurso vegetal y datos fenotípicos
 
 Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363), el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (_Oryza sativa L._). Posteriormente, dichos conjuntos de datos fueron usados por @cite:26, quienes sometieron los datos de genotipado de SNP a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01.<!-- Las condiciones detalladas del procedimiento de control de calidad, así como también del proceso de imputación, son descritas por @cite:26.-->
@@ -88,85 +90,72 @@ Para identificar el efecto sobre la predictibilidad del tamaño de la muestra de
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
-Puntos <- data.frame(x = c(3.5, 6.2), y = c(6.1, 5.4))
+Punto <- data.frame(x = 4.95, y = 0.8)
+Puntos <- data.frame(x = c(4.95, 4.85, 5.05, 4.90, 5.00), y = c(1.8, 1.8, 1.8, 1.4, 1.4))
+Punto_2 <- data.frame(x = 2.25, y = 5.15)
 
 data.frame(
-  x = c(3.5:16.7), y = c(-7.0:6.2)
+  x = 4.0, y = 0.5
   ) %>%
-  ggplot(aes(x, y)) +
+  ggplot(aes(x0 = x, y0 = y, r = 0.8)) +
   #geom_blank() +
-  annotate(geom = 'rect', xmin = 3.7, xmax = 5.9, ymin = 3.7, ymax = 5.9, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 4.8, y = 4.8, label = 'A', size = 6.4, colour = 'black') +
-  #annotate(geom = 'text', x = 2.6, y = 4.9, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
-  #annotate(geom = 'text', x = 2.6, y = 4.4, label = 'basadas en', family = 'gochi', size = 5.4, colour = 'black') +
-  #annotate(geom = 'text', x = 2.6, y = 3.9, label = 'datos de pedigrí', family = 'gochi', size = 5.4, colour = 'black') +
   
-  annotate(geom = 'rect', xmin = 6.3, xmax = 7.7, ymin = 3.8, ymax = 5.2, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'text', x = 7.0, y = 4.5, label = 'G', size = 6.4, colour = 'black') +
-  #annotate(geom = 'text', x = 8.8, y = 4.9, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
-  #annotate(geom = 'text', x = 8.8, y = 4.4, label = 'basadas en', family = 'gochi', size = 5.4, colour = 'black') +
-  #annotate(geom = 'text', x = 8.8, y = 3.9, label = 'datos genómicos', family = 'gochi', size = 5.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 2.0, xmax = 3.25, ymin = 7.5, ymax = 9.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 2.625, y = 8.5, label = 'A', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 1.7, y = 8.5, label = 'Matriz A', size = 4.6, angle = 90, colour = 'black') +
   
-  geom_curve(x = 4.8, xend = 5.0, y = 3.6, yend = 2.4, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
-  geom_curve(x = 7.0, xend = 6.4, y = 3.6, yend = 2.0, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
+  annotate(geom = 'rect', xmin = 5.0, xmax = 5.75, ymin = 7.75, ymax = 9.0, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 5.375, y = 8.375, label = 'G', size = 6.4, colour = 'black') +
+  annotate(geom = 'text', x = 4.7, y = 8.375, label = 'Matriz G', size = 4.6, angle = 90, colour = 'black') +
   
-  annotate(geom = 'rect', xmin = 4.1, xmax = 6.3, ymin = 0.0, ymax = 2.2, colour = 'black', fill = 'white') +
-  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 0.1, ymax = 1.5, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 4.8, xmax = 6.2, ymin = 1.6, ymax = 2.1, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 4.2, xmax = 4.7, ymin = 0.1, ymax = 1.5, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 4.2, xmax = 4.7, ymin = 1.6, ymax = 2.1, colour = 'red', fill = 'red', alpha = 0.2) +
-  annotate(geom = 'text', x = 5.2, y = 1.1, label = 'H', size = 6.4, colour = 'black') +
-  #annotate(geom = 'text', x = 3.3, y = 0.7, label = 'Relaciones', family = 'gochi', size = 5.4, colour = 'black') +
-  #annotate(geom = 'text', x = 3.3, y = 0.2, label = 'combinadas', family = 'gochi', size = 5.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 2.0, xmax = 3.25, ymin = 3.75, ymax = 5.75, colour = 'black', fill = 'white', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 2.4, xmax = 3.15, ymin = 3.95, ymax = 5.05, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 1.7, y = 4.75, label = 'Matriz H', size = 4.6, angle = 90, colour = 'black') +
   
-  geom_curve(x = 6.4, xend = 6.8, y = 0.2, yend = 0.6, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
-  annotate(geom = 'text', x = 7.6, y = 1.1, label = 'ssGBLUP', size = 4.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 3.5, xmax = 4.5, ymin = 1.8, ymax = 0.8, colour = 'black', fill = 'black', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 3.9, xmax = 4.1, ymin = 0.8, ymax = 0.5, colour = 'black', fill = 'black', alpha = 0.7) +
+  geom_circle(aes(x0 = x, y0 = y, r = 0.2), colour = 'black', fill = 'black', alpha = 0.7, size = 0.7) +
   
-  annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
-  annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = 3.0, ymax = 5.9, colour = 'black', fill = 'white', linetype = 'dashed') +
-  annotate(geom = 'rect', xmin = 9.2, xmax = 12.7, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
-  #annotate(geom = 'rect', xmin = 13.0, xmax = 16.5, ymin = -0.2, ymax = 2.7, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 4.7, xmax = 5.2, ymin = 0.3, ymax = 2.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  geom_point(aes(x = x, y = y), data = Punto, size = 1.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  geom_point(aes(x = x, y = y), data = Puntos, size = 0.6, shape = 21, color = 'black', fill = 'black', alpha = 0.9) +
+  annotate(geom = 'text', x = 3.2, y = 1.0, label = 'ssGBLUP', size = 4.6, angle = 90, colour = 'black') +
   
-  annotate(geom = 'text', x = 3.5, y = 6.1, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 6.2, y = 5.4, label = '2-3', family = 'gochi', size = 3.4, colour = 'black') +
-  #annotate(geom = 'text', x = 8.1, y = 0.4, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
-  geom_point(aes(x = x, y = y), data = Puntos, size = 6, shape = 1, color = 'black') +
+  geom_curve(x = 5.4, xend = 6.2, y = 1.0, yend = 1.0, arrow = arrow(length = unit(0.08, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'dashed') +
+  #annotate(geom = 'text', x = 8.8, y = 1.2, label = 'EBV', size = 4.8, colour = 'black') +
+  annotate(geom = 'text', x = 6.7, y = 1.0, label = 'GEBV', size = 4.8, colour = 'black') +
   
-  annotate(geom = 'text', x = 9.5, y = 5.5, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 13.3, y = 5.5, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
-  annotate(geom = 'text', x = 9.5, y = 2.3, label = '2', family = 'gochi', size = 5.8, colour = 'black') +
-  #annotate(geom = 'text', x = 13.3, y = 2.3, label = '3', family = 'gochi', size = 5.8, colour = 'black') +
+  geom_curve(x = 2.625, xend = 2.625, y = 7.3, yend = 6.05, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
+  geom_curve(x = 5.375, xend = 3.55, y = 7.45, yend = 4.75, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
+  geom_curve(x = 2.875, xend = 3.95, y = 3.45, yend = 2.1, arrow = arrow(length = unit(0.05, 'inch')), size = 0.5, color = 'black', curvature = 0.0, linetype = 'solid') +
   
-  annotate(geom = 'rect', xmin = 9.3, xmax = 9.6, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 9.6, xmax = 9.9, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 9.9, xmax = 10.2, ymin = 4.0, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 10.5, xmax = 10.8, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 10.8, xmax = 11.1, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 11.1, xmax = 11.4, ymin = 3.7, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 11.7, xmax = 12.0, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 12.0, xmax = 12.3, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 12.3, xmax = 12.6, ymin = 3.4, ymax = 5.0, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 6.25, xmax = 8.25, ymin = 6.5, ymax = 8.8, colour = 'black', fill = 'white', linetype = 'dashed') +
+  annotate(geom = 'rect', xmin = 6.25, xmax = 8.25, ymin = 3.95, ymax = 6.25, colour = 'black', fill = 'white', linetype = 'dashed') +
   
-  annotate(geom = 'rect', xmin = 13.1, xmax = 13.9, ymin = 4.2, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 14.0, xmax = 15.0, ymin = 4.0, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
-  annotate(geom = 'rect', xmin = 15.1, xmax = 16.3, ymin = 3.8, ymax = 5.0, colour = 'black', fill = 'black', alpha = 0.2) +
+  annotate(geom = 'text', x = 2.25, y = 5.15, label = '1-2', family = 'gochi', size = 3.4, colour = 'black') +
+  geom_point(aes(x = x, y = y), data = Punto_2, size = 6, shape = 1, color = 'black') +
   
-  annotate(geom = 'rect', xmin = 9.3, xmax = 10.4, ymin = 1.35, ymax = 1.8, colour = 'black', fill = 'white') +
-  annotate(geom = 'rect', xmin = 9.3, xmax = 11.5, ymin = 0.75, ymax = 1.25, colour = 'black', fill = 'white') +
-  annotate(geom = 'rect', xmin = 9.3, xmax = 12.6, ymin = 0.15, ymax = 0.65, colour = 'black', fill = 'white') +
+  annotate(geom = 'text', x = 6.35, y = 8.45, label = '1', family = 'gochi', size = 4.4, colour = 'black') +
+  annotate(geom = 'rect', xmin = 6.45, xmax = 6.75, ymin = 7.8, ymax = 8.3, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 6.8, xmax = 7.4, ymin = 7.3, ymax = 8.3, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 7.45, xmax = 8.15, ymin = 6.9, ymax = 8.3, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
   
-  annotate(geom = 'text', x = 9.84, y = 1.575, label = '100122', size = 2.4, colour = 'black') +
-  annotate(geom = 'text', x = 10.38, y = 0.975, label = '10012210120211', size = 2.4, colour = 'black') +
-  annotate(geom = 'text', x = 10.90, y = 0.375, label = '1001221012021120012210', size = 2.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.35, y = 5.95, label = '2', family = 'gochi', size = 4.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.65, y = 5.45, label = '100122', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 7.00, y = 4.95, label = '10012210120211', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 7.29, y = 4.45, label = '100122101202112001221', size = 2.8, colour = 'black') +
   
-  scale_x_continuous(limits = c(2.5, 17.7)) +
-  scale_y_continuous(limits = c(-1.0, 6.8)) +
+  scale_x_continuous(limits = c(1.05, 8.95)) +
+  scale_y_continuous(limits = c(0.0, 9.5)) +
+  
   theme_bw() +
+  #labs(title = 'ssGBLUP') +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) #-> Esquema_1
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> Esquema_1
 
-#knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
@@ -195,18 +184,18 @@ data.frame(
   annotate(geom = 'text', x = 10.0, y = 4.7, label = 'Población fundadora', size = 4.4, colour = 'black') +
   #annotate(geom = 'text', x = 10.0, y = 4.5, label = '(G, y)', size = 4.4, colour = 'black') +
   
-  annotate(geom = 'rect', xmin = 3.6, xmax = 8.0, ymin = 7.2, ymax = 8.0, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 3.6, xmax = 8.0, ymin = 7.2, ymax = 8.0, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 5.8, y = 7.6, label = 'Genotipos fundadores', size = 4.0, colour = 'black') +
   geom_curve(x = 5.8, xend = 7.6, y = 6.9, yend = 5.35, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   
-  annotate(geom = 'rect', xmin = 12.0, xmax = 16.4, ymin = 6.4, ymax = 8.0, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 12.0, xmax = 16.4, ymin = 6.4, ymax = 8.0, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 14.2, y = 7.6, label = 'Localización de QTN', size = 4.0, colour = 'black') +
   annotate(geom = 'text', x = 14.2, y = 6.8, label = 'y efectos', size = 4.0, colour = 'black') +
   geom_curve(x = 14.2, xend = 12.4, y = 6.1, yend = 5.35, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   
   geom_curve(x = 10.0, xend = 10.0, y = 4.1, yend = 1.6, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   geom_curve(x = 10.8, xend = 10.2, y = 2.75, yend = 2.75, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
-  annotate(geom = 'rect', xmin = 11.0, xmax = 13.2, ymin = 2.35, ymax = 3.15, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 11.0, xmax = 13.2, ymin = 2.35, ymax = 3.15, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 12.1, y = 2.75, label = 'Pedigrí', size = 4.0, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 8.0, xmax = 12.0, ymin = 0.5, ymax = 1.3, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
@@ -214,14 +203,14 @@ data.frame(
   
   geom_curve(x = 10.0, xend = 10.0, y = 0.3, yend = -2.0, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
   geom_curve(x = 10.8, xend = 10.2, y = -0.75, yend = -0.75, arrow = arrow(length = unit(0.1, 'inch')), size = 1.2, color = 'black', curvature = 0.0) +
-  annotate(geom = 'rect', xmin = 11.0, xmax = 14.6, ymin = -1.25, ymax = -0.35, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'rect', xmin = 11.0, xmax = 14.6, ymin = -1.25, ymax = -0.35, colour = 'black', fill = 'black', alpha = 0.2) +
   annotate(geom = 'text', x = 12.8, y = -0.75, label = 'Densidad de SNP', size = 4.0, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 9.4, xmax = 11.0, ymin = -4.0, ymax = -2.2, colour = 'black', fill = 'white') +
-  annotate(geom = 'rect', xmin = 9.9, xmax = 10.9, ymin = -3.9, ymax = -2.9, colour = 'black', fill = 'black', alpha = 0.4) +
-  annotate(geom = 'rect', xmin = 9.9, xmax = 10.9, ymin = -2.8, ymax = -2.3, colour = 'gray34', fill = 'gray44', alpha = 0.4) +
-  annotate(geom = 'rect', xmin = 9.5, xmax = 9.8, ymin = -3.9, ymax = -2.9, colour = 'gray34', fill = 'gray44', alpha = 0.4) +
-  annotate(geom = 'rect', xmin = 9.5, xmax = 9.8, ymin = -2.8, ymax = -2.3, colour = 'gray64', fill = 'gray64', alpha = 0.4) +
+  annotate(geom = 'rect', xmin = 9.9, xmax = 10.9, ymin = -3.9, ymax = -2.9, colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  #annotate(geom = 'rect', xmin = 9.9, xmax = 10.9, ymin = -2.8, ymax = -2.3, colour = 'gray34', fill = 'gray44', alpha = 0.4) +
+  #annotate(geom = 'rect', xmin = 9.5, xmax = 9.8, ymin = -3.9, ymax = -2.9, colour = 'gray34', fill = 'gray44', alpha = 0.4) +
+  #annotate(geom = 'rect', xmin = 9.5, xmax = 9.8, ymin = -2.8, ymax = -2.3, colour = 'gray64', fill = 'gray64', alpha = 0.4) +
   annotate(geom = 'text', x = 9.0, y = -3.1, label = 'Matriz H', size = 5.6, angle = 90, colour = 'black') +
   
   annotate(geom = 'text', x = 8.2, y = 8.2, label = '1', family = 'gochi', size = 5.8, colour = 'black') +
@@ -233,9 +222,9 @@ data.frame(
   theme_bw() +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
-        axis.title = element_blank()) #-> Esquema_2
+        axis.title = element_blank()) -> Esquema_2
 
-#knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 ```
 
 

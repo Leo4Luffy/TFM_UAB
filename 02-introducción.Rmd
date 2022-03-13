@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(dplyr, ggplot2, showtext, patchwork, latex2exp, gt, ggforce, here, fmsb, readr, tidyr)
+pacman::p_load(dplyr, ggplot2, showtext, patchwork, latex2exp, gt, ggforce, here, fmsb, readr, tidyr, png)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
