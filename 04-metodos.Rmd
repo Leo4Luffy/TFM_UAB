@@ -312,13 +312,13 @@ donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y 
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H. 
 
-## Simulación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva
+## Generación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva
 
-En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en @cite:48). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software MOLCOANC [@cite:24] con el fin de contar con esta información.
+En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en @cite:48). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc [@cite:24] con el fin de contar con esta información.
 
-De acuerdo a @cite:24, la idea del software MOLCOANC consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí simulado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados. <!-- NOTA: El objetivo del software molcoanc no es recuperar el pedigrí real, sino proporcionar un pedigrí que sea compatible con la dversidad observada y la relación molecular entre los individuos genotipados -->
+De acuerdo a @cite:24, la idea del software Molcoanc consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí generado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados. <!-- NOTA: El objetivo del software molcoanc no es recuperar el pedigrí real, sino proporcionar un pedigrí que sea compatible con la dversidad observada y la relación molecular entre los individuos genotipados -->
 
-En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones simuladas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
+En este sentido, el software Molcoanc se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones generadas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
 
@@ -584,9 +584,9 @@ Para identificar el efecto sobre la predictibilidad del número de datos de geno
 
 1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 
-2. Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de PLINK [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
+2. Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
 
-Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 2.4).
+Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -659,25 +659,35 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
+__Figura 4.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 :::
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del software `R`, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteracciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete `lme4GS`, no se cambio el número de iteracciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que la que se tiene por defecto era suficiente (comunicación personal). 
+Cabe aclarar que además de los casos descritos con anterioidad, también se consideraron los casos en los cuales ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
-<!--
-Ver artciulo Inter- and Intra-Generation Genomic Predictions for Douglas-fir Growth in Unobserved Environments en favoritos donde describen los paquetes (BGLR) usados.
--->
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteracciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete `lme4GS`, no se cambio el número de iteracciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteracciones que se tiene por defecto era suficiente (comunicación personal). 
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
 
 ## Simulación de fenotipos y genotipos, subconjuntos de datos y habilidad predictiva 
 
+Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados realizando simulación por ordenador, usando el paquete `SeqBreed` [@cite:47] del lenguaje de programación `Python` [@cite:53]. Los pasos llevados a cabo en la simulación se describen a continuación (Figura 4.5):
 
+1. Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete `SeqBreed`.
 
-<!--Evaluación de la precisión con simulaciones por ordenador
+   Luego, hola
+
+<!--
+
+Aquí, presentamos una versátil herramienta de simulación directa de python3, SeqBreed, para evaluar el rendimiento de GP en escenarios genéricos y con cualquier arquitectura genética (es decir, la cantidad de QTN, sus efectos y ubicación, y la cantidad de rasgos). El propósito de SeqBreed es generar datos de fenotipo y genotipo de individuos bajo diferentes estrategias de selección (genómica). 
+
+----
+
+Evaluación de la precisión con simulaciones por ordenador
 Investigamos la precisión para predecir el rendimiento fenotípico realizando simulaciones por computadora basadas en los datos de marcadores de nuestro estudio. 
 
-Bridging the gap between marker-assisted and genomic selection of heading time and plant height in hybrid wheat Y Zhao1,3, MF Mette1,3, M Gowda2,4, CFH Longin2 and JC Reif1-->
+Bridging the gap between marker-assisted and genomic selection of heading time and plant height in hybrid wheat Y Zhao1,3, MF Mette1,3, M Gowda2,4, CFH Longin2 and JC Reif1
+
+-->
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
