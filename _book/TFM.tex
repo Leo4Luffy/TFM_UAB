@@ -349,7 +349,7 @@ Se denomina como valor de cría estimado (EBV) al efecto genético que un indivi
 
 En otro orden de ideas, el rápido desarrollo de la genética molecular a partir de los años 60 permitió comprender mejor los mecanismos de la herencia. Esta disciplina permitió, a diferencia de la genética cuantitativa, estudiar de forma directa el gen, lo que facilitó a finales de la década de 1970 e inicio de 1980 el descubrimiento de secuencias variables de ADN con fenotipos fácilmente observables (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}). Son ejemplo de estas secuencias (denominadas como marcadores de ADN) los microsatélites, los polimorfismos en el tamaño de los fragmentos de restricción (RFLP) y los polimorfismos de un sólo nucleótido (SNP), siendo este último hoy en día el principal marcador utilizado para detectar variaciones en el ADN.
 
-Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), abrieron la posibilidad de obtener una predicción más precisa de los EBV (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}), los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL, permitió identificar la genética subyacente a la variación fenotípica de un carácter (delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}; Qanbari \protect\hyperlink{ref-cite:36}{2020}).
+Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}), abrieron la posibilidad de obtener una predicción más precisa de los EBV (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}), comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores (de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}), los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL, permitió identificar la genética subyacente a la variación fenotípica de un carácter (de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}; Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}; Qanbari \protect\hyperlink{ref-cite:36}{2020}).
 
 Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}), proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica (Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar su frecuencia (Figura 1.2).
 
@@ -384,7 +384,7 @@ El uso de decenas de miles de marcadores de ADN es una de las características f
 \hypertarget{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}{%
 \subsection{Métodos estadísticos en la selección genómica}\label{muxe9todos-estaduxedsticos-en-la-selecciuxf3n-genuxf3mica}}
 
-En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Crossa et~al. \protect\hyperlink{ref-cite:37}{2017}).
+En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}; Crossa et~al. \protect\hyperlink{ref-cite:37}{2017}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_RL} \end{center}
 
@@ -409,12 +409,12 @@ y = Zg + e,
 
 donde \(y\) es un vector de longitud igual al número de individuos (\(1, 2, 3, …, n\)) que representa al fenotipo, \(Z\) es una matriz que indica si el marcador es homocigoto dominante, heterocigoto u homocigoto recesivo (por ejemplo, 2 si es homocigoto dominante, 1 si es heterocigoto y 0 si es homocigoto recesivo), \(g\) es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos fijos), y \(e\) es el término del error. Luego el GEBV se puede predecir como \(\hat{g} = (Z'Z)^{- 1} Z'y\) mediante mínimos cuadrados.
 
-Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}), hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, la selección genómica brinda la oportunidad de enfrentar el problema del p grande y n pequeño por medio del uso de modelos de regresión lineal alternativos (Figura 1.5).
+Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}), hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, la selección genómica brinda la oportunidad de enfrentar el problema del p grande y n pequeño por medio del uso de modelos de regresión lineal alternativos (Figura 1.5).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_GS} \end{center}
 
 \begin{center}
-\textbf{Figura 1.5:} Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}) y de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
+\textbf{Figura 1.5:} Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) y de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
 
 \end{center}
 
@@ -464,12 +464,12 @@ La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la mat
 
 \end{center}
 
-En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP no es necesario usar una población de entrenamiento para estimar el efecto del marcador de ADN y luego predecir el GEBV. En su lugar, en el GBLUP se pueden colocar directamente a los individuos con fenotipo y sin fenotipo en el mismo modelo, y al mismo tiempo predecir el GEBV, y calcular su precisión (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}). En cuanto a la velocidad de calculo, el GBLUP es mucho más rápido que los método Bayesianos, por lo que es más adecuado para obtener rápidamente el GEBV. Sin embargo, los métodos Bayesianos permiten incorporar al modelo información previa proveniente de múltiples estudios, siendo esto una ventaja de los mismos sobre otros métodos como el GBLUP. En tal sentido, delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}) proporcionan algunos ejemplos sobre que tipo de información se podría incorporar a los efectos previos asignado a los marcadores, por mencionar algunos de ellos, la ubicación del marcador en el genoma, si dicha ubicación corresponde a una región codificante o no, y si el marcador esta en una región del genoma que alberga genes que pueden afectar una carácter de interés.
+En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP no es necesario usar una población de entrenamiento para estimar el efecto del marcador de ADN y luego predecir el GEBV. En su lugar, en el GBLUP se pueden colocar directamente a los individuos con fenotipo y sin fenotipo en el mismo modelo, y al mismo tiempo predecir el GEBV, y calcular su precisión (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}). En cuanto a la velocidad de calculo, el GBLUP es mucho más rápido que los método Bayesianos, por lo que es más adecuado para obtener rápidamente el GEBV. Sin embargo, los métodos Bayesianos permiten incorporar al modelo información previa proveniente de múltiples estudios, siendo esto una ventaja de los mismos sobre otros métodos como el GBLUP. En tal sentido, de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) proporcionan algunos ejemplos sobre que tipo de información se podría incorporar a los efectos previos asignado a los marcadores, por mencionar algunos de ellos, la ubicación del marcador en el genoma, si dicha ubicación corresponde a una región codificante o no, y si el marcador esta en una región del genoma que alberga genes que pueden afectar una carácter de interés.
 
 \hypertarget{de-la-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}{%
 \subsection{De la selección genómica de múltiples pasos a un solo paso}\label{de-la-selecciuxf3n-genuxf3mica-de-muxfaltiples-pasos-a-un-solo-paso}}
 
-Para implementar los métodos de selección genómica mencionados anteriormente (rrBLUP, BayesA-B-C, LASSO Bayesiano y GBLUP), es necesario disponer de información genotípica y fenotípica ya que los modelos estadísticos generalmente se construyen en base a esta información. Esta situación puede ser desventajosa al momento de implementar la selección genómica, ya que por lo general no todos los individuos pueden genotiparse y en ocasiones (principalmente en animales) no se tienen valores fenotípicos para caracteres de interés (por ejemplo, la producción de leche en machos) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; delosCampos et~al. \protect\hyperlink{ref-cite:31}{2013}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}; Blasco \protect\hyperlink{ref-cite:21}{2021}). Como solución al problema de la falta de fenotipos, VanRaden (\protect\hyperlink{ref-cite:39}{2007}), con la implementación del GBLUP, propuso asignarle pseudo-fenotipos o valores de-regresados (estos son, valores fenotípicos estimados a partir de los EBV) a aquellos individuos con fenotipos faltantes, basándose en la información de sus parientes, permitiendo de esta forma implementar la selección genómica combinando los EBV y los genotipos a través de múltiples pasos (Figura 1.7) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}; Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
+Para implementar los métodos de selección genómica mencionados anteriormente (rrBLUP, BayesA-B-C, LASSO Bayesiano y GBLUP), es necesario disponer de información genotípica y fenotípica ya que los modelos estadísticos generalmente se construyen en base a esta información. Esta situación puede ser desventajosa al momento de implementar la selección genómica, ya que por lo general no todos los individuos pueden genotiparse y en ocasiones (principalmente en animales) no se tienen valores fenotípicos para caracteres de interés (por ejemplo, la producción de leche en machos) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; de los Campos et~al. \protect\hyperlink{ref-cite:31}{2013}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}; Blasco \protect\hyperlink{ref-cite:21}{2021}). Como solución al problema de la falta de fenotipos, VanRaden (\protect\hyperlink{ref-cite:39}{2007}), con la implementación del GBLUP, propuso asignarle pseudo-fenotipos o valores de-regresados (estos son, valores fenotípicos estimados a partir de los EBV) a aquellos individuos con fenotipos faltantes, basándose en la información de sus parientes, permitiendo de esta forma implementar la selección genómica combinando los EBV y los genotipos a través de múltiples pasos (Figura 1.7) (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}; Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/BLUPs} \end{center}
 
@@ -482,7 +482,7 @@ Empero, esta forma de implementar la selección genómica en múltiples pasos es
 
 En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}). Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso (Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}; Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), sin la necesidad del calculo posterior de pseudo-fenotipos (Misztal, Lourenco, y Legarra \protect\hyperlink{ref-cite:18}{2020}).
 
-El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a delosCampos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
+El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}), el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
 \begin{infobox}
 \textbf{Recuadro 1.1}
@@ -707,16 +707,16 @@ G A_{22}^{-1} A_{12}' & G
 
 donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de la matriz A, y los subíndices \(1\) y \(2\) representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y \(nSNP\) representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumo un valor de 0.05.
 
-Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función \texttt{R} usada para construir la matriz H.
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
 
-\hypertarget{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-pedigruxedes-ancestrales}{%
-\section{Habilidad predictiva, subconjuntos de datos y simulación de pedigríes ancestrales}\label{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-pedigruxedes-ancestrales}}
+\hypertarget{simulaciuxf3n-de-pedigruxedes-ancestrales-subconjuntos-de-datos-y-habilidad-predictiva}{%
+\section{Simulación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva}\label{simulaciuxf3n-de-pedigruxedes-ancestrales-subconjuntos-de-datos-y-habilidad-predictiva}}
 
 En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en Cros et~al. (\protect\hyperlink{ref-cite:48}{2014})). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software MOLCOANC (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información.
 
 De acuerdo a Fernández y Toro (\protect\hyperlink{ref-cite:24}{2006}), la idea del software MOLCOANC consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí simulado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados.
 
-En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones simuladas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica en la predicción mediante el BLUP y el ssGBLUP.
+En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones simuladas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-1} \end{center}
 
@@ -725,24 +725,28 @@ En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes
 
 \end{center}
 
-Para identificar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 4.4) con la siguientes características:
+Para identificar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Distinta cantidad de individuos genotipados:
+  Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 \item
-  Diferentes densidades de SNP:
+  Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de PLINK (Purcell et~al. \protect\hyperlink{ref-cite:49}{2007}) tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
 \end{enumerate}
+
+Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 2.4).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
 \begin{center}
-\textbf{Figura 2.4:} Esquema de construcción de la matriz H a partir de la matriz A y y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
+\textbf{Figura 2.4:} Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 
 \end{center}
 
-Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente o mediante validación cruzada donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se considero como faltante.
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del software \texttt{R}.
+
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
 
 \hypertarget{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-fenotipos-y-genotipos}{%
 \section{Habilidad predictiva, subconjuntos de datos y simulación de fenotipos y genotipos}\label{habilidad-predictiva-subconjuntos-de-datos-y-simulaciuxf3n-de-fenotipos-y-genotipos}}
@@ -1159,6 +1163,9 @@ Blasco, A. 2021. \emph{Mejora genética animal}. 1st edition. EDITORIAL SÍNTESI
 \leavevmode\hypertarget{ref-cite:3}{}%
 Blasco, A., y M. A. Toro. 2014. «A short critical history of the application of genomics to animal breeding». \emph{Livestock Science} 166: 4-9.
 
+\leavevmode\hypertarget{ref-cite:51}{}%
+Caamal-Pat, D, P. Pérez-Rodríguez, J. Crossa, C. Velasco-Cruz, S. Pérez-Elizalde, y M. Vázquez-Peña. 2021. «lme4GS: An R-package for genomic selection». \emph{Genetics} 12. \url{https://doi.org/10.3389/fgene.2021.680569}.
+
 \leavevmode\hypertarget{ref-cite:42}{}%
 Caligari, P. D. S., y J. Brown. 2017. \emph{Plant breeding, practice}. 2nd edition. Vol. 2. Elsevier Ltd. \url{https://doi.org/10.1016/B978-0-12-394807-6.00195-7}.
 
@@ -1166,10 +1173,10 @@ Caligari, P. D. S., y J. Brown. 2017. \emph{Plant breeding, practice}. 2nd editi
 Cros, D., L. Sánchez, B. Cochard, P. Samper, M. Denis, J. M. Bouvet, y J. Fernández. 2014. «Estimation of genealogical coancestry in plant species using a pedigree reconstruction algorithm and application to an oil palm breeding population». \emph{Theoretical and Applied Genetics} 127: 981-94. \url{https://doi.org/10.1007/s00122-014-2273-3}.
 
 \leavevmode\hypertarget{ref-cite:37}{}%
-Crossa, J., P. Pérez-Rodríguez, J. Cuevas, O. Montesinos-López, D. Jarquín, G. delosCampos, J. Burgueño, et~al. 2017. «Genomic selection in plant breeding: methods, models, and perspectives». \emph{Trends in Plant Science}, 961-75. \url{https://doi.org/10.1016/j.tplants.2017.08.011}.
+Crossa, J., P. Pérez-Rodríguez, J. Cuevas, O. Montesinos-López, D. Jarquín, G. de los Campos, J. Burgueño, et~al. 2017. «Genomic selection in plant breeding: methods, models, and perspectives». \emph{Trends in Plant Science}, 961-75. \url{https://doi.org/10.1016/j.tplants.2017.08.011}.
 
 \leavevmode\hypertarget{ref-cite:31}{}%
-delosCampos, G., J. H. Hickey, R. Pong-Wong, H. D. Daetwyler, y M. P. L. Calus. 2013. «Whole-genome regression and prediction methods applied to plant and animal breeding». \emph{Genetics} 193: 327-45. \url{https://doi.org/10.1534/genetics.112.143313}.
+de los Campos, G., J. H. Hickey, R. Pong-Wong, H. D. Daetwyler, y M. P. L. Calus. 2013. «Whole-genome regression and prediction methods applied to plant and animal breeding». \emph{Genetics} 193: 327-45. \url{https://doi.org/10.1534/genetics.112.143313}.
 
 \leavevmode\hypertarget{ref-cite:10}{}%
 Desta, Z. A., y R. Ortiz. 2014. «Genomic selection: genome-wide prediction in plant improvement». \emph{Trends in Plant Science} 19 (9): 592-601.
@@ -1238,10 +1245,19 @@ Nelson, R. M., M. E. Pettersson, y Ö. Carlborg. 2012. «A century after Fisher:
 Pérez-Enciso, M., L. Ramírez-Ayala, y L. M. Zingaretti. 2020. «SeqBreed: a python tool to evaluate genomic prediction in complex scenarios». \emph{Genetion Selection Evolution} 52 (7). \url{https://doi.org/10.1186/s12711-020-0530-2}.
 
 \leavevmode\hypertarget{ref-cite:19}{}%
-Pérez-Rodríguez, P., J. Crossa, J. Rutkoski, J. Poland, R. Singh, A. Legarra, E. Autrique, J. Burgueño G. delosCampos, y S. Dreisigacker. 2017. «Single-step genomic and pedigree genotype x environment interaction models for predicting wheat lines in international environments». \emph{Plant Genome} 10 (2). \url{https://doi.org/10.3835/plantgenome2016.09.0089}.
+Pérez-Rodríguez, P., J. Crossa, J. Rutkoski, J. Poland, R. Singh, A. Legarra, E. Autrique, J. Burgueño G. de los Campos, y S. Dreisigacker. 2017. «Single-step genomic and pedigree genotype x environment interaction models for predicting wheat lines in international environments». \emph{Plant Genome} 10 (2). \url{https://doi.org/10.3835/plantgenome2016.09.0089}.
+
+\leavevmode\hypertarget{ref-cite:50}{}%
+Pérez-Rodríguez, P., y G. de los Campos. 2014. «Genome-wide regression and prediction with the BGLR statistical package». \emph{Genetics} 198 (2): 483-95. \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4196607/}.
+
+\leavevmode\hypertarget{ref-cite:49}{}%
+Purcell, S., B. Neale, K. Todd-Brown, L. Thomas, M. A. R. Ferreira, D. Bender, J. Maller, et~al. 2007. «PLINK: a toolset for whole-genome association and population-based linkage analysis». \emph{American Journal of Human Genetics} 81: 981-94. \url{http://pngu.mgh.harvard.edu/purcell/plink/}.
 
 \leavevmode\hypertarget{ref-cite:36}{}%
 Qanbari, S. 2020. «On the extent of linkage disequilibrium in the genome of farm animals». \emph{Frontiers in Genetics} 10. \url{https://doi.org/10.3389/fgene.2019.01304}.
+
+\leavevmode\hypertarget{ref-cite:52}{}%
+R Core Team. 2020. \emph{R: A Language and Environment for Statistical Computing}. Vienna, Austria: R Foundation for Statistical Computing. \url{https://www.R-project.org/}.
 
 \leavevmode\hypertarget{ref-cite:27}{}%
 Schaeffer, L. R. 1991. «C. R. Henderson: contributions to predicting genetic merit». \emph{Journal of Dairy Science} 74 (11): 4052-66. \url{https://doi.org/10.3168/jds.S0022-0302(91)78601-3}.

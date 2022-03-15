@@ -310,15 +310,15 @@ G A_{22}^{-1} A_{12}' & G
 
 donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y los subíndices $1$ y $2$ representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumo un valor de 0.05.
 
-Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función `R` usada para construir la matriz H. 
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H. 
 
-## Habilidad predictiva, subconjuntos de datos y simulación de pedigríes ancestrales
+## Simulación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva
 
 En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en @cite:48). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software MOLCOANC [@cite:24] con el fin de contar con esta información.
 
 De acuerdo a @cite:24, la idea del software MOLCOANC consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí simulado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados. <!-- NOTA: El objetivo del software molcoanc no es recuperar el pedigrí real, sino proporcionar un pedigrí que sea compatible con la dversidad observada y la relación molecular entre los individuos genotipados -->
 
-En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones simuladas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica en la predicción mediante el BLUP y el ssGBLUP.
+En este sentido, el software MOLCOANC se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones simuladas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
 
@@ -580,11 +580,13 @@ ped3 <- ped_plot_3 %>%
 __Figura 4.3:__ .
 :::
 
-Para identificar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, se usaron diferentes subconjuntos de datos (Figura 4.4) con la siguientes características:
+Para identificar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
-1. Distinta cantidad de individuos genotipados:
+1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 
-2. Diferentes densidades de SNP:
+2. Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de PLINK [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
+
+Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 2.4).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -657,8 +659,10 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.4:__ Esquema de construcción de la matriz H a partir de la matriz A y y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
+__Figura 2.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 :::
+
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del software `R`, permitiendo con ello la predicción mediante procedimientos Bayesianos y penalizados, respectivamente.
 
 <!--
 Ver artciulo Inter- and Intra-Generation Genomic Predictions for Douglas-fir Growth in Unobserved Environments en favoritos donde describen los paquetes (BGLR) usados.
