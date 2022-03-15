@@ -662,7 +662,7 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 __Figura 2.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 :::
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del software `R`, permitiendo con ello la predicción mediante procedimientos Bayesianos y penalizados, respectivamente.
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del software `R`, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteracciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete `lme4GS`, no se cambio el número de iteracciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que la que se tiene por defecto era suficiente (comunicación personal). 
 
 <!--
 Ver artciulo Inter- and Intra-Generation Genomic Predictions for Douglas-fir Growth in Unobserved Environments en favoritos donde describen los paquetes (BGLR) usados.
@@ -670,7 +670,9 @@ Ver artciulo Inter- and Intra-Generation Genomic Predictions for Douglas-fir Gro
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
 
-## Habilidad predictiva, subconjuntos de datos y simulación de fenotipos y genotipos
+## Simulación de fenotipos y genotipos, subconjuntos de datos y habilidad predictiva 
+
+
 
 <!--Evaluación de la precisión con simulaciones por ordenador
 Investigamos la precisión para predecir el rendimiento fenotípico realizando simulaciones por computadora basadas en los datos de marcadores de nuestro estudio. 

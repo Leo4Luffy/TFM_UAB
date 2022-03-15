@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 03:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.9)  15 MAR 2022 04:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -860,14 +860,14 @@ Package pdftex.def Info: figures/Esquema_1.pdf  used on input line 740.
 LaTeX Info: Redefining \. on input line 740.
 LaTeX Info: Redefining \% on input line 740.
 [25 <./TFM_files/figure-latex/unnamed-chunk-20-1.pdf>]
-<figures/Esquema_2.pdf, id=548, 456.70625pt x 312.16624pt>
+LaTeX Info: Redefining \. on input line 750.
+LaTeX Info: Redefining \% on input line 750.
+[26 <./figures/Esquema_1.pdf>]
+<figures/Esquema_2.pdf, id=569, 456.70625pt x 312.16624pt>
 File: figures/Esquema_2.pdf Graphic file (type pdf)
 <use figures/Esquema_2.pdf>
 Package pdftex.def Info: figures/Esquema_2.pdf  used on input line 754.
 (pdftex.def)             Requested size: 360.01347pt x 246.07513pt.
-LaTeX Info: Redefining \. on input line 754.
-LaTeX Info: Redefining \% on input line 754.
-[26 <./figures/Esquema_1.pdf>]
 LaTeX Info: Redefining \. on input line 757.
 LaTeX Info: Redefining \% on input line 757.
 [27 <./figures/Esquema_2.pdf>]
@@ -887,7 +887,7 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 780--783
 []$[]$ 
  []
 
-<figures/covar_h2.pdf, id=584, 448.67625pt x 303.1325pt>
+<figures/covar_h2.pdf, id=585, 448.67625pt x 303.1325pt>
 File: figures/covar_h2.pdf Graphic file (type pdf)
 <use figures/covar_h2.pdf>
 Package pdftex.def Info: figures/covar_h2.pdf  used on input line 784.
@@ -895,12 +895,12 @@ Package pdftex.def Info: figures/covar_h2.pdf  used on input line 784.
 [28
 
 ]
-<figures/Cor_Bay_Pen.pdf, id=591, 460.72125pt x 308.15125pt>
+<figures/Cor_Bay_Pen.pdf, id=592, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen.pdf>
 Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 793.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-<figures/Cor_F2_F3.pdf, id=592, 460.72125pt x 308.15125pt>
+<figures/Cor_F2_F3.pdf, id=593, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
 Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 800.
@@ -987,7 +987,7 @@ Underfull \hbox (badness 3646) in paragraph at lines 1223--1225
  []
 
 [39] [40] [41]
-<figures/uvalogo_regular_p_en.pdf, id=737, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=738, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
@@ -1034,10 +1034,10 @@ fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publ
 ic/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb
 ></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/leo/.Ti
 nyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (47 pages, 5088798 bytes).
+Output written on TFM.pdf (47 pages, 5089411 bytes).
 PDF statistics:
- 944 PDF objects out of 1000 (max. 8388607)
- 777 compressed objects within 8 object streams
+ 945 PDF objects out of 1000 (max. 8388607)
+ 778 compressed objects within 8 object streams
  167 named destinations out of 1000 (max. 500000)
  281 words of extra memory for PDF output out of 10000 (max. 10000000)
 
