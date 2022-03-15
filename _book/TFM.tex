@@ -758,12 +758,51 @@ Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete \texttt{SeqBreed}.
+  Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete \texttt{SeqBreed}. Luego usando las funciones \texttt{gg.GFounder()} y \texttt{gg.Genome()}, se obtuvo un archivo que indica el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100231).
+\item
+  Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el caracter tiempo de floración y heredabilidad deseada: se uso el software GCTA (Yang et~al. \protect\hyperlink{ref-cite:54}{2011}) para hacer un GWAS e identificar las regiones genómicas asociadas al caracter (Anexo A.2). Luego, en base a este GWAS se generaron los datos que indican el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, con la función \texttt{gg.QTNs()} se especificaron estos estos datos generados, indicando también la heredabilidad del caracter (0.7) de acuerdo a resultados ya reportados en la literatura cientifica.
+\item
+  Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Luego usando la función \texttt{gg.Population()} se generó mediante simulación los genotipos y fenotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
+\end{enumerate}
 
-  Luego, hola
+\begin{center}
+\textbf{Tabla 4.1:} Representación de los cuatro pedigríes generados. Cada uno de estos pedigríes tienen esquemas de cruzamientos diferentes, dando lugar a distintos número de individuos en la generación \(F_{1}\), pero con mismo número de individuos en las generaciones \(F_{2}\) y \(F_{3}\).
+
+\end{center}
+
+\captionsetup[table]{labelformat=empty,skip=1pt}
+\begin{longtable}{lllll}
+\toprule
+  & Pedigrí 1 & Pedigri 2 & Pedigrí 3 & Pedigrí 4 \\ 
+\midrule
+F0 & 451 & 451 & 451 & 451 \\ 
+F1 & 10\textsuperscript{1} & 20 & 40 & 80 \\ 
+F2 & 800 (10x80)\textsuperscript{2} & 800 (20x40) & 800 (40x20) & 800 (80x10) \\ 
+F3 & 800 (800x1)\textsuperscript{3} & 800 (800x1) & 800 (800x1) & 800 (800x1) \\ 
+Total & 2061 & 2071 & 2091 & 2131 \\ 
+ \bottomrule
+\end{longtable}
+\vspace{-5mm}
+\begin{minipage}{\linewidth}
+\textsuperscript{1}10 indica el número de descendientes que tendrían los 451 individuos de la generación F0 mediante cruzamiento. \\ 
+\textsuperscript{2}10x80 indica el número de descendientes (80) que tendrían cada uno de los 10 individuos de la generación F1 por autofecundación, dando un total de 800 individuos en la generación F2. \\ 
+\textsuperscript{3}800x1 indica el número de descendientes (1) que tendrían cada uno de los 800 individuos de la generación F2 por autofecundación, dando un total de 800 individuos en la generación F3. \\ 
+\end{minipage}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Uso de subconjuntos de datos con diferentes densidades de SNP:
 \end{enumerate}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_2} \end{center}
+
+\begin{center}
+\textbf{Figura 4.5:}
+
+\end{center}
 
 \hypertarget{resultados-y-discusiuxf3n}{%
 \chapter{Resultados y discusión}\label{resultados-y-discusiuxf3n}}
@@ -827,7 +866,7 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \chapter{Anexos}\label{anexos}}
 
 \hypertarget{funciuxf3n-para-el-calculo-de-la-matriz-de-parentesco-combinada}{%
-\section{Función para el calculo de la matriz de parentesco combinada}\label{funciuxf3n-para-el-calculo-de-la-matriz-de-parentesco-combinada}}
+\section{\texorpdfstring{\href{http://rstudio-pubs-static.s3.amazonaws.com/378595_edda8cfe948a4786ae6dd74962cf6e94.html}{Función} para el calculo de la matriz de parentesco combinada}{Función para el calculo de la matriz de parentesco combinada}}\label{funciuxf3n-para-el-calculo-de-la-matriz-de-parentesco-combinada}}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -901,6 +940,11 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \NormalTok{  \}}
 \end{Highlighting}
 \end{Shaded}
+
+\hypertarget{visualizaciuxf3n-del-gwas}{%
+\section{Visualización del GWAS}\label{visualizaciuxf3n-del-gwas}}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/gwas} \end{center}
 
 \hypertarget{habilidad-predictiva}{%
 \section{Habilidad predictiva}\label{habilidad-predictiva}}
@@ -1300,6 +1344,9 @@ Wang, J., J. Crossa, y J. Gai. 2020. «Quantitative genetic studies with applica
 
 \leavevmode\hypertarget{ref-cite:25}{}%
 Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice using genomic best linear unbiased prediction». \emph{Proceedings of the National Academy of Sciences of the United States of America} 111 (34): 12456-61. \url{https://doi.org/10.1073/pnas.1413750111}.
+
+\leavevmode\hypertarget{ref-cite:54}{}%
+Yang, J., S. H. Lee, M. E. Goddard, y P. M. Visscher. 2011. «GCTA: A Tool for Genome-wide Complex Trait Analysis». \emph{American Journal of Human Genetics} 88 (1): 76-82. \url{https://doi.org/10.1016/j.ajhg.2010.11.011}.
 
 \endgroup
 

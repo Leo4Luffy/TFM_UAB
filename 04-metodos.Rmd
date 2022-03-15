@@ -672,22 +672,42 @@ Se uso el coeficiente de correlación entre los valores fenotípicos observados 
 
 Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados realizando simulación por ordenador, usando el paquete `SeqBreed` [@cite:47] del lenguaje de programación `Python` [@cite:53]. Los pasos llevados a cabo en la simulación se describen a continuación (Figura 4.5):
 
-1. Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete `SeqBreed`.
+1. Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete `SeqBreed`. Luego usando las funciones `gg.GFounder()` y `gg.Genome()`, se obtuvo un archivo que indica el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100231).
 
-   Luego, hola
+2. Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el caracter tiempo de floración y heredabilidad deseada: se uso el software GCTA [@cite:54] para hacer un GWAS e identificar las regiones genómicas asociadas al caracter (Anexo A.2). Luego, en base a este GWAS se generaron los datos que indican el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, con la función `gg.QTNs()` se especificaron estos estos datos generados, indicando también la heredabilidad del caracter (0.7) de acuerdo a resultados ya reportados en la literatura cientifica.
 
-<!--
+3. Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Luego usando la función `gg.Population()` se generó mediante simulación los genotipos y fenotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
 
-Aquí, presentamos una versátil herramienta de simulación directa de python3, SeqBreed, para evaluar el rendimiento de GP en escenarios genéricos y con cualquier arquitectura genética (es decir, la cantidad de QTN, sus efectos y ubicación, y la cantidad de rasgos). El propósito de SeqBreed es generar datos de fenotipo y genotipo de individuos bajo diferentes estrategias de selección (genómica). 
+::: {.center data-latex=""}
+__Tabla 4.1:__ Representación de los cuatro pedigríes generados. Cada uno de estos pedigríes tienen esquemas de cruzamientos diferentes, dando lugar a distintos número de individuos en la generación $F_{1}$, pero con mismo número de individuos en las generaciones $F_{2}$ y $F_{3}$.
+:::
 
-----
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
-Evaluación de la precisión con simulaciones por ordenador
-Investigamos la precisión para predecir el rendimiento fenotípico realizando simulaciones por computadora basadas en los datos de marcadores de nuestro estudio. 
+tribble(
+  ~' ', ~'Pedigrí 1', ~'Pedigri 2', ~'Pedigrí 3', ~'Pedigrí 4',
+  'F0', '451', '451', '451', '451',
+  'F1', '10', '20', '40', '80',
+  'F2', '800 (10x80)', '800 (20x40)', '800 (40x20)', '800 (80x10)',
+  'F3', '800 (800x1)', '800 (800x1)', '800 (800x1)', '800 (800x1)',
+  'Total', '2061', '2071', '2091', '2131'
+  ) %>%
+  gt() %>%
+   tab_footnote(
+    footnote = '10 indica el número de descendientes que tendrían los 451 individuos de la generación F0 mediante cruzamiento.',
+    locations = cells_body(columns = 'Pedigrí 1', rows = 2)
+  ) %>%
+   tab_footnote(
+    footnote = '10x80 indica el número de descendientes (80) que tendrían cada uno de los 10 individuos de la generación F1 por autofecundación, dando un total de 800 individuos en la generación F2.',
+    locations = cells_body(columns = 'Pedigrí 1', rows = 3)
+  ) %>%
+   tab_footnote(
+    footnote = '800x1 indica el número de descendientes (1) que tendrían cada uno de los 800 individuos de la generación F2 por autofecundación, dando un total de 800 individuos en la generación F3.',
+    locations = cells_body(columns = 'Pedigrí 1', rows = 4)
+  )
+```
 
-Bridging the gap between marker-assisted and genomic selection of heading time and plant height in hybrid wheat Y Zhao1,3, MF Mette1,3, M Gowda2,4, CFH Longin2 and JC Reif1
-
--->
+4. Uso de subconjuntos de datos con diferentes densidades de SNP:<!-- Recordar que use los mismos chips de la metología anterior (1000, 10000, 100000) -->
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -745,5 +765,7 @@ data.frame(
 knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 ```
 
-
+::: {.center data-latex=""}
+__Figura 4.5:__
+:::
 

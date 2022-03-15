@@ -9,7 +9,7 @@ pacman::p_load(tibble, gt, dplyr, tidyr)
 
 # Anexos
 
-## Función para el calculo de la matriz de parentesco combinada
+## [Función](http://rstudio-pubs-static.s3.amazonaws.com/378595_edda8cfe948a4786ae6dd74962cf6e94.html) para el calculo de la matriz de parentesco combinada
 
 ```{r, echo = TRUE, eval = FALSE}
 
@@ -81,6 +81,83 @@ fn.mH <- function(ped, mG) { # Esta función recibe como argu-
   
   return(mH)
   }
+```
+
+## Visualización del GWAS
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
+
+res_GWAS <- read_delim(here('figures', 'gwas.mlma')) # Se importa el archivo con los resultados del GWAS.
+
+# Se visualiza los resultados mediante ggplot2 ----
+
+# 1. se calcula la posición acumulada de los SNPs:
+
+vis_GWAS <- res_GWAS %>%
+  
+  group_by(Chr) %>%
+  summarise(Tam_cromosoma = max(bp)) %>% # se calcula el tamaño de los cromosomas.
+  
+  mutate(Total = cumsum(Tam_cromosoma) - Tam_cromosoma) %>%
+  select(-Tam_cromosoma) %>% # Se calcula la posición acumulada de cada cromosoma.
+  
+  left_join(res_GWAS, ., by = c('Chr' = 'Chr')) %>% # Se adiciona la información anterior al conjunto de datos inicial "res_GWAS".
+  
+  arrange(Chr, bp) %>%
+  mutate(bp_total = bp + Total) # Se adiciona la posición acumulada de cada SNP.
+
+# 2. Se prepara el eje x, debido a que no se quiere mostrar la posición acumulada de los SNPs o bp, sino mostrar el nombre del cromosoma:
+
+eje_x <- vis_GWAS %>%
+  group_by(Chr) %>%
+  summarise(centro = (max(bp_total) + min(bp_total)) / 2)
+
+# 3. Se hace el gráfico a continuación:
+
+Graf_Manhattan <- ggplot(data = vis_GWAS, aes(x = bp_total, y = -log10(p))) +
+  geom_point(aes(colour = as.factor(Chr)), alpha = 0.2, size = 2.4) +
+  scale_colour_manual(values = c('cyan', 'green', 'red', 'yellow', 'cyan', 'green', 'red', 'yellow', 'cyan', 'green', 'red', 'yellow')) +
+  scale_x_continuous( label = eje_x$Chr, breaks= eje_x$centro ) +
+  labs(x = 'Cromosoma', y = '-log10(p)') +
+  theme_bw() +
+  theme(
+    legend.position = 'none',
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold')
+    ) # Nota: 
+
+gg_qqplot <- function(ps, ci = 0.95) {
+  n  <- length(ps)
+  df <- data.frame(
+    observed = -log10(sort(ps)),
+    expected = -log10(ppoints(n)),
+    clower   = -log10(qbeta(p = (1 - ci) / 2, shape1 = 1:n, shape2 = n:1)),
+    cupper   = -log10(qbeta(p = (1 + ci) / 2, shape1 = 1:n, shape2 = n:1))
+  )
+  log10Pe <- expression(paste('Expected -log'[10], plain(P)))
+  log10Po <- expression(paste('Observed -log'[10], plain(P)))
+  ggplot(df) +
+    geom_ribbon(
+      mapping = aes(x = expected, ymin = clower, ymax = cupper),
+      alpha = 0.2, fill = 'yellow'
+    ) +
+    geom_abline(intercept = 0, slope = 1, alpha = 1.0, size = 1.0) +
+    geom_point(aes(expected, observed), colour = 'yellow', alpha = 0.5, size = 2.6) +
+    xlab(log10Pe) +
+    ylab(log10Po)
+  }
+
+Graf_qq <- gg_qqplot(res_GWAS$p) +
+  labs(x = '-log10(P) esperado', y = '-log10(P) observado') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold')
+    )
+
+Graf_Manhattan | Graf_qq -> GWAS
+
+knitr::include_graphics('figures/gwas.pdf', auto_pdf = TRUE)
 ```
 
 ## Habilidad predictiva
