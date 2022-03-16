@@ -33,11 +33,11 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ## Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos se obtuvieron del [Rice SNP-Seek Database](https://snp-seek.irri.org/index.zul;jsessionid=DD991975FDC4F320BE3C33ED056D0363) , el cual es un cibersitio con información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los datos de genotipado de SNP fueron sometidos a procedimientos de control de calidad, en los que fueron eliminados loci de SNP con una frecuencia del alelo menor de menos de 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se consideró eliminar loci de SNP con una frecuencia del alelo menor de menos de 0.05.
+Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database, que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05.
 
-Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.
+<!--Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.-->
 
-Mediante un análisis de componentes principales realizado sobre los datos de genotipado de SNP (Figura 4.1) se observaron diferentes grupos varietales de arroz, de los cuales la variedad indica fue seleccionada para llevar a cabo el estudio una vez la misma fue el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+La Figura 4.1 muestra un análisis de componentes principales realizado sobre los datos de genotipado de SNP, donde se observan diferentes grupos varietales de arroz. La variedad indica fue seleccionada para llevar a cabo este estudio ya que es el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
 
@@ -118,7 +118,7 @@ knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 __Figura 4.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
-En relación a los datos de fenotipo, el conjunto de datos proporcionó información sobre distintos caracteres fenotípicos de relevancia agronómica como son la trillabilidad de la panícula, el peso del grano, la fuerza del culmo, entre otros (Figura 4.2), siendo seleccionada para la predicción posterior utilizando los modelos de selección genómica el carácter tiempo de floración, ya que en este se observo suficiente variación fenotípica.
+De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este [@cite:26] se observo que en este carácter la predicción genómica podría funcionar mejor.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE, warning = FALSE}
 
@@ -308,9 +308,9 @@ G A_{22}^{-1} A_{12}' & G
 ,
 \end{equation}
 
-donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y los subíndices $1$ y $2$ representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumo un valor de 0.05.
+donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y los subíndices $1$ y $2$ representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
 
-Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H.
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H.
 
 ## Estimación de la heredabilidad
 
@@ -324,11 +324,11 @@ donde $\sigma^{2}_{g}$ es la varianza genética aditiva y $\sigma^{2}_{e}$ es la
 
 ## Generación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva
 
-En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en @cite:48. Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc [@cite:24] con el fin de contar con esta información.
+En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en @cite:48. Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc [@cite:24] con el fin de simular esta información.
 
-De acuerdo a @cite:24, la idea del software Molcoanc consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí generado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados. <!-- NOTA: El objetivo del software molcoanc no es recuperar el pedigrí real, sino proporcionar un pedigrí que sea compatible con la dversidad observada y la relación molecular entre los individuos genotipados -->
+Con el software Molcoanc se simulan pedigríes mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí generado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados [@cite:24]. <!-- NOTA: El objetivo del software molcoanc no es recuperar el pedigrí real, sino proporcionar un pedigrí que sea compatible con la dversidad observada y la relación molecular entre los individuos genotipados -->
 
-En este sentido, el software Molcoanc se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones generadas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
+El software Molcoanc se utilizó para construir tres pedigríes, que se diferenciaron en el número de generaciones ancestro de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se replicó diez veces para cada pedigrí, con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
 
@@ -590,13 +590,13 @@ knitr::include_graphics('figures/Pedigríes.pdf', auto_pdf = TRUE)
 __Figura 4.3:__ Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1661 en el pedigrí 2 y 2451 en el pedigrí 3. 
 :::
 
-Para identificar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
+Para estudiar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
 1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 
-2. Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
+2. Diferentes densidades de SNP: del conjunto total con 100231 SNP después del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1.000, 10.000 y 100.000 SNP.
 
-Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4), usando la función `R` descrita en el anexo A.1.
+A continuación, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4), usando la función `R` descrita en el anexo A.1.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -672,21 +672,21 @@ knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 __Figura 4.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 :::
 
-Cabe aclarar que además de los casos descritos con anterioridad, también se consideraron los casos en los cuales ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
+Cabe aclarar que, además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteraciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete `lme4GS`, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal). 
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50.000 iteraciones, de las cuales fueron descartadas las primeras 10.000 como muestras burn-in. En cuanto al paquete `lme4GS`, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal). 
 
-Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este estudio, los valores fenotípicos observados de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas en los conjuntos de datos) se consideraron como fenotipos faltantes <!--(fueron predichos)-->.
 
 ## Simulación de fenotipos y genotipos, subconjuntos de datos y habilidad predictiva 
 
-Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados realizando simulación por ordenador, usando el paquete `SeqBreed` [@cite:47] del lenguaje de programación `Python` [@cite:53]. Los pasos llevados a cabo en la simulación se describen a continuación (Figura 4.5):
+Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados realizando simulación por ordenador, usando el paquete `SeqBreed` [@cite:47] del lenguaje de programación `Python` [@cite:53]. En esta sección se vio la obligación de especular sobre la base genética del carácter tiempo de floración, mientras que en la sección metodológica anterior se usaron los fenotipos y genotipos observados. Los pasos llevados a cabo en la simulación se describen a continuación (Figura 4.5):
 
-1. Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete `SeqBreed`. Luego usando las funciones `gg.GFounder()` y `gg.Genome()`, se obtuvo un archivo que indicaba el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100231).
+1. Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100.231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete `SeqBreed`. Luego usando las funciones `gg.GFounder()` y `gg.Genome()`, se obtuvo un archivo que indicaba el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100.231).
 
-2. Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el carácter tiempo de floración y heredabilidad deseada: se uso el software GCTA [@cite:54] para hacer un GWAS e identificar las regiones genómicas asociadas al carácter (Anexo A.2). Luego en base al GWAS, se generaron los datos que indicaban el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, se uso la función `gg.QTNs()` sobre estos datos generados, indicando también la heredabilidad del carácter (0.7) de acuerdo a resultados ya reportados en la literatura científica.
+2. Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el carácter tiempo de floración y heredabilidad deseada: se uso el software GCTA [@cite:54] para hacer un un estudio de asociación a nivel genómico (GWAS) para identificar las regiones genómicas asociadas al carácter (Anexo A.2). Luego, en base al GWAS, se generaron los datos que indicaban el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, se uso la función `gg.QTNs()` sobre estos datos generados, indicando también la heredabilidad del carácter (0.7) de acuerdo a resultados previamente reportados [@cite:26].
 
-3. Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Luego usando la función `gg.Population()`, se generó mediante simulación los genotipos y fenotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
+3. Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Usando la función `gg.Population()`, se generó mediante simulación los fenotipos y genotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
 
 ::: {.center data-latex=""}
 __Tabla 4.1:__ Representación de los cuatro pedigríes generados. Cada uno de estos pedigríes tienen esquemas de cruzamientos diferentes, dando lugar a distintos número de individuos en la generación $F_{1}$, pero con mismo número de individuos en las generaciones $F_{2}$ y $F_{3}$.
@@ -717,9 +717,9 @@ tribble(
   )
 ```
 
-4. Uso de subconjuntos de datos con diferentes densidades de SNP: se especificaron distintas densidades de SNP usando la función `gg.Chip()`, con el fin de determinar el número de marcadores necesarios para implementar el ssGBLUP. Para ello se usaron los tres subconjuntos de datos de SNP creados en el apartado anterior, con número de marcadores aproximado de 1000, 10000 y 100000 SNP.
+4. Uso de subconjuntos de datos con diferentes densidades de SNP: se especificaron distintas densidades de SNP usando la función `gg.Chip()`, con el fin de determinar el número de marcadores necesarios para implementar el ssGBLUP. Para ello se usaron los tres subconjuntos de datos de SNP creados en la sección metodológica anterior, con número de marcadores aproximado de 1.000, 10.000 y 100.000 SNP.
 
-5. Implementación de la selección: se uso la función `sel.doEbv()` para llevar a cabo la predicción, usando los modelos BLUP y ssGBLUP descritos anteriormente. En caso del GBLUP, el cual requiere de datos de marcadores de ADN, se uso previamente la función `gg.do_X()` para generar la matriz G. Cabe aclarar que `SeqBreed` genero dicha matriz G de acuerdo a los condiciones descritas anteriormente, como son calcularla utilizando el método de @cite:39, y sumarle a sus elementos de la diagonal un valor de 0.05 para evitar posibles problemas de singularidad.
+5. Implementación de la selección: se uso la función `sel.doEbv()` para llevar a cabo la predicción, usando los modelos BLUP y ssGBLUP descritos anteriormente. En el caso del ssGBLUP, el cual requiere de datos de marcadores de ADN, se uso previamente la función `gg.do_X()` para generar la matriz G. Cabe aclarar que `SeqBreed` genero dicha matriz G de acuerdo a los condiciones descritas anteriormente, como son calcularla utilizando el método de @cite:39, y sumarle a sus elementos de la diagonal un valor de 0.05 para evitar posibles problemas de singularidad.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -792,6 +792,14 @@ knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 __Figura 4.5:__ Esquema de predicción usando simulación con el paquete `SeqBreed`. Figura adaptada de @cite:47.
 :::
 
-Para identificar el efecto del número de individuos genotipados sobre la predictibilidad, fueron considerados cuatro casos: ningún individuo genotipado, solo los individuos de la generación $F_{2}$ genotipados, los individuos de la generación $F_{1}$ y $F_{2}$ genotipados y todos los individuos de las distintas generaciones genotipadas.
+Para identificar el efecto del número de individuos genotipados sobre la predictibilidad, fueron considerados cuatro casos:
 
-Por último y al igual que en el apartado anteriormente descrito, se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Para esto, los valores fenotípicos observados de los individuos de las generaciones $F_{2}$ y $F_{3}$ se consideraron como fenotipos faltantes.
++ Ningún individuo genotipado,
+
++ Solo los individuos de la generación $F_{2}$ genotipados, 
+
++ Los individuos de la generaciones $F_{1}$ y $F_{2}$ genotipados y,
+
++ Todos los individuos de las distintas generaciones genotipadas.
+
+Por último y al igual que en la sección metodológica anteriormente descrita, se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Para esto, los valores fenotípicos observados de los individuos de las generaciones $F_{2}$ y $F_{3}$ se consideraron como fenotipos faltantes.

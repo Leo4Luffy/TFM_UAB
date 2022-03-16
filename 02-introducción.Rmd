@@ -1288,6 +1288,8 @@ tribble(
 
 ### Relevancia de la mejora genética en arroz
 
+
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, message = FALSE, warning=FALSE}
 
 Arroz <- read_delim(here('figures', 'datos_arroz_2.csv'), delim = ',')
