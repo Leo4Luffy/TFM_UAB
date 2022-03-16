@@ -690,7 +690,7 @@ Para llevar a cabo la predicción usando el mejor predictor lineal insesgado (BL
 y = 1_{n} \mu + Zg + e,
 \end{equation}
 
-donde \(y\) representa el valor del fenotipo a predecir (es decir, el tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(g\) con \(y\). \(1_{n}\) es un vector de unos, \(\mu\) es la media de la población, el vector \(g\) representa los efectos aleatorios genéticos aditivos, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\).
+donde \(y\) representa el valor del fenotipo a predecir (es decir, el tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(g\) con \(y\). \(1_{n}\) es un vector de unos, \(\mu\) es la media de la población, el vector \(g\) representa los efectos aleatorios genéticos aditivos, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\), siendo \(I\) representa la matriz identidad, y \(\sigma_{e}^{2}\) la varianza residual.
 
 En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información de pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
 
@@ -709,19 +709,30 @@ donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de la matr
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos metodologías que se describen a continuación. En el anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
 
+\hypertarget{estimaciuxf3n-de-la-heredabilidad}{%
+\section{Estimación de la heredabilidad}\label{estimaciuxf3n-de-la-heredabilidad}}
+
+Se estimó la heredabilidad mediante el método BLUP con base en el modelo descrito anteriormente. La heredabilidad se calculó como:
+
+\begin{equation}
+h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
+\end{equation}
+
+donde \(\sigma^{2}_{g}\) es la varianza genética aditiva y \(\sigma^{2}_{e}\) es la varianza residual.
+
 \hypertarget{generaciuxf3n-de-pedigruxedes-ancestrales-subconjuntos-de-datos-y-habilidad-predictiva}{%
 \section{Generación de pedigríes ancestrales, subconjuntos de datos y habilidad predictiva}\label{generaciuxf3n-de-pedigruxedes-ancestrales-subconjuntos-de-datos-y-habilidad-predictiva}}
 
-En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en Cros et~al. (\protect\hyperlink{ref-cite:48}{2014})). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información.
+En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en Cros et~al. (\protect\hyperlink{ref-cite:48}{2014}). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de contar con esta información.
 
 De acuerdo a Fernández y Toro (\protect\hyperlink{ref-cite:24}{2006}), la idea del software Molcoanc consiste en construir un pedigrí mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí generado tenga la correlación más alta con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados.
 
 En este sentido, el software Molcoanc se utilizó para construir tres pedigríes, los cuales se diferenciaron en el número de generaciones generadas por encima de la población fundadora (Figura 4.3). Este proceso de generación de pedigríes se realizó diez veces (diez replicas para cada pedigrí) con el fin de posteriormente usar cada replica para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP.
 
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-20-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/Pedigríes} \end{center}
 
 \begin{center}
-\textbf{Figura 4.3:} .
+\textbf{Figura 4.3:} Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1661 en el pedigrí 2 y 2451 en el pedigrí 3.
 
 \end{center}
 
@@ -735,7 +746,7 @@ Para identificar el efecto sobre la predictibilidad del número de datos de geno
   Diferentes densidades de SNP: del conjunto total con 100231 SNP luego del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink (Purcell et~al. \protect\hyperlink{ref-cite:49}{2007}) tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1000, 10000 y 100000 SNP.
 \end{enumerate}
 
-Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4).
+Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4), usando la función \texttt{R} descrita en el anexo A.1.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_1} \end{center}
 
@@ -744,11 +755,11 @@ Luego, usando los diferentes subconjuntos de datos descritos anteriormente, se o
 
 \end{center}
 
-Cabe aclarar que además de los casos descritos con anterioidad, también se consideraron los casos en los cuales ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
+Cabe aclarar que además de los casos descritos con anterioridad, también se consideraron los casos en los cuales ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y GBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del lenguaje de programación \texttt{R}, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete \texttt{BGLR}, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteracciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete \texttt{lme4GS}, no se cambio el número de iteracciones necesarios para alcanzar la convergencia, ya que los autores del paquete (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) indicaron que el número de iteracciones que se tiene por defecto era suficiente (comunicación personal).
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del lenguaje de programación \texttt{R}, permitiendo así la predicción mediante procedimientos Bayesianos y penalizados, respectivamente. Para la estimación de los componentes de varianza y predicción de los valores fenotípicos usando el paquete \texttt{BGLR}, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteraciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete \texttt{lme4GS}, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal).
 
-Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de la predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
+Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este sentido, el valor fenotípico observado de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas) se consideró como fenotipo faltante.
 
 \hypertarget{simulaciuxf3n-de-fenotipos-y-genotipos-subconjuntos-de-datos-y-habilidad-predictiva}{%
 \section{Simulación de fenotipos y genotipos, subconjuntos de datos y habilidad predictiva}\label{simulaciuxf3n-de-fenotipos-y-genotipos-subconjuntos-de-datos-y-habilidad-predictiva}}
@@ -758,11 +769,11 @@ Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete \texttt{SeqBreed}. Luego usando las funciones \texttt{gg.GFounder()} y \texttt{gg.Genome()}, se obtuvo un archivo que indica el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100231).
+  Uso de genotipos de la población fundadora: para simular los datos de fenotipo y de genotipo se uso el conjunto de datos con los 100231 SNP resultantes del control de calidad. Dicho conjunto de datos se paso previamente a formato variant call usando Plink, ya que así lo requería el paquete \texttt{SeqBreed}. Luego usando las funciones \texttt{gg.GFounder()} y \texttt{gg.Genome()}, se obtuvo un archivo que indicaba el número de individuos genotipados o individuos de la población fundadora (451), la ploidía (2) y el número de SNP (100231).
 \item
-  Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el caracter tiempo de floración y heredabilidad deseada: se uso el software GCTA (Yang et~al. \protect\hyperlink{ref-cite:54}{2011}) para hacer un GWAS e identificar las regiones genómicas asociadas al caracter (Anexo A.2). Luego, en base a este GWAS se generaron los datos que indican el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, con la función \texttt{gg.QTNs()} se especificaron estos estos datos generados, indicando también la heredabilidad del caracter (0.7) de acuerdo a resultados ya reportados en la literatura cientifica.
+  Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el carácter tiempo de floración y heredabilidad deseada: se uso el software GCTA (Yang et~al. \protect\hyperlink{ref-cite:54}{2011}) para hacer un GWAS e identificar las regiones genómicas asociadas al carácter (Anexo A.2). Luego en base al GWAS, se generaron los datos que indicaban el efecto de los QTN y su localización, seleccionando solo 50 de ellos proporcional a la varianza aditiva explicada. Por último, se uso la función \texttt{gg.QTNs()} sobre estos datos generados, indicando también la heredabilidad del carácter (0.7) de acuerdo a resultados ya reportados en la literatura científica.
 \item
-  Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Luego usando la función \texttt{gg.Population()} se generó mediante simulación los genotipos y fenotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
+  Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Luego usando la función \texttt{gg.Population()}, se generó mediante simulación los genotipos y fenotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
 \end{enumerate}
 
 \begin{center}
@@ -792,17 +803,22 @@ Total & 2061 & 2071 & 2091 & 2131 \\
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{3}
-\tightlist
 \item
-  Uso de subconjuntos de datos con diferentes densidades de SNP:
+  Uso de subconjuntos de datos con diferentes densidades de SNP: se especificaron distintas densidades de SNP usando la función \texttt{gg.Chip()}, con el fin de determinar el número de marcadores necesarios para implementar el ssGBLUP. Para ello se usaron los tres subconjuntos de datos de SNP creados en el apartado anterior, con número de marcadores aproximado de 1000, 10000 y 100000 SNP.
+\item
+  Implementación de la selección: se uso la función \texttt{sel.doEbv()} para llevar a cabo la predicción, usando los modelos BLUP y ssGBLUP descritos anteriormente. En caso del GBLUP, el cual requiere de datos de marcadores de ADN, se uso previamente la función \texttt{gg.do\_X()} para generar la matriz G. Cabe aclarar que \texttt{SeqBreed} genero dicha matriz G de acuerdo a los condiciones descritas anteriormente, como son calcularla utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), y sumarle a sus elementos de la diagonal un valor de 0.05 para evitar posibles problemas de singularidad.
 \end{enumerate}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Esquema_2} \end{center}
 
 \begin{center}
-\textbf{Figura 4.5:}
+\textbf{Figura 4.5:} Esquema de predicción usando simulación con el paquete \texttt{SeqBreed}. Figura adaptada de Pérez-Enciso, Ramírez-Ayala, y Zingaretti (\protect\hyperlink{ref-cite:47}{2020}).
 
 \end{center}
+
+Para identificar el efecto del número de individuos genotipados sobre la predictibilidad, fueron considerados cuatro casos: ningún individuo genotipado, solo los individuos de la generación \(F_{2}\) genotipados, los individuos de la generación \(F_{1}\) y \(F_{2}\) genotipados y todos los individuos de las distintas generaciones genotipadas.
+
+Por último y al igual que en el apartado anteriormente descrito, se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Para esto, los valores fenotípicos observados de los individuos de las generaciones \(F_{2}\) y \(F_{3}\) se consideraron como fenotipos faltantes.
 
 \hypertarget{resultados-y-discusiuxf3n}{%
 \chapter{Resultados y discusión}\label{resultados-y-discusiuxf3n}}
