@@ -9,7 +9,7 @@ pacman::p_load(tibble, gt, dplyr, tidyr)
 
 # Anexos
 
-## [Función](http://rstudio-pubs-static.s3.amazonaws.com/378595_edda8cfe948a4786ae6dd74962cf6e94.html) para el calculo de la matriz de parentesco combinada
+## Función para el calculo de la matriz de parentesco combinada
 
 ```{r, echo = TRUE, eval = FALSE}
 

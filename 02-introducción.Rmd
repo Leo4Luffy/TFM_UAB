@@ -11,7 +11,7 @@ showtext_auto()
 
 ## Breve historia hacia la selección genómica
 
-La historia de la genética tanto cuantitativa como molecular se remonta a la contribución de muchas personas (Figura 1.1), hecho que permitió la conexión entre ambas disciplinas y el desarrollo de lo que hoy en día se conoce como selección genómica.
+La historia de la genética tanto cuantitativa como molecular se remonta a la contribución de muchas personas (Figura 2.1), hecho que permitió la conexión entre ambas disciplinas y el desarrollo de lo que hoy en día se conoce como selección genómica.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -150,7 +150,7 @@ knitr::include_graphics('figures/Crono.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.1:__ Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de @cite:2.
+__Figura 2.1:__ Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de @cite:2.
 :::
 
 La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida que fue adhiriéndose a la teoría del modelo infinitesimal.<!-- NOTA: Fisher, en 1918, propuso el modelo que se ha venido usando desde entonces, aproximando el efecto conjunto de los genes de pequeño efecto a una distribución normal, lo que permitió la aplicación de modelos lineales, habituales hoy en día en la selección. -->
@@ -161,7 +161,7 @@ En otro orden de ideas, el rápido desarrollo de la genética molecular a partir
 
 Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por dos individuos [@cite:15], abrieron la posibilidad de obtener una predicción más precisa de los EBV [@cite:14; @cite:31], comparado al método BLUP mencionado en párrafos anteriores. Según los mismos autores [@cite:31], los primeros intentos de integrar datos de marcadores de ADN en las predicciones se basaron en el supuesto de que era posible encontrar genes que contribuyeran a la variación genética del carácter. Este enfoque, conocido como etiquetado de genes o mapeo de QTL<!-- NOTA: un QTL es un gen que está asociado con la variación en un fenotipo. -->, permitió identificar la genética subyacente a la variación fenotípica de un carácter [@cite:31; @cite:30; @cite:36].
 
-Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar su frecuencia (Figura 1.2).
+Tanto en animales como en plantas, el interés principal en el mapeo de QTL consistió en usarse en un método conocido como selección asistida por marcadores (MAS) [@cite:3], proceso en el cual los individuos portadores de un marcador de ADN deseado podían ser identificados y seleccionados para aumentar la respuesta genética de caracteres cuantitativos de relevancia económica [@cite:32]<!-- NOTA: la MAS se define como un tipo de selección indirecta basada en la asociación significativa entre un marcador de ADN y la variación de un caracter. -->. @cite:3 describen la MAS como un proceso en el cual se detectan genes que afectan directamente un carácter (QTL), que al ser seleccionados, logran una mejora genética al aumentar su frecuencia (Figura 2.2).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -229,7 +229,7 @@ knitr::include_graphics('figures/MAS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.2:__ Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de @cite:6.
+__Figura 2.2:__ Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de @cite:6.
 :::
 
 Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología al no detectar marcadores de ADN con efectos genéticos menores [@cite:3; @cite:10; @cite:32; @cite:7]. Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
@@ -240,7 +240,7 @@ Finalmente, en el año 2001, Theodorus Meuwissen, Ben Hayes y Michael Goddard pr
 
 ### Definición de la selección genómica
 
-Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). @cite:3 y @cite:33 describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN <!--(teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores)--> para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 1.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos según el GEBV en lugar de pocos QTL [@cite:6].
+Se denomina selección genómica a una serie de métodos que usan decenas de miles de marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). @cite:3 y @cite:33 describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN <!--(teniendo en cuenta también el desequilibrio de ligamiento entre dichos marcadores)--> para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 2.3). Por tanto, la selección genómica suele ser vista como una forma de MAS en la que se seleccionan individuos según el GEBV en lugar de pocos QTL [@cite:6].
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -304,14 +304,14 @@ knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7.
+__Figura 2.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7.
 :::
 
 El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto biológico sobre el carácter, a partir de este hecho biológico si que se garantizaría una asociación (no observada) entre el QTL y el carácter [@cite:30; @cite:35; @cite:36].
 
 ### Métodos estadísticos en la selección genómica
 
-En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 1.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica [@cite:6; @cite:31; @cite:37].
+En la selección genómica, la relación genotipo-fenotipo puede ser representada como un modelo lineal (Figura 2.4). Por tanto, el modelo de regresión lineal es un enfoque fundamental en la selección genómica [@cite:6; @cite:31; @cite:37].
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -367,7 +367,7 @@ knitr::include_graphics('figures/Mod_RL.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.4:__ Relación genotipo-fenotipo de individuos (circulos amarillo y azul) <!--en una población de entrenamiento -->para un solo marcador. $Y_{i}$ y $x_{i1}$ denotan los fenotipos y genotipos, y $\mu$ y $g_{i}$ son los parámetros a determinar. Los genotipos bialélicos se codifican como 0 y 1, y los fenotipos se distribuyen de acuerdo a una normal. Figura adaptada de @cite:6.
+__Figura 2.4:__ Relación genotipo-fenotipo de individuos (circulos amarillo y azul) <!--en una población de entrenamiento -->para un solo marcador. $Y_{i}$ y $x_{i1}$ denotan los fenotipos y genotipos, y $\mu$ y $g_{i}$ son los parámetros a determinar. Los genotipos bialélicos se codifican como 0 y 1, y los fenotipos se distribuyen de acuerdo a una normal. Figura adaptada de @cite:6.
 :::
 
 Dicha relación genotipo-fenotipo se puede expresar de la forma:
@@ -386,7 +386,7 @@ y = Zg + e,
 
 donde $y$ es un vector de longitud igual al número de individuos ($1, 2, 3, …, n$) que representa al fenotipo, $Z$ es una matriz que indica si el marcador es homocigoto dominante, heterocigoto u homocigoto recesivo (por ejemplo, 2 si es homocigoto dominante, 1 si es heterocigoto y 0 si es homocigoto recesivo), $g$ es un vector de efectos del marcador en el fenotipo (tratados aquí como efectos fijos), y $e$ es el término del error. Luego el GEBV se puede predecir como $\hat{g} = (Z'Z)^{- 1} Z'y$ mediante mínimos cuadrados<!--, buscando así que dicha predicción sea próxima al verdadero valor ($g$)-->.<!-- NOTA: tal como está, X'X no se puede invertir. Esto se debe a que los parámetros, incluidos los valores genéticos, no son independientes. ay dos formas principales para contabilizar esta dependencia: 1- Tratar los valores genéticos a estimar como desviaciones de una media general; 2- Tratar uno de los efectos estimados como referencia y medir todos los demás efectos como desviaciones de la referencia. Creo que esta segunda forma es como aparece en la figura de Nakaya e Isobe, donde beta0 sería el efecto de referencia a partir del cual se mide beta 1. -->
 
-Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño [@cite:6; @cite:31; @cite:7], hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, la selección genómica brinda la oportunidad de enfrentar el problema del p grande y n pequeño por medio del uso de modelos de regresión lineal alternativos (Figura 1.5).
+Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el GEBV, al emplear el modelo lineal en selección genómica puede surgir un problema conocido como p grande y n pequeño [@cite:6; @cite:31; @cite:7], hecho que puede afectar el uso de la regresión por mínimos cuadrados, ya que esta solo se puede aplicar en situaciones en las que el número de observaciones es mayor al número de variables o predictores. En tal sentido, la selección genómica brinda la oportunidad de enfrentar el problema del p grande y n pequeño por medio del uso de modelos de regresión lineal alternativos (Figura 2.5).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -483,7 +483,7 @@ knitr::include_graphics('figures/Mod_GS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.5:__ Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de @cite:31 y de @cite:7.
+__Figura 2.5:__ Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de @cite:31 y de @cite:7.
 :::
 
 Al proponer la teoría de la selección genómica, @cite:8 proporcionaron también una serie de métodos estadísticos como solución al problema planteado en el párrafo anterior, esto es, el mejor predictor lineal insesgado por regresión de crestas (rrBLUP), y los métodos Bayesianos BayesA y BayesB.
@@ -523,7 +523,7 @@ Z'y
 
 donde $X$, $Z$, $b$, $g$ y $\lambda$ denotan los mismos términos de los modelos (1.2) y (1.3), y $G^{-1}$ corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores están normalmente distribuidos.
 
-La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, caso contrario al parentesco derivado al usar la matriz G que es observado, debido a lo cual si puede evidenciar de forma precisa el parentesco real entre dos individuos (Figura 1.6).
+La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, caso contrario al parentesco derivado al usar la matriz G que es observado, debido a lo cual si puede evidenciar de forma precisa el parentesco real entre dos individuos (Figura 2.6).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, warning = FALSE}
 
@@ -621,7 +621,7 @@ knitr::include_graphics('figures/Ped.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.6:__ Parentesco observado entre individuos emparentados.
+__Figura 2.6:__ Parentesco observado entre individuos emparentados.
 :::
 
 <!--
@@ -674,7 +674,7 @@ En comparación a los métodos Bayesianos descritos anteriormente, en el GBLUP n
 
 ### De la selección genómica de múltiples pasos a un solo paso
 
-Para implementar los métodos de selección genómica mencionados anteriormente (rrBLUP,  BayesA-B-C, LASSO Bayesiano y GBLUP), es necesario disponer de información genotípica y fenotípica ya que los modelos estadísticos generalmente se construyen en base a esta información. Esta situación puede ser desventajosa al momento de implementar la selección genómica, ya que por lo general no todos los individuos pueden genotiparse y en ocasiones (principalmente en animales) no se tienen valores fenotípicos para caracteres de interés (por ejemplo, la producción de leche en machos) [@cite:17; @cite:31; @cite:11; @cite:21]. Como solución al problema de la falta de fenotipos, @cite:39, con la implementación del GBLUP, propuso asignarle pseudo-fenotipos o valores de-regresados (estos son, valores fenotípicos  estimados a partir de los EBV) a aquellos individuos con fenotipos faltantes, basándose en la información de sus parientes, permitiendo de esta forma implementar la selección genómica combinando los EBV y los genotipos a través de múltiples pasos (Figura 1.7) [@cite:17; @cite:16; @cite:14; @cite:15; @cite:18].
+Para implementar los métodos de selección genómica mencionados anteriormente (rrBLUP,  BayesA-B-C, LASSO Bayesiano y GBLUP), es necesario disponer de información genotípica y fenotípica ya que los modelos estadísticos generalmente se construyen en base a esta información. Esta situación puede ser desventajosa al momento de implementar la selección genómica, ya que por lo general no todos los individuos pueden genotiparse y en ocasiones (principalmente en animales) no se tienen valores fenotípicos para caracteres de interés (por ejemplo, la producción de leche en machos) [@cite:17; @cite:31; @cite:11; @cite:21]. Como solución al problema de la falta de fenotipos, @cite:39, con la implementación del GBLUP, propuso asignarle pseudo-fenotipos o valores de-regresados (estos son, valores fenotípicos  estimados a partir de los EBV) a aquellos individuos con fenotipos faltantes, basándose en la información de sus parientes, permitiendo de esta forma implementar la selección genómica combinando los EBV y los genotipos a través de múltiples pasos (Figura 2.7) [@cite:17; @cite:16; @cite:14; @cite:15; @cite:18].
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -821,12 +821,12 @@ knitr::include_graphics('figures/BLUPs.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.7:__ Esquema de comparación del BLUP, GBLUP y ssGBLUP. El GBLUP es un proceso de tres pasos en el que los individuos, con base en su información fenotípica y de pedigrí, son evaluados inicialmente mediante el BLUP; luego, a partir de los pseudo-fenotipos resultantes de esta evaluación inicial, se lleva a cabo un análisis genómico de los individuos genotipados mediante el GBLUP. En el ssGBLUP se simplifica este proceso al incorporar la información genómica (la matriz G) desde el primer paso.
+__Figura 2.7:__ Esquema de comparación del BLUP, GBLUP y ssGBLUP. El GBLUP es un proceso de tres pasos en el que los individuos, con base en su información fenotípica y de pedigrí, son evaluados inicialmente mediante el BLUP; luego, a partir de los pseudo-fenotipos resultantes de esta evaluación inicial, se lleva a cabo un análisis genómico de los individuos genotipados mediante el GBLUP. En el ssGBLUP se simplifica este proceso al incorporar la información genómica (la matriz G) desde el primer paso.
 :::
 
 Empero, esta forma de implementar la selección genómica en múltiples pasos es tendente a cometer errores [@cite:14], además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos [@cite:17; @cite:15]. Conscientes de esto, @cite:17 simplificaron el proceso de varios pasos al desarrollar un método de selección genómica, en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su EBV o GEBV [@cite:20; @cite:11], método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
-En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 1.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del calculo posterior de pseudo-fenotipos [@cite:18].
+En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 2.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos tiende a simplificarse al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del calculo posterior de pseudo-fenotipos [@cite:18].
 
 El proceso de construcción de la matriz H es simple (Recuadro 1.1). De acuerdo a @cite:31, el parentesco genómico de los individuos no genotipados se estima a partir de los que sí lo estan, usando un procedimiento de regresión lineal que predice los genotipos no observados como combinaciones lineales de los genotipos observados con coeficientes de regresión derivados de las relaciones basadas en el pedigrí.
 
@@ -1074,7 +1074,7 @@ knitr::include_graphics('figures/Mod_ML.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.7:__ . Figura adaptada de @cite:7.
+__Figura 2.7:__ . Figura adaptada de @cite:7.
 :::
 
 -->
@@ -1085,7 +1085,7 @@ __Figura 1.7:__ . Figura adaptada de @cite:7.
 
 Tras la domesticación de animales y el cultivo de plantas, la especie humana consiguió producir animales y plantas mejoradas. Esto a partir de la selección artificial. La clave del éxito de los antiguos domesticadores y cultivadores consistió en cruzar individuos portadores de caracteres deseables, al comprender que los descendientes podrían heredar estas características, pese a que para esos tiempos se desconocían los mecanismos biológicos de la herencia [@cite:43]. Hoy en día, se conoce como mejora genética al proceso de mejorar los caracteres fenotípicos deseables en animales y plantas mediante selección artificial [@cite:7], siendo la misma reconocida como una intrincada integración de ciencia y practicidad [@cite:42].
 
-En términos generales, la mejora genética se puede organizar en tres procesos, siendo estos la producción de variación genética, la selección entre la variación y la multiplicación para uso comercial (Figura 1.8).
+En términos generales, la mejora genética se puede organizar en tres procesos, siendo estos la producción de variación genética, la selección entre la variación y la multiplicación para uso comercial (Figura 2.8).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -1249,7 +1249,7 @@ knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.8:__ Esquema de la mejora genética en animales y en plantas. Figura adaptada de @cite:44.
+__Figura 2.8:__ Esquema de la mejora genética en animales y en plantas. Figura adaptada de @cite:44.
 :::
 
 El primer requisito en la mejora genética, como se mencionó en el párrafo anterior, consiste en producir variación genética de los caracteres que se desean a mejorar. Tanto en animales como en plantas, la producción de variación genética se da a través del apareamiento de individuos cuya expresión de caracteres es deseable [@cite:42]. De esta forma, mediante el proceso natural de reproducción sexual, se puede obtener una descendencia que contiene genes de interés heredados de los dos progenitores.
@@ -1286,9 +1286,9 @@ tribble(
   gt()
 ```
 
-### Relevancia de la mejora genética en arroz
+### Importancia de la mejora genética en arroz
 
-
+Se considera al arroz como uno de los principales cultivos básicos del mundo, ya que proporciona aproximadamente el 20 % de la energía alimentaria mundial [@cite:55]. En la figura a continuación (Figura 2.9) se evidencia el aumento en la producción de arroz a lo largo de los años en respuesta a una población mundial en crecimiento. De igual modo, en los próximos años se prevé que dicho crecimiento en la población mundial cotinue, lo cual requerirá del aumento en la producción de arroz en relación con los niveles actuales [@cite:44; @cite:32]. <!--Garantizar la oferta de este alimento debe ser prioritario para cualquier país que entienda que de ello depende la vida de quienes lo habitan.-->
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, message = FALSE, warning=FALSE}
 
@@ -1395,5 +1395,9 @@ knitr::include_graphics('figures/Graf_arroz.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 1.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa L._)--> a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura - [FAOSTAT](http://faostat.fao.org/) para desarrollar estas figuras.
+__Figura 2.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa L._)--> a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura (FAOSTAT) para desarrollar estas figuras.
 :::
+
+En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como son los cultivos de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.
+
+

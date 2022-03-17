@@ -33,11 +33,11 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ## Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database, que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05.
+Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database, que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05 usando Plink [@cite:49].
 
 <!--Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.-->
 
-La Figura 4.1 muestra un análisis de componentes principales realizado sobre los datos de genotipado de SNP, donde se observan diferentes grupos varietales de arroz. La variedad indica fue seleccionada para llevar a cabo este estudio ya que es el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
+En la figura a continuación (Figura 4.1) se observa un análisis de componentes principales realizado sobre los datos de genotipado de SNP, donde se observan diferentes grupos varietales de arroz. La variedad indica fue seleccionada para llevar a cabo este estudio ya que es el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning=FALSE}
 
@@ -594,7 +594,7 @@ Para estudiar el efecto sobre la predictibilidad del número de datos de genotip
 
 1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 
-2. Diferentes densidades de SNP: del conjunto total con 100231 SNP después del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink [@cite:49] tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1.000, 10.000 y 100.000 SNP.
+2. Diferentes densidades de SNP: del conjunto total con 100231 SNP después del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1.000, 10.000 y 100.000 SNP.
 
 A continuación, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4), usando la función `R` descrita en el anexo A.1.
 
