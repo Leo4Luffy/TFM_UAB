@@ -1079,9 +1079,7 @@ __Figura 2.7:__ . Figura adaptada de @cite:7.
 
 -->
 
-## Breve descripción de la mejora genética en arroz
-
-### Diferencias de la mejora genética en animales y en plantas
+## Diferencias de la mejora genética en animales y en plantas
 
 Tras la domesticación de animales y el cultivo de plantas, la especie humana consiguió producir animales y plantas mejoradas. Esto a partir de la selección artificial. La clave del éxito de los antiguos domesticadores y cultivadores consistió en cruzar individuos portadores de caracteres deseables, al comprender que los descendientes podrían heredar estas características, pese a que para esos tiempos se desconocían los mecanismos biológicos de la herencia [@cite:43]. Hoy en día, se conoce como mejora genética al proceso de mejorar los caracteres fenotípicos deseables en animales y plantas mediante selección artificial [@cite:7], siendo la misma reconocida como una intrincada integración de ciencia y practicidad [@cite:42].
 
@@ -1286,6 +1284,8 @@ tribble(
   gt()
 ```
 
+## Breve descripción de la mejora genética en arroz
+
 ### Importancia de la mejora genética en arroz
 
 Se considera al arroz como uno de los principales cultivos básicos del mundo, ya que proporciona aproximadamente el 20 % de la energía alimentaria mundial [@cite:55]. En la figura a continuación (Figura 2.9) se evidencia el aumento en la producción de arroz a lo largo de los años en respuesta a una población mundial en crecimiento. De igual modo, en los próximos años se prevé que dicho crecimiento en la población mundial cotinue, lo cual requerirá del aumento en la producción de arroz en relación con los niveles actuales [@cite:44; @cite:32]. <!--Garantizar la oferta de este alimento debe ser prioritario para cualquier país que entienda que de ello depende la vida de quienes lo habitan.-->
@@ -1398,6 +1398,99 @@ knitr::include_graphics('figures/Graf_arroz.pdf', auto_pdf = TRUE)
 __Figura 2.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa L._)--> a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura (FAOSTAT) para desarrollar estas figuras.
 :::
 
-En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como son los cultivos de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.
+En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como es el cultivo de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.
+
+### Subtitulo
+
+El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En arroz, @cite:58 citan distintos trabajos donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
+
+Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias de apareamiento (Figura 2.10).
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
+
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot() +
+  #geom_blank() +
+  
+  annotate(geom = 'rect', xmin = 2.4, xmax = 4.4, ymin = 8.3, ymax = 9.3, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.4, y = 9.0, label = 'Línea', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.4, y = 8.6, label = 'donante', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 8.8, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 5.55, xmax = 7.65, ymin = 8.3, ymax = 9.3, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.6, y = 9.0, label = 'Línea', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.6, y = 8.6, label = 'receptora', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  geom_curve(x = 4.9, xend = 4.4, y = 8.0, yend = 7.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 3.4, xmax = 4.2, ymin = 6.9, ymax = 7.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.8, y = 7.2, label = 'F1', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 7.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.6, ymin = 6.9, ymax = 7.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.2, y = 7.2, label = 'SR', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  geom_curve(x = 4.9, xend = 4.4, y = 6.7, yend = 6.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 6.2, xend = 6.2, y = 6.8, yend = 6.6, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 5.9, ymax = 6.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.8, y = 6.2, label = 'BC1', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 6.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.6, ymin = 5.9, ymax = 6.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.2, y = 6.2, label = 'SR', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  geom_curve(x = 4.9, xend = 4.4, y = 5.7, yend = 5.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 4.9, xend = 4.4, y = 5.2, yend = 4.9, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 4.9, xend = 4.4, y = 4.7, yend = 4.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  geom_curve(x = 6.2, xend = 6.2, y = 5.7, yend = 5.5, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 6.2, xend = 6.2, y = 5.3, yend = 5.1, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 6.2, xend = 6.2, y = 4.9, yend = 4.7, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 3.1, xmax = 4.2, ymin = 3.9, ymax = 4.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.65, y = 4.2, label = 'BCn-1', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 4.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.6, ymin = 3.9, ymax = 4.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.2, y = 4.2, label = 'SR', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  scale_x_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(0.0, 9.5)) +
+  
+  theme_bw() +
+  labs(title = 'Apareamiento controlado en plantas') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> Ap_control
+
+data.frame(
+  x = c(0.0:10.0), y = c(0.0:10.0)
+  ) %>%
+  ggplot() +
+  #geom_blank() +
+  
+  
+  
+  scale_x_continuous(limits = c(0.0, 10.0)) +
+  scale_y_continuous(limits = c(0.0, 10.0)) +
+  
+  theme_bw() +
+  labs(title = 'Bondades de la selección genómica') +
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        axis.title = element_blank(),
+        plot.title = element_text(size = 11, face = 'bold')) -> Ap_GS
 
 
+(Ap_control | Ap_GS) #-> GS_plant
+
+#knitr::include_graphics('figures/GS_plant.pdf', auto_pdf = TRUE)
+```
