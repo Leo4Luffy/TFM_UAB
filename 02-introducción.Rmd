@@ -1404,7 +1404,7 @@ En este sentido, la tercera revolución agrícola o revolución verde tiene como
 
 El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En arroz, @cite:58 citan distintos trabajos donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
 
-Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias de apareamiento (Figura 2.10).
+Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias de apareamiento: la introgresión y la selección recurrente (Figura 2.10).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -1424,7 +1424,7 @@ data.frame(
   annotate(geom = 'text', x = 6.6, y = 9.0, label = 'Línea', family = 'gochi', size = 3.4, colour = 'black') +
   annotate(geom = 'text', x = 6.6, y = 8.6, label = 'receptora', family = 'gochi', size = 3.4, colour = 'black') +
   
-  geom_curve(x = 4.9, xend = 4.4, y = 8.0, yend = 7.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 4.9, xend = 4.4, y = 7.7, yend = 7.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 3.4, xmax = 4.2, ymin = 6.9, ymax = 7.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'text', x = 3.8, y = 7.2, label = 'F1', family = 'gochi', size = 3.4, colour = 'black') +
@@ -1454,15 +1454,59 @@ data.frame(
   geom_curve(x = 6.2, xend = 6.2, y = 4.9, yend = 4.7, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 3.1, xmax = 4.2, ymin = 3.9, ymax = 4.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.65, y = 4.2, label = 'BCn-1', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.65, y = 4.2, label = 'BCn-1', family = 'gochi', size = 3.0, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 4.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  geom_curve(x = 4.9, xend = 4.4, y = 3.7, yend = 3.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 5.1, xend = 5.6, y = 3.7, yend = 3.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 5.8, xmax = 6.6, ymin = 3.9, ymax = 4.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'text', x = 6.2, y = 4.2, label = 'SR', family = 'gochi', size = 3.4, colour = 'black') +
   
+  annotate(geom = 'rect', xmin = 3.1, xmax = 4.2, ymin = 2.9, ymax = 3.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.65, y = 3.2, label = 'BCn', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 3.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  geom_curve(x = 4.9, xend = 4.4, y = 2.3, yend = 2.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 5.1, xend = 5.6, y = 2.3, yend = 2.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 2.9, ymax = 3.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.35, y = 3.2, label = 'BCn', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 1.5, ymax = 2.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.8, y = 1.8, label = 'IC1', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 1.8, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 1.5, ymax = 2.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.35, y = 1.8, label = 'IC1', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 0.5, ymax = 1.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 3.8, y = 0.8, label = 'IC2', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'text', x = 5.0, y = 0.8, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
+  geom_curve(x = 4.9, xend = 4.4, y = 1.3, yend = 1.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  geom_curve(x = 5.1, xend = 5.6, y = 1.3, yend = 1.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 0.5, ymax = 1.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 6.35, y = 0.8, label = 'IC2', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  annotate(geom = 'rect', xmin = 3.3, xmax = 6.7, ymin = -0.9, ymax = -0.3, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
+  annotate(geom = 'text', x = 5.0, y = -0.6, label = 'Línea mejorada', family = 'gochi', size = 3.4, colour = 'black') +
+  
+  geom_curve(x = 5.0, xend = 5.0, y = 0.4, yend = -0.2, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
+  
+  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 7.5, yend = 2.9, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'text', x = 2.4, y = 5.25, label = 'Retrocruzamiento', size = 3.2, colour = 'black', angle = 90) +
+  
+  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 2.1, yend = 0.5, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'text', x = 2.4, y = 1.3, label = 'Entrecruzamiento', size = 3.2, colour = 'black', angle = 90) +
+  
+  annotate(geom = 'segment', x = 7.1, xend = 7.1, y = 7.5, yend = 3.9, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'text', x = 7.5, y = 5.7, label = 'Selección recurrente', size = 3.2, colour = 'black', angle = 90) +
+  
   scale_x_continuous(limits = c(0.0, 10.0)) +
-  scale_y_continuous(limits = c(0.0, 9.5)) +
+  scale_y_continuous(limits = c(-1.0, 9.4)) +
   
   theme_bw() +
   labs(title = 'Apareamiento controlado en plantas') +
