@@ -1247,7 +1247,7 @@ knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.8:__ Esquema de la mejora genética en animales y en plantas. Figura adaptada de @cite:44.
+__Figura 2.8:__ Esquema de la mejora genética en animales y en plantas. Figura adaptada de @cite:44. <!-- NOTA: el esquema de la mejora genética en plantas consiste en lo que se conoce como método de pedigrí, donde se cruzan progenitores y se generan poblaciones segregantes, a través de generaciones de autopolinización y selección, hasta obtener un conjunto de líneas derivadas que combina las buenas características de ambos progenitores. El método de pedigrí es atractivo para los mejoradores porque permite construir mejores variedades reuniendo, en la misma planta, buenas características que estaban presentes en diferentes materiales. Como todos los cruces son controlados, es posible conocer la genealogía de cada cultivar. La principal debilidad del método genealógico reside en el hecho de que el rendimiento se evalúa eficientemente sólo al final del proceso, en líneas puras, cuando la semilla está disponible para ensayos repetidos. -->
 :::
 
 El primer requisito en la mejora genética, como se mencionó en el párrafo anterior, consiste en producir variación genética de los caracteres que se desean a mejorar. Tanto en animales como en plantas, la producción de variación genética se da a través del apareamiento de individuos cuya expresión de caracteres es deseable [@cite:42]. De esta forma, mediante el proceso natural de reproducción sexual, se puede obtener una descendencia que contiene genes de interés heredados de los dos progenitores.
@@ -1284,7 +1284,7 @@ tribble(
   gt()
 ```
 
-## Breve descripción de la mejora genética en arroz
+## La mejora genética en arroz
 
 ### Importancia de la mejora genética en arroz
 
@@ -1400,11 +1400,11 @@ __Figura 2.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa 
 
 En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como es el cultivo de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.
 
-### Subtitulo
+### Breve descripción de la mejora genética en plantas con ejemplos en arroz
 
-El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En arroz, @cite:58 citan distintos trabajos donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
+El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea <!-- NOTA: una línea pura es una población de individuos en la que todos portan el mismo genotipo completamente homocigótico. Es un grupo de individuos idénticos que producen siempre descendencia del mismo fenotipo cuando se cruzan entre sí. -->de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En arroz, @cite:58 citan distintos trabajos donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
 
-Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias de apareamiento: la introgresión y la selección recurrente (Figura 2.10).
+Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias de apareamiento: la selección recurrente y la introgresión (Figura 2.10).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE}
 
@@ -1496,13 +1496,13 @@ data.frame(
   
   geom_curve(x = 5.0, xend = 5.0, y = 0.4, yend = -0.2, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
-  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 7.5, yend = 2.9, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 7.5, yend = 2.9, colour = 'black', linetype = 'solid') +
   annotate(geom = 'text', x = 2.4, y = 5.25, label = 'Retrocruzamiento', size = 3.2, colour = 'black', angle = 90) +
   
-  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 2.1, yend = 0.5, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'segment', x = 2.8, xend = 2.8, y = 2.1, yend = 0.5, colour = 'black', linetype = 'solid') +
   annotate(geom = 'text', x = 2.4, y = 1.3, label = 'Entrecruzamiento', size = 3.2, colour = 'black', angle = 90) +
   
-  annotate(geom = 'segment', x = 7.1, xend = 7.1, y = 7.5, yend = 3.9, colour = 'black', linetype = 'dashed') +
+  annotate(geom = 'segment', x = 7.1, xend = 7.1, y = 7.5, yend = 3.9, colour = 'black', linetype = 'solid') +
   annotate(geom = 'text', x = 7.5, y = 5.7, label = 'Selección recurrente', size = 3.2, colour = 'black', angle = 90) +
   
   scale_x_continuous(limits = c(0.0, 10.0)) +
@@ -1538,3 +1538,12 @@ data.frame(
 
 #knitr::include_graphics('figures/GS_plant.pdf', auto_pdf = TRUE)
 ```
+
+::: {.center data-latex=""}
+__Figura 2.10:__ . Figura adaptada de @cite:59.
+:::
+
+En la selección recurrente, la mejora genética se realiza a través de un esquema de rondas consecutivas de selección. En esta estrategía de apareamiento, se cruzan individuos progenitores (líneas donante y receptora) y se generan poblaciones segregantes <!-- NOTA: una línea segregante es un grupo de individuos genéticamente variables que constituyen la descendencia de una población híbrida que resulta de cruzar dos líneas diferentes genéticamente uniformes. -->a través de generaciones de autopolinización <!-- NOTA: la polinización directa o autopolinización o autofecundación sucede cuando el grano de polen llega solo desde el estambre al estigma de la misma flor. A estas especies se las denomina autógamas. La ventaja de esta tipología es que, en caso de ausencia de agentes polinizadores externos, la especie puede reproducirse igual. -->y selección, hasta obtener un conjunto de líneas derivadas que combina las buenas características de ambos progenitores. En cuanto a la introgresión, esta al igual que en la selección recurrente, inicia con el cruce de individuos progenitores, seguido de repetidos ciclos de retrocruzamiento y entrecruzamiento<!-- NOTA: el objetivo de un programa de introgresión es introducir un gen 'objetivo', que puede ser un solo gen o un QTL, de una línea o raza (donante) de baja productividad en una línea productiva que carece de ese gen particular. La introgresión comienza cruzando las líneas donante y receptora, seguida de repetidos retrocruzamientos con la línea receptora para recuperar el genoma de la línea receptora. El gen objetivo se mantiene en las generaciones de retrocruzamiento a través de la selección de portadores de genes donantes. La recuperación del genoma del receptor puede mejorarse mediante la selección de individuos retrocruzados que tengan un alto valor para el fenotipo del rasgo del receptor. Una vez que se recupera una proporción suficiente del genoma del receptor, la línea de retrocruzamiento se entrecruza y se seleccionan los homocigotos del gen donante para fijar el gen objetivo. Esto podría requerir más de una generación para obtener suficientes individuos para la reproducción posterior o si se deben introgresar varios genes objetivo. -->. El proposito de esta estrategía de apareamiento consiste en generar variedades mejoradas (híbridas) reuniendo, en una misma planta, las mejores características presentes de los distintos cruces [@cite:57].
+
+
+
