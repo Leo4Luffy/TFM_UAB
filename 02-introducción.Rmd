@@ -153,7 +153,7 @@ knitr::include_graphics('figures/Crono.pdf', auto_pdf = TRUE)
 __Figura 2.1:__ Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de @cite:2.
 :::
 
-La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9]. A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida que fue adhiriéndose a la teoría del modelo infinitesimal.<!-- NOTA: Fisher, en 1918, propuso el modelo que se ha venido usando desde entonces, aproximando el efecto conjunto de los genes de pequeño efecto a una distribución normal, lo que permitió la aplicación de modelos lineales, habituales hoy en día en la selección. -->
+La genética cuantitativa se formo hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Esta disciplina se formo gracias a los avances teóricos de Ronald Fisher quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los estudios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, supuso que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter esta determinada por un gran número de factores Mendelianos (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9].<!-- A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida que fue adhiriéndose a la teoría del modelo infinitesimal.--><!-- NOTA: Fisher, en 1918, propuso el modelo que se ha venido usando desde entonces, aproximando el efecto conjunto de los genes de pequeño efecto a una distribución normal, lo que permitió la aplicación de modelos lineales, habituales hoy en día en la selección. -->
 
 Se denomina como valor de cría estimado (EBV) al efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:7]<!-- NOTA:  la forma habitual de resolver el BLUP hoy en día es mediante el uso de las ecuaciones del modelo mixto. -->. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson quien a inicio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, hoy en día se reconoce que dicho procedimiento ignora la base física de la herencia (el ADN), y utiliza una representación conceptual elemental de como la información genética es heredada (esto es, ambos progenitores deben aportar la mitad de la información genética a su descendencia) [@cite:15].
 
@@ -304,7 +304,7 @@ knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7.
+__Figura 2.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7. <!-- NOTA: la selección genómica difiere significativamente de la selección convencional asistida por marcadores, ya que permite seleccionar individuos sin conocimiento previo de una asociación entre los marcadores y el rasgo de interés. La selección genómica se refiere a métodos que utilizan marcadores de todo el genoma para predecir el valor genómico de un individuo con suficiente precisión para permitir la selección de individuos basándose únicamente en esa predicción. -->
 :::
 
 El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto biológico sobre el carácter, a partir de este hecho biológico si que se garantizaría una asociación (no observada) entre el QTL y el carácter [@cite:30; @cite:35; @cite:36].
@@ -498,7 +498,7 @@ donde $y$, $Z$ y $e$ denotan los mismos términos del modelo (1.2), $g$ es un ve
 
 Con respecto a los métodos Bayesianos, estos, a diferencia del método anterior, no asumen una distribución normal de los efectos de los marcadores, sino que en su lugar permiten que una parte de dichos marcadores tengan efectos importantes sobre el carácter, permitiendo así efectos del marcador diferentes [@cite:38].
 
-Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por @cite:8, se diferencian en los distintos supuestos sobre los efectos del marcador y sus distribuciones. De acuerdo a @cite:21, en BayesA se supone que los efectos de los marcadores se distribuyen de acuerdo a una distribución t de Student en lugar de una normal, permitiendo así que algunos marcadores tengan efectos grandes, otros medianos y otros pequeños. En cuanto a BayesB, este presenta los mismos supuestos de BayesA, sin embargo, a diferencia de este último, en BayesB se permite que una parte de los marcadores no tengan efecto alguno sobre el carácter [@cite:21]. De la misma manera, BayesA y BayesB se diferencian en el procedimiento de estimación: BayesA utiliza el método de cadenas de Markov Monte Carlo (MCMC) para ... [@cite:34].
+Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por @cite:8, se diferencian en los distintos supuestos sobre los efectos del marcador y sus distribuciones. De acuerdo a @cite:21, en BayesA se supone que los efectos de los marcadores se distribuyen de acuerdo a una distribución t de Student en lugar de una normal, permitiendo así que algunos marcadores tengan efectos grandes, otros medianos y otros pequeños. En cuanto a BayesB, este presenta los mismos supuestos de BayesA, sin embargo, a diferencia de este último, en BayesB se permite que una parte de los marcadores no tengan efecto alguno sobre el carácter [@cite:21].
 
 Sobre la base de los dos modelos de regresión Bayesianos propuestos por @cite:8, se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo en BayesC, se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter [@cite:21]. Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas [@cite:34].
 
@@ -523,7 +523,7 @@ Z'y
 
 donde $X$, $Z$, $b$, $g$ y $\lambda$ denotan los mismos términos de los modelos (1.2) y (1.3), y $G^{-1}$ corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores están normalmente distribuidos.
 
-La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, caso contrario al parentesco derivado al usar la matriz G que es observado, debido a lo cual si puede evidenciar de forma precisa el parentesco real entre dos individuos (Figura 2.6).
+La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, caso contrario al parentesco observado derivado al usar la matriz G que puede evidenciar de forma precisa el parentesco real entre dos individuos (Figura 2.6).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, warning = FALSE}
 
@@ -621,7 +621,7 @@ knitr::include_graphics('figures/Ped.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.6:__ Parentesco observado entre individuos emparentados.
+__Figura 2.6:__ Parentesco observado entre individuos emparentados. El coeficiente de parentesco molecular entre los individuos 4 y 5, y 5 y 6, es igual a 1.0 y 0.0, respectivamente, caso contrario al coeficiente de parentesco genealógico el cual entre todos los individuos, por tratarse de hermanos completos, sería igual a 0.25.
 :::
 
 <!--
@@ -1254,7 +1254,7 @@ El primer requisito en la mejora genética, como se mencionó en el párrafo ant
 
 Una vez producida la variación genética, es necesario seleccionar individuos con mejor expresión de caracteres. Tanto en animales como en plantas, la selección se lleva a cabo de forma recurrente (en los denominados núcleos de selección) con la finalidad de aumentar la frecuencia de genes favorables. Sin embargo, los métodos de selección históricamente usados han sido distintos. Por un lado, en plantas se ha utilizado principalmente la MAS con el fin de identificar e incorporar genes beneficiosos, favoreciendo así que genes con efectos moderados a grandes hayan sido explotados más ampliamente en plantas que en animales. Por otro lado, en animales la mayoría de caracteres económicamente importantes han sido cuantitativos y complejos, lo cual obligo a los mejoradores genéticos a utilizar enfoques biométricos para predecir el EBV mediante la combinación de información fenotípica y de pedigrí (propiamente el BLUP), y con ello tomar las decisiones de selección [@cite:44].
 
-Justo después de aumentar la frecuencia de genes deseables, es necesario multiplicar o difundir el mérito genético medio obtenido de la población mejorada, y así facilitar que en las granjas comerciales los agricultores produzcan los caracteres mejorados [@cite:21]. Según @cite:44, una diferencia importante entre la mejora genética de animales y plantas, es que en animales la mejora difundida a las granjas comerciales no se recicla a los núcleos de selección, mientras que en plantas, al darle importancia a la selección de productos mejorados en forma de variedades vegetales, dichas variedades pueden ser usadas como progenitores en un ciclo nuevo de cultivo.
+Justo después de aumentar la frecuencia de genes deseables, es necesario multiplicar o difundir el mérito genético medio obtenido de la población mejorada, y así facilitar que en las granjas comerciales los agricultores produzcan los caracteres mejorados [@cite:21]. Según @cite:44 y @cite:66, una diferencia importante entre la mejora genética de animales y plantas, es que en animales la mejora difundida a las granjas comerciales no se recicla a los núcleos de selección, mientras que en plantas, al darle importancia a la selección de productos mejorados en forma de variedades vegetales, dichas variedades pueden ser usadas como progenitores en un ciclo nuevo de cultivo.
 <!--
 Otra diferencia entre animales y plantas señalada por los mismos autores [@cite:44], son los caracteres limitados por el sexo. En animales pueden presentarse caracteres que no se pueden medir en un individuo (por ejemplo, la producción de leche en los machos), por lo cual se suele utilizar la información de sus familiares para predecir su fenotipo. Por lo contrario, en plantas no se presenta este problema de los caracteres limitados por el sexo.
 -->
@@ -1269,10 +1269,10 @@ Por otro lado, desde el momento en que la selección genómica fue propuesta por
 
 4- Es costoso invertir en infraestructura computacional y de registro tanto de datos genotípicos como fenotípicos requeridos para implementar la selección genómica. El tamaño de las poblaciones en la cría de animales son mucho más pequeños que la mayoría de poblaciones en la cría de plantas. Si bien los costos de genotipado por individuo son cada vez más bajos, el costo total de genotipado al considerar todas las plantas es aún hoy en día demasiado alto para la mayoría de programas de mejora genética en plantas [@cite:46].
 
-Pese a lo anterior, en la literatura científica (Tabla1.1) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica. Por lo tanto, es de esperar que los mejoradores genéticos de animales y de plantas se beneficien del trabajo conjunto para solucionar aquellos problemas que les son comunes.
+Pese a lo anterior, en la literatura científica (Tabla 2.1) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica. Por lo tanto, es de esperar que los mejoradores genéticos de animales y de plantas se beneficien del trabajo conjunto para solucionar aquellos problemas que les son comunes.
 
 ::: {.center data-latex=""}
-__Tabla 1.1:__ .
+__Tabla 2.1:__ .
 :::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
@@ -1284,9 +1284,9 @@ tribble(
   gt()
 ```
 
-## La mejora genética en arroz
+## La mejora genética en el arroz
 
-### Importancia de la mejora genética en arroz
+### Importancia de la mejora genética en el arroz
 
 Se considera al arroz como uno de los principales cultivos básicos del mundo, ya que proporciona aproximadamente el 20 % de la energía alimentaria mundial [@cite:55]. En la figura a continuación (Figura 2.9) se evidencia el aumento en la producción de arroz a lo largo de los años en respuesta a una población mundial en crecimiento. De igual modo, en los próximos años se prevé que dicho crecimiento en la población mundial cotinue, lo cual requerirá del aumento en la producción de arroz en relación con los niveles actuales [@cite:44; @cite:32]. <!--Garantizar la oferta de este alimento debe ser prioritario para cualquier país que entienda que de ello depende la vida de quienes lo habitan.-->
 
@@ -1400,9 +1400,9 @@ __Figura 2.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa 
 
 En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como es el cultivo de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.
 
-### Breve descripción de la mejora genética en plantas con ejemplos en arroz
+### Breve descripción de la mejora genética en plantas con ejemplos en el arroz
 
-El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea <!-- NOTA: una línea pura es una población de individuos en la que todos portan el mismo genotipo completamente homocigótico. Es un grupo de individuos idénticos que producen siempre descendencia del mismo fenotipo cuando se cruzan entre sí. -->de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En arroz, @cite:58 citan distintos estudios donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
+El método más antiguo y simple que se conozca para la mejora genética en plantas es la selección de individuos de una sola línea <!-- NOTA: una línea pura es una población de individuos en la que todos portan el mismo genotipo completamente homocigótico. Es un grupo de individuos idénticos que producen siempre descendencia del mismo fenotipo cuando se cruzan entre sí. -->de acuerdo a su fenotipo. Este método, conocido como selección masal, se implemento con un conocimiento elemental de la herencia, basado en el supuesto de que los descendientes de los mejores individuos heredarían sus características [@cite:57]. En el arroz, @cite:58 citan distintos estudios donde se evidencia la mejora genética lograda en este cultivo a través del método de selección masal.
 
 Posterior al método de selección masal, se propuso un método en plantas en el cual la mejora genética era posible a través del apareamiento controlado de individuos. Esto a partir de  dos estrategias: la selección fenotípica recurrente y la introgresión (Figura 2.10).
 
@@ -1438,7 +1438,7 @@ data.frame(
   geom_curve(x = 6.2, xend = 6.2, y = 6.8, yend = 6.6, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 5.9, ymax = 6.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.8, y = 6.2, label = 'BC1', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.8, y = 6.2, label = 'RC1', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 6.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
   
@@ -1454,7 +1454,7 @@ data.frame(
   geom_curve(x = 6.2, xend = 6.2, y = 4.9, yend = 4.7, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 3.1, xmax = 4.2, ymin = 3.9, ymax = 4.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.65, y = 4.2, label = 'BCn-1', family = 'gochi', size = 3.0, colour = 'black') +
+  annotate(geom = 'text', x = 3.65, y = 4.2, label = 'RCn-1', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 4.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
   geom_curve(x = 4.9, xend = 4.4, y = 3.7, yend = 3.4, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
@@ -1464,32 +1464,32 @@ data.frame(
   annotate(geom = 'text', x = 6.2, y = 4.2, label = 'SR', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 3.1, xmax = 4.2, ymin = 2.9, ymax = 3.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.65, y = 3.2, label = 'BCn', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.65, y = 3.2, label = 'RCn', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 3.2, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
   geom_curve(x = 4.9, xend = 4.4, y = 2.3, yend = 2.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   geom_curve(x = 5.1, xend = 5.6, y = 2.3, yend = 2.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 2.9, ymax = 3.5, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 6.35, y = 3.2, label = 'BCn', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.35, y = 3.2, label = 'RCn', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 1.5, ymax = 2.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.8, y = 1.8, label = 'IC1', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.8, y = 1.8, label = 'EC1', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 1.8, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 1.5, ymax = 2.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 6.35, y = 1.8, label = 'IC1', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.35, y = 1.8, label = 'EC1', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 3.35, xmax = 4.25, ymin = 0.5, ymax = 1.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 3.8, y = 0.8, label = 'IC2', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 3.8, y = 0.8, label = 'EC2', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'text', x = 5.0, y = 0.8, label = 'x', family = 'gochi', size = 4.4, colour = 'black') +
   geom_curve(x = 4.9, xend = 4.4, y = 1.3, yend = 1.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   geom_curve(x = 5.1, xend = 5.6, y = 1.3, yend = 1.0, arrow = arrow(length = unit(0.05, 'inch')), size = 0.1, color = 'black', curvature = 0.0) +
   
   annotate(geom = 'rect', xmin = 5.8, xmax = 6.9, ymin = 0.5, ymax = 1.1, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
-  annotate(geom = 'text', x = 6.35, y = 0.8, label = 'IC2', family = 'gochi', size = 3.4, colour = 'black') +
+  annotate(geom = 'text', x = 6.35, y = 0.8, label = 'EC2', family = 'gochi', size = 3.4, colour = 'black') +
   
   annotate(geom = 'rect', xmin = 3.3, xmax = 6.7, ymin = -0.9, ymax = -0.3, colour = 'yellow', fill = 'yellow', alpha = 0.2) +
   annotate(geom = 'text', x = 5.0, y = -0.6, label = 'Línea mejorada', family = 'gochi', size = 3.4, colour = 'black') +
@@ -1509,7 +1509,7 @@ data.frame(
   scale_y_continuous(limits = c(-1.0, 9.4)) +
   
   theme_bw() +
-  labs(title = 'Apareamiento controlado en plantas') +
+  #labs(title = 'Apareamiento controlado en plantas') +
   theme(axis.text = element_blank(),
         axis.ticks = element_blank(),
         axis.title = element_blank(),
@@ -1552,23 +1552,25 @@ data.frame(
 
 
 
-(Ap_control | Ap_control) #-> GS_plant
+#(Ap_control | Ap_control) -> GS_plant
 
-#knitr::include_graphics('figures/GS_plant.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/Ap_control.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 2.10:__ . Figura adaptada de @cite:59.
+__Figura 2.10:__ Esquema de mejora genética de especies agrícolas. Figura adaptada de @cite:59.
 :::
 
 En la selección fenotípica recurrente, la mejora genética se realiza a través de un esquema de rondas consecutivas de selección. En esta estrategia de apareamiento, se cruzan individuos progenitores (líneas donante y receptora) y se generan poblaciones segregantes <!-- NOTA: una línea segregante es un grupo de individuos genéticamente variables que constituyen la descendencia de una población híbrida que resulta de cruzar dos líneas diferentes genéticamente uniformes. -->a través de generaciones de autopolinización <!-- NOTA: la polinización directa o autopolinización o autofecundación sucede cuando el grano de polen llega solo desde el estambre al estigma de la misma flor. A estas especies se las denomina autógamas. La ventaja de esta tipología es que, en caso de ausencia de agentes polinizadores externos, la especie puede reproducirse igual. -->y selección, hasta obtener variedades mejoradas que combinan las buenas características y los avances logrados en generaciones anteriores. La característica principal de la selección fenotípica recurrente es aumentar las frecuencias de los alelos favorables [@cite:62]. En cuanto a la introgresión, esta al igual que la anterior, inicia con el cruce de individuos progenitores, seguido de repetidos ciclos de retrocruzamiento y entrecruzamiento<!-- NOTA: el objetivo de un programa de introgresión es introducir un gen 'objetivo', que puede ser un solo gen o un QTL, de una línea o raza (donante) de baja productividad en una línea productiva que carece de ese gen particular. La introgresión comienza cruzando las líneas donante y receptora, seguida de repetidos retrocruzamientos con la línea receptora para recuperar el genoma de la línea receptora. El gen objetivo se mantiene en las generaciones de retrocruzamiento a través de la selección de portadores de genes donantes. La recuperación del genoma del receptor puede mejorarse mediante la selección de individuos retrocruzados que tengan un alto valor para el fenotipo del rasgo del receptor. Una vez que se recupera una proporción suficiente del genoma del receptor, la línea de retrocruzamiento se entrecruza y se seleccionan los homocigotos del gen donante para fijar el gen objetivo. Esto podría requerir más de una generación para obtener suficientes individuos para la reproducción posterior o si se deben introgresar varios genes objetivo. -->. El proposito de esta estrategia de apareamiento consiste en generar variedades mejoradas (híbridas) reuniendo, en una misma planta, las mejores características de los distintos cruces [@cite:57], aumentando también el rendimiento más allá de las variedades iniciales mediante la explotación de la heterosis [@cite:62]. <!-- NOTA: se espera que los cruces entre líneas genéticamente distantes muestren mayor vigor híbrido o efectos heteróticos que aquellos entre líneas más estrechamente relacionadas, porque se espera que las diferencias en las frecuencias alélicas entre líneas genéticamente distantes sean mayores. -->
 
-La MAS también fue importante en la mejora genética de plantas [@cite:60], ya que permitió identificar e incorporar QTL beneficiosos en tiempos relativamente cortos [@cite:61]. Sin embargo, el impacto general al implementar este método para aumentar la eficiencia de la mejora genética en arroz ha sido limitada [@cite:63], ya que la mayoría de caracteres de interés en este cultivo no están controlados por pocos genes con grandes efectos (siendo esta la principal característica para que la MAS sea efectiva), sino por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores [@cite:32; @cite:60].
+En relación con las estrategias descritas en el párrafo anterior, @cite:65 hacen mención del programa de mejora genética en el arroz para América Latina y el Caribe, desarrollados por el centro internacional de agricultura tropical, y por la organización francesa de investigación agrícola y de cooperación internacional para el desarrollo sostenible. Ellos describen a este programa como un proceso de tres etapas realizadas de manera recurrente: <!--(i)--> evaluación de individuos derivados de una población inicial<!-- ($P_{n}$)-->, <!--(ii)--> selección con presión suave de los mejores individuos para aumentar gradualmente la frecuencia de alelos favorables, y <!--(iii)--> entrecruzamiento de los individuos seleccionados para formar una nueva población <!--($P_{n+1}$)--> con una media mejorada. <!--Al final de cada ciclo, los mejores individuos seleccionados también se utilizan para el desarrollo de variedades mejoradas a través del mejoramiento genético convencional.-->
 
-La selección genómica brindo nuevas oportunidades para la mejora genética de caracteres con herencia poligénica [@cite:64]. Este método se implemento para la mejora de la ganancia genética en plantas, debido al éxito alcanzado en animales [@cite:60], y hoy en día se ha establecido como un método prometedor [@cite:63]. En arroz, los primeros estudios que informaron del uso de la selección genómica fueron publicados en el año 2014, siendo esto considerado por @cite:58 como un hecho donde se evidencia un retraso en la transición del mapeo de QTL a la selección genómica, debido a que años atras ya se contaba con los recursos genómicos necesarios para su implementación.
+<!--NOTA: Desde 1992, el CIAT (Centro internacional de agricultura tropical) y el Cirad (Organización francesa de investigación agrícola y cooperación internacional para el desarrollo sostenible) han desarrollado un programa de mejoramiento de arroz para América Latina y el Caribe basado en el mejoramiento de poblaciones sintéticas a través de la selección recurrente. El programa comenzó con el desarrollo de una población base P0 a través del entrecruzamiento de aproximadamente 60 accesiones fundadoras complementarias. La población base resultante se recombinó varias veces para generar una gran cantidad de recombinantes, lo que condujo a una población sintética con desequilibrio de ligamiento más bien bajo, dotada de suficiente variabilidad genética para la selección futura. El esquema de selección incluye tres etapas realizadas de manera recurrente: (i) evaluación de individuos derivados de una población Pn , (ii) selección con presión suave de los mejores individuos para aumentar gradualmente la frecuencia de alelos favorables en loci involucrados en caracteres complejos (aditivos y efectos de epistasis), (iii) entrecruzamiento de los individuos seleccionados para formar una nueva población Pn+1 con una media mejorada. Este esquema se ve facilitado por la presencia de un gen de esterilidad masculina nuclear recesivo (ms-IR36) ubicado en el cromosoma 2, que se segrega dentro de la población. Al final de cada ciclo, los mejores individuos seleccionados también se utilizan para el desarrollo de variedades mejoradas a través del mejoramiento genético convencional.-->
 
-En plantas, una de las ventajas con la implementación de la selección genómica es que permite reducir el tiempo requerido para el desarrollo de variedades mejoradas. @cite:64 aluden esta ventaja en la mejora genética del tomate, donde a partir del uso de la selección genómica es posible reducir el número de generaciones de autopolinización necesarias para generar variedades de tomate de buen rendimiento. De igual modo, @cite:37 mencionan que el uso de la selección genómica en la mejora genética del maíz conlleva una reducción de los costos de mejoramiento comparado con el método tradicional de selección fenotípica, al reducir el tiempo requerido para el desarrollo de variedades. En cuanto a la mejora genética en arroz, @cite:65 y @cite:58 lo asocian al concepto de respuesta a la selección.
+La MAS también fue importante en la mejora genética de plantas [@cite:60], ya que permitió identificar e incorporar QTL beneficiosos en tiempos relativamente cortos [@cite:61]. Sin embargo, el impacto general al implementar este método para aumentar la eficiencia de la mejora genética en el arroz ha sido limitada [@cite:63], ya que la mayoría de caracteres de interés en este cultivo no están controlados por pocos genes con grandes efectos (siendo esta la principal característica para que la MAS sea efectiva), sino por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores [@cite:32; @cite:60].
 
-<!--
-Como destaca Meuwissen et al. [11] en su artículo seminal, el uso de predicciones genómicas pueden aumentar en gran medida la tasa de ganancia genética al reducir el tiempo del ciclo: "Era llegó a la conclusión de que la selección de valores genéticos predichos a partir de marcadores podría aumentar sustancialmente la tasa de ganancia genética en animales y plantas, especialmente si se combina con reproducción técnicas para acortar el intervalo generacional”. Esta conclusión fue confirmada quince años después. por el primer informe del impacto de la selección genómica en la tasa de ganancia genética en el ganado lechero [113]. Los autores encontraron una reducción drástica en el intervalo generacional relacionado con un fuerte aumento en la tasa de ganancia genética de los rasgos de rendimiento (50 - 100%). En el fitomejoramiento, los métodos para reducir el tiempo del ciclo (independientemente del uso de la selección genómica) se han estudiado para varias décadas ahora [114, 115] . El avance de generación rápida (RGA) o doble haploide son probablemente el más común en las especies de cultivo, incluso si se han utilizado enfoques más modernos propuesto últimamente [116, 117]. En arroz, RGA ha recuperado interés recientemente ya que es rentable forma de arreglar rápidamente el material (típicamente de F2 a F6 en un año) para su evaluación en réplicas ensayos [118]. Esto se puede realizar en invernaderos, casas de malla o en el campo dependiendo de la recursos disponibles. Para los criadores que trabajan en un esquema de crianza de pedigrí clásico, el uso de RGA podría ser un primer paso hacia la implementación de la selección genómica [119]. para la cría programas que ya implementan RGA o métodos similares para reducir el tiempo de ciclo, genómica la selección puede ayudar aún más a acortar el ciclo de reproducción. Sin embargo, esto requiere una genómica modelo de predicción que puede predecir de manera eficiente el valor genético de la próxima generación (descendencia).
--->
+La selección genómica brindo nuevas oportunidades para la mejora genética de caracteres con herencia poligénica [@cite:64]. Este método se implemento para la mejora de la ganancia genética en plantas, debido al éxito alcanzado en animales [@cite:60]<!-- NOTA: el uso de la selección genómica en esquemas de fitomejoramiento comenzó con investigaciones sobre la precisión de las predicciones de los GEBV basadas en estudios de simulación -->, y hoy en día se ha establecido como un método prometedor [@cite:63]. En el arroz, los primeros estudios que informaron del uso de la selección genómica fueron publicados en el año 2014, siendo esto considerado por @cite:58 como un hecho donde se evidencia un retraso en la transición del mapeo de QTL a la selección genómica, debido a que años atrás ya se contaba con los recursos genómicos necesarios para su implementación.
+
+En plantas, una de las ventajas con la implementación de la selección genómica es que permite reducir el tiempo requerido para el desarrollo de variedades mejoradas. @cite:64 aluden esta ventaja en la mejora genética del tomate, donde a partir del uso de la selección genómica es posible reducir el número de generaciones de autopolinización necesarias para generar variedades de tomate de buen rendimiento. De igual modo, @cite:37 mencionan que el uso de la selección genómica en la mejora genética del maíz conlleva una reducción de los costos de mejoramiento comparado con el método tradicional de selección fenotípica, al reducir el tiempo requerido para el desarrollo de variedades. En cuanto a la mejora genética del arroz, @cite:58 hacen mención que el uso de la selección genómica permite aumentar la tasa de ganancia genética en este cultivo al reducir el tiempo necesario en la generación de variedades mejoradas.
+
+La mayor parte de los estudios sobre selección genómica en plantas han ignorado la información de pedigrí, a diferencia de los animales donde el uso del pedigrí en modelos de selección ha sido considerado un factor importante en los programas de mejora genética [@cite:63]. <!-- Por lo tanto, no se dispone de una comprensión integral de las ganancias de la selección fenotípica a la selección de pedigrí en las plantas. -->Con el desarrollo del ssGBLUP se dio la posibilidad de usar esta información, y hoy en día se pueden encontrar ejemplos del uso de esta metodología en plantas [@cite:19; @cite:11]. Sin embargo, todavía se necesitan esquemas de selección genómica optimizados y validados en el arroz. En el tiempo actual, no se han evaluado los distintos factores que pueden afectar la implementación y precisión del método del ssGBLUP en cultivos de arroz. Contar con estos resultados, ya sea a través de enfoques de simulación o usando datos empíricos, sera clave para evaluar el impacto de dichos factores al implementar el ssGBLUP en el arroz.
