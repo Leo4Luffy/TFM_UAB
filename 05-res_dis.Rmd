@@ -12,16 +12,16 @@ showtext_auto()
 ## Fenotipo y heredabilidad {#results3}
 
 ::: {.center data-latex=""}
-__Tabla 2.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
+__Tabla 5.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
 :::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
 
 tribble(
   ~'Parámetros', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
-  'Varianza aditiva', 0.43, 0.50, 0.56, NA, NA, NA,
-  'Varianza ambiental', 0.16, 0.14, 0.11, NA, NA, NA,
-  'Heredabilidad', 0.72, 0.78, 0.83, NA, NA, NA
+  'Varianza aditiva', 0.43, 0.50, 0.56, 0.47, NA, NA,
+  'Varianza ambiental', 0.16, 0.14, 0.11, 0.12, NA, NA,
+  'Heredabilidad', 0.72, 0.78, 0.83, 0.80, NA, NA
   ) %>%
   gt() %>%
   cols_label(

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.9)  27 MAR 2022 09:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  28 MAR 2022 05:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -261,7 +261,7 @@ Package hyperref Info: Option `breaklinks' set `true' on input line 43.
 Package: babel 2022/02/26 3.73 The Babel package
 \babel@savecnt=\count282
 \U@D=\dimen152
-\l@unhyphenated=\language3
+\l@unhyphenated=\language4
 (/home/leo/.TinyTeX/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count283
@@ -270,15 +270,6 @@ Package babel Info: Main language set with 'main='. Except if you have
 (babel)             the main language. Reported on input line 4219.
 (/home/leo/.TinyTeX/texmf-dist/tex/generic/babel-spanish/spanish.ldf
 Language: spanish.ldf 2021/05/27 v5.0q Spanish support from the babel system
-
-Package babel Warning: No hyphenation patterns were preloaded for
-(babel)                the language 'Spanish' into the format.
-(babel)                Please, configure your TeX system to add them and
-(babel)                rebuild the format. Now I will use the patterns
-(babel)                preloaded for \language=0 instead on input line 51.
-
-Package babel Info: Hyphen rules for 'spanish' set to \l@english
-(babel)             (\language0). Reported on input line 52.
 \es@quottoks=\toks25
 \es@quotdepth=\count284
 )) (/home/leo/.TinyTeX/texmf-dist/tex/latex/graphics/color.sty
@@ -689,7 +680,7 @@ Package pdftex.def Info: figures/MAS.pdf  used on input line 356.
 LaTeX Info: Redefining \. on input line 364.
 LaTeX Info: Redefining \% on input line 364.
 [4 <./figures/MAS.pdf>]
-<figures/GS.pdf, id=182, 456.70625pt x 312.16624pt>
+<figures/GS.pdf, id=181, 456.70625pt x 312.16624pt>
 File: figures/GS.pdf Graphic file (type pdf)
 <use figures/GS.pdf>
 Package pdftex.def Info: figures/GS.pdf  used on input line 375.
@@ -785,8 +776,8 @@ Package xcolor Warning: Incompatible color definition on input line 581.
 
 Package xcolor Warning: Incompatible color definition on input line 581.
 
-LaTeX Info: Redefining \. on input line 591.
-LaTeX Info: Redefining \% on input line 591.
+LaTeX Info: Redefining \. on input line 592.
+LaTeX Info: Redefining \% on input line 592.
 [15]
 <figures/Mej_Anim_Plan.pdf, id=402, 446.66875pt x 302.12875pt>
 File: figures/Mej_Anim_Plan.pdf Graphic file (type pdf)
@@ -983,72 +974,84 @@ LaTeX Info: Redefining \% on input line 1248.
 [43]
 LaTeX Info: Redefining \. on input line 1250.
 LaTeX Info: Redefining \% on input line 1250.
-[44] [45
+[44]
+Underfull \hbox (badness 2126) in paragraph at lines 1289--1291
+ [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
+L Frus-cian-
+ []
+
+
+Underfull \hbox (badness 2080) in paragraph at lines 1289--1291
+ \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
+ree-ding by
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 1289--1291
+ \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
+m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
+ []
+
+[45
 
 
 ]
-Underfull \hbox (badness 1776) in paragraph at lines 1316--1318
- [][]\T1/lmr/m/n/10.95 Gholami, M., V. Wim-mer, C. Sansa-loni, C. Petroli, S. J
-. Hearne,
+Underfull \hbox (badness 3209) in paragraph at lines 1316--1318
+ [][]\T1/lmr/m/n/10.95 Gholami, M., V. Wim-mer, C. San-sa-lo-ni, C. Pe-tro-li, 
+S. J. Hear-
  []
 
 
-Underfull \hbox (badness 3158) in paragraph at lines 1316--1318
- \T1/lmr/m/n/10.95 G. Covarrubias-Pazaran, S. Rens-ing, et al. 2021. ^^SA com-p
-ar-i-
+Underfull \hbox (badness 2401) in paragraph at lines 1316--1318
+ \T1/lmr/m/n/10.95 ne, G. Covarrubias-Pazaran, S. Ren-sing, et al. 2021. ^^SA c
+om-
  []
 
 
-Underfull \hbox (badness 1490) in paragraph at lines 1316--1318
- \T1/lmr/m/n/10.95 son of the adop-tion of ge-nom-ic se-lec-tion across dif-fer
--ent breed-
+Underfull \hbox (badness 5359) in paragraph at lines 1316--1318
+ \T1/lmr/m/n/10.95 pa-ri-son of the adop-tion of ge-no-mic se-lec-tion across d
+if-fe-rent
  []
 
 
-Underfull \hbox (badness 2818) in paragraph at lines 1316--1318
- \T1/lmr/m/n/10.95 ing in-sti-tu-tions^^T. \T1/lmr/m/it/10.95 Fron-tiers in Pla
-nt Sci-ence \T1/lmr/m/n/10.95 12: 728567. [][]$https :
+Underfull \hbox (badness 6001) in paragraph at lines 1316--1318
+ \T1/lmr/m/n/10.95 bree-ding ins-ti-tu-tions^^T. \T1/lmr/m/it/10.95 Fron-tiers 
+in Plant Scien-ce \T1/lmr/m/n/10.95 12: 728567.
  []
 
 
 Underfull \hbox (badness 1205) in paragraph at lines 1322--1324
  [][]\T1/lmr/m/n/10.95 Grinberg, N. F., O. I. Orho-bor, y R. D. King. 2020. ^^S
-An eval-u-a-
+An eva-lua-
  []
 
 
 Underfull \hbox (badness 6542) in paragraph at lines 1322--1324
- \T1/lmr/m/n/10.95 tion of machine-learning for pre-dict-ing phe-no-type: stud-
+ \T1/lmr/m/n/10.95 tion of machine-learning for pre-dic-ting phe-noty-pe: stu-d
 ies in
  []
 
 
 Underfull \hbox (badness 3260) in paragraph at lines 1322--1324
- \T1/lmr/m/n/10.95 yeast, rice, and wheat^^T. \T1/lmr/m/it/10.95 Ma-chine Learn
--ing \T1/lmr/m/n/10.95 109: 251-77. [][]$https :
+ \T1/lmr/m/n/10.95 yeast, ri-ce, and wheat^^T. \T1/lmr/m/it/10.95 Ma-chi-ne Lea
+r-ning \T1/lmr/m/n/10.95 109: 251-77. [][]$https :
  []
 
 
 Overfull \hbox (30.45624pt too wide) in paragraph at lines 1325--1327
- [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Rice Breed-ing
-\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]72
-297-[]9 /
+ [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
+g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
+2297-[]9 /
  []
 
 [46]
-Underfull \hbox (badness 2884) in paragraph at lines 1358--1360
- \T1/lmr/m/n/10.95 In-crease Pre-dic-tion Ac-cu-ra-cy in Ge-nom-ic Se-lec-tion 
-of Com-plex
- []
-
-
-Underfull \hbox (badness 3646) in paragraph at lines 1358--1360
- \T1/lmr/m/n/10.95 Traits in Al-fal-fa (Med-ica-go sati-va L.)^^T. \T1/lmr/m/it
-/10.95 Cells \T1/lmr/m/n/10.95 10 (12). [][]$https :
+Underfull \hbox (badness 1231) in paragraph at lines 1379--1381
+ \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
+ex sce-na-
  []
 
 [47] [48] [49]
-<figures/uvalogo_regular_p_en.pdf, id=869, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=866, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
@@ -1066,10 +1069,10 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15842 strings out of 480236
- 257058 string characters out of 5895862
- 568410 words of memory out of 5000000
- 33313 multiletter control sequences out of 15000+600000
+ 15838 strings out of 480218
+ 256989 string characters out of 5895106
+ 568459 words of memory out of 5000000
+ 33315 multiletter control sequences out of 15000+600000
  546978 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,16n,63p,1663b,512s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1094,10 +1097,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (55 pages, 10770088 bytes).
+Output written on TFM.pdf (55 pages, 10769933 bytes).
 PDF statistics:
- 1087 PDF objects out of 1200 (max. 8388607)
- 907 compressed objects within 10 object streams
+ 1084 PDF objects out of 1200 (max. 8388607)
+ 904 compressed objects within 10 object streams
  199 named destinations out of 1000 (max. 500000)
  315 words of extra memory for PDF output out of 10000 (max. 10000000)
 
