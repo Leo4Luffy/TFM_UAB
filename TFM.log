@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  29 MAR 2022 04:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.28)  30 MAR 2022 14:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -820,7 +820,7 @@ Cap\'{\i }tulo 3.
 
 ]
 Cap\'{\i }tulo 4.
-<figures/Graf_PCA.pdf, id=531, 459.7175pt x 315.1775pt>
+<figures/Graf_PCA.pdf, id=532, 459.7175pt x 315.1775pt>
 File: figures/Graf_PCA.pdf Graphic file (type pdf)
 <use figures/Graf_PCA.pdf>
 Package pdftex.def Info: figures/Graf_PCA.pdf  used on input line 696.
@@ -828,7 +828,7 @@ Package pdftex.def Info: figures/Graf_PCA.pdf  used on input line 696.
 [24
 
 ]
-<figures/Graf_feno.pdf, id=540, 457.71pt x 310.15875pt>
+<figures/Graf_feno.pdf, id=541, 457.71pt x 310.15875pt>
 File: figures/Graf_feno.pdf Graphic file (type pdf)
 <use figures/Graf_feno.pdf>
 Package pdftex.def Info: figures/Graf_feno.pdf  used on input line 705.
@@ -842,7 +842,7 @@ LaTeX Info: Redefining \% on input line 726.
 LaTeX Info: Redefining \. on input line 757.
 LaTeX Info: Redefining \% on input line 757.
 [27]
-<figures/Pedigríes.pdf, id=588, 438.63875pt x 291.0875pt>
+<figures/Pedigríes.pdf, id=589, 438.63875pt x 291.0875pt>
 File: figures/Pedigríes.pdf Graphic file (type pdf)
 <use figures/Pedigríes.pdf>
 Package pdftex.def Info: figures/Pedigríes.pdf  used on input line 760.
@@ -850,7 +850,7 @@ Package pdftex.def Info: figures/Pedigríes.pdf  used on input line 760.
 LaTeX Info: Redefining \. on input line 774.
 LaTeX Info: Redefining \% on input line 774.
 [28 <./figures/Pedigríes.pdf>]
-<figures/Esquema_1.pdf, id=604, 456.70625pt x 312.16624pt>
+<figures/Esquema_1.pdf, id=605, 456.70625pt x 312.16624pt>
 File: figures/Esquema_1.pdf Graphic file (type pdf)
 <use figures/Esquema_1.pdf>
 Package pdftex.def Info: figures/Esquema_1.pdf  used on input line 779.
@@ -873,7 +873,7 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 825--830
 LaTeX Info: Redefining \. on input line 838.
 LaTeX Info: Redefining \% on input line 838.
 [31]
-<figures/Esquema_2.pdf, id=651, 456.70625pt x 312.16624pt>
+<figures/Esquema_2.pdf, id=652, 456.70625pt x 312.16624pt>
 File: figures/Esquema_2.pdf Graphic file (type pdf)
 <use figures/Esquema_2.pdf>
 Package pdftex.def Info: figures/Esquema_2.pdf  used on input line 840.
@@ -900,7 +900,7 @@ Overfull \hbox (17.0pt too wide) in paragraph at lines 886--889
 []$[]$ 
  []
 
-<figures/covar_h2.pdf, id=675, 448.67625pt x 303.1325pt>
+<figures/covar_h2.pdf, id=676, 448.67625pt x 303.1325pt>
 File: figures/covar_h2.pdf Graphic file (type pdf)
 <use figures/covar_h2.pdf>
 Package pdftex.def Info: figures/covar_h2.pdf  used on input line 890.
@@ -908,12 +908,12 @@ Package pdftex.def Info: figures/covar_h2.pdf  used on input line 890.
 [34
 
 ]
-<figures/Cor_Bay_Pen.pdf, id=682, 460.72125pt x 308.15125pt>
+<figures/Cor_Bay_Pen.pdf, id=683, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen.pdf>
 Package pdftex.def Info: figures/Cor_Bay_Pen.pdf  used on input line 899.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-<figures/Cor_F2_F3.pdf, id=683, 460.72125pt x 308.15125pt>
+<figures/Cor_F2_F3.pdf, id=684, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
 Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 906.
@@ -952,7 +952,7 @@ Package xcolor Warning: Incompatible color definition on input line 997.
 
 Package xcolor Warning: Incompatible color definition on input line 997.
 
-<figures/gwas.pdf, id=733, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=734, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
 Package pdftex.def Info: figures/gwas.pdf  used on input line 1002.
@@ -1051,7 +1051,7 @@ ex sce-na-
  []
 
 [47] [48] [49]
-<figures/uvalogo_regular_p_en.pdf, id=866, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=867, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
@@ -1097,10 +1097,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (55 pages, 10769929 bytes).
+Output written on TFM.pdf (55 pages, 10770243 bytes).
 PDF statistics:
- 1084 PDF objects out of 1200 (max. 8388607)
- 904 compressed objects within 10 object streams
+ 1085 PDF objects out of 1200 (max. 8388607)
+ 905 compressed objects within 10 object streams
  199 named destinations out of 1000 (max. 500000)
  315 words of extra memory for PDF output out of 10000 (max. 10000000)
 

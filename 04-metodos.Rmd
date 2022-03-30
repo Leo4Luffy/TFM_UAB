@@ -33,7 +33,7 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 
 ## Recurso vegetal y datos fenotípicos
 
-Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database, que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05 usando Plink [@cite:49].
+Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database (disponible en la dirección web o URL http://iric.irri.org/), que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05 usando Plink [@cite:49].
 
 <!--Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.-->
 
@@ -118,7 +118,7 @@ knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 __Figura 4.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
-De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este [@cite:26] se observo que en este carácter la predicción genómica podría funcionar mejor.
+De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este [@cite:26] se observo que en este carácter la predicción genómica podría funcionar mejor. Estos datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE, warning = FALSE}
 
