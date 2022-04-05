@@ -34,7 +34,7 @@
 \usepackage{hyperref}
 \PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
 \hypersetup{unicode=true,
-            pdftitle={Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción},
+            pdftitle={Evaluación de la selección genómica de un solo paso en arroz},
             pdfauthor={Jorge Leonardo López Martínez},
             colorlinks=true,
             linkcolor=cyan,
@@ -250,7 +250,7 @@
 
 \vspace*{\drop}
 \begin{center}
-\Huge \textsc{Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción}
+\Huge \textsc{Evaluación de la selección genómica de un solo paso en arroz}
 \end{center}
 
 %% Page II: Colophon %LCR
@@ -277,7 +277,7 @@ bajo la licencia Creative Commons Attribution-NonCommercial-ShareAlike 4.0 Inter
 \begin{center}
 \includegraphics[width=41mm]{_bookdown_files/logo_uab.png} \includegraphics[width=41mm]{_bookdown_files/logo_upv.jpg} \includegraphics[width=41mm]{_bookdown_files/logo_ciheam.jpg} \newline
 \vspace{\baselineskip}
-\Huge{Selección genómica en arroz: efecto del número de marcadores y de individuos genotipados sobre la precisión de la predicción}\par
+\Huge{Evaluación de la selección genómica de un solo paso en arroz}\par
 \vspace{\baselineskip}
 \linespread{1.3}{\normalsize Tesis académica para obtener\\
 el grado de Máster en Mejora Genética y\\
@@ -671,8 +671,17 @@ En plantas, una de las ventajas con la implementación de la selección genómic
 
 La mayor parte de los estudios sobre selección genómica en plantas han ignorado la información de pedigrí, a diferencia de los animales donde el uso del pedigrí en modelos de selección ha sido considerado un factor importante en los programas de mejora genética (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}). Con el desarrollo del ssGBLUP existe la posibilidad de usar esta información, y hoy en día se pueden encontrar ejemplos del uso de esta metodología en plantas (Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). Sin embargo, todavía se necesitan esquemas de selección genómica optimizados y validados en el arroz. En estos momentos, no se han evaluado los distintos factores que pueden afectar la implementación y precisión del método del ssGBLUP en cultivos de arroz. Contar con estos resultados, ya sea a través de enfoques de simulación o usando datos empíricos, será clave para evaluar el impacto de dichos factores al implementar el ssGBLUP en el arroz.
 
-\hypertarget{objetivos}{%
-\chapter{Objetivos}\label{objetivos}}
+\hypertarget{objetivo}{%
+\chapter{Objetivo}\label{objetivo}}
+
+El objetivo principal de este estudio consistió en evaluar la selección genómica utilizando información fenotípica, genotípica y de pedigrí usando el enfoque de un solo paso que combina información de pedigrí y de marcadores de ADN en una matriz de parentesco combinada (o matriz H). Para ello, en este estudio se pretendió evaluar el efecto de las siguientes situaciones sobre la precisión de la predicción genómica, bajo dos escenarios de simulación (simulación hacia atrás y hacia adelante):
+
+\begin{itemize}
+\item
+  Distinta cantidad de individuos genotipados.
+\item
+  Diferentes densidades de SNP.
+\end{itemize}
 
 \hypertarget{materiales-y-muxe9todos}{%
 \chapter{Materiales y métodos}\label{materiales-y-muxe9todos}}
@@ -693,10 +702,10 @@ En la figura a continuación (Figura 4.1) se observa un análisis de componentes
 
 De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}) se observo que en este carácter la predicción genómica podría funcionar mejor. Estos datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/Graf_feno} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/Graf_feno_2} \end{center}
 
 \begin{center}
-\textbf{Figura 4.2:} Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+\textbf{Figura 4.2:} Distribución y media \(\pm\) desviación estándar del carácter tiempo de floración del conjunto de datos fenotípicos de arroz.
 
 \end{center}
 
@@ -850,14 +859,14 @@ Para identificar el efecto del número de individuos genotipados sobre la predic
 
 Por último y al igual que en la sección metodológica anteriormente descrita, se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Para esto, los valores fenotípicos observados de los individuos de las generaciones \(F_{2}\) y \(F_{3}\) se consideraron como fenotipos faltantes.
 
-\hypertarget{resultados-y-discusiuxf3n}{%
-\chapter{Resultados y discusión}\label{resultados-y-discusiuxf3n}}
+\hypertarget{resultados}{%
+\chapter{Resultados}\label{resultados}}
 
 \hypertarget{results3}{%
 \section{Fenotipo y heredabilidad}\label{results3}}
 
 \begin{center}
-\textbf{Tabla 5.1:} Estimaciones de heredabilidad para el caracter tiempo de floración estimado por BLUP basado en el pedigrí.
+\textbf{Tabla 5.1:} Estimaciones de heredabilidad para el caracter tiempo de floración estimado mediante el método BLUP.
 
 \end{center}
 
@@ -868,9 +877,7 @@ Por último y al igual que en la sección metodológica anteriormente descrita, 
  \cmidrule(lr){2-4} \cmidrule(lr){5-7}
 Parámetros & Ped. 1\textsuperscript{1} & Ped. 2 & Ped. 3 & Ped. 1 & Ped. 2 & Ped. 3 \\ 
 \midrule
-Varianza aditiva & 0.43 & 0.50 & 0.56 & 0.47 & 0.50 & 0.56 \\ 
-Varianza ambiental & 0.16 & 0.14 & 0.11 & 0.12 & 0.13 & 0.11 \\ 
-Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 79.00 & 0.84 \\ 
+Heredabilidad & 0.72 & 0.78 & 0.84 & 0.8 & 0.79 & 0.84 \\ 
  \bottomrule
 \end{longtable}
 \vspace{-5mm}
@@ -878,14 +885,12 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 79.00 & 0.84 \\
 \textsuperscript{1}Ped. 1 indica Pedigrí 1 \\ 
 \end{minipage}
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2_2} \end{center}
 
 \begin{center}
 \textbf{Figura 5.1:} .
 
 \end{center}
-
-Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots{} (RKHS) bajo el modelo aditivo se observan en la Figura 5.2.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_Bay_Pen} \end{center}
 
@@ -900,6 +905,9 @@ Los resultados del análisis de máxima verosimilitud restringida (REML) y\ldots
 \textbf{Figura 5.3:} .
 
 \end{center}
+
+\hypertarget{discusiuxf3n}{%
+\chapter{Discusión}\label{discusiuxf3n}}
 
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}

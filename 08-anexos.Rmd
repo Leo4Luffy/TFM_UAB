@@ -1,0 +1,532 @@
+```{r, echo = FALSE}
+
+pacman::p_load(tibble, gt, dplyr, tidyr)
+```
+
+<!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
+
+# (APPENDIX) Appendix {-}
+
+# Anexos
+
+## Función para el calculo de la matriz de parentesco combinada
+
+```{r, echo = TRUE, eval = FALSE}
+
+fn.mH <- function(ped, mG) { # Esta función recibe como argu-
+                             # mentos los datos con estructu- 
+                             # ra (id | sire | dam | Gen (TRUE 
+                             # /FALSE)) y la matriz de relacio-
+                             # nes genómicas.
+  
+  # 1. Se calcula la matriz de relaciones aditivas con base en 
+  # el pedigrí (A)
+  
+  ped_edit <- pedigreemm::editPed( # Esta función ordena el pe-
+                                   # digrí.
+    sire = ped$sire,
+    dam = ped$dam,
+    label = ped$id
+    )
+  pedi <- pedigreemm::pedigree( # Aquí se usa la salida anterior
+                                # (ya ordenado) y se crea un ob-
+                                # jeto de clase pedigree.
+    sire = ped_edit$sire,
+    dam = ped_edit$dam,
+    label = ped_edit$label
+    )
+  Matrix_A <- pedigreemm::getA(ped = pedi) # Esto dara la matriz
+                                           # de relaciones adi-
+                                           # tivas A.
+ 
+  # 2. De lo anterior (Matriz_A) se extraen las partes correspon-
+  # dientes a individuos no genotipados (1) y genotipados (2)
+  
+  # Individuos no genotipados:
+  A_11 <- Matrix_A[ped$Genotiped != 1, ped$Genotiped != 1]
+  # Individuos genotipados:
+  A_22 <- Matrix_A[ped$Genotiped == 1, ped$Genotiped == 1]
+  # Individuos no genotipados (en filas) y genotipados (en 
+  # columnas):
+  A_12 <- Matrix_A[ped$Genotiped != 1, ped$Genotiped == 1]
+  # Transpuesta de la anterior (individuos no genotipados en 
+  # columnas y genotipados en filas):
+  A_21 <- t(A_12)
+  
+  # 3. Se coloca el nombre de las filas y y de las columnas 
+  # de la matriz G según los individuos genotipados
+  
+  rownames(mG) <- ped$id[ped$Genotiped == 1]
+  colnames(mG) <- ped$id[ped$Genotiped == 1]
+  
+  # 4. Teniendo todos los componentes de la matriz H, se pro-
+  # cede a su construcción
+  
+  H_11 <- A_11 - 
+    (A_12 %*% solve(A_22) %*% A_21) + 
+    (A_12 %*% solve(A_22) %*% mG %*% solve(A_22) %*% A_21)
+  H_12 <- A_12 %*% solve(A_22) %*% mG
+  H_21 <- t(H_12)
+  H_22 <- mG
+  
+  H_11_H_12 <- cbind(H_11, H_12)
+  H_21_H_22 <- cbind(H_21, H_22)
+  mH <- rbind(H_11_H_12, H_21_H_22)
+  
+  mH <- mH[order(as.numeric(rownames(mH))), 
+           order(as.numeric(colnames(mH)))]
+  mH <- Matrix(mH)
+  
+  # 5. Finalmente se indica retornar la matriz H (mH)
+  
+  return(mH)
+  }
+```
+
+## Visualización del GWAS
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
+
+res_GWAS <- read_delim(here('figures', 'gwas.mlma')) # Se importa el archivo con los resultados del GWAS.
+
+# Se visualiza los resultados mediante ggplot2 ----
+
+# 1. se calcula la posición acumulada de los SNPs:
+
+vis_GWAS <- res_GWAS %>%
+  
+  group_by(Chr) %>%
+  summarise(Tam_cromosoma = max(bp)) %>% # se calcula el tamaño de los cromosomas.
+  
+  mutate(Total = cumsum(Tam_cromosoma) - Tam_cromosoma) %>%
+  select(-Tam_cromosoma) %>% # Se calcula la posición acumulada de cada cromosoma.
+  
+  left_join(res_GWAS, ., by = c('Chr' = 'Chr')) %>% # Se adiciona la información anterior al conjunto de datos inicial "res_GWAS".
+  
+  arrange(Chr, bp) %>%
+  mutate(bp_total = bp + Total) # Se adiciona la posición acumulada de cada SNP.
+
+# 2. Se prepara el eje x, debido a que no se quiere mostrar la posición acumulada de los SNPs o bp, sino mostrar el nombre del cromosoma:
+
+eje_x <- vis_GWAS %>%
+  group_by(Chr) %>%
+  summarise(centro = (max(bp_total) + min(bp_total)) / 2)
+
+# 3. Se hace el gráfico a continuación:
+
+Graf_Manhattan <- ggplot(data = vis_GWAS, aes(x = bp_total, y = -log10(p))) +
+  geom_point(aes(colour = as.factor(Chr)), alpha = 0.2, size = 2.4) +
+  scale_colour_manual(values = c('cyan', 'green', 'red', 'yellow', 'cyan', 'green', 'red', 'yellow', 'cyan', 'green', 'red', 'yellow')) +
+  scale_x_continuous( label = eje_x$Chr, breaks= eje_x$centro ) +
+  labs(x = 'Cromosoma', y = '-log10(p)') +
+  theme_bw() +
+  theme(
+    legend.position = 'none',
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold')
+    ) # Nota: 
+
+gg_qqplot <- function(ps, ci = 0.95) {
+  n  <- length(ps)
+  df <- data.frame(
+    observed = -log10(sort(ps)),
+    expected = -log10(ppoints(n)),
+    clower   = -log10(qbeta(p = (1 - ci) / 2, shape1 = 1:n, shape2 = n:1)),
+    cupper   = -log10(qbeta(p = (1 + ci) / 2, shape1 = 1:n, shape2 = n:1))
+  )
+  log10Pe <- expression(paste('Expected -log'[10], plain(P)))
+  log10Po <- expression(paste('Observed -log'[10], plain(P)))
+  ggplot(df) +
+    geom_ribbon(
+      mapping = aes(x = expected, ymin = clower, ymax = cupper),
+      alpha = 0.2, fill = 'yellow'
+    ) +
+    geom_abline(intercept = 0, slope = 1, alpha = 1.0, size = 1.0) +
+    geom_point(aes(expected, observed), colour = 'yellow', alpha = 0.5, size = 2.6) +
+    xlab(log10Pe) +
+    ylab(log10Po)
+  }
+
+Graf_qq <- gg_qqplot(res_GWAS$p) +
+  labs(x = '-log10(P) esperado', y = '-log10(P) observado') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold')
+    )
+
+Graf_Manhattan | Graf_qq -> GWAS
+
+knitr::include_graphics('figures/gwas.pdf', auto_pdf = TRUE)
+```
+
+## Habilidad predictiva
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 1'
+    )
+
+Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 2'
+    )
+
+Cor_ped_3_est <- read_delim(here('figures', 'Ped3_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 3'
+    )
+
+Cor_ped <- bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est)
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 1') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 1',
+    subtitle = '751 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 2') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 2',
+    subtitle = '1661 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+
+Cor_ped %>%
+  filter(Pedigrí == 'Pedigrí 3') %>%
+  pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
+  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 3',
+    subtitle = '2451 individuos en total'
+  ) %>%
+  cols_label(
+    Correlación_Bayesiano = 'Media',
+    des_Bayesiano = 'Desvío',
+    Correlación_Penalizado = 'Media',
+    des_Penalizado = 'Desvíó'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'Bayesiano',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'Penalizado',
+    columns = c(4, 5)
+  )
+```
+
+## Habilidad predictiva
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+Cor_F2_est <- read_delim(here('figures', 'Ped_F2.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F2',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+    )
+
+Cor_F3_est <- read_delim(here('figures', 'Ped_F3.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Predicción = 'F3',
+    Pedigrí = case_when(
+      Pedigrí == 'Pedigrí_1' ~ 'Pedigrí 1',
+      Pedigrí == 'Pedigrí_2' ~ 'Pedigrí 2',
+      Pedigrí == 'Pedigrí_3' ~ 'Pedigrí 3',
+      Pedigrí == 'Pedigrí_4' ~ 'Pedigrí 4'
+      )
+  )
+
+Cor_F2_F3 <- bind_rows(Cor_F2_est, Cor_F3_est)
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 1') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 1',
+    subtitle = '2061 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 2') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 2',
+    subtitle = '2071 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 3') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 3',
+    subtitle = '2091 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+
+Cor_F2_F3 %>%
+  filter(Pedigrí == 'Pedigrí 4') %>%
+  pivot_wider(names_from = Predicción, values_from = c(Media, Desvio)) %>%
+  relocate(Desvio_F2, .after = Media_F2) %>%
+  select(Genotipados, Media_F2, Desvio_F2, Media_F3, Desvio_F3) %>%
+  gt() %>%
+  tab_header(
+    title = 'Pedirí 4',
+    subtitle = '2131 individuos en total'
+  ) %>%
+  cols_label(
+    Media_F2 = 'Media',
+    Desvio_F2 = 'Desvío',
+    Media_F3 = 'Media',
+    Desvio_F3 = 'Desvío'
+  ) %>%
+  tab_row_group(
+    label = 'Densidad 100.000',
+    rows = 8:10
+    )  %>%
+  tab_row_group(
+    label = 'Densidad 10.000',
+    rows = 5:7
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 1.000',
+    rows = 2:4
+    ) %>%
+  tab_row_group(
+    label = 'Densidad 0',
+    rows = 1
+    ) %>%
+  tab_spanner(
+    label = 'F2',
+    columns = c(2, 3)
+  ) %>%
+  tab_spanner(
+    label = 'F3',
+    columns = c(4, 5)
+  )
+```

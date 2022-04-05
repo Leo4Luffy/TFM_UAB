@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, scales, pedigreemm)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, scales, pedigreemm, patchwork, latex2exp)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -144,14 +144,30 @@ Rasgo_1 <- Fenotipos %>%
 Rasgo_2 <- Fenotipos %>%
   na.omit() %>%
   ggplot(data = ., aes(x = Time.to.flowering..from.sowing)) +
-  geom_density(color = 'black', fill = 'black', alpha = 0.2) +
-  labs(x = 'Tiempo de\n floración', y = 'Densidad') +
+  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.2) +
+  labs(x = 'Tiempo de floración', y = 'Densidad') +
   theme_bw() +
   theme(
-    axis.text.x = element_text(size = 6, face = 'bold'),
+    axis.text.x = element_text(size = 10, face = 'bold'),
     axis.text.y = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 8, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
     axis.title.y = element_text(size = 10, face = 'bold')
+    )
+
+Rasgo_2b <- Fenotipos %>%
+  na.omit() %>%
+  ggplot(aes(x = ' ', y = Time.to.flowering..from.sowing)) + 
+  geom_boxplot(color = 'cyan', fill = 'cyan', alpha = 0.2) +
+  annotate(geom = 'text', x = 1.4, y = 4.2, label = TeX('$\\bar{x} = 4.57 \\pm 0.23$'), size = 3.2) +
+  coord_flip() +
+  labs(x = ' ', y = 'Tiempo de floración') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    axis.title.y = element_text(size = 10, face = 'bold'),
+    axis.ticks.y = element_blank()
     )
 
 # Daño de la sal ----
@@ -278,11 +294,13 @@ Rasgo_10 <- Fenotipos %>%
 
 (Rasgo_1 | Rasgo_2 | Rasgo_3 | Rasgo_4 | Rasgo_5) / (Rasgo_6 | Rasgo_7 | Rasgo_8 | Rasgo_9 | Rasgo_10) -> Graf_feno
 
-knitr::include_graphics('figures/Graf_feno.png', auto_pdf = TRUE)
+Rasgo_2 | Rasgo_2b -> Graf_feno_2
+
+knitr::include_graphics('figures/Graf_feno_2.png', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 4.2:__ Distribución de cada uno de los caracteres del conjunto de datos fenotípicos de arroz.
+__Figura 4.2:__ Distribución y media $\pm$ desviación estándar del carácter tiempo de floración del conjunto de datos fenotípicos de arroz.
 :::
 
 ## Predicción basada en información de pedigrí e información genómica

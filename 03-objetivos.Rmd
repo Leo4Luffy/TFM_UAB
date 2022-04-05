@@ -7,4 +7,14 @@ showtext_auto()
 
 <!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
 
-# Objetivos
+# Objetivo
+
+El objetivo principal de este estudio consistió en evaluar la selección genómica utilizando información fenotípica, genotípica y de pedigrí usando el enfoque de un solo paso que combina información de pedigrí y de marcadores de ADN en una matriz de parentesco combinada (o matriz H). Para ello, en este estudio se pretendió evaluar el efecto de las siguientes situaciones sobre la precisión de la predicción genómica, bajo dos escenarios de simulación (simulación hacia atrás y hacia adelante):
+
++ Distinta cantidad de individuos genotipados.
+
++ Diferentes densidades de SNP.
+
+<!--
+realizar las predicciones utilizando información fenotípica, genealógica y genómica para evaluar genéticamente las línea
+-->

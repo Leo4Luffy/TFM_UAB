@@ -1,0 +1,7 @@
+# Agradecimientos {-}
+\chaptermark{Acknowledgments}
+
+```{r echo=FALSE}
+
+knitr::include_graphics("figures/uvalogo_regular_p_en.jpg", auto_pdf = TRUE)
+```
