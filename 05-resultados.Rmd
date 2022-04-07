@@ -9,16 +9,18 @@ showtext_auto()
 
 # Resultados
 
-## Fenotipo y heredabilidad {#results3}
+## Fenotipo y heredabilidad
+
+Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP, se resumen en la Tabla 5.1 y en la Figura 5.1. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 en los tres pedigríes generados a partir de las simulaciones hacia atrás, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
 ::: {.center data-latex=""}
-__Tabla 5.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración estimado mediante el método BLUP.
+__Tabla 5.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
 :::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
 
 tribble(
-  ~'Parámetros', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
+  ~'Parámetro', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
   #'Varianza aditiva', 0.43, 0.50, 0.56, 0.47, 0.50, 0.56,
   #'Varianza ambiental', 0.16, 0.14, 0.11, 0.12, 0.13, 0.11,
   'Heredabilidad', 0.72, 0.78, 0.84, 0.80, 0.79, 0.84
@@ -34,7 +36,7 @@ tribble(
     columns = c(2, 3, 4)
     ) %>%
   tab_spanner(
-    label = 'Penalizado',
+    label = 'REML',
     columns = c(5, 6, 7)
     ) %>%
   tab_footnote(
@@ -214,14 +216,22 @@ knitr::include_graphics('figures/covar_h2_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.1:__ .
+__Figura 5.1:__ Distribuciones posteriores de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 :::
-<!--
-Los resultados del análisis de máxima verosimilitud restringida (REML) y... (RKHS) bajo el modelo aditivo se observan en la Figura 5.2.
--->
+
+## Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia atrás
+
+
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
   mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
@@ -256,6 +266,12 @@ Cor_ped_1_est %>%
 
 Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %>%
   mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
+  mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
       Densidad == 1 ~ '1.000',
@@ -288,6 +304,12 @@ Cor_ped_2_est %>%
     ) -> Cor_ped_2_est_graf
 
 Cor_ped_3_est <- read_delim(here('figures', 'Ped3_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
   mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
@@ -341,12 +363,16 @@ bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est) %>%
     strip.text = element_text(size = 10, colour = 'black', face = 'bold')
     ) -> Cor_Bay_Pen
 
-knitr::include_graphics('figures/Cor_Bay_Pen.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
 __Figura 5.2:__ .
 :::
+
+## Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia adelante
+
+
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
