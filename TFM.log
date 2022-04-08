@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  7 APR 2022 06:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  8 APR 2022 06:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -931,64 +931,64 @@ Cap\'{\i }tulo 7.
 ]
 Ap\'{e}ndice A.
 
-Package xcolor Warning: Incompatible color definition on input line 926.
+Package xcolor Warning: Incompatible color definition on input line 928.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 928.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 930.
 
-Package xcolor Warning: Incompatible color definition on input line 997.
-
-
-Package xcolor Warning: Incompatible color definition on input line 997.
+Package xcolor Warning: Incompatible color definition on input line 999.
 
 
-Package xcolor Warning: Incompatible color definition on input line 997.
+Package xcolor Warning: Incompatible color definition on input line 999.
+
+
+Package xcolor Warning: Incompatible color definition on input line 999.
 
 [39
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 997.
+Package xcolor Warning: Incompatible color definition on input line 999.
 
 
-Package xcolor Warning: Incompatible color definition on input line 997.
+Package xcolor Warning: Incompatible color definition on input line 999.
 
-<figures/gwas.pdf, id=735, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=738, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
-Package pdftex.def Info: figures/gwas.pdf  used on input line 1002.
+Package pdftex.def Info: figures/gwas.pdf  used on input line 1004.
 (pdftex.def)             Requested size: 360.01208pt x 244.2939pt.
-LaTeX Info: Redefining \. on input line 1002.
-LaTeX Info: Redefining \% on input line 1002.
+LaTeX Info: Redefining \. on input line 1004.
+LaTeX Info: Redefining \% on input line 1004.
 [40]
-LaTeX Info: Redefining \. on input line 1040.
-LaTeX Info: Redefining \% on input line 1040.
+LaTeX Info: Redefining \. on input line 1042.
+LaTeX Info: Redefining \% on input line 1042.
 [41 <./figures/gwas.pdf>]
-LaTeX Info: Redefining \. on input line 1108.
-LaTeX Info: Redefining \% on input line 1108.
+LaTeX Info: Redefining \. on input line 1110.
+LaTeX Info: Redefining \% on input line 1110.
 [42]
-LaTeX Info: Redefining \. on input line 1180.
-LaTeX Info: Redefining \% on input line 1180.
+LaTeX Info: Redefining \. on input line 1182.
+LaTeX Info: Redefining \% on input line 1182.
 [43]
-LaTeX Info: Redefining \. on input line 1248.
-LaTeX Info: Redefining \% on input line 1248.
-[44]
 LaTeX Info: Redefining \. on input line 1250.
 LaTeX Info: Redefining \% on input line 1250.
+[44]
+LaTeX Info: Redefining \. on input line 1252.
+LaTeX Info: Redefining \% on input line 1252.
 [45]
-Underfull \hbox (badness 2126) in paragraph at lines 1289--1291
+Underfull \hbox (badness 2126) in paragraph at lines 1291--1293
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1289--1291
+Underfull \hbox (badness 2080) in paragraph at lines 1291--1293
  \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
 ree-ding by
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1289--1291
+Underfull \hbox (badness 5203) in paragraph at lines 1291--1293
  \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
@@ -997,27 +997,27 @@ m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
 
 
 ]
-Overfull \hbox (30.45624pt too wide) in paragraph at lines 1319--1321
+Overfull \hbox (30.45624pt too wide) in paragraph at lines 1321--1323
  [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
 g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
  []
 
 [47]
-Underfull \hbox (badness 1231) in paragraph at lines 1373--1375
+Underfull \hbox (badness 1231) in paragraph at lines 1375--1377
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
 [48] [49] [50]
-<figures/uvalogo_regular_p_en.pdf, id=863, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=866, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-438.
+440.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1438--1439
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1440--1441
 [][] 
  []
 
@@ -1056,10 +1056,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (57 pages, 9960215 bytes).
+Output written on TFM.pdf (57 pages, 9961171 bytes).
 PDF statistics:
- 1090 PDF objects out of 1200 (max. 8388607)
- 908 compressed objects within 10 object streams
+ 1093 PDF objects out of 1200 (max. 8388607)
+ 911 compressed objects within 10 object streams
  202 named destinations out of 1000 (max. 500000)
  339 words of extra memory for PDF output out of 10000 (max. 10000000)
 
