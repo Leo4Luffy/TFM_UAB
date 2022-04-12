@@ -166,6 +166,12 @@ knitr::include_graphics('figures/gwas.pdf', auto_pdf = TRUE)
 
 Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %>%
   mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
+  mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
       Densidad == 1 ~ '1.000',
@@ -178,6 +184,12 @@ Cor_ped_1_est <- read_delim(here('figures', 'Ped1_Bay_Pen.txt'), delim = '\t') %
 
 Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %>%
   mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
+  mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
       Densidad == 1 ~ '1.000',
@@ -189,6 +201,12 @@ Cor_ped_2_est <- read_delim(here('figures', 'Ped2_Bay_Pen.txt'), delim = '\t') %
     )
 
 Cor_ped_3_est <- read_delim(here('figures', 'Ped3_Bay_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Enfoque = recode(
+      .x = Enfoque,
+      'Penalizado' = 'REML'
+      )
+    ) %>%
   mutate(
     Densidad = case_when(
       Densidad == 0 ~ '0',
@@ -205,8 +223,8 @@ Cor_ped <- bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est)
 Cor_ped %>%
   filter(Pedigrí == 'Pedigrí 1') %>%
   pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
-  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
-  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  relocate(des_Bayesiano, .before = Correlación_REML) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_REML, des_REML) %>%
   gt() %>%
   tab_header(
     title = 'Pedirí 1',
@@ -215,8 +233,8 @@ Cor_ped %>%
   cols_label(
     Correlación_Bayesiano = 'Media',
     des_Bayesiano = 'Desvío',
-    Correlación_Penalizado = 'Media',
-    des_Penalizado = 'Desvíó'
+    Correlación_REML = 'Media',
+    des_REML = 'Desvíó'
   ) %>%
   tab_row_group(
     label = 'Densidad 100.000',
@@ -239,15 +257,15 @@ Cor_ped %>%
     columns = c(2, 3)
   ) %>%
   tab_spanner(
-    label = 'Penalizado',
+    label = 'REML',
     columns = c(4, 5)
   )
 
 Cor_ped %>%
   filter(Pedigrí == 'Pedigrí 2') %>%
   pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
-  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
-  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  relocate(des_Bayesiano, .before = Correlación_REML) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_REML, des_REML) %>%
   gt() %>%
   tab_header(
     title = 'Pedirí 2',
@@ -256,8 +274,8 @@ Cor_ped %>%
   cols_label(
     Correlación_Bayesiano = 'Media',
     des_Bayesiano = 'Desvío',
-    Correlación_Penalizado = 'Media',
-    des_Penalizado = 'Desvíó'
+    Correlación_REML = 'Media',
+    des_REML = 'Desvíó'
   ) %>%
   tab_row_group(
     label = 'Densidad 100.000',
@@ -280,15 +298,15 @@ Cor_ped %>%
     columns = c(2, 3)
   ) %>%
   tab_spanner(
-    label = 'Penalizado',
+    label = 'REML',
     columns = c(4, 5)
   )
 
 Cor_ped %>%
   filter(Pedigrí == 'Pedigrí 3') %>%
   pivot_wider(names_from = Enfoque, values_from = c(Correlación, des)) %>%
-  relocate(des_Bayesiano, .before = Correlación_Penalizado) %>%
-  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_Penalizado, des_Penalizado) %>%
+  relocate(des_Bayesiano, .before = Correlación_REML) %>%
+  select(Genotipados, Correlación_Bayesiano, des_Bayesiano, Correlación_REML, des_REML) %>%
   gt() %>%
   tab_header(
     title = 'Pedirí 3',
@@ -297,8 +315,8 @@ Cor_ped %>%
   cols_label(
     Correlación_Bayesiano = 'Media',
     des_Bayesiano = 'Desvío',
-    Correlación_Penalizado = 'Media',
-    des_Penalizado = 'Desvíó'
+    Correlación_REML = 'Media',
+    des_REML = 'Desvíó'
   ) %>%
   tab_row_group(
     label = 'Densidad 100.000',
@@ -321,7 +339,7 @@ Cor_ped %>%
     columns = c(2, 3)
   ) %>%
   tab_spanner(
-    label = 'Penalizado',
+    label = 'REML',
     columns = c(4, 5)
   )
 ```

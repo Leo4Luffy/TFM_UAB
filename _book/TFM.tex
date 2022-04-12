@@ -684,6 +684,8 @@ El objetivo de este estudio fue evaluar el interés de la selección genómica e
 
 Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database (disponible en la dirección web o URL \url{http://iric.irri.org/}), que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (\emph{Oryza sativa L.}). En un estudio previo a este (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}), los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05 usando Plink (Purcell et~al. \protect\hyperlink{ref-cite:49}{2007}).
 
+Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.
+
 En la figura a continuación (Figura 4.1) se observa un análisis de componentes principales realizado sobre los datos de genotipado de SNP, donde se observan diferentes grupos varietales de arroz. La variedad indica fue seleccionada para llevar a cabo este estudio ya que es el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA} \end{center}
@@ -693,7 +695,7 @@ En la figura a continuación (Figura 4.1) se observa un análisis de componentes
 
 \end{center}
 
-De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}) se observo que en este carácter la predicción genómica podría funcionar mejor. Estos datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
+De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de floración, ya que en un estudio previo a este (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}) se observo que en este carácter la predicción genómica podría funcionar mejor. Con la figura a continuación (Figura 4.2) se observa que la distribución empírica general de este carácter fue aproximadamente normal, lo que permitió el uso de modelos de distribución normal. Los datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_feno_2} \end{center}
 
@@ -715,7 +717,7 @@ donde \(y\) representa el valor del fenotipo a predecir (es decir, el tiempo de 
 
 En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información de pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
 
-En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A descrita anteriormente y de la matriz de parentesco basado en marcadores de ADN (o matriz G) (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz de parentesco basado en marcadores de ADN (o matriz G) (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
 
 \begin{equation}
 H =
@@ -726,14 +728,11 @@ G A_{22}^{-1} A_{12}' & G
 ,
 \end{equation}
 
-donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de la matriz A, y los subíndices \(1\) y \(2\) representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y \(nSNP\) representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
+donde \(A_{11}\) es el bloque de A para los individuos sin de genotipo, \(A_{22}\) es el bloque de individuos con genotipo y \(A_{12}\) y \(A_{21}\) son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y \(nSNP\) representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
 
-\hypertarget{estimaciuxf3n-de-la-heredabilidad}{%
-\section{Estimación de la heredabilidad}\label{estimaciuxf3n-de-la-heredabilidad}}
-
-Se estimó la heredabilidad mediante el método BLUP con base en el modelo descrito anteriormente. La heredabilidad se calculó como:
+La heredabilidad en sentido estricto se estimó mediante el método BLUP como:
 
 \begin{equation}
 h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
@@ -910,7 +909,9 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.8 & 0.79 & 0.84 \\
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
 
-A pesar del interés que en su momento hubo en el uso de la información de pedigrí para la mejora genética de animales, el uso de esta información en plantas no fue relevante (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}). Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología para la mejora de la ganancia genética en plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), y en tiempo más recientes se ha demostrado su uso en la mejora genética de los cultvos de arroz a través de estudios de simulación (Xu et~al. \protect\hyperlink{ref-cite:60}{2021}).
+A pesar del interés que en su momento hubo en el uso del pedigrí para la mejora genética de animales, el uso de esta información en plantas no fue relevante (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}). Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología para la mejora de la ganancia genética en plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultvos de arroz a través de estudios de simulación (Xu et~al. \protect\hyperlink{ref-cite:60}{2021}).
+
+Con el desarrollo del método del ssGBLUP, fue posible
 
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}
@@ -1013,7 +1014,7 @@ A pesar del interés que en su momento hubo en el uso de la información de pedi
 {\small 751 individuos en total}
 } \\ 
 \toprule
- & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{Penalizado} \\ 
+ & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{REML} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
 Genotipados & Media & Desvío & Media & Desvíó \\ 
 \midrule
@@ -1047,7 +1048,7 @@ Genotipados & Media & Desvío & Media & Desvíó \\
 {\small 1661 individuos en total}
 } \\ 
 \toprule
- & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{Penalizado} \\ 
+ & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{REML} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
 Genotipados & Media & Desvío & Media & Desvíó \\ 
 \midrule
@@ -1081,7 +1082,7 @@ Genotipados & Media & Desvío & Media & Desvíó \\
 {\small 2451 individuos en total}
 } \\ 
 \toprule
- & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{Penalizado} \\ 
+ & \multicolumn{2}{c}{Bayesiano} & \multicolumn{2}{c}{REML} \\ 
  \cmidrule(lr){2-3} \cmidrule(lr){4-5}
 Genotipados & Media & Desvío & Media & Desvíó \\ 
 \midrule

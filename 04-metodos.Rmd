@@ -30,12 +30,12 @@ Al ser una forma de BLUP en el que la matriz de relación de parentesco es susti
 -->
 
 # Materiales y métodos
-
+  
 ## Recurso vegetal y datos fenotípicos
 
 Los conjuntos de datos se obtuvieron del Rice SNP-Seek Database (disponible en la dirección web o URL http://iric.irri.org/), que contiene información sobre datos de genotipado de SNP y de fenotipos de distintas variedades de arroz (*Oryza sativa L.*). En un estudio previo a este [@cite:26], los genotipados de SNP fueron sometidos a procedimientos de control de calidad, eliminando loci con una frecuencia del alelo menor inferior a 0.01 y con una tasa de ausencia mayor a 0.01. Para este estudio se eliminaron loci con una frecuencia del alelo menor inferior a 0.05 usando Plink [@cite:49].
 
-<!--Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.-->
+Luego, el conjunto de datos de genotipado final se transformó de la codificación de genotipo de nucleótidos (esto es, A, C, T y G) a la codificación numérica (0, 1 y 2 para los homocigotos de clase I, heterocigotos y homocigotos de clase II, respectivamente) para facilitar el análisis estadístico posterior.
 
 En la figura a continuación (Figura 4.1) se observa un análisis de componentes principales realizado sobre los datos de genotipado de SNP, donde se observan diferentes grupos varietales de arroz. La variedad indica fue seleccionada para llevar a cabo este estudio ya que es el grupo varietal con mayor número de individuos genotipados (451 individuos de un total de 738).
 
@@ -118,7 +118,7 @@ knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 __Figura 4.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
 :::
 
-De entre los datos de fenotipos disponibles (Figura 4.2), se eligió el carácter tiempo de floración, ya que en un estudio previo a este [@cite:26] se observo que en este carácter la predicción genómica podría funcionar mejor. Estos datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
+De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de floración, ya que en un estudio previo a este [@cite:26] se observo que en este carácter la predicción genómica podría funcionar mejor. Con la figura a continuación  (Figura 4.2) se observa que la distribución empírica general de este carácter fue aproximadamente normal, lo que permitió el uso de modelos de distribución normal. Los datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE, warning = FALSE}
 
@@ -315,7 +315,7 @@ donde $y$ representa el valor del fenotipo a predecir (es decir, el tiempo de fl
 
 En la ecuación anterior (4.1), se asume que $g$ sigue una distribución normal con media igual a $0$ y matriz de covarianza $A\sigma^{2}_{g}$ en el modelo BLUP, donde $A$ representa la matriz de parentesco basada en información de pedigrí, y $\sigma^{2}_{g}$ es la varianza genética aditiva.
 
-En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A descrita anteriormente y de la matriz de parentesco basado en marcadores de ADN (o matriz G) [@cite:16], y se define de la siguiente manera:
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz de parentesco basado en marcadores de ADN (o matriz G) [@cite:16], y se define de la siguiente manera:
 
 \begin{equation}
 H =
@@ -326,13 +326,11 @@ G A_{22}^{-1} A_{12}' & G
 ,
 \end{equation}
 
-donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de la matriz A, y los subíndices $1$ y $2$ representan los individuos genotipados y no genotipados, respectivamente. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
+donde $A_{11}$ es el bloque de A para los individuos sin de genotipo, $A_{22}$ es el bloque de individuos con genotipo y $A_{12}$ y $A_{21}$ son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Inicialmente para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H.
 
-## Estimación de la heredabilidad
-
-Se estimó la heredabilidad mediante el método BLUP con base en el modelo descrito anteriormente. La heredabilidad se calculó como:
+La heredabilidad en sentido estricto se estimó mediante el método BLUP como:
 
 \begin{equation}
 h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
