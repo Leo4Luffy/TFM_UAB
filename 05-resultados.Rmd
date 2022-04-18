@@ -221,11 +221,55 @@ __Figura 5.1:__ Distribuciones posteriores de componentes de varianza y de hered
 
 ## Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia atrás
 
-Usando datos con distintas densidades de SNP e información de pedigrí, se construyeron matrices H que fueron usadas en el ssGBLUP para evaluar la precisión de la predicción en individuos genotipados para el caracter tiempo de floración en el arroz. Para la construcción de estas matrices, además de las distintas densidades de SNP, se consideraron también distinta cantidad de individuos genotipados. Para el caso de ningún individuo genotipado, la precisión de la predicción se evaluó usando las relaciones genéticas esperadas definidas en la matriz A (esto es, mediante BLUP). En relación con esto, la precisión de la predicción para los distintos casos considerados, con los tres pedigríes simulados (hacia atrás), se muestran en la Figura 5.2 y en el Anexo A.3. <!--La importancia de las diferencias entre los escenarios se probó. Casi todas estas diferencias fueron altamente significativas ( P  <  0,01).-->
+Usando datos con distintas densidades de SNP e información de pedigrí, se construyeron matrices H que fueron usadas en el ssGBLUP para evaluar la precisión de la predicción en individuos genotipados para el caracter tiempo de floración. Para la construcción de estas matrices, además de la densidad de SNP, se consideraron también distinta cantidad de individuos genotipados. Para el caso de ningún individuo genotipado, la precisión de la predicción se evaluó usando las relaciones genéticas esperadas definidas en la matriz A mediante BLUP. En relación con esto, la precisión de la predicción para los distintos casos considerados, con los tres pedigríes simulados (hacia atrás), se muestran en la Figura 5.2 y en el Anexo A.3. <!--La importancia de las diferencias entre los escenarios se probó. Casi todas estas diferencias fueron altamente significativas ( P  <  0,01).-->
 
 En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaba tanto la proporción de individuos genotipados como el número de marcadores. Respecto a la proporción de individuos genotipados, 
 
+```{r, eval = FALSE, echo = FALSE}
 
+####################
+# Enfoque penalizado
+####################
+
+Ped1_Pen <- read_delim(here('figures', 'Ped1_Pen.txt'), delim = '\t') %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 0 ~ '0',
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Genotipados = as.factor(Genotipados),
+    Pedigrí = 'Pedigrí 1'
+    )
+
+# Diferencias entre distintos individuos genotipados con una densidad de SNP de 1.000 y con el enfoque REML ----
+
+Ped1_Pen_1.000 <- Ped1_Pen %>%
+  filter(Densidad == '1.000' | Densidad == '0')
+
+mod_comp_1 <- aov(formula = Correlación ~ Genotipados, data = Ped1_Pen_1.000)
+summary(mod_comp_1)
+TukeyHSD(mod_comp_1) # Aquí se ve que no hay diferencias entre 148-298, 148-451, pero si hay diferencia entre 298-451.
+
+# Diferencias entre distintos individuos genotipados con una densidad de SNP de 10.000 y con el enfoque REML ----
+
+Ped1_Pen_10.000 <- Ped1_Pen %>%
+  filter(Densidad == '10.000' | Densidad == '0')
+
+mod_comp_2 <- aov(formula = Correlación ~ Genotipados, data = Ped1_Pen_10.000)
+summary(mod_comp_2)
+TukeyHSD(mod_comp_2) # Aquí se ve que no hay diferencia entre 148-298, pero si hay diferencias entre 148-451 y 298-451.
+
+# Diferencias entre distintos individuos genotipados con una densidad de SNP de 100.000 y con el enfoque REML ----
+
+Ped1_Pen_100.000 <- Ped1_Pen %>%
+  filter(Densidad == '100.000' | Densidad == '0')
+
+mod_comp_3 <- aov(formula = Correlación ~ Genotipados, data = Ped1_Pen_100.000)
+summary(mod_comp_3)
+TukeyHSD(mod_comp_3) # Aquí se ve que hay diferencias entre 148-298, 148-451 y 298-451.
+```
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -353,6 +397,17 @@ bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est) %>%
   geom_errorbar(aes(ymin = Correlación - des, ymax = Correlación + des), width = 0.2, position = position_dodge(width = 0.7)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
   facet_grid(vars(Pedigrí), vars(Enfoque)) +
+  annotate(geom = 'text', x = 1.78, y = 0.72, label = 'bc', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 2.0, y = 0.72, label = 'b', size = 2.8, colour = 'black') +
+  facet_grid(vars(Pedigrí), vars(Enfoque)) +
+  annotate(geom = 'text', x = 1.0, y = 0.72, label = 'a', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 2.25, y = 0.72, label = 'ac', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 2.78, y = 0.72, label = 'a', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 3.0, y = 0.72, label = 'a', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 3.78, y = 0.72, label = 'a', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 4.0, y = 0.72, label = 'ab', size = 2.8, colour = 'black') +
+  annotate(geom = 'text', x = 4.22, y = 0.72, label = 'b', size = 2.8, colour = 'black') +
+  facet_grid(vars(Pedigrí), vars(Enfoque)) +
   labs(y = 'Precisión de la predicción', x = 'Densidad del marcador') +
   scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
   scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
@@ -365,7 +420,7 @@ bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est) %>%
     legend.position = 'top',
     strip.background = element_rect(colour = 'black', fill = 'white'),
     strip.text = element_text(size = 10, colour = 'black', face = 'bold')
-    ) -> Cor_Bay_Pen
+    ) #-> Cor_Bay_Pen
 
 knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```

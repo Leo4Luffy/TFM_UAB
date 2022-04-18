@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(tibble, gt, dplyr, tidyr)
+pacman::p_load(tibble, gt, tidyverse, here)
 ```
 
 <!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
