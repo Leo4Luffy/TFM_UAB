@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, latex2exp)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, latex2exp, reshape2, ggforce)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -14,15 +14,15 @@ showtext_auto()
 Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP, se resumen en la Tabla 5.1 y en la Figura 5.1. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 en los tres pedigríes generados a partir de las simulaciones hacia atrás, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
 ::: {.center data-latex=""}
-__Tabla 5.1:__ Estimaciones de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
+__Tabla 5.1:__ Estimaciones de componentes de varianza y de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
 :::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
 
 tribble(
   ~'Parámetro', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
-  #'Varianza aditiva', 0.43, 0.50, 0.56, 0.47, 0.50, 0.56,
-  #'Varianza ambiental', 0.16, 0.14, 0.11, 0.12, 0.13, 0.11,
+  'Varianza aditiva', 0.43, 0.50, 0.56, 0.47, 0.50, 0.56,
+  'Varianza ambiental', 0.16, 0.14, 0.11, 0.12, 0.13, 0.11,
   'Heredabilidad', 0.72, 0.78, 0.84, 0.80, 0.79, 0.84
   ) %>%
   gt() %>%
@@ -89,7 +89,7 @@ varE_ped1 <- ggplot(data = varE_ped_1, aes(x = varE)) +
     )
 
 h2_ped1 <- ggplot(data = h2_ped_1, aes(x = h2)) +
-  geom_density(color = 'yellow', fill = 'yellow', alpha = 0.4) +
+  geom_density(color = 'red', fill = 'red', alpha = 0.4) +
   annotate(geom = 'text', x = 0.65, y = 15, label = TeX('$|0.62; 0.79|$'), size = 3.2) +
   #annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.72$'), size = 4.8) +
   labs(title = 'Pedigrí 1 - h2', x = 'Valor estimado', y = ' ') +
@@ -142,7 +142,7 @@ varE_ped2 <- ggplot(data = varE_ped_2, aes(x = varE)) +
     )
 
 h2_ped2 <- ggplot(data = h2_ped_2, aes(x = h2)) +
-  geom_density(color = 'cyan', fill = 'cyan', alpha = 0.4) +
+  geom_density(color = 'red', fill = 'red', alpha = 0.4) +
   annotate(geom = 'text', x = 0.72, y = 14, label = TeX('$|0.69; 0.85|$'), size = 3.2) +
   #annotate(geom = 'text', x = 0.77, y = 13, label = TeX('$\\bar{x} = 0.78$'), size = 4.8) +
   labs(title = 'Pedigrí 2 - h2', x = 'Valor estimado', y = ' ') +
@@ -212,14 +212,18 @@ h2_ped3 <- ggplot(data = h2_ped_3, aes(x = h2)) +
 
 (h2_ped1 | h2_ped2 | h2_ped3) -> covar_h2_2
 
-knitr::include_graphics('figures/covar_h2_2.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.1:__ Distribuciones posteriores de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
+__Figura 5.1:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 :::
 
 ## Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia atrás
+
+Usando datos con distintas densidades de SNP e información de pedigrí, se construyeron matrices H que fueron usadas en el ssGBLUP para evaluar la precisión de la predicción en individuos genotipados para el caracter tiempo de floración en el arroz. Para la construcción de estas matrices, además de las distintas densidades de SNP, se consideraron también distinta cantidad de individuos genotipados. Para el caso de ningún individuo genotipado, la precisión de la predicción se evaluó usando las relaciones genéticas esperadas definidas en la matriz A (esto es, mediante BLUP). En relación con esto, la precisión de la predicción para los distintos casos considerados, con los tres pedigríes simulados (hacia atrás), se muestran en la Figura 5.2 y en el Anexo A.3. <!--La importancia de las diferencias entre los escenarios se probó. Casi todas estas diferencias fueron altamente significativas ( P  <  0,01).-->
+
+En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaba tanto la proporción de individuos genotipados como el número de marcadores. Respecto a la proporción de individuos genotipados, 
 
 
 
@@ -441,6 +445,10 @@ __Figura 5.3:__ .
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
+####################################################
+# Con todos los individuos genotipados (F0-F1-F2-F3)
+####################################################
+
 ###########
 # Pedigrí 1
 ###########
@@ -448,8 +456,6 @@ __Figura 5.3:__ .
 ###################
 # Densidad de 1.000
 ###################
-
-# Con todos los individuos genotipados (F0-F1-F2-F3):
 
 ### Para la matriz A:
 
@@ -661,15 +667,115 @@ mH_ped3_map_b <-ggplot(data = mH_ped3_map, aes(x = value, after_stat(density))) 
 
 # Con todos los individuos genotipados (F0-F1-F2-F3):
 
-### Para la matriz A:
+mH_ped4a <- readRDS(here('figures', 'mH_ped4a.RDS'))
+
+mH_ped4a_map <- melt(mH_ped4a) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mH_ped4a_map_a <- ggplot(data = mH_ped4a_map, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(high = 'red', low = 'yellow') +
+  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+mH_ped4a_map_b <-ggplot(data = mH_ped4a_map, aes(x = value, after_stat(density))) +
+  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  labs(title = 'Matriz H (F0-F1-F2-F3)', x = 'relación', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    )
+
+# Con los individuos de las generaciones F1 y F2 genotipados:
+
+mH_ped4b <- readRDS(here('figures', 'mH_ped4b.RDS'))
+
+mH_ped4b_map <- melt(mH_ped4b) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mH_ped4b_map_a <- ggplot(data = mH_ped4b_map, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(high = 'red', low = 'yellow') +
+  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+mH_ped4b_map_b <-ggplot(data = mH_ped4b_map, aes(x = value, after_stat(density))) +
+  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  labs(title = 'Matriz H (F1-F2)', x = 'relación', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    )
+
+# Con los individuos de las generación F2 genotipados:
+
+mH_ped4c <- readRDS(here('figures', 'mH_ped4c.RDS'))
+
+mH_ped4c_map <- melt(mH_ped4c) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mH_ped4c_map_a <- mH_ped4c_map %>%
+  filter(
+    Var2 %in% c(452:531),
+    Var1 %in% c(452:531)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient(high = 'red', low = 'yellow') +
+  #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
+  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+mH_ped4c_map_b <- ggplot(data = mH_ped4c_map, aes(x = value, after_stat(density))) +
+  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
+  labs(title = 'Matriz H', x = 'relación', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    )
+
+# Con ningún individuo genotipado:
 
 mA_ped4 <- readRDS(here('figures', 'mA_ped4.RDS'))
 
-mA_ped4_map <- melt(mA_ped4) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+mA_ped4_map <- melt(mA_ped4) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
 
-mA_ped4_map_a <- ggplot(data = mA_ped4_map, aes(x = Var1, y = Var2, fill = value)) +
+mA_ped4_map_a <- mA_ped4_map %>%
+  filter(
+    Var2 %in% c(452:531),
+    Var1 %in% c(452:531)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
   geom_tile() +
   scale_fill_gradient(high = 'red', low = 'yellow') +
+  #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
   labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
   theme_bw() +
   theme(
@@ -681,7 +787,7 @@ mA_ped4_map_a <- ggplot(data = mA_ped4_map, aes(x = Var1, y = Var2, fill = value
 
 mA_ped4_map_b <-ggplot(data = mA_ped4_map, aes(x = value, after_stat(density))) +
   geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 4 - matriz A', x = 'relación', y = ' ') +
+  labs(title = 'Matriz A', x = 'relación', y = ' ') +
   theme_bw() +
   theme(
     axis.text.x = element_text(size = 10, face = 'bold'),
@@ -691,41 +797,7 @@ mA_ped4_map_b <-ggplot(data = mA_ped4_map, aes(x = value, after_stat(density))) 
     axis.ticks.y = element_blank(),
     )
 
-### Para la matriz H:
+(mA_ped4_map_b | mA_ped4_map_a) / (mH_ped4c_map_b | mH_ped4c_map_a) -> map_dens
 
-mH_ped4 <- readRDS(here('figures', 'mH_ped4.RDS'))
-
-mH_ped4_map <- melt(mH_ped4) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped4_map_a <- ggplot(data = mH_ped4_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped4_map_b <-ggplot(data = mH_ped4_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 4 - matriz H', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-(mA_ped3_map_b | mA_ped3_map_a | mH_ped3_map_b | mH_ped3_map_a) / # Pedigrí 1
-  (mA_ped2_map_b | mA_ped2_map_a | mH_ped2_map_b | mH_ped2_map_a) / # Pedigrí 2
-  (mA_ped1_map_b | mA_ped1_map_a | mH_ped1_map_b | mH_ped1_map_a) / # Pedigrí 3
-  (mA_ped4_map_b | mA_ped4_map_a | mH_ped4_map_b | mH_ped4_map_a) # Pedigrí 3
-  
-
-#knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/map_dens.pdf', auto_pdf = TRUE)
 ```

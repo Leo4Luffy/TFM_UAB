@@ -775,7 +775,7 @@ A continuación, usando los diferentes subconjuntos de datos descritos anteriorm
 
 \end{center}
 
-Cabe aclarar que, además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
+Además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
 Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del lenguaje de programación \texttt{R}, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete \texttt{BGLR}, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteraciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. En cuanto al paquete \texttt{lme4GS}, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal).
 
@@ -860,7 +860,7 @@ Por último y al igual que en la sección metodológica anteriormente descrita, 
 Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP, se resumen en la Tabla 5.1 y en la Figura 5.1. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 en los tres pedigríes generados a partir de las simulaciones hacia atrás, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
 \begin{center}
-\textbf{Tabla 5.1:} Estimaciones de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
+\textbf{Tabla 5.1:} Estimaciones de componentes de varianza y de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
 
 \end{center}
 
@@ -871,7 +871,9 @@ Los resultados de la estima de heredabilidad (en sentido estricto) para el cará
  \cmidrule(lr){2-4} \cmidrule(lr){5-7}
 Parámetro & Ped. 1\textsuperscript{1} & Ped. 2 & Ped. 3 & Ped. 1 & Ped. 2 & Ped. 3 \\ 
 \midrule
-Heredabilidad & 0.72 & 0.78 & 0.84 & 0.8 & 0.79 & 0.84 \\ 
+Varianza aditiva & 0.43 & 0.50 & 0.56 & 0.47 & 0.50 & 0.56 \\ 
+Varianza ambiental & 0.16 & 0.14 & 0.11 & 0.12 & 0.13 & 0.11 \\ 
+Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 0.79 & 0.84 \\ 
  \bottomrule
 \end{longtable}
 \vspace{-5mm}
@@ -879,15 +881,19 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.8 & 0.79 & 0.84 \\
 \textsuperscript{1}Ped. 1 indica Pedigrí 1 \\ 
 \end{minipage}
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2_2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2} \end{center}
 
 \begin{center}
-\textbf{Figura 5.1:} Distribuciones posteriores de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
+\textbf{Figura 5.1:} Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 
 \end{center}
 
 \hypertarget{comparaciuxf3n-de-la-precisiuxf3n-de-la-predicciuxf3n-en-pedigruxedes-generados-mediante-simulaciones-hacia-atruxe1s}{%
 \section{Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia atrás}\label{comparaciuxf3n-de-la-precisiuxf3n-de-la-predicciuxf3n-en-pedigruxedes-generados-mediante-simulaciones-hacia-atruxe1s}}
+
+Usando datos con distintas densidades de SNP e información de pedigrí, se construyeron matrices H que fueron usadas en el ssGBLUP para evaluar la precisión de la predicción en individuos genotipados para el caracter tiempo de floración en el arroz. Para la construcción de estas matrices, además de las distintas densidades de SNP, se consideraron también distinta cantidad de individuos genotipados. Para el caso de ningún individuo genotipado, la precisión de la predicción se evaluó usando las relaciones genéticas esperadas definidas en la matriz A (esto es, mediante BLUP). La precisión de la predicción para los distintos casos considerados y estimados a partir de enfoques Bayesianos y REML, con los tres pedigríes simulados, se muestran en la Figura 5.2.
+
+En general,
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_Bay_Pen_2} \end{center}
 
@@ -905,6 +911,8 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.8 & 0.79 & 0.84 \\
 \textbf{Figura 5.3:} .
 
 \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/map_dens} \end{center}
 
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
