@@ -223,9 +223,9 @@ __Figura 5.1:__ Distribuciones posteriores de componentes de varianza y de hered
 
 El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en la Figura 5.2 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad de marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador aproximado de 10.000 y de 100.000, dicha precisión tendió a aumentar, mostrando la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando tal cantidad de marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesianos y como en REML.
+En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesiano y como en REML.
 
-
+En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente cuando al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado  en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
 ```{r, eval = FALSE, echo = FALSE}
 
@@ -428,10 +428,10 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.2:__ .
+__Figura 5.2:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras.
 :::
 
-## Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia adelante
+## Efecto de la densidad del marcador y de la cantidad de individuos genotipados en la precisión de la predicción mediante simulaciones hacia adelante
 
 
 
@@ -736,7 +736,7 @@ mH_ped4a_map_a <- mH_ped4a_map %>%
   ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
   geom_tile() +
   scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  labs(title = 'Matriz H (F0-F1-F2-F3)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
   theme_bw() +
   theme(
     axis.text = element_text(size = 10, face = 'bold'),
@@ -771,7 +771,7 @@ mH_ped4b_map_a <- mH_ped4b_map %>%
   ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
   geom_tile() +
   scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  labs(title = 'Matriz H (F1-F2)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
   theme_bw() +
   theme(
     axis.text = element_text(size = 10, face = 'bold'),
@@ -807,7 +807,7 @@ mH_ped4c_map_a <- mH_ped4c_map %>%
   geom_tile() +
   scale_fill_gradient(high = 'red', low = 'yellow') +
   #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  labs(title = 'Matriz H (F1)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
   theme_bw() +
   theme(
     axis.text = element_text(size = 10, face = 'bold'),
@@ -818,7 +818,7 @@ mH_ped4c_map_a <- mH_ped4c_map %>%
 
 mH_ped4c_map_b <- ggplot(data = mH_ped4c_map, aes(x = value, after_stat(density))) +
   geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Matriz H', x = 'relación', y = ' ') +
+  labs(title = 'Matriz H (F1)', x = 'relación', y = ' ') +
   theme_bw() +
   theme(
     axis.text.x = element_text(size = 10, face = 'bold'),
@@ -843,7 +843,7 @@ mA_ped4_map_a <- mA_ped4_map %>%
   geom_tile() +
   scale_fill_gradient(high = 'red', low = 'yellow') +
   #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  labs(title = 'Matriz A', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
   theme_bw() +
   theme(
     axis.text = element_text(size = 10, face = 'bold'),
@@ -864,7 +864,9 @@ mA_ped4_map_b <-ggplot(data = mA_ped4_map, aes(x = value, after_stat(density))) 
     axis.ticks.y = element_blank(),
     )
 
-(mA_ped4_map_b | mA_ped4_map_a | mH_ped4c_map_b | mH_ped4c_map_a) / (mH_ped4b_map_b | mH_ped4b_map_a | mH_ped4a_map_b | mH_ped4a_map_a) -> map_dens
+(mA_ped4_map_b | mH_ped4c_map_b ) / (mH_ped4b_map_b | mH_ped4a_map_b) #-> dens_rel
 
-knitr::include_graphics('figures/map_dens.pdf', auto_pdf = TRUE)
+(mA_ped4_map_a | mH_ped4c_map_a) / (mH_ped4b_map_a | mH_ped4a_map_a) #-> map_rel
+
+#knitr::include_graphics('figures/map_dens.pdf', auto_pdf = TRUE)
 ```

@@ -674,7 +674,7 @@ La mayor parte de los estudios sobre selección genómica en plantas han ignorad
 \hypertarget{objetivo}{%
 \chapter{Objetivo}\label{objetivo}}
 
-El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas. Para ello, se evaluó el efecto de la proporción de individuos genotipados y del número de marcadores en un diseño que combina datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestros) y hacia delante (descendientes).
+El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas. Para ello, se evaluó el efecto de la cantidad de individuos genotipados y del número de marcadores en un diseño que combina datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestros) y hacia delante (descendientes).
 
 \hypertarget{materiales-y-muxe9todos}{%
 \chapter{Materiales y métodos}\label{materiales-y-muxe9todos}}
@@ -888,14 +888,12 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 0.79 & 0.84 \\
 
 \end{center}
 
-\hypertarget{comparaciuxf3n-de-la-precisiuxf3n-de-la-predicciuxf3n-en-pedigruxedes-generados-mediante-simulaciones-hacia-atruxe1s}{%
-\section{Comparación de la precisión de la predicción en pedigríes generados mediante simulaciones hacia atrás}\label{comparaciuxf3n-de-la-precisiuxf3n-de-la-predicciuxf3n-en-pedigruxedes-generados-mediante-simulaciones-hacia-atruxe1s}}
+\hypertarget{efecto-de-la-densidad-del-marcador-y-de-la-cantidad-de-individuos-genotipados-en-la-precisiuxf3n-de-la-predicciuxf3n-mediante-simulaciones-hacia-atruxe1s}{%
+\section{Efecto de la densidad del marcador y de la cantidad de individuos genotipados en la precisión de la predicción mediante simulaciones hacia atrás}\label{efecto-de-la-densidad-del-marcador-y-de-la-cantidad-de-individuos-genotipados-en-la-precisiuxf3n-de-la-predicciuxf3n-mediante-simulaciones-hacia-atruxe1s}}
 
-Usando datos con distintas densidades de SNP e información de pedigrí, se construyeron matrices H que fueron usadas en el ssGBLUP para evaluar la precisión de la predicción en individuos genotipados para el caracter tiempo de floración. Para la construcción de estas matrices, además de la densidad de SNP, se consideraron también distinta cantidad de individuos genotipados. Para el caso de ningún individuo genotipado, la precisión de la predicción se evaluó usando las relaciones genéticas esperadas definidas en la matriz A mediante BLUP. En relación con esto, la precisión de la predicción para los distintos casos considerados, con los tres pedigríes simulados (hacia atrás), se muestran en la Figura 5.2 y en el Anexo A.3.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en la Figura 5.2 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaba tanto la proporción de individuos genotipados como el número de marcadores. Respecto a la proporción de individuos genotipados,
-
-\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-29-1} \end{center}
+En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad de marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador aproximado de 10.000 y de 100.000, dicha precisión tendió a aumentar, mostrando la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando tal cantidad de marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesianos y como en REML.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_Bay_Pen_2} \end{center}
 
@@ -915,6 +913,8 @@ En general, y como era de esperar, la precisión de la predicción aumento a med
 \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-31-1} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{TFM_files/figure-latex/unnamed-chunk-31-2} \end{center}
 
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
