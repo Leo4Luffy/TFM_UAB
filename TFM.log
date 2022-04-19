@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  18 APR 2022 06:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  19 APR 2022 03:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,33 +907,43 @@ Package pdftex.def Info: figures/covar_h2.pdf  used on input line 884.
 [33
 
 ]
-<figures/Cor_Bay_Pen_2.pdf, id=671, 460.72125pt x 308.15125pt>
-File: figures/Cor_Bay_Pen_2.pdf Graphic file (type pdf)
-<use figures/Cor_Bay_Pen_2.pdf>
-Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 898.
+<TFM_files/figure-latex/unnamed-chunk-29-1.pdf, id=671, 460.72125pt x 308.15125
+pt>
+File: TFM_files/figure-latex/unnamed-chunk-29-1.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-29-1.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-29-1.pdf  used on
+ input line 898.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
 LaTeX Info: Redefining \. on input line 898.
 LaTeX Info: Redefining \% on input line 898.
 [34 <./figures/covar_h2.pdf>]
-<figures/Cor_F2_F3.pdf, id=686, 460.72125pt x 308.15125pt>
+<figures/Cor_Bay_Pen_2.pdf, id=686, 460.72125pt x 308.15125pt>
+File: figures/Cor_Bay_Pen_2.pdf Graphic file (type pdf)
+<use figures/Cor_Bay_Pen_2.pdf>
+Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 900.
+(pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
+<figures/Cor_F2_F3.pdf, id=687, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
-Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 908.
+Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 910.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 908.
-LaTeX Info: Redefining \% on input line 908.
-[35 <./figures/Cor_Bay_Pen_2.pdf>]
-<figures/map_dens.pdf, id=700, 427.5975pt x 303.1325pt>
-File: figures/map_dens.pdf Graphic file (type pdf)
-<use figures/map_dens.pdf>
-Package pdftex.def Info: figures/map_dens.pdf  used on input line 915.
-(pdftex.def)             Requested size: 360.00154pt x 255.21236pt.
-LaTeX Info: Redefining \. on input line 915.
-LaTeX Info: Redefining \% on input line 915.
+LaTeX Info: Redefining \. on input line 910.
+LaTeX Info: Redefining \% on input line 910.
+[35 <./TFM_files/figure-latex/unnamed-chunk-29-1.pdf> <./figures/Cor_Bay_Pen_2.
+pdf>]
+<TFM_files/figure-latex/unnamed-chunk-31-1.pdf, id=710, 431.6125pt x 303.1325pt
+>
+File: TFM_files/figure-latex/unnamed-chunk-31-1.pdf Graphic file (type pdf)
+<use TFM_files/figure-latex/unnamed-chunk-31-1.pdf>
+Package pdftex.def Info: TFM_files/figure-latex/unnamed-chunk-31-1.pdf  used on
+ input line 917.
+(pdftex.def)             Requested size: 360.00987pt x 252.84415pt.
+LaTeX Info: Redefining \. on input line 917.
+LaTeX Info: Redefining \% on input line 917.
 [36 <./figures/Cor_F2_F3.pdf>]
-LaTeX Info: Redefining \. on input line 918.
-LaTeX Info: Redefining \% on input line 918.
-[37 <./figures/map_dens.pdf>]
+LaTeX Info: Redefining \. on input line 920.
+LaTeX Info: Redefining \% on input line 920.
+[37 <./TFM_files/figure-latex/unnamed-chunk-31-1.pdf>]
 Cap\'{\i }tulo 6.
 [38
 
@@ -944,64 +954,64 @@ Cap\'{\i }tulo 7.
 ]
 Ap\'{e}ndice A.
 
-Package xcolor Warning: Incompatible color definition on input line 937.
+Package xcolor Warning: Incompatible color definition on input line 939.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 939.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 941.
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1010.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1010.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1010.
 
 [40
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1010.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1010.
 
-<figures/gwas.pdf, id=751, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=762, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
-Package pdftex.def Info: figures/gwas.pdf  used on input line 1013.
+Package pdftex.def Info: figures/gwas.pdf  used on input line 1015.
 (pdftex.def)             Requested size: 360.01208pt x 244.2939pt.
-LaTeX Info: Redefining \. on input line 1013.
-LaTeX Info: Redefining \% on input line 1013.
+LaTeX Info: Redefining \. on input line 1015.
+LaTeX Info: Redefining \% on input line 1015.
 [41]
-LaTeX Info: Redefining \. on input line 1051.
-LaTeX Info: Redefining \% on input line 1051.
+LaTeX Info: Redefining \. on input line 1053.
+LaTeX Info: Redefining \% on input line 1053.
 [42 <./figures/gwas.pdf>]
-LaTeX Info: Redefining \. on input line 1119.
-LaTeX Info: Redefining \% on input line 1119.
+LaTeX Info: Redefining \. on input line 1121.
+LaTeX Info: Redefining \% on input line 1121.
 [43]
-LaTeX Info: Redefining \. on input line 1191.
-LaTeX Info: Redefining \% on input line 1191.
+LaTeX Info: Redefining \. on input line 1193.
+LaTeX Info: Redefining \% on input line 1193.
 [44]
-LaTeX Info: Redefining \. on input line 1259.
-LaTeX Info: Redefining \% on input line 1259.
-[45]
 LaTeX Info: Redefining \. on input line 1261.
 LaTeX Info: Redefining \% on input line 1261.
+[45]
+LaTeX Info: Redefining \. on input line 1263.
+LaTeX Info: Redefining \% on input line 1263.
 [46]
-Underfull \hbox (badness 2126) in paragraph at lines 1300--1302
+Underfull \hbox (badness 2126) in paragraph at lines 1302--1304
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1300--1302
+Underfull \hbox (badness 2080) in paragraph at lines 1302--1304
  \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
 ree-ding by
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1300--1302
+Underfull \hbox (badness 5203) in paragraph at lines 1302--1304
  \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
@@ -1010,27 +1020,27 @@ m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
 
 
 ]
-Overfull \hbox (30.45624pt too wide) in paragraph at lines 1330--1332
+Overfull \hbox (30.45624pt too wide) in paragraph at lines 1332--1334
  [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
 g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
  []
 
 [48]
-Underfull \hbox (badness 1231) in paragraph at lines 1384--1386
+Underfull \hbox (badness 1231) in paragraph at lines 1386--1388
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
 [49] [50] [51]
-<figures/uvalogo_regular_p_en.pdf, id=880, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=891, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-449.
+451.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1449--1450
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1451--1452
 [][] 
  []
 
@@ -1041,10 +1051,10 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15850 strings out of 480218
- 257539 string characters out of 5895106
+ 15860 strings out of 480218
+ 258213 string characters out of 5895106
  568267 words of memory out of 5000000
- 33324 multiletter control sequences out of 15000+600000
+ 33332 multiletter control sequences out of 15000+600000
  546978 words of font info for 81 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,16n,63p,1588b,641s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1069,10 +1079,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (58 pages, 10524827 bytes).
+Output written on TFM.pdf (58 pages, 11077211 bytes).
 PDF statistics:
- 1103 PDF objects out of 1200 (max. 8388607)
- 915 compressed objects within 10 object streams
+ 1114 PDF objects out of 1200 (max. 8388607)
+ 921 compressed objects within 10 object streams
  201 named destinations out of 1000 (max. 500000)
- 336 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 341 words of extra memory for PDF output out of 10000 (max. 10000000)
 

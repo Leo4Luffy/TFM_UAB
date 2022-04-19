@@ -9,8 +9,6 @@ showtext_auto()
 
 # Objetivo
 
-El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas.  Para ello, se evaluó el efecto de la proporción de individuos genotipados y del número de marcadores en un diseño que combina datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestros) y hacia delante (descendientes).
+El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas.  Para ello, se evaluó el efecto de la cantidad de individuos genotipados y del número de marcadores en un diseño que combina datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestros) y hacia delante (descendientes).
 
-<!--
-realizar las predicciones utilizando información fenotípica, genealógica y genómica para evaluar genéticamente las línea
--->
+
