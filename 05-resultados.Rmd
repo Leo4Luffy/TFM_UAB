@@ -500,7 +500,7 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 __Figura 5.3:__ .
 :::
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 ####################################################
 # Con todos los individuos genotipados (F0-F1-F2-F3)
@@ -864,9 +864,15 @@ mA_ped4_map_b <-ggplot(data = mA_ped4_map, aes(x = value, after_stat(density))) 
     axis.ticks.y = element_blank(),
     )
 
-(mA_ped4_map_b | mH_ped4c_map_b ) / (mH_ped4b_map_b | mH_ped4a_map_b) #-> dens_rel
+(mA_ped4_map_b | mH_ped4c_map_b ) / (mH_ped4b_map_b | mH_ped4a_map_b) -> dens_rel
 
-(mA_ped4_map_a | mH_ped4c_map_a) / (mH_ped4b_map_a | mH_ped4a_map_a) #-> map_rel
+(mA_ped4_map_a | mH_ped4c_map_a) / (mH_ped4b_map_a | mH_ped4a_map_a) -> map_rel
 
-#knitr::include_graphics('figures/map_dens.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/dens_rel.pdf', auto_pdf = TRUE)
+knitr::include_graphics('figures/map_rel.pdf', auto_pdf = TRUE)
+```
+
+```{r Análisis de componentes principales para las matrices de relaciones combinadas (H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+
 ```
