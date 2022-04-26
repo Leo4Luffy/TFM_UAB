@@ -9,7 +9,11 @@ showtext_auto()
 
 # Resultados
 
-## Fenotipo y heredabilidad
+## Matrices de relación
+
+
+
+## Componentes de varianza y heredabilidad
 
 Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP, se resumen en la Tabla 5.1 y en la Figura 5.1. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 en los tres pedigríes generados a partir de las simulaciones hacia atrás, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
@@ -219,13 +223,13 @@ knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 __Figura 5.1:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 :::
 
-## Efecto de la densidad del marcador y de la cantidad de individuos genotipados en la precisión de la predicción mediante simulaciones hacia atrás
+## Precisión de la predición mediante simulación de pedigrí ancestral y de descendientes
 
 El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en la Figura 5.2 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesiano y como en REML.
+En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesiano como en REML.
 
-En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente cuando al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado  en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
+En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado  en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
 ```{r, eval = FALSE, echo = FALSE}
 
@@ -428,10 +432,8 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.2:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras.
+__Figura 5.2:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras. <!--NOTA: colocar aquí que se calculo la media y las barras son los desvios, como en el articulo de Luis Varona et al sobre las ovejas Latxa.-->
 :::
-
-## Efecto de la densidad del marcador y de la cantidad de individuos genotipados en la precisión de la predicción mediante simulaciones hacia adelante
 
 
 
@@ -499,6 +501,7 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 ::: {.center data-latex=""}
 __Figura 5.3:__ .
 :::
+
 
 ```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
