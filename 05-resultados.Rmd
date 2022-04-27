@@ -13,7 +13,7 @@ showtext_auto()
 
 
 
-```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 ###########
 # Pedigrí 1
@@ -156,8 +156,129 @@ mHc_ped1_map_b <- mHc_ped1_map_b %>%
     axis.ticks.y = element_blank(),
     )
 
-(mA_ped1_map | mHc_ped1_map)
+(mA_ped1_map | mHc_ped1_map) -> map_A_H_Molcoanc
+
+knitr::include_graphics('figures/map_A_H_Molcoanc.pdf', auto_pdf = TRUE)
 ```
+
+::: {.center data-latex=""}
+__Figura 5.1:__ .
+:::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+###########
+# Pedigrí 3
+###########
+
+#####################
+# Densidad de 100.000
+#####################
+
+# Con ningún individuo genotipado ---- 
+
+mA_ped3 <- readRDS(here('figures', 'mA_ped3_SeqBreed.RDS')) %>%
+  as.matrix()
+
+mA_ped3_map <- melt(mA_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mA_ped3_map <- mA_ped3_map %>%
+  filter(
+    Var2 %in% c(452:491),
+    Var1 %in% c(452:491)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'yellow', high = 'black', labels = function(x) sprintf('%.2f', x)) +
+  labs(title = 'Matriz A', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+# Con los individuos de la generación F2 genotipados ---- 
+
+mHa_ped3 <- readRDS(here('figures', 'mHa_ped3_SeqBreed.RDS')) %>%
+  as.matrix()
+
+mHa_ped3_map <- melt(mHa_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mHa_ped3_map <- mHa_ped3_map %>%
+  filter(
+    Var2 %in% c(452:491),
+    Var1 %in% c(452:491)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'yellow', high = 'black', labels = function(x) sprintf('%.2f', x)) +
+  labs(title = 'Matriz H (F2 genotipados)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+# Con los individuos de las generaciones F2 y F3 genotipados ---- 
+
+mHb_ped3 <- readRDS(here('figures', 'mHb_ped3_SeqBreed.RDS')) %>%
+  as.matrix()
+
+mHb_ped3_map <- melt(mHb_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mHb_ped3_map <- mHb_ped3_map %>%
+  filter(
+    Var2 %in% c(452:491),
+    Var1 %in% c(452:491)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'yellow', high = 'black', labels = function(x) sprintf('%.2f', x)) +
+  labs(title = 'Matriz H (F2-F3 genotipados)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+# Con todos los individuos genotipados ---- 
+
+mHc_ped3 <- readRDS(here('figures', 'mHc_ped3_SeqBreed.RDS')) %>%
+  as.matrix()
+
+mHc_ped3_map <- melt(mHc_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
+
+mHc_ped3_map <- mHc_ped3_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'yellow', high = 'black', labels = function(x) sprintf('%.2f', x)) +
+  labs(title = 'Matriz H (F0-F1-F2-F3 genotipados)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+(mA_ped3_map | mHa_ped3_map) / (mHb_ped3_map | mHc_ped3_map) -> map_A_H_SeqBreed
+
+knitr::include_graphics('figures/map_A_H_SeqBreed.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 5.2:__ .
+:::
 
 ## Componentes de varianza y heredabilidad
 
@@ -366,7 +487,7 @@ knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.1:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
+__Figura 5.3:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 :::
 
 ## Precisión de la predición mediante simulación de pedigrí ancestral y de descendientes
@@ -578,7 +699,7 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.2:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras. <!--NOTA: colocar aquí que se calculo la media y las barras son los desvios, como en el articulo de Luis Varona et al sobre las ovejas Latxa.-->
+__Figura 5.4:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras. <!--NOTA: colocar aquí que se calculo la media y las barras son los desvios, como en el articulo de Luis Varona et al sobre las ovejas Latxa.-->
 :::
 
 
@@ -645,7 +766,7 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.3:__ .
+__Figura 5.5:__ .
 :::
 
 
