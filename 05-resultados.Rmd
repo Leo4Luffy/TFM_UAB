@@ -9,9 +9,155 @@ showtext_auto()
 
 # Resultados
 
-## Matrices de relación
+## Matrices de parentesco
 
 
+
+```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+###########
+# Pedigrí 1
+###########
+
+#####################
+# Densidad de 100.000
+#####################
+
+# Con ningún individuo genotipado ---- 
+
+mA_ped1 <- readRDS(here('figures', 'mA_ped1_Molcoanc.RDS')) %>%
+  as.matrix()
+
+mA_ped1_map <- melt(mA_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mA_ped1_map <- mA_ped1_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'black', high = 'yellow') +
+  labs(title = 'Matriz A', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+mA_ped1 <- mA_ped1 %>%
+  replace(., col(.) == row(.), NA) # Los elementos de la diagonal de la matriz se reemplazan por NA.
+
+mA_ped1_map_b <- melt(mA_ped1)
+
+mA_ped1_map_b <- mA_ped1_map_b %>%
+  ggplot(data = ., aes(x = value, after_stat(density))) +
+  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2, bins = 5) +
+  labs(title = 'Matriz A', x = 'relación', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 7, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    )
+
+# Con 148 individuos genotipados ---- 
+
+mHa_ped1 <- readRDS(here('figures', 'mHa_ped1_Molcoanc.RDS')) %>%
+  as.matrix()
+
+mHa_ped1_map <- melt(mHa_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mHa_ped1_map <- mHa_ped1_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'black', high = 'yellow') +
+  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+# Con 298 individuos genotipados ---- 
+
+mHb_ped1 <- readRDS(here('figures', 'mHb_ped1_Molcoanc.RDS')) %>%
+  as.matrix()
+
+mHb_ped1_map <- melt(mHb_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mHb_ped1_map <- mHb_ped1_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'black', high = 'yellow') +
+  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+# Con 451 individuos genotipados ---- 
+
+mHc_ped1 <- readRDS(here('figures', 'mHc_ped1_Molcoanc.RDS')) %>%
+  as.matrix()
+
+mHc_ped1_map <- melt(mHc_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mHc_ped1_map <- mHc_ped1_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'black', high = 'yellow') +
+  #facet_zoom(xlim = c(35, 40), ylim = c(35, 40)) +
+  labs(title = 'Matriz H', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+
+mHc_ped1 <- mHc_ped1 %>%
+  replace(., col(.) == row(.), NA) # Los elementos de la diagonal de la matriz se reemplazan por NA.
+
+mHc_ped1_map_b <- melt(mHc_ped1)
+
+mHc_ped1_map_b <- mHc_ped1_map_b %>%
+  ggplot(data = ., aes(x = value, after_stat(density))) +
+  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2, bins = 5) +
+  labs(title = 'Matriz H (451 individuos genotipados)', x = 'relación', y = ' ') +
+  theme_bw() +
+  theme(
+    axis.text.x = element_text(size = 10, face = 'bold'),
+    axis.title.x = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 7, face = 'bold'),
+    axis.text.y = element_blank(),
+    axis.ticks.y = element_blank(),
+    )
+
+(mA_ped1_map | mHc_ped1_map)
+```
 
 ## Componentes de varianza y heredabilidad
 
@@ -503,379 +649,4 @@ __Figura 5.3:__ .
 :::
 
 
-```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
-####################################################
-# Con todos los individuos genotipados (F0-F1-F2-F3)
-####################################################
-
-###########
-# Pedigrí 1
-###########
-
-###################
-# Densidad de 1.000
-###################
-
-### Para la matriz A:
-
-mA_ped1 <- readRDS(here('figures', 'mA_ped1.RDS'))
-
-mA_ped1_map <- melt(mA_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
-
-mA_ped1_map_a <- ggplot(data = mA_ped1_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mA_ped1_map_b <-ggplot(data = mA_ped1_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 3 - matriz A', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-### Para la matriz H:
-
-mH_ped1 <- readRDS(here('figures', 'mH_ped1.RDS'))
-
-mH_ped1_map <- melt(mH_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped1_map_a <- ggplot(data = mH_ped1_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped1_map_b <-ggplot(data = mH_ped1_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 3 - matriz H', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-###########
-# Pedigrí 2
-###########
-
-###################
-# Densidad de 1.000
-###################
-
-# Con todos los individuos genotipados (F0-F1-F2-F3):
-
-### Para la matriz A:
-
-mA_ped2 <- readRDS(here('figures', 'mA_ped2.RDS'))
-
-mA_ped2_map <- melt(mA_ped2) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
-
-mA_ped2_map_a <- ggplot(data = mA_ped2_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mA_ped2_map_b <-ggplot(data = mA_ped2_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 2 - matriz A', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-### Para la matriz H:
-
-mH_ped2 <- readRDS(here('figures', 'mH_ped2.RDS'))
-
-mH_ped2_map <- melt(mH_ped2) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped2_map_a <- ggplot(data = mH_ped2_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped2_map_b <-ggplot(data = mH_ped2_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 2 - matriz H', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-###########
-# Pedigrí 3
-###########
-
-###################
-# Densidad de 1.000
-###################
-
-# Con todos los individuos genotipados (F0-F1-F2-F3):
-
-### Para la matriz A:
-
-mA_ped3 <- readRDS(here('figures', 'mA_ped3.RDS'))
-
-mA_ped3_map <- melt(mA_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
-
-mA_ped3_map_a <- ggplot(data = mA_ped3_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mA_ped3_map_b <-ggplot(data = mA_ped3_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 1 - matriz A', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-### Para la matriz H:
-
-mH_ped3 <- readRDS(here('figures', 'mH_ped3.RDS'))
-
-mH_ped3_map <- melt(mH_ped3) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped3_map_a <- ggplot(data = mH_ped3_map, aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped3_map_b <-ggplot(data = mH_ped3_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Pedigrí 1 - matriz H', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-###########
-# Pedigrí 4
-###########
-
-###################
-# Densidad de 1.000
-###################
-
-# Con todos los individuos genotipados (F0-F1-F2-F3):
-
-mH_ped4a <- readRDS(here('figures', 'mH_ped4a.RDS'))
-
-mH_ped4a_map <- melt(mH_ped4a) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped4a_map_a <- mH_ped4a_map %>%
-  filter(
-    Var2 %in% c(452:531),
-    Var1 %in% c(452:531)
-    ) %>%
-  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(title = 'Matriz H (F0-F1-F2-F3)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped4a_map_b <-ggplot(data = mH_ped4a_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Matriz H (F0-F1-F2-F3)', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-# Con los individuos de las generaciones F1 y F2 genotipados:
-
-mH_ped4b <- readRDS(here('figures', 'mH_ped4b.RDS'))
-
-mH_ped4b_map <- melt(mH_ped4b) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped4b_map_a <- mH_ped4b_map %>%
-  filter(
-    Var2 %in% c(452:531),
-    Var1 %in% c(452:531)
-    ) %>%
-  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  labs(title = 'Matriz H (F1-F2)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped4b_map_b <-ggplot(data = mH_ped4b_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Matriz H (F1-F2)', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-# Con los individuos de las generación F2 genotipados:
-
-mH_ped4c <- readRDS(here('figures', 'mH_ped4c.RDS'))
-
-mH_ped4c_map <- melt(mH_ped4c) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mH_ped4c_map_a <- mH_ped4c_map %>%
-  filter(
-    Var2 %in% c(452:531),
-    Var1 %in% c(452:531)
-    ) %>%
-  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
-  labs(title = 'Matriz H (F1)', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mH_ped4c_map_b <- ggplot(data = mH_ped4c_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Matriz H (F1)', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-# Con ningún individuo genotipado:
-
-mA_ped4 <- readRDS(here('figures', 'mA_ped4.RDS'))
-
-mA_ped4_map <- melt(mA_ped4) # Usando la función melt() del paquete "reshape2" se convertie la matriz H al formato largo.
-
-mA_ped4_map_a <- mA_ped4_map %>%
-  filter(
-    Var2 %in% c(452:531),
-    Var1 %in% c(452:531)
-    ) %>%
-  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
-  geom_tile() +
-  scale_fill_gradient(high = 'red', low = 'yellow') +
-  #facet_zoom(xlim = c(452, 531), ylim = c(452, 531)) +
-  labs(title = 'Matriz A', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10, face = 'bold'),
-    axis.title = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    legend.title = element_text(size = 9, face = 'bold')
-    )
-
-mA_ped4_map_b <-ggplot(data = mA_ped4_map, aes(x = value, after_stat(density))) +
-  geom_histogram(colour = 'cyan', fill = 'cyan', alpha = 0.2) +
-  labs(title = 'Matriz A', x = 'relación', y = ' ') +
-  theme_bw() +
-  theme(
-    axis.text.x = element_text(size = 10, face = 'bold'),
-    axis.title.x = element_text(size = 10, face = 'bold'),
-    plot.title = element_text(size = 10, face = 'bold'),
-    axis.text.y = element_blank(),
-    axis.ticks.y = element_blank(),
-    )
-
-(mA_ped4_map_b | mH_ped4c_map_b ) / (mH_ped4b_map_b | mH_ped4a_map_b) -> dens_rel
-
-(mA_ped4_map_a | mH_ped4c_map_a) / (mH_ped4b_map_a | mH_ped4a_map_a) -> map_rel
-
-knitr::include_graphics('figures/dens_rel.pdf', auto_pdf = TRUE)
-knitr::include_graphics('figures/map_rel.pdf', auto_pdf = TRUE)
-```
-
-```{r Análisis de componentes principales para las matrices de relaciones combinadas (H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
-
-
-```

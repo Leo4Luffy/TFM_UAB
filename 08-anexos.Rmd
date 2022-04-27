@@ -160,6 +160,44 @@ Graf_Manhattan | Graf_qq -> GWAS
 knitr::include_graphics('figures/gwas.pdf', auto_pdf = TRUE)
 ```
 
+## Matriz de parentesco combinada
+
+```{r Graficas de mapa de calor e histograma de las matrices de relaciones (A y H), echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+###########
+# Pedigrí 1
+###########
+
+#####################
+# Densidad de 100.000
+#####################
+
+# Con 451 individuos genotipados ---- 
+
+mHc_ped1 <- readRDS(here('figures', 'mHc_ped1_Molcoanc.RDS')) %>%
+  as.matrix()
+
+mHc_ped1_map <- melt(mHc_ped1) # Usando la función melt() del paquete "reshape2" se convertie la matriz A al formato largo.
+
+mHc_ped1_map %>%
+  filter(
+    Var2 %in% c(1:50),
+    Var1 %in% c(1:50)
+    ) %>%
+  ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = 'black', high = 'yellow') +
+  facet_zoom(xlim = c(35, 40), ylim = c(35, 40)) +
+  labs(title = 'Matriz H', x = 'Individuos', y = 'Individuos', fill = 'Relación') +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    legend.title = element_text(size = 9, face = 'bold')
+    )
+```
+
 ## Habilidad predictiva
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
