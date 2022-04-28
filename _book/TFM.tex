@@ -861,30 +861,30 @@ Por último y al igual que en la sección metodológica anteriormente descrita, 
 
 La matriz de parentesco combinada (o matriz H), tuvo un rango más amplio de variación del parentesco entre individuos en comparación con la matriz basada solo en información de pedigrí (o matriz A), situación que se puede observar en la Figuras 5.1 y 5.2, y en el Anexo A.3.
 
-Al no conocer nada sobre su herencia, la matriz A identifico a los individuos de la población fundadora como no relacionados (Figura 5.1), contrario con la matriz H en la cual, al capturar las relaciones históricas, se evidenció que entre los individuos de la población fundadora si puede existir una relación (Anexo A.3).
+Al no conocer su herencia, la matriz A identifico a los individuos de la población fundadora como no relacionados (Figura 5.1), contrario con la matriz H en la cual, al capturar las relaciones históricas, se evidenció que entre los individuos de la población fundadora si puede existir una relación (Anexo A.3).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/map_A_H_Molcoanc} \end{center}
 
 \begin{center}
-\textbf{Figura 5.1:} .
+\textbf{Figura 5.1:} Mapas de calor de las matrices A y H, esta última estimada a partir de 451 individuos genotipados con una densidad de marcador aproximado de 100.000, de 50 individuos pertencientes a la generación \(F_{0}\) del pedigrí 1 generado a partir de simulación ancestral. Los colores en gris (fuera de la diagonal) indican que existe relación entre pares de individuos.
 
 \end{center}
 
-Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, ya no todos los hermanos completos están igualmente relacionados entre sí (como lo indica las relaciones genéticas esperadas debido al pedigrí), en su lugar, proporciona un continuo de las relaciones genéticas realizadas entre pares de individuos.
+Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, todos los hermanos completos no estuvieron igualmente relacionados entre sí (como lo indica las relaciones genéticas esperadas debido al pedigrí), en su lugar, se produjo un continuo de las relaciones genéticas realizadas entre pares de individuos.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/map_A_H_SeqBreed} \end{center}
 
 \begin{center}
-\textbf{Figura 5.2:} .
+\textbf{Figura 5.2:} Mapas de calor de las matrices A y H, esta última estimada a partir de diferentes cantidades de individuos genotipados con una densidad de marcador aproximado de 100.000, de 40 individuos de la generación \(F_{1}\) del pedigrí 3 generado a partir de simulación de descendientes. Las escalas muestran el continuo de las relaciones genéticas entre pares de individuos, desde ninguna relación (áreas en blanco correspondientes a valores iguales a 0) a relaciones completas (áreas en gris correspondientes a valores en torno a 0.5).
 
 \end{center}
 
-Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), al considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estár disponibles en los registros genealógicos (Morais-Júnior et~al. \protect\hyperlink{ref-cite:68}{2018}).
+Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), al considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos (Morais-Júnior et~al. \protect\hyperlink{ref-cite:68}{2018}).
 
 \hypertarget{componentes-de-varianza-y-heredabilidad}{%
 \section{Componentes de varianza y heredabilidad}\label{componentes-de-varianza-y-heredabilidad}}
 
-Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP, se resumen en la Tabla 5.1 y en la Figura 5.1. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 en los tres pedigríes generados a partir de las simulaciones hacia atrás, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
+Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP en los tres pedigríes generados a partir de simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.3. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
 \begin{center}
 \textbf{Tabla 5.1:} Estimaciones de componentes de varianza y de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
@@ -918,11 +918,11 @@ Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 0.79 & 0.84 \\
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-pedigruxed-ancestral-y-de-descendientes}{%
 \section{Precisión de la predición mediante simulación de pedigrí ancestral y de descendientes}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-pedigruxed-ancestral-y-de-descendientes}}
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en la Figura 5.2 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en las Figura 5.4 y 5.5 y en los Anexos A.4 y A.5. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En relación a la precisión de la predicción debido a la densidad del marcador, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes generados a partir de las simulaciones hacia atrás, tanto en el enfoque Bayesiano como en REML.
+En relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
-En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
+En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_Bay_Pen_2} \end{center}
 
@@ -1041,8 +1041,8 @@ Con el desarrollo del método del ssGBLUP, fue posible
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/map_H_Molcoanc} \end{center}
 
-\hypertarget{habilidad-predictiva}{%
-\section{Habilidad predictiva}\label{habilidad-predictiva}}
+\hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-pedigruxed-ancestral-1}{%
+\section{Precisión de la predición mediante simulación de pedigrí ancestral}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-pedigruxed-ancestral-1}}
 
 \captionsetup[table]{labelformat=empty,skip=1pt}
 \begin{longtable}{crrrr}
@@ -1147,8 +1147,8 @@ Genotipados & Media & Desvío & Media & Desvíó \\
  \bottomrule
 \end{longtable}
 
-\hypertarget{habilidad-predictiva-1}{%
-\section{Habilidad predictiva}\label{habilidad-predictiva-1}}
+\hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}{%
+\section{Precisión de la predición mediante simulación de descendientes}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}}
 
 \captionsetup[table]{labelformat=empty,skip=1pt}
 \begin{longtable}{lrrrr}

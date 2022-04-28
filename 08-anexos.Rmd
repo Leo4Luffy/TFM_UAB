@@ -200,7 +200,7 @@ mHc_ped1_map %>%
 knitr::include_graphics('figures/map_H_Molcoanc.pdf', auto_pdf = TRUE)
 ```
 
-## Habilidad predictiva
+## Precisión de la predición mediante simulación de pedigrí ancestral
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -384,7 +384,7 @@ Cor_ped %>%
   )
 ```
 
-## Habilidad predictiva
+## Precisión de la predición mediante simulación de descendientes
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
