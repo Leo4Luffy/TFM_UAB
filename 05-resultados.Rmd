@@ -167,19 +167,7 @@ knitr::include_graphics('figures/map_A_H_Molcoanc.pdf', auto_pdf = TRUE)
 __Figura 5.1:__ .
 :::
 
-
-
-<!--
-La relación genómica es más detallada. Todavía podemos discernir las diez familias dentro de la última generación, pero ya no todos los hermanos están igualmente relacionados entre sí y con sus antepasados. El genotipado ayuda a rastrear la segregación dentro de las familias, indicándonos cuándo los parientes están más o menos relacionados que el promedio que obtenemos del pedigrí.
-
---
-
-También se muestra una comparación de las matrices de relaciones genómicas realizadas y esperadas del pedigrí utilizando mapas de calor que muestran patrones similares, lo que indica un buen control del pedigrí en la producción de familias de hermanos completos, aunque los datos de marcadores, al capturar las relaciones genéticas realizadas, proporcionan estimaciones considerablemente más refinadas. de la distribución continua de parentesco verdadero en la muestra de población (Fig. 2).
-
---
-
-
--->
+Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, ya no todos los hermanos completos están igualmente relacionados entre sí (como lo indica las relaciones genéticas esperadas debido al pedigrí), en su lugar, produjo un continuo de las relaciones genéticas realizadas entre pares de individuos.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -296,7 +284,7 @@ knitr::include_graphics('figures/map_A_H_SeqBreed.pdf', auto_pdf = TRUE)
 __Figura 5.2:__ .
 :::
 
-Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), ya que esta permite considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estár disponibles en los registros genealógicos [@cite:68].
+Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), al considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos [@cite:68].
 
 ## Componentes de varianza y heredabilidad
 
