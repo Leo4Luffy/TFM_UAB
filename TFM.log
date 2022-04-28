@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  27 APR 2022 10:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  28 APR 2022 06:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -887,57 +887,57 @@ Cap\'{\i }tulo 5.
 <figures/map_A_H_Molcoanc.pdf, id=663, 443.6575pt x 303.1325pt>
 File: figures/map_A_H_Molcoanc.pdf Graphic file (type pdf)
 <use figures/map_A_H_Molcoanc.pdf>
-Package pdftex.def Info: figures/map_A_H_Molcoanc.pdf  used on input line 862.
-(pdftex.def)             Requested size: 359.99695pt x 245.97076pt.
-<figures/map_A_H_SeqBreed.pdf, id=664, 443.6575pt x 303.1325pt>
-File: figures/map_A_H_SeqBreed.pdf Graphic file (type pdf)
-<use figures/map_A_H_SeqBreed.pdf>
-Package pdftex.def Info: figures/map_A_H_SeqBreed.pdf  used on input line 869.
+Package pdftex.def Info: figures/map_A_H_Molcoanc.pdf  used on input line 866.
 (pdftex.def)             Requested size: 359.99695pt x 245.97076pt.
 [33
 
  <./figures/map_A_H_Molcoanc.pdf>]
-Overfull \hbox (2.83324pt too wide) in alignment at lines 887--897
+<figures/map_A_H_SeqBreed.pdf, id=676, 443.6575pt x 303.1325pt>
+File: figures/map_A_H_SeqBreed.pdf Graphic file (type pdf)
+<use figures/map_A_H_SeqBreed.pdf>
+Package pdftex.def Info: figures/map_A_H_SeqBreed.pdf  used on input line 873.
+(pdftex.def)             Requested size: 359.99695pt x 245.97076pt.
+
+Overfull \hbox (2.83324pt too wide) in alignment at lines 893--903
  [] [] [] [] [] [] [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 900--901
-
- []
-
-
-Overfull \hbox (17.0pt too wide) in paragraph at lines 899--902
-[]$[]$ 
- []
-
-<figures/covar_h2.pdf, id=677, 448.67625pt x 303.1325pt>
-File: figures/covar_h2.pdf Graphic file (type pdf)
-<use figures/covar_h2.pdf>
-Package pdftex.def Info: figures/covar_h2.pdf  used on input line 903.
-(pdftex.def)             Requested size: 360.0095pt x 243.22789pt.
 LaTeX Info: Redefining \. on input line 903.
 LaTeX Info: Redefining \% on input line 903.
 [34 <./figures/map_A_H_SeqBreed.pdf>]
-LaTeX Info: Redefining \. on input line 916.
-LaTeX Info: Redefining \% on input line 916.
+Underfull \hbox (badness 10000) in paragraph at lines 906--907
+
+ []
+
+
+Overfull \hbox (17.0pt too wide) in paragraph at lines 905--908
+[]$[]$ 
+ []
+
+<figures/covar_h2.pdf, id=693, 448.67625pt x 303.1325pt>
+File: figures/covar_h2.pdf Graphic file (type pdf)
+<use figures/covar_h2.pdf>
+Package pdftex.def Info: figures/covar_h2.pdf  used on input line 909.
+(pdftex.def)             Requested size: 360.0095pt x 243.22789pt.
+LaTeX Info: Redefining \. on input line 922.
+LaTeX Info: Redefining \% on input line 922.
 [35 <./figures/covar_h2.pdf>]
-<figures/Cor_Bay_Pen_2.pdf, id=707, 460.72125pt x 308.15125pt>
+<figures/Cor_Bay_Pen_2.pdf, id=709, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen_2.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen_2.pdf>
-Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 919.
+Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 925.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 923.
-LaTeX Info: Redefining \% on input line 923.
-[36 <./figures/Cor_Bay_Pen_2.pdf>]
-<figures/Cor_F2_F3.pdf, id=721, 460.72125pt x 308.15125pt>
+LaTeX Info: Redefining \. on input line 925.
+LaTeX Info: Redefining \% on input line 925.
+[36]
+<figures/Cor_F2_F3.pdf, id=714, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
-Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 926.
+Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 932.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 934.
-LaTeX Info: Redefining \% on input line 934.
-[37 <./figures/Cor_F2_F3.pdf>]
+LaTeX Info: Redefining \. on input line 940.
+LaTeX Info: Redefining \% on input line 940.
+[37 <./figures/Cor_Bay_Pen_2.pdf> <./figures/Cor_F2_F3.pdf>]
 Cap\'{\i }tulo 6.
 [38
 
@@ -948,69 +948,69 @@ Cap\'{\i }tulo 7.
 ]
 Ap\'{e}ndice A.
 
-Package xcolor Warning: Incompatible color definition on input line 953.
+Package xcolor Warning: Incompatible color definition on input line 959.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 955.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 961.
 
-Package xcolor Warning: Incompatible color definition on input line 1024.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1024.
+Package xcolor Warning: Incompatible color definition on input line 1030.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1024.
+Package xcolor Warning: Incompatible color definition on input line 1030.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1030.
 
 [40
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1024.
+Package xcolor Warning: Incompatible color definition on input line 1030.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1024.
+Package xcolor Warning: Incompatible color definition on input line 1030.
 
-<figures/gwas.pdf, id=757, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=759, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
-Package pdftex.def Info: figures/gwas.pdf  used on input line 1029.
+Package pdftex.def Info: figures/gwas.pdf  used on input line 1035.
 (pdftex.def)             Requested size: 360.01208pt x 244.2939pt.
-LaTeX Info: Redefining \. on input line 1029.
-LaTeX Info: Redefining \% on input line 1029.
+LaTeX Info: Redefining \. on input line 1035.
+LaTeX Info: Redefining \% on input line 1035.
 [41]
-<figures/map_H_Molcoanc.pdf, id=763, 453.695pt x 313.17pt>
+<figures/map_H_Molcoanc.pdf, id=765, 453.695pt x 313.17pt>
 File: figures/map_H_Molcoanc.pdf Graphic file (type pdf)
 <use figures/map_H_Molcoanc.pdf>
-Package pdftex.def Info: figures/map_H_Molcoanc.pdf  used on input line 1034.
+Package pdftex.def Info: figures/map_H_Molcoanc.pdf  used on input line 1040.
 (pdftex.def)             Requested size: 360.00044pt x 248.49586pt.
-LaTeX Info: Redefining \. on input line 1072.
-LaTeX Info: Redefining \% on input line 1072.
+LaTeX Info: Redefining \. on input line 1078.
+LaTeX Info: Redefining \% on input line 1078.
 [42 <./figures/gwas.pdf> <./figures/map_H_Molcoanc.pdf>]
-LaTeX Info: Redefining \. on input line 1106.
-LaTeX Info: Redefining \% on input line 1106.
+LaTeX Info: Redefining \. on input line 1112.
+LaTeX Info: Redefining \% on input line 1112.
 [43]
-LaTeX Info: Redefining \. on input line 1178.
-LaTeX Info: Redefining \% on input line 1178.
+LaTeX Info: Redefining \. on input line 1184.
+LaTeX Info: Redefining \% on input line 1184.
 [44]
-LaTeX Info: Redefining \. on input line 1246.
-LaTeX Info: Redefining \% on input line 1246.
+LaTeX Info: Redefining \. on input line 1252.
+LaTeX Info: Redefining \% on input line 1252.
 [45]
-LaTeX Info: Redefining \. on input line 1282.
-LaTeX Info: Redefining \% on input line 1282.
+LaTeX Info: Redefining \. on input line 1288.
+LaTeX Info: Redefining \% on input line 1288.
 [46]
-Underfull \hbox (badness 2126) in paragraph at lines 1321--1323
+Underfull \hbox (badness 2126) in paragraph at lines 1327--1329
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1321--1323
+Underfull \hbox (badness 2080) in paragraph at lines 1327--1329
  \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
 ree-ding by
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1321--1323
+Underfull \hbox (badness 5203) in paragraph at lines 1327--1329
  \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
@@ -1019,27 +1019,27 @@ m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
 
 
 ]
-Overfull \hbox (30.45624pt too wide) in paragraph at lines 1351--1353
+Overfull \hbox (30.45624pt too wide) in paragraph at lines 1357--1359
  [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
 g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
  []
 
 [48]
-Underfull \hbox (badness 1231) in paragraph at lines 1408--1410
+Underfull \hbox (badness 1231) in paragraph at lines 1417--1419
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
 [49] [50] [51]
-<figures/uvalogo_regular_p_en.pdf, id=897, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=900, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-473.
+482.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1473--1474
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1482--1483
 [][] 
  []
 
@@ -1050,8 +1050,8 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15879 strings out of 480218
- 258154 string characters out of 5895106
+ 15880 strings out of 480218
+ 258165 string characters out of 5895106
  567211 words of memory out of 5000000
  33345 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1078,10 +1078,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (58 pages, 11035499 bytes).
+Output written on TFM.pdf (58 pages, 11036734 bytes).
 PDF statistics:
- 1123 PDF objects out of 1200 (max. 8388607)
- 924 compressed objects within 10 object streams
- 204 named destinations out of 1000 (max. 500000)
+ 1127 PDF objects out of 1200 (max. 8388607)
+ 928 compressed objects within 10 object streams
+ 205 named destinations out of 1000 (max. 500000)
  354 words of extra memory for PDF output out of 10000 (max. 10000000)
 

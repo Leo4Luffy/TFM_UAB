@@ -11,7 +11,9 @@ showtext_auto()
 
 ## Matrices de parentesco
 
+La matriz de parentesco combinada (o matriz H), tuvo un rango más amplio de variación del parentesco entre individuos en comparación con la matriz basada solo en información de pedigrí (o matriz A), situación que se puede observar en la Figuras 5.1 y 5.2, y en el Anexo A.3.
 
+Al no conocer nada sobre su herencia, la matriz A identifico a los individuos de la población fundadora como no relacionados (Figura 5.1), contrario con la matriz H en la cual, al capturar las relaciones históricas, se evidenció que entre los individuos de la población fundadora si puede existir una relación (Anexo A.3).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -165,6 +167,20 @@ knitr::include_graphics('figures/map_A_H_Molcoanc.pdf', auto_pdf = TRUE)
 __Figura 5.1:__ .
 :::
 
+
+
+<!--
+La relación genómica es más detallada. Todavía podemos discernir las diez familias dentro de la última generación, pero ya no todos los hermanos están igualmente relacionados entre sí y con sus antepasados. El genotipado ayuda a rastrear la segregación dentro de las familias, indicándonos cuándo los parientes están más o menos relacionados que el promedio que obtenemos del pedigrí.
+
+--
+
+También se muestra una comparación de las matrices de relaciones genómicas realizadas y esperadas del pedigrí utilizando mapas de calor que muestran patrones similares, lo que indica un buen control del pedigrí en la producción de familias de hermanos completos, aunque los datos de marcadores, al capturar las relaciones genéticas realizadas, proporcionan estimaciones considerablemente más refinadas. de la distribución continua de parentesco verdadero en la muestra de población (Fig. 2).
+
+--
+
+
+-->
+
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 ###########
@@ -279,6 +295,8 @@ knitr::include_graphics('figures/map_A_H_SeqBreed.pdf', auto_pdf = TRUE)
 ::: {.center data-latex=""}
 __Figura 5.2:__ .
 :::
+
+Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), ya que esta permite considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estár disponibles en los registros genealógicos [@cite:68].
 
 ## Componentes de varianza y heredabilidad
 
