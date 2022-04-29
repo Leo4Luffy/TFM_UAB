@@ -164,7 +164,7 @@ knitr::include_graphics('figures/map_A_H_Molcoanc.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.1:__ Mapas de calor de las matrices A y H, esta última estimada a partir de 451 individuos genotipados con una densidad de marcador aproximado de 100.000, de 50 individuos pertencientes a la generación $F_{0}$ del pedigrí 1 generado a partir de simulación ancestral. Los colores en gris (fuera de la diagonal) indican que existe relación entre pares de individuos.
+__Figura 5.1:__ Mapas de calor de las matrices A y H, esta última estimada a partir de 451 individuos genotipados con una densidad de marcador aproximado de 100.000, de 50 individuos pertencientes a la generación $F_{0}$ del pedigrí 1 (primera replica) generado a partir de simulación ancestral. Los colores en gris (fuera de la diagonal) indican que existe relación entre pares de individuos.
 :::
 
 Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, todos los hermanos completos no estuvieron igualmente relacionados entre sí (como lo indica las relaciones genéticas esperadas debido al pedigrí), en su lugar, se produjo un continuo de las relaciones genéticas realizadas entre pares de individuos.
@@ -260,8 +260,8 @@ mHc_ped3_map <- melt(mHc_ped3) # Usando la función melt() del paquete "reshape2
 
 mHc_ped3_map <- mHc_ped3_map %>%
   filter(
-    Var2 %in% c(1:50),
-    Var1 %in% c(1:50)
+    Var2 %in% c(452:491),
+    Var1 %in% c(452:491)
     ) %>%
   ggplot(data = ., aes(x = Var1, y = Var2, fill = value)) +
   geom_tile() +
@@ -281,10 +281,10 @@ knitr::include_graphics('figures/map_A_H_SeqBreed.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.2:__ Mapas de calor de las matrices A y H, esta última estimada a partir de diferentes cantidades de individuos genotipados con una densidad de marcador aproximado de 100.000, de 40 individuos de la generación $F_{1}$ del pedigrí 3 generado a partir de simulación de descendientes. Las escalas muestran el continuo de las relaciones genéticas entre pares de individuos, desde ninguna relación (áreas en blanco correspondientes a valores iguales a 0) a relaciones completas (áreas en gris correspondientes a valores en torno a 0.5).
+__Figura 5.2:__ Mapas de calor de las matrices A y H, esta última estimada a partir de diferentes cantidades de individuos genotipados con una densidad de marcador aproximado de 100.000, de 40 individuos de la generación $F_{1}$ del pedigrí 3 (primera replica) generado a partir de simulación de descendientes. Las escalas muestran el continuo de las relaciones genéticas entre pares de individuos, desde ninguna relación (áreas en blanco con valores iguales a 0) a relaciones completas (áreas en gris con valores en torno a 0.5).
 :::
 
-Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H (y por tanto, al implementar la selección genómica mediante el método de ssGBLUP), al considerar el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos [@cite:68].
+Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H, ya que en el calculo de esta última se considera el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos [@cite:68].
 
 ## Componentes de varianza y heredabilidad
 
@@ -498,9 +498,9 @@ __Figura 5.3:__ Distribuciones posteriores de componentes de varianza y de hered
 
 ## Precisión de la predición mediante simulación de pedigrí ancestral y de descendientes
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en las Figura 5.4 y 5.5 y en los Anexos A.4 y A.5. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en las Figuras 5.4 y 5.5 y en los Anexos A.4 y A.5. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral, esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, es posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
+En relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.4 y Anexo A.4), esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, fue posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
 En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado  en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
@@ -705,10 +705,32 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.4:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en simulaciones hacia atras. <!--NOTA: colocar aquí que se calculo la media y las barras son los desvios, como en el articulo de Luis Varona et al sobre las ovejas Latxa.-->
+__Figura 5.4:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en la simulación ancestral. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
 :::
 
+El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.5 y Anexo A.5), observandose en este un comportamiento similar al observado con la simulación ancestral anterior, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (~ 0.0%), para todos los casos de individuos genotipados. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en el pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones $F_{2}$ y $F_{3}$ como conjuntos de validación.
 
+
+
+<!--
+La definición de la población genotipada es un factor determinante para la precisión de la predicción bajo evaluación genómica. Para analizar diferentes formas de seleccionar animales para la población genotipada, se probaron varias combinaciones de sexo de los individuos, EBV, conocimiento del pedigrí, año de inicio del genotipado y número de individuos genotipados. En todos los casos, los valores genéticos estimados por ssGBLUP mostraron precisiones más altas (media 0.5841 para LCNEUS, 0.5981 para LCR, 0.5507 para LCNNAF) que las evaluaciones BLUP basadas en pedigrí (media 0.4570 para LCNEUS, 0.5190 para LCR, 0.5111 para LCNNAF), por lo que la media las diferencias de precisión relativa siempre fueron positiva
+
+--
+
+Hay una pérdida en la precisión de GEBV cuando el número de hembras genotipadas disminuye, que es menos notorio según el tamaño de la población genotipada. Esto probablemente se deba a que, aunque estos individuos no tienen un pedigrí completo, sus propios registros, y posiblemente los datos y conexiones de su descendencia, brindan información útil para evaluaciones más precisa
+
+--
+
+Así, la ganancia esperada en precisión a corto plazo para las poblaciones de Latxa estaría en torno al 11%. Los resultados más bajos mostrados por los escenarios restringidos (60% menos de diferencia de precisión que los escenarios no restringidos), resaltaron la relevancia de tener datos genómicos de varias generaciones anteriore
+
+--
+
+como era de esperar ( Meuwissen et al., 2001), la diferencia de precisión relativa aumentó según el número de individuos genotipados en las 3 razas. Se logró un incremento del 60% del 10 al 70% de los escenarios
+
+--
+
+
+-->
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -772,7 +794,7 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.5:__ .
+__Figura 5.5:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los cuatro pedigríes (Pedigrí 1-2-3-4) corresponden a los pedigríes generados en la simulación de descendientes. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
 :::
 
 
