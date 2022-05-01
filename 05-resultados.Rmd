@@ -1,6 +1,6 @@
 ```{r, echo = FALSE}
 
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, latex2exp, reshape2, ggforce)
+pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr, latex2exp, reshape2, ggforce, FactoMineR, factoextra)
 font_add_google('Gochi Hand', 'gochi')
 showtext_auto()
 ```
@@ -11,7 +11,7 @@ showtext_auto()
 
 ## Matrices de parentesco
 
-La matriz de parentesco combinada (o matriz H), tuvo un rango más amplio de variación del parentesco entre individuos en comparación con la matriz basada solo en información de pedigrí (o matriz A), situación que se puede observar en la Figuras 5.1 y 5.2, y en el Anexo A.3.
+La matriz de parentesco combinada (o matriz H), tuvo un rango más amplio de variación del parentesco entre individuos en comparación con la matriz basada solo en información del pedigrí (o matriz A), situación que se puede observar en la Figuras 5.1 y 5.2, y en el Anexo A.3.
 
 Al no conocer su herencia, la matriz A identifico a los individuos de la población fundadora como no relacionados (Figura 5.1), contrario con la matriz H en la cual, al capturar las relaciones históricas, se evidenció que entre los individuos de la población fundadora si puede existir una relación (Anexo A.3).
 
@@ -167,7 +167,7 @@ knitr::include_graphics('figures/map_A_H_Molcoanc.pdf', auto_pdf = TRUE)
 __Figura 5.1:__ Mapas de calor de las matrices A y H, esta última estimada a partir de 451 individuos genotipados con una densidad de marcador aproximado de 100.000, de 50 individuos pertencientes a la generación $F_{0}$ del pedigrí 1 (primera replica) generado a partir de simulación ancestral. Los colores en gris (fuera de la diagonal) indican que existe relación entre pares de individuos.
 :::
 
-Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, todos los hermanos completos no estuvieron igualmente relacionados entre sí (como lo indica las relaciones genéticas esperadas debido al pedigrí), en su lugar, se produjo un continuo de las relaciones genéticas realizadas entre pares de individuos.
+Al observar la relación entre hermanos completos, la matriz H proporcionó estimaciones de parentescos más detalladas en comparación con la matriz A (Figura 5.2). En la matriz H, todos los hermanos completos no estuvieron igualmente relacionados entre sí (contrario a lo que indica las relaciones genéticas esperadas debido al pedigrí, donde todos los hermanos completos se relacionan con un valor de 0.5), en su lugar, se produjo un continuo de las relaciones genéticas realizadas entre pares de individuos.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -284,11 +284,309 @@ knitr::include_graphics('figures/map_A_H_SeqBreed.pdf', auto_pdf = TRUE)
 __Figura 5.2:__ Mapas de calor de las matrices A y H, esta última estimada a partir de diferentes cantidades de individuos genotipados con una densidad de marcador aproximado de 100.000, de 40 individuos de la generación $F_{1}$ del pedigrí 3 (primera replica) generado a partir de simulación de descendientes. Las escalas muestran el continuo de las relaciones genéticas entre pares de individuos, desde ninguna relación (áreas en blanco con valores iguales a 0) a relaciones completas (áreas en gris con valores en torno a 0.5).
 :::
 
-Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H, ya que en el calculo de esta última se considera el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos [@cite:68].
+Estos resultados indican una mejor capacidad de diferenciación de las relaciones entre individuos al usar la matriz H, ya que en el calculó de esta última se considera el intercambio de alelos o la segregación mendeliana, y las relaciones genéticas a través de ancestros comunes desconocidos que pueden no estar disponibles en los registros genealógicos [@cite:68].
 
-## Componentes de varianza y heredabilidad
+## Estructura poblacional y heredabilidad
 
-Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP en los tres pedigríes generados a partir de simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.3. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
+No se observó una estuctura poblacional clara en los primeros dos componentes principales, según las relaciones genéticas realizadas estimadas en la matriz H (Figuras 5.3 y 5.4). De acuerdo a @cite:69, el hecho de que la mayor parte de la variación total sea explicada por unos pocos valores propios (en este estudio, el 80.0% de la variación explicada entre los primeros diez a veinte valores propios), sugiere que la población no fue diversa, lo cual era de esperar dado el método implementado de generación de individuos a través de la simulación del pedigrí ancestral y de descendientes, con el cual se trato de replicar los métodos que en realidad se emplean en la mejora de los cultivos de arroz, esto es, generación inicial sintetizada a partir del cruzamiento entre distintos individuos, y posterior recombinanción a través del dialelo circulante en las progenies, en distintas generaciones y por autopolinización. Este hecho de ausencia de estructura poblacional, según @cite:70, sugiere un escenario favorable para obtener estimaciones confiables de predicción genómica.
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+###########
+# Pedigrí 1
+###########
+
+################################
+# Con 451 individuos genotipados
+################################
+
+# Con una densidad de marcador de 1.000 ----
+
+#mHd_ped1 <- readRDS(here('figures', 'mHd_ped1_Molcoanc.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHd_ped1, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 752, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 1.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_1 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (30.3%)', y = 'Segundo componente\n (18.6%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_PCA_mH_1
+
+#(Graf_val_propio_mH_1 | Graf_PCA_mH_1) -> PCA_mH_1
+
+# Con una densidad de marcador de 10.000 ----
+
+#mHe_ped1 <- readRDS(here('figures', 'mHe_ped1_Molcoanc.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHe_ped1, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 752, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 10.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_2 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (28.1%)', y = 'Segundo componente\n (19.4%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_PCA_mH_2
+
+#(Graf_val_propio_mH_2 | Graf_PCA_mH_2) -> PCA_mH_2
+
+# Con una densidad de marcador de 100.000 ----
+
+#mHc_ped1 <- readRDS(here('figures', 'mHc_ped1_Molcoanc.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHc_ped1, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 752, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 100.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_3 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (30.1%)', y = 'Segundo componente\n (19.0%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 9, face = 'bold')
+    #) -> Graf_PCA_mH_3
+
+#(Graf_val_propio_mH_3 | Graf_PCA_mH_3) -> PCA_mH_3
+
+#(Graf_val_propio_mH_1 | Graf_PCA_mH_1) / (Graf_val_propio_mH_2 | Graf_PCA_mH_2) / (Graf_val_propio_mH_3 | Graf_PCA_mH_3) -> Graf_PCA_mH_Molcoanc
+
+knitr::include_graphics('figures/Graf_PCA_mH_Molcoanc.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 5.3:__ Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 451 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 1 (primera replica).
+:::
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+
+###########
+# Pedigrí 3
+###########
+
+################################################
+# Todos los individuos genotipados (F0-F1-F2-F3)
+################################################
+
+# Con una densidad de marcador de 0 ----
+
+#mA_ped3 <- readRDS(here('figures', 'mA_ped3_SeqBreed.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mA_ped3, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 2092, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = '', x = 'Componentes principales', y = 'Proporción de la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 10, face = 'bold'),
+    #axis.title = element_text(size = 10, face = 'bold'),
+    #legend.title = element_text(size = 9, face = 'bold')
+    #) -> Graf_val_propio_mA # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (5.5%)', y = 'Segundo componente (3.8%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 10, face = 'bold'),
+    #axis.title = element_text(size = 10, face = 'bold'),
+    #legend.title = element_text(size = 9, face = 'bold')
+    #) -> Graf_PCA_mA
+
+#(Graf_val_propio_mA | Graf_PCA_mA) -> PCA_mA
+
+# Con una densidad de marcador de 1.000 ----
+
+#mHd_ped3 <- readRDS(here('figures', 'mHd_ped3_SeqBreed.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHd_ped3, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 2092, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 1.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_1 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (16.4%)', y = 'Segundo componente\n (13.0%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_PCA_mH_1
+
+#(Graf_val_propio_mH_1 | Graf_PCA_mH_1) -> PCA_mH_1
+
+# Con una densidad de marcador de 10.000 ----
+
+#mHe_ped3 <- readRDS(here('figures', 'mHe_ped3_SeqBreed.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHe_ped3, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 2092, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 10.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_2 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (15.7%)', y = 'Segundo componente\n (13.1%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_PCA_mH_2
+
+#(Graf_val_propio_mH_2 | Graf_PCA_mH_2) -> PCA_mH_2
+
+# Con una densidad de marcador de 100.000 ----
+
+#mHc_ped3 <- readRDS(here('figures', 'mHc_ped3_SeqBreed.RDS')) %>%
+  #as.matrix()
+
+#analisis_PCA <- PCA(X = mHc_ped3, graph = FALSE, scale.unit = FALSE) # Con la función PCA() del paquete "FactoMineR" se realiza en análisis de componentes principales.
+
+#val_propio <- get_eigenvalue(X = analisis_PCA) # Con la función get_eigenvalue() del paquete factoextra se pueden extraer los valores propios, es decir, la proporción de la variación retenidos por cada componente principal.
+
+#val_propio %>%
+  #as_tibble() %>%
+  #select(cumulative.variance.percent) %>%
+  #mutate(prop_varianza = cumulative.variance.percent / 100) %>%
+  #rowid_to_column(var = 'Componentes') %>%
+  #ggplot(data = ., aes(x = Componentes, y = prop_varianza)) +
+  #geom_point(colour = 'yellow', alpha = 0.2, size = 1.8) +
+  #annotate(geom = 'segment', x = 0, xend = 2092, y = 1.0, yend = 1.0, colour = 'black', linetype = 'dashed') +
+  #labs(title = 'Matriz H (densidad de 100.000)', x = 'Componentes principales', y = 'Proporción de\n la varianza') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 8, face = 'bold'),
+    #plot.title = element_text(size = 8, face = 'bold')
+    #) -> Graf_val_propio_mH_3 # Un método para determinar el número de componentes principales es mirar este gráfico.
+
+#fviz_pca_ind(X = analisis_PCA, label = 'none', col.ind = 'cyan', alpha.ind = 0.2, ) +
+  #labs(title = '', x = 'Primer componente (15.4%)', y = 'Segundo componente\n (13.2%)') +
+  #theme_bw() +
+  #theme(
+    #axis.text = element_text(size = 8, face = 'bold'),
+    #axis.title = element_text(size = 8, face = 'bold'),
+    #legend.title = element_text(size = 9, face = 'bold')
+    #) -> Graf_PCA_mH_3
+
+#(Graf_val_propio_mH_3 | Graf_PCA_mH_3) -> PCA_mH_3
+
+#(Graf_val_propio_mH_1 | Graf_PCA_mH_1) / (Graf_val_propio_mH_2 | Graf_PCA_mH_2) / (Graf_val_propio_mH_3 | Graf_PCA_mH_3) -> Graf_PCA_mH_SeqBreed
+
+knitr::include_graphics('figures/Graf_PCA_mH_SeqBreed.pdf', auto_pdf = TRUE)
+```
+
+::: {.center data-latex=""}
+__Figura 5.4:__ Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 2091 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 3 (primera replica).
+:::
+
+Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) bajo el método BLUP en los tres pedigríes generados a partir de simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.5. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
 ::: {.center data-latex=""}
 __Tabla 5.1:__ Estimaciones de componentes de varianza y de heredabilidad para el caracter tiempo de floración mediante el método BLUP.
@@ -493,14 +791,14 @@ knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.3:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
+__Figura 5.5:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 :::
 
-## Precisión de la predición mediante simulación de pedigrí ancestral y de descendientes
+## Precisión de la predición mediante simulación del pedigrí ancestral y de descendientes
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en las Figuras 5.4 y 5.5 y en los Anexos A.4 y A.5. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el caracter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos, resultados que se resumen en las Figuras 5.6 y 5.7 y en los Anexos A.4 y A.5. En general, y como era de esperar, la precisión de la predicción aumento a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-En relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.4 y Anexo A.4), esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, fue posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
+En relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.6 y Anexo A.4), esta fue mayor cuando se consideró una densidad del marcador igual a 0 en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque en el caso en el que se consideró el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde se consideró una densidad igual a 0). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, fue posible afirmar que el limite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvió estándar de las precisiones de predicción fue similar a medida que el número de marcadores aumentaba. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
 En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, el desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado  en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
@@ -705,10 +1003,10 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.4:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en la simulación ancestral. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
+__Figura 5.6:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los tres pedigríes (Pedigrí 1-2-3) corresponden a los pedigríes generados en la simulación ancestral. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
 :::
 
-El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.5 y Anexo A.5), observandose en este un comportamiento similar al observado con la simulación ancestral anterior, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (~ 0.0%), para todos los casos de individuos genotipados. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones $F_{2}$ y $F_{3}$ como conjuntos de validación.
+El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.7 y Anexo A.5), observandose en este un comportamiento similar al observado con la simulación ancestral anterior, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (~ 0.0%), para todos los casos de individuos genotipados. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones $F_{2}$ y $F_{3}$ como conjuntos de validación.
 
 
 
@@ -794,8 +1092,5 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 ```
 
 ::: {.center data-latex=""}
-__Figura 5.5:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los cuatro pedigríes (Pedigrí 1-2-3-4) corresponden a los pedigríes generados en la simulación de descendientes. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
+__Figura 5.7:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados. Los cuatro pedigríes (Pedigrí 1-2-3-4) corresponden a los pedigríes generados en la simulación de descendientes. Las barras representan la media de la precisión de la predicción de las 10 replicas de cada pedigrí y las barras de error representan el desvió estándar como medida de variabilidad.
 :::
-
-
-
