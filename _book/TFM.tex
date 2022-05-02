@@ -318,7 +318,7 @@ Director:
 \chapter{Resumen}\label{resumen}}
 
 \noindent 
-Insert abstract.
+Por lo general, los modelos de selección genómica se construyen con base en información de genotipo y de fenotipo. A partir del desarrollo del mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) a inicio de la década de 2010, fue posible construir dichos modelos de selección genómica usando la información de individuos fenotipados pero no genotipados, permitiendo a través del uso de esta información adicional mejorar la precisión de la predicción. El ssGBLUP se adapta fácilmente a las herramientas informáticas ya desarrolladas en base a métodos de evaluación genética anteriores, y hoy en día se le considera como el método más popular para la evaluación genética tanto en plantas como en animales. El objetivo de este estudio consistió evaluar la utilidad de esta metodología de selección en la predicción genómica del arroz.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -884,19 +884,19 @@ Estos resultados indican una mejor capacidad de diferenciación de las relacione
 \hypertarget{estructura-poblacional-y-heredabilidad}{%
 \section{Estructura poblacional y heredabilidad}\label{estructura-poblacional-y-heredabilidad}}
 
-No se observó una estructura poblacional clara en los primeros dos componentes principales, según las relaciones genéticas realizadas estimadas en la matriz H (Figuras 5.3 y 5.4). De acuerdo a Morais-Júnior, Duarte, et~al. (\protect\hyperlink{ref-cite:69}{2018}), el hecho de que la mayor parte de la variación total sea explicada por unos pocos valores propios (en este estudio, los primeros diez a veinte valores propios explicaron el 80.0\% de la variación total), sugiere que la población no es diversa, lo cual era de esperar dado el método implementado de generación de individuos a través de la simulación del pedigrí ancestral y de descendientes, con el cual se trato de replicar los métodos que en realidad se emplean en la mejora de los cultivos de arroz, esto es, generación inicial sintetizada a partir del cruzamiento entre distintos individuos, y posterior recombinación a través del dialelo circulante en las progenies, en distintas generaciones y por autopolinización. Este hecho de ausencia de estructura poblacional, según Guo et~al. (\protect\hyperlink{ref-cite:70}{2014}), sugiere un escenario favorable para obtener estimaciones confiables de predicción genómica.
+No se observó una estructura poblacional clara en los primeros dos componentes principales, según las relaciones genéticas realizadas estimadas en la matriz H (Figuras 5.3 y 5.4). De acuerdo a Morais-Júnior, Duarte, et~al. (\protect\hyperlink{ref-cite:69}{2018}), el hecho de que la mayor parte de la variación total sea explicada por unos pocos valores propios (en este estudio, los primeros diez a veinte valores propios explicaron el 80.0\% de la variación total), sugiere que la población no es diversa, lo cual era de esperar dado el método implementado de generación de individuos a través de la simulación del pedigrí ancestral y de descendientes, con el cual se trato de replicar los métodos que en realidad se emplean en la mejora de los cultivos de arroz, esto es, generación inicial sintetizada a partir del cruzamiento entre distintos individuos, y posterior recombinación a través del dialelo circulante en las progenies, en distintas generaciones y por autopolinización. La ausencia de estructura poblacional, según Guo et~al. (\protect\hyperlink{ref-cite:70}{2014}), es un escenario favorable para obtener estimaciones confiables de predicción genómica.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA_mH_Molcoanc} \end{center}
 
 \begin{center}
-\textbf{Figura 5.3:} Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 451 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 1 (primera replica).
+\textbf{Figura 5.3:} Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 451 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 1 (primera replica) mediante simulación ancestral.
 
 \end{center}
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA_mH_SeqBreed} \end{center}
 
 \begin{center}
-\textbf{Figura 5.4:} Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 2091 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 3 (primera replica).
+\textbf{Figura 5.4:} Gráfico de sedimentación y de componentes principales de los dos primeros valores propios. Aquí, la matriz H se estimó a partir de 2091 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 3 (primera replica) mediante simulación de descendientes.
 
 \end{center}
 
@@ -949,7 +949,7 @@ En cuanto a la cantidad de individuos genotipados, la precisión de la predicci�
 
 El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.7 y Anexo A.5), observándose en este un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (\textasciitilde{} 0.0\%), para todos los casos de individuos genotipados. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones \(F_{2}\) y \(F_{3}\) como conjuntos de validación.
 
-Respecto a la cantidad de individuos genotipados, también se observo una tendencia similar al observado con la simulación ancestral. La precisión de la predicción aumento al aumentar la cantidad de individuos genotipados, observandose una estabilización al considerar un tamaño de genotipado entre solo los individuos de la generación \(F_{1}\) y los individuos de las generaciones \(F_{1}\) y \(F_{2}\). La mayor precisión de la predicción se observó al genotipar los individuos de todas las generaciones (\(F_{0}\), \(F_{1}\), \(F_{2}\) y \(F_{3}\)), logrando una ganancia esperada en la precisión mínima del 3.1\% (en el pedigrí 2) y máxima del 13.0\% (en el pedigrí 4), al considerar una densidad de 1.000 y 100.000 marcadores, respectivamente.
+Respecto a la cantidad de individuos genotipados, también se observo una tendencia similar al observado con la simulación ancestral. La precisión de la predicción aumento al aumentar la cantidad de individuos genotipados, observándose una estabilización al considerar un tamaño de genotipado entre solo los individuos de la generación \(F_{1}\) y los individuos de las generaciones \(F_{1}\) y \(F_{2}\). La mayor precisión de la predicción se observó al genotipar los individuos de todas las generaciones (\(F_{0}\), \(F_{1}\), \(F_{2}\) y \(F_{3}\)), logrando una ganancia esperada en la precisión mínima del 3.1\% (en el pedigrí 2) y máxima del 13.0\% (en el pedigrí 4), al considerar una densidad de 1.000 y 100.000 marcadores, respectivamente.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_F2_F3} \end{center}
 
@@ -960,10 +960,6 @@ Respecto a la cantidad de individuos genotipados, también se observo una tenden
 
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
-
-A pesar del interés que en su momento hubo en el uso del pedigrí para la mejora genética de animales, el uso de esta información en plantas no fue relevante (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}). Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología para la mejora de la ganancia genética en plantas (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}), y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultvos de arroz a través de estudios de simulación (Xu et~al. \protect\hyperlink{ref-cite:60}{2021}).
-
-Con el desarrollo del método del ssGBLUP, fue posible
 
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}

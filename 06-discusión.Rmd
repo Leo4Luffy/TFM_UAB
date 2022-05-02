@@ -1,14 +1,12 @@
-```{r, echo = FALSE}
-
-pacman::p_load(cowplot, magick, tibble, gt, dplyr, ggplot2, showtext, here, readr)
-font_add_google('Gochi Hand', 'gochi')
-showtext_auto()
-```
 
 <!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
 
 # Discusión
 
+
+
+<!--
 A pesar del interés que en su momento hubo en el uso del pedigrí para la mejora genética de animales, el uso de esta información en plantas no fue relevante [@cite:63]. Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología para la mejora de la ganancia genética en plantas [@cite:6], y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultvos de arroz a través de estudios de simulación [@cite:60].
 
 Con el desarrollo del método del ssGBLUP, fue posible
+-->
