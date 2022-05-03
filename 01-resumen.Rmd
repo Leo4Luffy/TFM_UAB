@@ -4,7 +4,13 @@
 # Resumen
 
 \noindent 
-Por lo general, los modelos de selección genómica se construyen con base en información de genotipo y de fenotipo. A partir del desarrollo del mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) a inicio de la década de 2010, fue posible construir dichos modelos de selección genómica usando la información de individuos fenotipados pero no genotipados, permitiendo a través del uso de esta información adicional mejorar la precisión de la predicción. El ssGBLUP se adapta fácilmente a las herramientas informáticas ya desarrolladas en base a métodos de evaluación genética anteriores, y hoy en día se le considera como el método más popular para la evaluación genética tanto en plantas como en animales. El objetivo de este estudio consistió en evaluar la utilidad de esta metodología de selección en la predicción genómica del arroz.
+Por lo general, los modelos de selección genómica se construyen con base en información de genotipo y de fenotipo. A partir del desarrollo del mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP), fue posible construir dichos modelos de selección genómica usando la información de individuos fenotipados pero no genotipados, permitiendo a través del uso de esta información adicional mejorar la precisión de la predicción. El ssGBLUP se adapta fácilmente a las herramientas informáticas ya desarrolladas en base a métodos de evaluación genética anteriores, y hoy en día se le considera como el método más popular para la evaluación genética tanto en plantas como en animales. El objetivo de este estudio consistió en evaluar la utilidad de esta metodología de selección en la predicción genómica del arroz.
+
+\noindent 
+El estudio consistió en usar datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestral) y hacia adelante (descendientes), esto último con el fin obtener la información necesaria para implementar la selección genómica mediante el ssGBLUP. La cantidad de individuos genotipados (o conjunto de entrenamiento) y el número de marcadores variaron con el fin determinar su efecto en la precisión de la predicción. Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad.
+
+\noindent 
+
 
 ---
 

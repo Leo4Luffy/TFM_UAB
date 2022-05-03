@@ -114,10 +114,10 @@ Graf_PCA <- ggplot(data = vec_propios, mapping = aes(x = `1`, y = `2`, color = S
 knitr::include_graphics('figures/Graf_PCA.png', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 4.1:__ Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
-:::
 
+\hspace*{1em}
 De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de floración, ya que en un estudio previo [@cite:26] se observó que en este carácter la predicción genómica podría funcionar mejor. Con la figura a continuación  (Figura 4.2) se observa que la distribución empírica general de este carácter fue aproximadamente normal, lo que permitió el uso de modelos de distribución normal. Los datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE, warning = FALSE}
@@ -299,9 +299,8 @@ Rasgo_2 | Rasgo_2b -> Graf_feno_2
 knitr::include_graphics('figures/Graf_feno_2.png', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent
 __Figura 4.2:__ Distribución y media $\pm$ desviación estándar del carácter tiempo de floración del conjunto de datos fenotípicos de arroz.
-:::
 
 ## Predicción basada en información del pedigrí e información genómica
 
@@ -602,10 +601,10 @@ ped3 <- ped_plot_3 %>%
 knitr::include_graphics('figures/Pedigríes.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent
 __Figura 4.3:__ Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1661 en el pedigrí 2 y 2451 en el pedigrí 3. 
-:::
 
+\hspace*{1em}
 Para estudiar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
 1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
@@ -684,10 +683,10 @@ data.frame(
 knitr::include_graphics('figures/Esquema_1.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent
 __Figura 4.4:__ Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
-:::
 
+\hspace*{1em}
 Además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
 Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteraciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. <!--NOTA: La estimación Bayesiana con MCMC provee cadenas con muestras aleatorias de las distribuciones marginales posteriores de cada parámetro o efecto desconocido, a partir de las cuales se pueden hacer las inferencias. Es incorrecto decir que un parámetro genético o que unos valores aditivos han sido estimados “por MCMC” o, “por Gibbs sampling”. La estimación se ha hecho a partir de las funciones de densidad posterior, y se ha usado la media o mediana de cada función para hacer la inferencia estadística; MCMC o Gibbs sampling son meros métodos de cálculo numérico. Decir que se estima un parámetro por Gibbs sampling es como decir que en lugar de predecir por BLUP unos valores aditivos, se predicen por Gauss-Seidel porque este es el método que se ha usado para resolver las ecuaciones del modelo mixto..-->En cuanto al paquete `lme4GS`, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal). 
@@ -703,10 +702,10 @@ Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado
 2. Especificación de la arquitectura genética (SNP causales (QTN) y sus efectos) para el carácter tiempo de floración y heredabilidad deseada: se uso el software GCTA [@cite:54] para hacer un estudio de asociación a nivel genómico (GWAS) para identificar las regiones genómicas asociadas al carácter (Anexo A.2). Luego, en base al GWAS, se generaron los datos que indicaban el efecto de los QTN y su localización, seleccionando solo 50 de ellos con un efecto proporcional a la varianza aditiva explicada. Por último, se uso la función `gg.QTNs()` sobre estos datos generados, indicando también la heredabilidad del carácter (0.7) de acuerdo a resultados previamente reportados [@cite:26].
 
 3. Generación de pedigríes: se generaron cuatro pedigríes (con diez replicas para medir la variabilidad de la predicción mediante el BLUP y el ssGBLUP), cada uno de ellos con esquemas de cruzamiento diferentes partiendo de la población fundadora con 451 individuos (Tabla 4.1). Usando la función `gg.Population()`, se generó mediante simulación los fenotipos y genotipos de cada uno de los individuos en cada uno de los cuatro pedigríes.
+\hspace*{1em}
 
-::: {.center data-latex=""}
+\noindent
 __Tabla 4.1:__ Representación de los cuatro pedigríes generados. Cada uno de estos pedigríes tienen esquemas de cruzamientos diferentes, dando lugar a distintos número de individuos en la generación $F_{1}$, pero con mismo número de individuos en las generaciones $F_{2}$ y $F_{3}$.
-:::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
@@ -804,10 +803,10 @@ data.frame(
 knitr::include_graphics('figures/Esquema_2.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent
 __Figura 4.5:__ Esquema de predicción usando simulación con el paquete `SeqBreed`. Figura adaptada de @cite:47.
-:::
 
+\hspace*{1em}
 Para identificar el efecto del número de individuos genotipados sobre la predictibilidad, fueron considerados cuatro casos:
 
 + Ningún individuo genotipado,

@@ -156,10 +156,10 @@ data.frame(
 knitr::include_graphics('figures/Crono_2.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.1:__ Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de @cite:2.
-:::
-
+ 
+\hspace*{1em}
 La genética cuantitativa se originó hace más de un siglo en ausencia directa de datos genéticamente observables [@cite:2]. Uno de los fundadores más influyentes fue Ronald Fisher, quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los principios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, asume que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter está determinada por un gran número de factores ‘Mendelianos’ (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter [@cite:2; @cite:9].<!-- A partir de este entonces, la genética cuantitativa fue extremadamente productiva a medida que fue adhiriéndose a la teoría del modelo infinitesimal.--><!-- NOTA: Fisher, en 1918, propuso el modelo que se ha venido usando desde entonces, aproximando el efecto conjunto de los genes de pequeño efecto a una distribución normal, lo que permitió la aplicación de modelos lineales, habituales hoy en día en la selección. -->
 
 Otro concepto fundamental, sobre todo en mejora genética, es el valor de cría estimado (EBV), definido como el efecto genético que un individuo posee y que puede transmitir a su descendencia. Este se puede predecir en función de un modelo que relaciona el fenotipo de una población con la información de pedigrí mediante el uso del mejor predictor lineal insesgado (BLUP) [@cite:67]<!-- NOTA:  la forma habitual de resolver el BLUP hoy en día es mediante el uso de las ecuaciones del modelo mixto. -->. Este procedimiento fue resultado del esfuerzo de Charles Roy Henderson, quien a inicio de la década de 1950 contribuyó a su desarrollo [@cite:28; @cite:29; @cite:27]. A pesar que desde entonces el BLUP fue el método más utilizado para la mejora genética tanto en animales como en plantas, dicho procedimiento ignora la base física de la herencia (el ADN).
@@ -233,10 +233,10 @@ data.frame(
 knitr::include_graphics('figures/MAS.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.2:__ Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de @cite:6.
-:::
 
+\hspace*{1em}
 Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología al no detectar marcadores de ADN con efectos genéticos menores [@cite:3; @cite:10; @cite:32; @cite:7]. Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
 
 Finalmente, en el año 2001, Theodorus Meuwissen, Ben Hayes y Michael Goddard presentaron una alternativa a la MAS, superando con ello las limitaciones que suponía el uso de esta metodología. A esta nueva alternativa se le dio el nombre de selección genómica. Solo fue cuestión de tiempo para que los datos obtenidos de la genética molecular se integraran a los modelos estadísticos de la genética cuantitativa, permitiendo así el análisis de caracteres complejos en el marco de efectos del modelo infinitesimal.
@@ -306,10 +306,10 @@ data.frame(
 knitr::include_graphics('figures/GS.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.3:__ Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de @cite:7. <!-- NOTA: la selección genómica difiere significativamente de la selección convencional asistida por marcadores, ya que permite seleccionar individuos sin conocimiento previo de una asociación entre los marcadores y el rasgo de interés. La selección genómica se refiere a métodos que utilizan marcadores de todo el genoma para predecir el valor genómico de un individuo con suficiente precisión para permitir la selección de individuos basándose únicamente en esa predicción. -->
-:::
 
+\hspace*{1em}
 El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica [@cite:10]. Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar [@cite:8], con lo cual, aún cuando dichos marcadores no tienen efecto directo sobre el carácter, sí que se captura una asociación entre el carácter y los marcadores.
 
 ### Métodos estadísticos en la selección genómica
@@ -369,10 +369,10 @@ ggplot(data = Gen_1_Gen_2, aes(x = x, y = y, colour = Genotipos, fill = Genotipo
 knitr::include_graphics('figures/Mod_RL.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.4:__ Relación genotipo-fenotipo de individuos (círculos amarillo y azul) <!--en una población de entrenamiento -->para un solo marcador. $Y_{i}$ y $x_{i1}$ denotan los fenotipos y genotipos, y $\mu$ y $g_{i}$ son los parámetros a determinar. Los genotipos bialélicos se codifican como 0 y 1, y los fenotipos se distribuyen de acuerdo a una normal. Figura adaptada de @cite:6.
-:::
 
+\hspace*{1em}
 Dicha relación genotipo-fenotipo se puede expresar de la forma:
 
 \begin{equation}
@@ -485,10 +485,10 @@ ggplot() +
 knitr::include_graphics('figures/Mod_GS.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.5:__ Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de @cite:31 y de @cite:7.
-:::
 
+\hspace*{1em}
 Al proponer la teoría de la selección genómica, @cite:8 proporcionaron también una serie de métodos estadísticos como solución al problema planteado en el párrafo anterior, esto es, el mejor predictor lineal insesgado por ridge-regression (rrBLUP), y los métodos Bayesianos BayesA y BayesB.
 
 En relación al rrBLUP, este se puede expresar como un modelo lineal mixto:
@@ -526,7 +526,7 @@ Z'y
 
 donde $X$, $Z$, $b$, $g$ y $\lambda$ denotan los mismos términos de los modelos (1.2) y (1.3), y $G^{-1}$ corresponde a la inversa de la matriz G. El GBLUP, al igual que el rrBLUP, supone una varianza común para el efecto del marcador y que el efecto de los marcadores están normalmente distribuidos.
 
-La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, mientras que G refleja mejor el parentesco ‘realizado’ (Figura 2.6).
+La idea de @cite:39, al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según @cite:21, el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, mientras que G refleja mejor el parentesco realizado (Figura 2.6).
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', fig.showtext = TRUE, warning = FALSE}
 
@@ -623,9 +623,8 @@ data.frame(x = c(3.7, 4.3, 4.0, 3.4, 4.6), y = c(1.5, 1.5, 0.9, 0.9, 0.9)) %>%
 knitr::include_graphics('figures/Ped.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent
 __Figura 2.6:__ Parentesco observado entre individuos emparentados. El coeficiente de parentesco molecular entre los individuos 4 y 5, y 5 y 6, es igual a 1.0 y 0.0, respectivamente, caso contrario al coeficiente de parentesco genealógico, el cual entre todos los individuos, por tratarse de hermanos completos, sería igual a 0.25.
-:::
 
 <!--
 Suponiendo que se tiene la siguiente información:
@@ -673,6 +672,7 @@ A1A1, A1A1 -> 4/4 = 1.0 entre los individuos 4 y 5.
 A1A1, A2A2 -> 0/4 = 0.0 entre los individuos 5 y 6.
 -->
 
+\hspace*{1em}
 Es más rápida la velocidad del cálculo del GBLUP, comparado con los métodos Bayesianos descritos anteriormente, por lo que el GBLUP es más adecuado para obtener rápidamente el GEBV. Sin embargo, los métodos Bayesianos permiten incorporar al modelo información previa proveniente de múltiples estudios, siendo esto una ventaja de los mismos sobre otros métodos como el GBLUP. En tal sentido, @cite:31 proporcionan algunos ejemplos sobre qué tipo de información se podría incorporar a los efectos previos asignados a los marcadores, por mencionar algunos de ellos, la ubicación del marcador en el genoma, si dicha ubicación corresponde a una región codificante o no, y si el marcador está en una región del genoma que alberga genes que pueden afectar un carácter de interés.
 
 ### De la selección genómica de múltiples pasos a un solo paso
@@ -822,10 +822,10 @@ data.frame(
 knitr::include_graphics('figures/BLUPs_2.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.7:__ Esquema de comparación del BLUP, GBLUP y ssGBLUP. El GBLUP es un proceso de tres pasos en el que los individuos, con base en su información fenotípica y de pedigrí, son evaluados inicialmente mediante el BLUP; luego, a partir de los pseudo-fenotipos resultantes de esta evaluación inicial, se lleva a cabo un análisis genómico de los individuos genotipados mediante el GBLUP. En el ssGBLUP se simplifica este proceso al incorporar la información genómica (la matriz G) desde el primer paso.
-:::
 
+\hspace*{1em}
 Empero, esta forma de implementar la selección genómica en múltiples pasos no es eficiente [@cite:14], además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos [@cite:17; @cite:15]. Conscientes de esto, @cite:17 simplificaron el proceso de varios pasos al desarrollar un método de selección genómica en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su GEBV [@cite:20; @cite:11], método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
 En el ssGBLUP se dispone de una matriz de parentesco genómica de individuos genotipados y no genotipados, denominada como matriz de parentesco combinada o matriz H (Figura 2.7). Esta matriz se obtiene combinando información de parentesco basado en marcadores de ADN (matriz G) entre individuos genotipados, e información de parentesco basado en pedigríes (matriz A) entre individuos genotipados y no genotipados [@cite:20]. Con ello, el proceso anterior de múltiples pasos se simplifica al incorporar la información genómica desde el primer paso [@cite:15; @cite:16], sin la necesidad del cálculo posterior de pseudo-fenotipos [@cite:18].
@@ -1248,10 +1248,10 @@ data.frame(
 knitr::include_graphics('figures/Mej_Anim_Plan.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.8:__ Esquema de la mejora genética en animales y en plantas. Figura adaptada de @cite:44. <!-- NOTA: el esquema de la mejora genética en plantas consiste en lo que se conoce como método de pedigrí, donde se cruzan progenitores y se generan poblaciones segregantes, a través de generaciones de autopolinización y selección, hasta obtener un conjunto de líneas derivadas que combina las buenas características de ambos progenitores. El método de pedigrí es atractivo para los mejoradores porque permite construir mejores variedades reuniendo, en la misma planta, buenas características que estaban presentes en diferentes materiales. Como todos los cruces son controlados, es posible conocer la genealogía de cada cultivar. La principal debilidad del método genealógico reside en el hecho de que el rendimiento se evalúa eficientemente sólo al final del proceso, en líneas puras, cuando la semilla está disponible para ensayos repetidos. -->
-:::
 
+\hspace*{1em}
 El primer requisito para la mejora genética es disponer de variación genética de los caracteres que se desean a mejorar. Tanto en animales como en plantas, la variación genética se da a través del apareamiento de individuos cuya expresión de caracteres es deseable [@cite:42]. De esta forma, mediante el proceso natural de reproducción sexual, se puede obtener una descendencia que contiene genes de interés heredados de los dos progenitores.
 
 A partir de una población variable, es necesario seleccionar individuos con mejor expresión de caracteres. Tanto en animales como en plantas, la selección se lleva a cabo de forma recurrente (en los denominados núcleos de selección) con la finalidad de aumentar la frecuencia de alelos favorables. Sin embargo, los métodos de selección usados han sido distintos. Por un lado, en plantas se ha utilizado principalmente la MAS con el fin de identificar e incorporar genes beneficiosos, favoreciendo así que genes con efectos moderados a grandes hayan sido explotados más ampliamente en plantas que en animales. Por otro lado, en animales la mayoría de caracteres económicamente importantes han sido cuantitativos y complejos, lo cual obligó a los mejoradores genéticos a usar enfoques biométricos para predecir el EBV mediante la combinación de información fenotípica y de pedigrí (propiamente el BLUP), y con ello tomar las decisiones de selección [@cite:44].
@@ -1267,10 +1267,11 @@ Por otro lado, desde el momento en que la selección genómica fue propuesta por
 3- Es costoso invertir en infraestructura computacional y de registro tanto de datos genotípicos como fenotípicos requeridos para implementar la selección genómica. El tamaño de las poblaciones en la cría de animales son mucho más pequeños que la mayoría de poblaciones en la cría de plantas. Si bien los costos de genotipado por individuo son cada vez más bajos, el costo total de genotipado al considerar todas las plantas es aún hoy en día demasiado alto para la mayoría de programas de mejora genética en plantas [@cite:46].
 
 Pese a lo anterior, en la literatura científica (Tabla 2.1) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica.
+\hspace*{1em}
 
-::: {.center data-latex=""}
+\hspace*{1em}
+\noindent 
 __Tabla 2.1:__ .
-:::
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center'}
 
@@ -1391,9 +1392,9 @@ b <- a +
 knitr::include_graphics('figures/Graf_arroz.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.9:__ Evolución de la producción y uso del arroz <!--(_Oryza sativa L._)--> a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura (FAOSTAT) para desarrollar estas figuras.
-:::
+
 
 <!--En este sentido, la tercera revolución agrícola o revolución verde tiene como objetivo aumentar la producción mundial de cultivos, como es el cultivo de arroz, mediante el empleo de métodos de mejora genética [@cite:7], lo cual garantizaría la oferta de arroz en un contexto de una población en crecimiento.-->
 
@@ -1554,10 +1555,10 @@ data.frame(
 knitr::include_graphics('figures/Ap_control.pdf', auto_pdf = TRUE)
 ```
 
-::: {.center data-latex=""}
+\noindent 
 __Figura 2.10:__ Esquema de mejora genética de especies agrícolas. Figura adaptada de @cite:59.
-:::
 
+\hspace*{1em}
 En la selección fenotípica recurrente, la mejora genética se realiza a través de un esquema de rondas consecutivas de selección. En esta estrategia de apareamiento, se cruzan individuos progenitores (líneas donante y receptora) y se generan poblaciones segregantes <!-- NOTA: una línea segregante es un grupo de individuos genéticamente variables que constituyen la descendencia de una población híbrida que resulta de cruzar dos líneas diferentes genéticamente uniformes. -->a través de generaciones de autopolinización <!-- NOTA: la polinización directa o autopolinización o autofecundación sucede cuando el grano de polen llega solo desde el estambre al estigma de la misma flor. A estas especies se las denomina autógamas. La ventaja de esta tipología es que, en caso de ausencia de agentes polinizadores externos, la especie puede reproducirse igual. -->y selección, hasta obtener variedades mejoradas que combinan las buenas características y los avances logrados en generaciones anteriores. La característica principal de la selección fenotípica recurrente es aumentar las frecuencias de los alelos favorables [@cite:62].
 
 En cuanto a la introgresión, ésta al igual que la anterior, se inicia con el cruce de individuos progenitores, seguido de repetidos ciclos de retrocruzamiento y entrecruzamiento<!-- NOTA: el objetivo de un programa de introgresión es introducir un gen 'objetivo', que puede ser un solo gen o un QTL, de una línea o raza (donante) de baja productividad en una línea productiva que carece de ese gen particular. La introgresión comienza cruzando las líneas donante y receptora, seguida de repetidos retrocruzamientos con la línea receptora para recuperar el genoma de la línea receptora. El gen objetivo se mantiene en las generaciones de retrocruzamiento a través de la selección de portadores de genes donantes. La recuperación del genoma del receptor puede mejorarse mediante la selección de individuos retrocruzados que tengan un alto valor para el fenotipo del rasgo del receptor. Una vez que se recupera una proporción suficiente del genoma del receptor, la línea de retrocruzamiento se entrecruza y se seleccionan los homocigotos del gen donante para fijar el gen objetivo. Esto podría requerir más de una generación para obtener suficientes individuos para la reproducción posterior o si se deben introgresar varios genes objetivo. -->. El proposito de esta estrategia de apareamiento consiste en generar variedades mejoradas (híbridas) reuniendo en una misma planta las mejores características de los distintos cruces [@cite:57], aumentando también el rendimiento más allá de las variedades iniciales mediante la explotación de la heterosis [@cite:62]. <!-- NOTA: se espera que los cruces entre líneas genéticamente distantes muestren mayor vigor híbrido o efectos heteróticos que aquellos entre líneas más estrechamente relacionadas, porque se espera que las diferencias en las frecuencias alélicas entre líneas genéticamente distantes sean mayores. -->
