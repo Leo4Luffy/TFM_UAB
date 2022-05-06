@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  5 MAY 2022 11:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  6 MAY 2022 05:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -984,7 +984,7 @@ Package xcolor Warning: Incompatible color definition on input line 1027.
 
 Package xcolor Warning: Incompatible color definition on input line 1027.
 
-<figures/gwas.pdf, id=777, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=781, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
 Package pdftex.def Info: figures/gwas.pdf  used on input line 1032.
@@ -1040,15 +1040,27 @@ Underfull \hbox (badness 1231) in paragraph at lines 1412--1414
 ex sce-na-
  []
 
-[53] [54] [55]
-<figures/uvalogo_regular_p_en.pdf, id=909, 433.62pt x 389.5353pt>
+[53]
+Underfull \hbox (badness 5345) in paragraph at lines 1445--1447
+ \T1/lmr/m/n/10.95 the ra-tio-na-le for es-ti-ma-ting ge-nea-lo-gi-cal coan-ces
+try from mo-
+ []
+
+
+Underfull \hbox (badness 7540) in paragraph at lines 1445--1447
+ \T1/lmr/m/n/10.95 le-cu-lar mar-kers^^T. \T1/lmr/m/it/10.95 Ge-ne-tics Se-lec-
+tion Evo-lu-tion \T1/lmr/m/n/10.95 43: 27. [][]$https :
+ []
+
+[54] [55]
+<figures/uvalogo_regular_p_en.pdf, id=916, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-477.
+483.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1477--1478
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1483--1484
 [][] 
  []
 
@@ -1059,8 +1071,8 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15872 strings out of 480218
- 258240 string characters out of 5895106
+ 15874 strings out of 480218
+ 258262 string characters out of 5895106
  568295 words of memory out of 5000000
  33335 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1087,10 +1099,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (62 pages, 12127272 bytes).
+Output written on TFM.pdf (62 pages, 12128973 bytes).
 PDF statistics:
- 1133 PDF objects out of 1200 (max. 8388607)
- 940 compressed objects within 10 object streams
- 208 named destinations out of 1000 (max. 500000)
+ 1140 PDF objects out of 1200 (max. 8388607)
+ 947 compressed objects within 10 object streams
+ 210 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
