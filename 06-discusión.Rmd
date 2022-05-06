@@ -3,12 +3,9 @@
 
 # Discusión
 
-Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado, principalmente en animales, ha sido en gran parte al uso de la información del pedigrí [@cite:30], y a la matriz de parentesco generada a partir de esta información (matriz A). La matriz A se ha utilizado ampliamente para estimar la covarianza genética entre individuos a través del mejor predictor lineal insesgado (BLUP). Sin embargo, en los últimos años, se han propuesto estimadores del parentesco entre individuos distintos a la basada en el pedigrí, ya que en esta última se asume una relación promedio entre individuos fundadores (generalmente 0) [@cite:71], además de que ignora el término de muestreo Mendeliano [@cite:72].
+Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí [@cite:30], y a la matriz de parentesco que se obtiene a partir de esta información (matriz A). La matriz A se ha utilizado ampliamente para estimar la covarianza genética entre individuos a través del mejor predictor lineal insesgado (BLUP). Sin embargo, en los últimos años, se han propuesto estimadores del parentesco entre individuos distintos al parentesco basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero [@cite:71], además de que se ignora el término de muestreo Mendeliano [@cite:72]. Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí en la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante [@cite:63].
 
 
 
-<!--
-A pesar del interés que en su momento hubo en el uso del pedigrí para la mejora genética de animales, el uso de esta información en plantas no fue relevante [@cite:63]. Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología para la mejora de la ganancia genética en plantas [@cite:6], y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultvos de arroz a través de estudios de simulación [@cite:60].
+Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología en plantas [@cite:6], y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultivos de arroz a través de estudios de simulación [@cite:60].
 
-Con el desarrollo del método del ssGBLUP, fue posible
--->

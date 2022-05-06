@@ -1,31 +1,31 @@
 \babel@toc {spanish}{}\relax 
 \contentsline {chapter}{\numberline {1}Resumen / Summary}{1}{chapter.1}%
-\contentsline {chapter}{\numberline {2}Revisión de literatura}{4}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Breve historia hacia la selección genómica}{4}{section.2.1}%
-\contentsline {section}{\numberline {2.2}La selección genómica}{7}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Métodos estadísticos en la selección genómica}{8}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}De la selección genómica de múltiples pasos a un solo paso}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Factores que afectan la habilidad predictiva de la selección genómica}{17}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Diferencias de la mejora genética en animales y en plantas}{17}{section.2.3}%
-\contentsline {section}{\numberline {2.4}La mejora genética en el arroz}{20}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Importancia de la mejora genética en el arroz}{20}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Breve descripción de la mejora genética en plantas con ejemplos en el arroz}{21}{subsection.2.4.2}%
-\contentsline {chapter}{\numberline {3}Objetivo}{24}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Materiales y métodos}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Recurso vegetal y datos fenotípicos}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Predicción basada en información del pedigrí e información genómica}{27}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Precisión de la predición mediante simulación del pedigrí ancestral}{28}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Precisión de la predición mediante simulación de descendientes}{31}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Resultados}{35}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Estructura poblacional y heredabilidad en la simulación ancestral}{35}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Precisión de la predición mediante simulación ancestral}{38}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Precisión de la predición mediante simulación de descendientes}{40}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Discusión}{42}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{43}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Anexos}{44}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Función para el calculo de la matriz de parentesco combinada}{44}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Visualización del GWAS}{46}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Precisión de la predición mediante simulación de pedigrí ancestral}{46}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Precisión de la predición mediante simulación de descendientes}{48}{section.Alph1.4}%
-\contentsline {chapter}{Bibliografía}{51}{appendix*.2}%
-\contentsline {chapter}{Agradecimientos}{56}{appendix*.3}%
+\contentsline {chapter}{\numberline {2}Revisión de literatura}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Breve historia hacia la selección genómica}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}La selección genómica}{6}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Métodos estadísticos en la selección genómica}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}De la selección genómica de múltiples pasos a un solo paso}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Factores que afectan la habilidad predictiva de la selección genómica}{16}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Diferencias de la mejora genética en animales y en plantas}{16}{section.2.3}%
+\contentsline {section}{\numberline {2.4}La mejora genética en el arroz}{19}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Importancia de la mejora genética en el arroz}{19}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Breve descripción de la mejora genética en plantas con ejemplos en el arroz}{20}{subsection.2.4.2}%
+\contentsline {chapter}{\numberline {3}Objetivo}{23}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Materiales y métodos}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Recurso vegetal y datos fenotípicos}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Predicción basada en información del pedigrí e información genómica}{26}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Precisión de la predición mediante simulación del pedigrí ancestral}{27}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Precisión de la predición mediante simulación de descendientes}{30}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Resultados}{34}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Estructura poblacional y heredabilidad en la simulación ancestral}{34}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Precisión de la predición mediante simulación ancestral}{37}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Precisión de la predición mediante simulación de descendientes}{39}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Discusión}{41}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{42}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Anexos}{43}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Función para el calculo de la matriz de parentesco combinada}{43}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Visualización del GWAS}{45}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Precisión de la predición mediante simulación de pedigrí ancestral}{45}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Precisión de la predición mediante simulación de descendientes}{47}{section.Alph1.4}%
+\contentsline {chapter}{Bibliografía}{50}{appendix*.2}%
+\contentsline {chapter}{Agradecimientos}{55}{appendix*.3}%
