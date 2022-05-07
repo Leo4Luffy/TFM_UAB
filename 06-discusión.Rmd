@@ -3,9 +3,29 @@
 
 # Discusión
 
-Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí [@cite:30], y a la matriz de parentesco que se obtiene a partir de esta información (matriz A). La matriz A se ha utilizado ampliamente para estimar la covarianza genética entre individuos a través del mejor predictor lineal insesgado (BLUP). Sin embargo, en los últimos años, se han propuesto estimadores del parentesco entre individuos distintos al parentesco basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero [@cite:71], además de que se ignora el término de muestreo Mendeliano [@cite:72]. Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí en la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante [@cite:63].
+Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí [@cite:30], y a la matriz de parentesco que se obtiene a partir de este tipo información (denominada como matriz A). La matriz A se ha utilizado ampliamente para estimar el parentesco (o covarianza genética) entre individuos a través del mejor predictor lineal insesgado (BLUP). Sin embargo, en los últimos años, se han propuesto estimadores del parentesco distintos al parentesco basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero [@cite:71], además de que se ignora el término de muestreo Mendeliano [@cite:72]. Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí en la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante [@cite:63].
 
+A partir del estudio de @cite:73, en el que se propuso incorporar información sobre marcadores de ADN en el BLUP, @cite:8 plantearon una serie de métodos que en su conjunto se denominaron como métodos de selección genómica. Siguiendo las consideraciones precedentes, @cite:39 desarrollo un método conocido como mejor predictor lineal insesgado basado genómico (GBLUP), el cual consiste en resolver un modelo mixto utilizando una matriz de parentesco basada en información de marcadores de ADN (denominada como matriz G) en lugar de la matriz A.
 
+<!--
+Para todas las características evaluadas, los modelos de predicción basados exclusivamente en datos genómicos (GBLUP, BCp, BL, PLSR, RF y RKHS) o combinando datos genómicos y de pedigrí (AGBLUP y HBLUP), presentaron mayor precisión que los basados solo en datos de pedigrí (ABLUP ). Este resultado es consistente con varios estudios que han informado la superioridad de los modelos basados en marcadores sobre el pedigrí (de los Campos et al., 2009; Spindel et al., 2015), aunque las diferencias entre los enfoques dependen de la población, el entorno y el rasgo. bajo selección. En este contexto, hay beneficios en el uso de matrices de relaciones basadas en marcadores, como evitar la selección de progenies estrechamente emparentadas, brindar mejores precisiones cuando se trata de progenies no emparentadas y corregir errores de pedigrí (Daetwyler et al., 2010). Esto expresa la importancia de los marcadores en la capitalización de alelos compartidos (dentro de la variación familiar) o efectos de segregación mendeliana, útiles para aumentar PAcc (VanRaden, 2008).
+
+--
+
+Además, la información del marcador permite tener en cuenta la variación genética no explicada por el pedigrí debido a la variación del muestreo binario de la segregación mendeliana. De hecho, el uso de datos de pedigrí, junto con datos de marcadores de ADN, puede mejorar la precisión predictiva, independientemente de la arquitectura genética del rasgo (de los Campos et al., 2009; Ashraf et al., 2016; Sukumaran et al. , 2017).
+
+--
+
+La construcción de una matriz de parentesco basada en la información de los marcadores genéticos permite rastrear no solo el parentesco temporal, tal como lo define la población base basada en el pedigrí, sino también el muestreo mendeliano (Visscher et al. 2006; Zapata-Valenzuela et al. 2013) y relación histórica (Powell et al. 2010).
+
+--
+
+Las relaciones genómicas pueden capturar el muestreo mendeliano y revelar vínculos entre animales que aparentemente no están relacionados a través del pedigrí. Así, las relaciones genómicas son más precisas, mejorando la conexión entre los animales de una población de referencia y los animales evaluados. Esta mayor conectividad reduce el sesgo y, por lo tanto, mejora la evaluación genética ( Kennedy, 1981 )
+-->
+
+<!--
+Con el uso de la información genómica fue posible una mayor comprensión de las covarianzas genéticas y el mapeo preciso del término de muestreo Mendeliano [@cite:].
 
 Con el desarrollo de la selección genómica y el éxito posterior alcanzado a través de su implementación en animales, se vio la posibilidad de usar esta metodología en plantas [@cite:6], y en tiempos más recientes se ha demostrado su uso para la mejora genética de los cultivos de arroz a través de estudios de simulación [@cite:60].
 
+-->
