@@ -304,7 +304,7 @@ __Figura 4.2:__ Distribución y media $\pm$ desviación estándar del carácter 
 
 ## Predicción basada en información del pedigrí e información genómica
 
-Para llevar a cabo la predicción usando el mejor predictor lineal insesgado (BLUP) en individuos no genotipados y el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
+Para llevar a cabo la predicción usando el BLUP en individuos no genotipados y el ssGBLUP tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
 
 \begin{equation}
 \textbf{y} = \mu + \textbf{Z} \textbf{g} + \textbf{e},
@@ -314,7 +314,7 @@ donde $y$ representa el valor del fenotipo (es decir, el tiempo de floración) y
 
 En la ecuación anterior (4.1), se asume que $g$ sigue una distribución normal con media igual a $0$ y matriz de covarianza $A\sigma^{2}_{g}$ en el modelo BLUP, donde $A$ representa la matriz de parentesco basada en información del pedigrí, y $\sigma^{2}_{g}$ es la varianza genética aditiva.
 
-En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz de parentesco basado en marcadores de ADN (o matriz G) [@cite:16], y se define de la siguiente manera:
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz G [@cite:16], y se define de la siguiente manera:
 
 \begin{equation}
 H =
@@ -325,7 +325,7 @@ G A_{22}^{-1} A_{12}' & G
 ,
 \end{equation}
 
-donde $A_{11}$ es el bloque de A para los individuos sin de genotipo, $A_{22}$ es el bloque de individuos con genotipo y $A_{12}$ y $A_{21}$ son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y $nSNP$ representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
+donde $A_{11}$ es el bloque de A para los individuos sin de genotipo, $A_{22}$ es el bloque de individuos con genotipo y $A_{12}$ y $A_{21}$ son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de @cite:39, $\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}$, donde $X$ es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), $p_{j}$ es la frecuencia del *j*-ésimo SNP, $n$ corresponde al número de individuos y nSNP representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el Anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H.
 

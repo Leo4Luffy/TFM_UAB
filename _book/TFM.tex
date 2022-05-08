@@ -715,7 +715,7 @@ De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de f
 \hypertarget{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}{%
 \section{Predicción basada en información del pedigrí e información genómica}\label{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}}
 
-Para llevar a cabo la predicción usando el mejor predictor lineal insesgado (BLUP) en individuos no genotipados y el mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
+Para llevar a cabo la predicción usando el BLUP en individuos no genotipados y el ssGBLUP tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
 
 \begin{equation}
 \textbf{y} = \mu + \textbf{Z} \textbf{g} + \textbf{e},
@@ -725,7 +725,7 @@ donde \(y\) representa el valor del fenotipo (es decir, el tiempo de floración)
 
 En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información del pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
 
-En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz de parentesco basado en marcadores de ADN (o matriz G) (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz G (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
 
 \begin{equation}
 H =
@@ -736,7 +736,7 @@ G A_{22}^{-1} A_{12}' & G
 ,
 \end{equation}
 
-donde \(A_{11}\) es el bloque de A para los individuos sin de genotipo, \(A_{22}\) es el bloque de individuos con genotipo y \(A_{12}\) y \(A_{21}\) son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y \(nSNP\) representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
+donde \(A_{11}\) es el bloque de A para los individuos sin de genotipo, \(A_{22}\) es el bloque de individuos con genotipo y \(A_{12}\) y \(A_{21}\) son los bloques que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y nSNP representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el Anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
 
@@ -938,9 +938,11 @@ Respecto a la cantidad de individuos genotipados, también se observo una tenden
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}
 
-Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}), y a la matriz de parentesco que se obtiene a partir de este tipo información (denominada como matriz A). La matriz A se ha utilizado ampliamente para estimar el parentesco (o covarianza genética) entre individuos a través del mejor predictor lineal insesgado (BLUP). Sin embargo, en los últimos años, se han propuesto estimadores del parentesco distintos al parentesco basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero (Toro, García-Cortés, y Legarra \protect\hyperlink{ref-cite:71}{2011}), además de que se ignora el término de muestreo Mendeliano (Ratcliffe et~al. \protect\hyperlink{ref-cite:72}{2017}). Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí en la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}).
+Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí (Legarra, Lourenco, y Vitezica \protect\hyperlink{ref-cite:30}{2018}), y a la matriz A que se obtiene a partir de este tipo información. La matriz A se ha utilizado ampliamente para estimar el parentesco entre individuos a través del BLUP. Sin embargo, en los últimos años, se han propuesto estimadores del parentesco distintos al parentesco basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero (Toro, García-Cortés, y Legarra \protect\hyperlink{ref-cite:71}{2011}), además de que ignora el término de muestreo Mendeliano (Ratcliffe et~al. \protect\hyperlink{ref-cite:72}{2017}). Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí en la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante (Robertsen, Hjortshøj, y Janss \protect\hyperlink{ref-cite:63}{2019}).
 
-A partir del estudio de Fernando y Grossman (\protect\hyperlink{ref-cite:73}{1989}), en el que se propuso incorporar información sobre marcadores de ADN en el BLUP, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) plantearon una serie de métodos que en su conjunto se denominaron como métodos de selección genómica. Siguiendo las consideraciones precedentes, VanRaden (\protect\hyperlink{ref-cite:39}{2007}) desarrollo un método conocido como mejor predictor lineal insesgado basado genómico (GBLUP), el cual consiste en resolver un modelo mixto utilizando una matriz de parentesco basada en información de marcadores de ADN (denominada como matriz G) en lugar de la matriz A.
+A partir del estudio de Fernando y Grossman (\protect\hyperlink{ref-cite:73}{1989}), en el que se propuso incorporar información de genotipos en el BLUP, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) plantearon los métodos de selección genómica. Siguiendo las consideraciones precedentes, VanRaden (\protect\hyperlink{ref-cite:39}{2007}) desarrollo el GBLUP, el cual es un método de selección genómica que consiste en resolver un modelo mixto utilizando la matriz G en lugar de la matriz A. En relación con lo anterior, algunos estudios han informado la superioridad de los métodos de selección genómica sobre el BLUP en animales (Karimi et~al. \protect\hyperlink{ref-cite:75}{2019}) y en plantas (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}). Esto último debido a que los métodos de selección genómica basados en información de genotipos tienen en cuenta la variación genética no explicada por el pedigrí debido a la variación del muestreo Mendeliano (Daetwyler et~al. \protect\hyperlink{ref-cite:40}{2007}; Morais-Júnior et~al. \protect\hyperlink{ref-cite:69}{2018}), además revelan relaciones entre individuos que aparentemente no están relacionados en el pedigrí (Pszczola et~al. \protect\hyperlink{ref-cite:74}{2012}). Se ha demostrado también el uso portencial de los métodos de selección genómica para la mejora genética de los cultivos de arroz a través de estudios de simulación (Xu et~al. \protect\hyperlink{ref-cite:60}{2021}).
+
+Sin embargo, el costo para obtener un genotipado completo de individuos puede ser una limitante en el uso de los métodos anteriores de selección genómica (Pérez-Rodríguez et~al. \protect\hyperlink{ref-cite:19}{2017}; Ratcliffe et~al. \protect\hyperlink{ref-cite:72}{2017}; Karimi et~al. \protect\hyperlink{ref-cite:76}{2018}). De igual modo, Ratcliffe et~al. (\protect\hyperlink{ref-cite:72}{2017}) recomiendan al momento de implementar la selección genómica, utilizar información de individuos sin genotipo y con genotipo, y de esta forma eliminar el sesgo asociado con la dependencia en el uso de individuos genotipados.
 
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}
@@ -1327,6 +1329,9 @@ Cros, D., L. Sánchez, B. Cochard, P. Samper, M. Denis, J. M. Bouvet, y J. Fern�
 \leavevmode\hypertarget{ref-cite:37}{}%
 Crossa, J., P. Pérez-Rodríguez, J. Cuevas, O. Montesinos-López, D. Jarquín, G. de los Campos, J. Burgueño, et~al. 2017. «Genomic selection in plant breeding: methods, models, and perspectives». \emph{Trends in Plant Science}, 961-75. \url{https://doi.org/10.1016/j.tplants.2017.08.011}.
 
+\leavevmode\hypertarget{ref-cite:40}{}%
+Daetwyler, H. D., B. Villanueva, P. Bijma, y J. A. Woolliams. 2007. «Inbreeding in genome-wide selection». \emph{Journal of Animal Breeding and Genetics} 124: 369-76.
+
 \leavevmode\hypertarget{ref-cite:59}{}%
 Dekkers, J., y F. Hospital. 2002. «The use of molecular genetics in the improvement of agricultural populations». \emph{Nature Reviews Genetics} 3: 22-32. \url{https://doi.org/10.1038/nrg701}.
 
@@ -1375,6 +1380,12 @@ Imai, A., T. Kuniga, T. Yoshioka, K. Nonaka, N. Mitani, H. Fukamachi, N. Hiehata
 \leavevmode\hypertarget{ref-cite:11}{}%
 Jurcic, E. J., P. V. Villalba, P. S. Pathauer, D. A. Palazzini, G. P. J. Oberschelp, L. Harrand, M. N. Garcia, et~al. 2021. «Single-setp genomic prediction of Eucalyptus dunni using different identity-by-descent and identity-by-state relationship matrices». \emph{Heredity} 127: 176-89.
 
+\leavevmode\hypertarget{ref-cite:76}{}%
+Karimi, K., M. Sargolzaei, G. S. Plastow, Z. Wang, y Y. Miar. 2018. «Effect of hidden relatedness on single-step genetic evaluation in an advanced open-pollinated breeding program». \emph{Journal of Heredity}, 802-10. \url{https://doi.org/10.1093/jhered/esy051}.
+
+\leavevmode\hypertarget{ref-cite:75}{}%
+---------. 2019. «Opportunities for genomic selection in american mink: a simulation study». \emph{PLoS ONE} 14 (3). \url{https://doi.org/10.1371/journal.pone.0213873}.
+
 \leavevmode\hypertarget{ref-cite:32}{}%
 Kyselova, J., L. Tichý, y K. Jochová. 2021. «The role of molecular genetics in animal breeding: a minireview». \emph{Czech Journal of Animal Science} 66 (4): 107-11. \url{https://doi.org/10.17221/251/2020-CJAS}.
 
@@ -1422,6 +1433,9 @@ Pérez-Rodríguez, P., J. Crossa, J. Rutkoski, J. Poland, R. Singh, A. Legarra, 
 
 \leavevmode\hypertarget{ref-cite:50}{}%
 Pérez-Rodríguez, P., y G. de los Campos. 2014. «Genome-wide regression and prediction with the BGLR statistical package». \emph{Genetics} 198 (2): 483-95. \url{https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4196607/}.
+
+\leavevmode\hypertarget{ref-cite:74}{}%
+Pszczola, M., T. Strabel, J. A. M. van Arendonk, y M. P. L. Calus. 2012. «The impact of genotyping different groups of animals on accuracy when moving from traditional to genomic selection». \emph{Journal of Dairy Science} 95: 5412-21. \url{https://doi.org/10.3168/jds.2012-5550}.
 
 \leavevmode\hypertarget{ref-cite:49}{}%
 Purcell, S., B. Neale, K. Todd-Brown, L. Thomas, M. A. R. Ferreira, D. Bender, J. Maller, et~al. 2007. «Plink: a toolset for whole-genome association and population-based linkage analysis». \emph{American Journal of Human Genetics} 81: 981-94. \url{http://pngu.mgh.harvard.edu/purcell/plink/}.
