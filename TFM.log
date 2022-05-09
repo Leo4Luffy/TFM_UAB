@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  9 MAY 2022 04:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  9 MAY 2022 05:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -841,8 +841,8 @@ LaTeX Info: Redefining \% on input line 710.
 LaTeX Info: Redefining \. on input line 730.
 LaTeX Info: Redefining \% on input line 730.
 [26 <./figures/Graf_feno_2.pdf>]
-LaTeX Info: Redefining \. on input line 758.
-LaTeX Info: Redefining \% on input line 758.
+LaTeX Info: Redefining \. on input line 757.
+LaTeX Info: Redefining \% on input line 757.
 [27]
 <figures/Pedigríes.pdf, id=579, 438.63875pt x 291.0875pt>
 File: figures/Pedigríes.pdf Graphic file (type pdf)
@@ -1099,7 +1099,7 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (62 pages, 12132557 bytes).
+Output written on TFM.pdf (62 pages, 12132586 bytes).
 PDF statistics:
  1173 PDF objects out of 1200 (max. 8388607)
  980 compressed objects within 10 object streams
