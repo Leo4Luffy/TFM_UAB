@@ -548,10 +548,10 @@ Cor_F2_F3 %>%
     columns = c(4, 5)
   )
 ```
-
+<!--
 ## Matrices de parentesco
-
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+-->
+```{r, eval = FALSE, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 ###########
 # Pedigrí 1
@@ -699,7 +699,7 @@ Cor_F2_F3 %>%
 knitr::include_graphics('figures/map_A_Molcoanc.pdf', auto_pdf = TRUE)
 ```
 
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
+```{r, eval = FALSE, echo = FALSE, out.width = "100%", fig.align = 'center', message = FALSE}
 
 ###########
 # Pedigrí 1
