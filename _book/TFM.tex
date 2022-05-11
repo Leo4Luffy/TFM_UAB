@@ -436,7 +436,7 @@ Con respecto a los métodos Bayesianos, estos, a diferencia del método anterior
 
 Los modelos de regresión Bayesianos (BayesA y BayesB) propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se diferencian en los distintos supuestos sobre los efectos del marcador y sus distribuciones. De acuerdo a Blasco (\protect\hyperlink{ref-cite:21}{2021}), en BayesA se supone que los efectos de los marcadores se distribuyen de acuerdo a una distribución t de Student en lugar de una normal, permitiendo así que algunos marcadores tengan mayor efecto que otros. En cuanto a BayesB, éste presenta los mismos supuestos de BayesA, sin embargo, a diferencia de este último, en BayesB se permite que una parte de los marcadores no tengan efecto alguno sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}).
 
-Sobre la base de los dos modelos de regresión Bayesianos propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo, en BayesC se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas (Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
+Sobre la base de los dos modelos de regresión Bayesianos propuestos por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se han desarrollado una gran variedad de modelos Bayesianos para la predicción del GEBV. Por ejemplo, en BayesC se supone que todos los marcadores se distribuyen de forma normal (como la rrBBLUP), sin embargo, al igual que en BayesB, se permite que un porcentaje de los marcadores no tengan efecto sobre el carácter (Blasco \protect\hyperlink{ref-cite:21}{2021}). Por otro lado, en el LASSO Bayesiano se supone que el efecto del marcador obedece a una distribución de Laplace, distribución que comparte las mismas características de la t de Student en BayesA al suponer que todos los marcadores tienen un efecto distinto de cero y con diferentes varianzas (C. Tan et~al. \protect\hyperlink{ref-cite:34}{2017}).
 
 Un modelo de regresión equivalente al rrGBLUP, denominado como mejor predictor lineal insesgado genómico (GBLUP), fue propuesto por VanRaden (\protect\hyperlink{ref-cite:39}{2007}). En el GBLUP, se utiliza una matriz de parentesco basada en marcadores de ADN (denominada como matriz G) en lugar de la matriz de parentesco basado en pedigríes (denominada como matriz A) del BLUP descrito por Henderson (\protect\hyperlink{ref-cite:41}{1975}). Luego la predicción del GEBV se realiza mediante un modelo lineal mixto, cuyas ecuaciones son:
 
@@ -946,7 +946,7 @@ Sin embargo, el costo para obtener un genotipado completo de individuos puede se
 
 Por otro lado, el factor más importante que determina el éxito de la selección genómica es la predicción precisa del GEBV (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}). Según Morais-Júnior, Duarte, et~al. (\protect\hyperlink{ref-cite:69}{2018}), la evaluación de la precisión se considera un requisito previo que permite comprender el potencial de un conjunto de datos para la predicción genómica. En el tiempo actual, se ha logrado grandes avances en la comprensión de los principales factores que afectan la precisión del GEBV, entre ellos la heredabilidad y la arquitectura genética del carácter, el modelo de predicción genómica, y el número de marcadores y de individuos genotipados (Nakaya y Isobe \protect\hyperlink{ref-cite:6}{2012}; Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Morais-Júnior, Breseghello, et~al. \protect\hyperlink{ref-cite:68}{2018}; Bartholomé, Thathapalli-Prakash, y Cobb \protect\hyperlink{ref-cite:58}{2021}).
 
-En relación con el número de marcadores, de acuerdo con de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) e Imai et~al. (\protect\hyperlink{ref-cite:20}{2019}), la precisión de la predicción es más baja con un número insuficiente de marcadores debido a que la probabilidad de asociación entre dichos marcadores con el QTL tiende a disminuir. Sin embargo, aunque la teoría indica que a mayor cantidad de marcadores mejor será la predicción, es posible también que a determinada densidad sea difícil mejorar significativamente dicha precisión (Wang et~al. \protect\hyperlink{ref-cite:77}{2018}). Esto último se observó en los resultados obtenidos en este estudio (Figuras 5.4 y 5.5), ya que al utilizar una densidad aproximada entre 1.000 y 10.000 marcadores se evidenció una precisión similar a usar la mayor cantidad de marcadores disponibles. A este respecto, varios estudios han evaluado la posibilidad de usar menor cantidad de marcadores sin afectar notablemente la precisión de la predicción genómica.
+En relación con el número de marcadores, de acuerdo con de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) e Imai et~al. (\protect\hyperlink{ref-cite:20}{2019}), la precisión de la predicción es más baja con un número insuficiente de marcadores debido a que la probabilidad de asociación (o desequilibrio de ligamiento) entre dichos marcadores con el QTL tiende a disminuir. Sin embargo, aunque la teoría indica que a mayor cantidad de marcadores mejor será la predicción, es posible también que a determinada densidad sea difícil mejorar significativamente dicha precisión (Wang et~al. \protect\hyperlink{ref-cite:77}{2018}). Esto último se observó en los resultados obtenidos en este estudio (Figuras 5.4 y 5.5), ya que al utilizar una densidad aproximada entre 1.000 y 10.000 marcadores se evidenció una precisión similar a usar la mayor cantidad de marcadores disponibles. A este respecto, varios estudios han evaluado la posibilidad de usar menos cantidad de marcadores sin afectar notablemente la precisión de la predicción genómica. A partir de una población constituida por 369 líneas de arroz mejorado del Instituto Internacional de Investigación del Arroz (IRRI), Kyselova, Tichý, y Jochová (\protect\hyperlink{ref-cite:32}{2021}) determinaron el número de marcadores necesario para implementar la selección genómica, seleccionando de forma aleatoria o distribuidos uniformemente en todo el genoma subconjuntos de los 73.147 marcadores disponibles, observando para casi todos los caracteres evaluados diferencias no significativas en la precisión de la predicción genómica con una cantidad mayor a 7.142 marcadores. Zhu et~al. (\protect\hyperlink{ref-cite:83}{2017}) investigaron el efecto de la densidad de marcadores en la predicción genómica de caracteres de crecimiento en bovino de carne Simmental chino, estudio que demostro que la precisión para la selección genómica puede alcanzar una meseta a densidades bajas de marcadores. En un estudio llevado a cabo para caracteres de crecimiento en camarón blanco del Pacífico, Wang et~al. (\protect\hyperlink{ref-cite:82}{2017}) reportaron una mejora en la precisión de la predicción con un aumento en el número de marcadores, evidenciando también un efecto débil de la densidad del marcador sobre dicha precisión después de que la cantidad de marcadores alcanzara un valor de 3.200. Una tendencia similar se encuentra en otros estudios (B. Tan et~al. \protect\hyperlink{ref-cite:79}{2017}; Haile et~al. \protect\hyperlink{ref-cite:81}{2018}; Norman et~al. \protect\hyperlink{ref-cite:78}{2018}; Lu et~al. \protect\hyperlink{ref-cite:80}{2020}) donde se evidencia que si la densidad del marcador alcanza cierto nivel, ya no es beneficioso para la precisión de la predicción genómica.
 
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}
@@ -1366,6 +1366,9 @@ Guimarães, E. P. 2009. \emph{Rice Breeding}. \url{https://doi.org/10.1007/978-0
 \leavevmode\hypertarget{ref-cite:70}{}%
 Guo, Z., D. M. Tucker, C. J. Basten, H. Gandhi, E. Ersoz, B. Guo, Z. Xu, D. Wang, y G. Gay. 2014. «The impact of population structure on genomic prediction in stratified populations». \emph{Theoretical and Applied Genetics} 127: 749-62. \url{https://doi.org/10.1007/s00122-013-2255-x}.
 
+\leavevmode\hypertarget{ref-cite:81}{}%
+Haile, J. K., A. N'Diaye, F. Clarke, J. Clarke, R. Knox, J. Rutkoski, F. M. Bassi, y C. J. Pozniak. 2018. «Genomic selection for grain yield and quality traits in durum wheat». \emph{Molecular Breeding} 38 (75): 110. \url{https://doi.org/10.1007/s11032-018-0818-x}.
+
 \leavevmode\hypertarget{ref-cite:41}{}%
 Henderson, C. R. 1975. «Best linear unbiased estimation and prediction under a selection model». \emph{Biometrics} 31: 423-47.
 
@@ -1405,6 +1408,9 @@ Legarra, A., D. Lourenco, y Z. G. Vitezica. 2018. \emph{Bases for genomic predic
 \leavevmode\hypertarget{ref-cite:22}{}%
 Lourenco, D., A. Legarra, S. Tsuruta, Y. Masuda, I. Aguilar, y I. Misztal. 2020. «Single-step genomic evaluations from theory to practice: using SNP chips and sequence data in BLUPF90». \emph{Genes} 11: 790. \url{https://doi.org/doi:10.3390/genes11070790}.
 
+\leavevmode\hypertarget{ref-cite:80}{}%
+Lu, S., Y. Liu, X. Yu, Y. Li, Y. Yang, M. Wei, Q. Zhou, et~al. 2020. «Prediction of genomic breeding values based on pre-selected SNPs using ssGBLUP, WssGBLUP and BayesB for Edwardsiellosis resistance in Japanese founder». \emph{Genetics Selection Evolution} 52 (49): 110. \url{https://doi.org/10.1186/s12711-020-00566-2}.
+
 \leavevmode\hypertarget{ref-cite:38}{}%
 Medina, C. A., H. Kaur, I. Ray, y L. X. Yu. 2021. «Strategies to Increase Prediction Accuracy in Genomic Selection of Complex Traits in Alfalfa (Medicago sativa L.)». \emph{Cells} 10 (12). \url{https://doi.org/10.3390/cells10123372}.
 
@@ -1431,6 +1437,9 @@ Nakaya, A., y S. N. Isobe. 2012. «Will genomic selection be a practical method 
 
 \leavevmode\hypertarget{ref-cite:2}{}%
 Nelson, R. M., M. E. Pettersson, y Ö. Carlborg. 2012. «A century after Fisher: time for a new paradigm in quantitative genetics». \emph{Trends in Genetics} 29 (9): 669-76.
+
+\leavevmode\hypertarget{ref-cite:78}{}%
+Norman, A., J. Taylor, J. Edwards, y H. Kuchel. 2018. «Optimising genomic selection in wheat: effect of marker density, population size and population structure on prediction accuracy». \emph{G3 Genes\textbar{}Genomes\textbar{}Genetics} 8: 2889-99. \url{https://doi.org/10.1534/g3.118.200311}.
 
 \leavevmode\hypertarget{ref-cite:47}{}%
 Pérez-Enciso, M., L. Ramírez-Ayala, y L. M. Zingaretti. 2020. «SeqBreed: a python tool to evaluate genomic prediction in complex scenarios». \emph{Genetion Selection Evolution} 52 (7). \url{https://doi.org/10.1186/s12711-020-0530-2}.
@@ -1462,6 +1471,9 @@ Schaeffer, L. R. 1991. «C. R. Henderson: contributions to predicting genetic me
 \leavevmode\hypertarget{ref-cite:29}{}%
 Searle, S. R. 1991. «C. R. Henderson, the statistician; and his contributions to variance components estimation». \emph{Journal of Dairy Science} 74 (11): 4035-44. \url{https://doi.org/10.3168/jds.S0022-0302(91)78599-8}.
 
+\leavevmode\hypertarget{ref-cite:79}{}%
+Tan, B., D. Grattapaglia, G. Salgado-Martins, K. Zamprogno-Ferreira, B. Sundberg, y P. K. Ingvarsson. 2017. «Evaluating the accuracy of genomic prediction of growth and wood traits in two Eucalyptus species and their F1 hybrids». \emph{BMC Plant Biology} 17: 110. \url{https://doi.org/10.1186/s12870-017-1059-6}.
+
 \leavevmode\hypertarget{ref-cite:34}{}%
 Tan, C., C. Bian, D. Yang, N. Li, Z. Wu, y X. Hu. 2017. «Application of genomic selection in farm animal breeding». \emph{Hereditas} 39 (11): 1033-45. \url{https://doi.org/10.16288/j.yczz.17-286}.
 
@@ -1486,8 +1498,11 @@ Vourlaki, I., R. Castanera, S. Ramos-Onsins, J. Casacuberta, y M. Pérez-Enciso.
 \leavevmode\hypertarget{ref-cite:46}{}%
 Wang, J., J. Crossa, y J. Gai. 2020. «Quantitative genetic studies with applications in plant breeding in the omics era». \emph{The Crop Journal} 8: 683-87. \url{https://doi.org/10.1016/j.cj.2020.09.001}.
 
+\leavevmode\hypertarget{ref-cite:82}{}%
+Wang, Q., Y. Yu, J. Yuan, X. Zhang, H. Huang, F. Li, y J. Xiang. 2017. «Effects of marker density and population structure on the genomic prediction accuracy for growth trait in Pacific white shrimp Litopenaeus vannamei». \emph{BMC Genetics} 18 (45). \url{https://doi.org/10.1186/s12863-017-0507-5}.
+
 \leavevmode\hypertarget{ref-cite:77}{}%
-Wang, X., Y. Xu, Z. Hu, y C. Xu. 2018. «Genomic selection methods for crop improvement: Current status and prospects». \emph{The Crop Journal} 6: 330-40. \url{https://doi.org/10.1016/j.cj.2018.03.001}.
+Wang, X., Y. Xu, Z. Hu, y C. Xu. 2018. «Genomic selection methods for crop improvement: current status and prospects». \emph{The Crop Journal} 6: 330-40. \url{https://doi.org/10.1016/j.cj.2018.03.001}.
 
 \leavevmode\hypertarget{ref-cite:55}{}%
 Wing, R. A., M. D. Purugganan, y Q. Zhang. 2018. «The rice genome revolution: from an ancient grain to Green Super Rice». \emph{Nature Reviews Genetics} 19: 505-17. \url{https://doi.org/10.1038/s41576-018-0024-z}.
@@ -1500,6 +1515,9 @@ Xua, S., D. Zhub, y Q. Zhang. 2014. «Predicting hybrid performance in rice usin
 
 \leavevmode\hypertarget{ref-cite:54}{}%
 Yang, J., S. H. Lee, M. E. Goddard, y P. M. Visscher. 2011. «GCTA: A Tool for Genome-wide Complex Trait Analysis». \emph{American Journal of Human Genetics} 88 (1): 76-82. \url{https://doi.org/10.1016/j.ajhg.2010.11.011}.
+
+\leavevmode\hypertarget{ref-cite:83}{}%
+Zhu, B., J. J. Zhang, H. Niu, L. Guan, P. Guo, L. Y. Xu, Y. Chen, et~al. 2017. «Effects of marker density and minor allele frequency on genomic prediction for growth traits in Chinese Simmental beef cattle». \emph{Journal of Integrative Agriculture} 16 (4): 911-20. \url{https://doi.org/10.1016/S2095-3119(16)61474-0}.
 
 \endgroup
 

@@ -21,11 +21,11 @@
 \contentsline {section}{\numberline {5.2}Precisión de la predición mediante simulación ancestral}{37}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Precisión de la predición mediante simulación de descendientes}{39}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Discusión}{41}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusiones}{43}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Anexos}{44}{appendix.Alph1}%
-\contentsline {section}{\numberline {A.1}Función para el calculo de la matriz de parentesco combinada}{44}{section.Alph1.1}%
-\contentsline {section}{\numberline {A.2}Visualización del GWAS}{46}{section.Alph1.2}%
-\contentsline {section}{\numberline {A.3}Precisión de la predición mediante simulación de pedigrí ancestral}{46}{section.Alph1.3}%
-\contentsline {section}{\numberline {A.4}Precisión de la predición mediante simulación de descendientes}{48}{section.Alph1.4}%
-\contentsline {chapter}{Bibliografía}{51}{appendix*.2}%
-\contentsline {chapter}{Agradecimientos}{57}{appendix*.3}%
+\contentsline {chapter}{\numberline {7}Conclusiones}{44}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Anexos}{45}{appendix.Alph1}%
+\contentsline {section}{\numberline {A.1}Función para el calculo de la matriz de parentesco combinada}{45}{section.Alph1.1}%
+\contentsline {section}{\numberline {A.2}Visualización del GWAS}{47}{section.Alph1.2}%
+\contentsline {section}{\numberline {A.3}Precisión de la predición mediante simulación de pedigrí ancestral}{47}{section.Alph1.3}%
+\contentsline {section}{\numberline {A.4}Precisión de la predición mediante simulación de descendientes}{49}{section.Alph1.4}%
+\contentsline {chapter}{Bibliografía}{52}{appendix*.2}%
+\contentsline {chapter}{Agradecimientos}{58}{appendix*.3}%

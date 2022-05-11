@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  10 MAY 2022 15:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  11 MAY 2022 06:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -953,11 +953,14 @@ Cap\'{\i }tulo 6.
 [41
 
 ]
+LaTeX Info: Redefining \. on input line 950.
+LaTeX Info: Redefining \% on input line 950.
+[42]
 LaTeX Info: Redefining \. on input line 952.
 LaTeX Info: Redefining \% on input line 952.
-[42]
+[43]
 Cap\'{\i }tulo 7.
-[43
+[44
 
 ]
 Ap\'{e}ndice A.
@@ -975,7 +978,7 @@ Package xcolor Warning: Incompatible color definition on input line 1035.
 
 Package xcolor Warning: Incompatible color definition on input line 1035.
 
-[44
+[45
 
 ]
 
@@ -984,29 +987,29 @@ Package xcolor Warning: Incompatible color definition on input line 1035.
 
 Package xcolor Warning: Incompatible color definition on input line 1035.
 
-<figures/gwas.pdf, id=815, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=832, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
 Package pdftex.def Info: figures/gwas.pdf  used on input line 1040.
 (pdftex.def)             Requested size: 360.01208pt x 244.2939pt.
 LaTeX Info: Redefining \. on input line 1040.
 LaTeX Info: Redefining \% on input line 1040.
-[45]
+[46]
 LaTeX Info: Redefining \. on input line 1078.
 LaTeX Info: Redefining \% on input line 1078.
-[46 <./figures/gwas.pdf>]
+[47 <./figures/gwas.pdf>]
 LaTeX Info: Redefining \. on input line 1146.
 LaTeX Info: Redefining \% on input line 1146.
-[47]
+[48]
 LaTeX Info: Redefining \. on input line 1218.
 LaTeX Info: Redefining \% on input line 1218.
-[48]
+[49]
 LaTeX Info: Redefining \. on input line 1286.
 LaTeX Info: Redefining \% on input line 1286.
-[49]
+[50]
 LaTeX Info: Redefining \. on input line 1288.
 LaTeX Info: Redefining \% on input line 1288.
-[50]
+[51]
 Underfull \hbox (badness 2126) in paragraph at lines 1327--1329
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
@@ -1024,7 +1027,7 @@ Underfull \hbox (badness 5203) in paragraph at lines 1327--1329
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
 
-[51
+[52
 
 
 ]
@@ -1034,50 +1037,62 @@ g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
  []
 
-[52] [53]
-Underfull \hbox (badness 1231) in paragraph at lines 1435--1437
+[53] [54]
+Underfull \hbox (badness 1231) in paragraph at lines 1444--1446
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
-[54]
-Underfull \hbox (badness 5345) in paragraph at lines 1471--1473
+[55]
+Underfull \hbox (badness 5345) in paragraph at lines 1483--1485
  \T1/lmr/m/n/10.95 the ra-tio-na-le for es-ti-ma-ting ge-nea-lo-gi-cal coan-ces
 try from mo-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 1471--1473
+Underfull \hbox (badness 7540) in paragraph at lines 1483--1485
  \T1/lmr/m/n/10.95 le-cu-lar mar-kers^^T. \T1/lmr/m/it/10.95 Ge-ne-tics Se-lec-
 tion Evo-lu-tion \T1/lmr/m/n/10.95 43: 27. [][]$https :
  []
 
-[55] [56]
-<figures/uvalogo_regular_p_en.pdf, id=963, 433.62pt x 389.5353pt>
+[56]
+Underfull \hbox (badness 3803) in paragraph at lines 1501--1503
+ \T1/lmr/m/n/10.95 2017. ^^SEf-fects of mar-ker den-sity and po-pu-la-tion stru
+c-tu-re on
+ []
+
+
+Underfull \hbox (badness 1072) in paragraph at lines 1501--1503
+ \T1/lmr/m/n/10.95 the ge-no-mic pre-dic-tion ac-cu-racy for growth trait in Pa
+-ci-fic whi-
+ []
+
+[57]
+<figures/uvalogo_regular_p_en.pdf, id=992, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-512.
+530.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1512--1513
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1530--1531
 [][] 
  []
 
-[57
+[58
 
  <./figures/uvalogo_regular_p_en.pdf>] (./TFM.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15882 strings out of 480218
- 258346 string characters out of 5895106
+ 15889 strings out of 480218
+ 258419 string characters out of 5895106
  568295 words of memory out of 5000000
  33335 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,16n,63p,2623b,684s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,16n,63p,2830b,684s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/home/leo/.Tiny
 TeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/home/leo/.TinyTeX/texmf-dist/
 fonts/enc/dvips/lm/lm-mathit.enc}{/home/leo/.TinyTeX/texmf-dist/fonts/enc/dvips
@@ -1099,10 +1114,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (63 pages, 12134855 bytes).
+Output written on TFM.pdf (64 pages, 12139532 bytes).
 PDF statistics:
- 1192 PDF objects out of 1200 (max. 8388607)
- 998 compressed objects within 10 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 1222 PDF objects out of 1440 (max. 8388607)
+ 1026 compressed objects within 11 object streams
+ 225 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
