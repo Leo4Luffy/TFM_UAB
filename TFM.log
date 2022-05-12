@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  11 MAY 2022 12:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  12 MAY 2022 02:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -987,7 +987,7 @@ Package xcolor Warning: Incompatible color definition on input line 1037.
 
 Package xcolor Warning: Incompatible color definition on input line 1037.
 
-<figures/gwas.pdf, id=834, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=836, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
 Package pdftex.def Info: figures/gwas.pdf  used on input line 1042.
@@ -1038,44 +1038,44 @@ g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
  []
 
 [53] [54]
-Underfull \hbox (badness 1231) in paragraph at lines 1449--1451
+Underfull \hbox (badness 1231) in paragraph at lines 1452--1454
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
 [55]
-Underfull \hbox (badness 5345) in paragraph at lines 1488--1490
+Underfull \hbox (badness 5345) in paragraph at lines 1491--1493
  \T1/lmr/m/n/10.95 the ra-tio-na-le for es-ti-ma-ting ge-nea-lo-gi-cal coan-ces
 try from mo-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 1488--1490
+Underfull \hbox (badness 7540) in paragraph at lines 1491--1493
  \T1/lmr/m/n/10.95 le-cu-lar mar-kers^^T. \T1/lmr/m/it/10.95 Ge-ne-tics Se-lec-
 tion Evo-lu-tion \T1/lmr/m/n/10.95 43: 27. [][]$https :
  []
 
 [56]
-Underfull \hbox (badness 3803) in paragraph at lines 1506--1508
+Underfull \hbox (badness 3803) in paragraph at lines 1509--1511
  \T1/lmr/m/n/10.95 2017. ^^SEf-fects of mar-ker den-sity and po-pu-la-tion stru
 c-tu-re on
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 1506--1508
+Underfull \hbox (badness 1072) in paragraph at lines 1509--1511
  \T1/lmr/m/n/10.95 the ge-no-mic pre-dic-tion ac-cu-racy for growth trait in Pa
 -ci-fic whi-
  []
 
 [57]
-<figures/uvalogo_regular_p_en.pdf, id=995, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=1002, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-535.
+538.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1535--1536
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1538--1539
 [][] 
  []
 
@@ -1086,8 +1086,8 @@ LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15890 strings out of 480218
- 258430 string characters out of 5895106
+ 15891 strings out of 480218
+ 258441 string characters out of 5895106
  568295 words of memory out of 5000000
  33335 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
@@ -1114,10 +1114,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (64 pages, 12140079 bytes).
+Output written on TFM.pdf (64 pages, 12141136 bytes).
 PDF statistics:
- 1225 PDF objects out of 1440 (max. 8388607)
- 1029 compressed objects within 11 object streams
- 226 named destinations out of 1000 (max. 500000)
+ 1232 PDF objects out of 1440 (max. 8388607)
+ 1036 compressed objects within 11 object streams
+ 227 named destinations out of 1000 (max. 500000)
  341 words of extra memory for PDF output out of 10000 (max. 10000000)
 
