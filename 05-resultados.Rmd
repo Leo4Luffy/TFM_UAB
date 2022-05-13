@@ -792,6 +792,64 @@ knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 \noindent
 __Figura 5.3:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
 
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
+
+param_gen <- read_delim(here('figures', 'param_gen.txt'), delim = '\t') %>%
+  rename(Replica = Pedigrí) %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Ind_gen = as.factor(Ind_gen),
+    Densidad = case_when(
+      Ind_gen == '0' & Densidad == '1.000' ~ '0',
+      Ind_gen == '0' & Densidad == '10.000' ~ '0',
+      Ind_gen == '0' & Densidad == '100.000' ~ '0',
+      Ind_gen == '148' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '148' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '148' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '298' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '298' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '298' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '451' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '451' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '451' & Densidad == '100.000' ~ '100.000'
+      ),
+    Pedigrí = case_when(
+      grepl('Pedigrí 1.', Replica) ~ 'Pedigrí 1',
+      grepl('Pedigrí 2.', Replica) ~ 'Pedigrí 2',
+      grepl('Pedigrí 3.', Replica) ~ 'Pedigrí 3'
+      )
+    ) %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup()
+
+ggplot(data = param_gen,aes(x = Densidad, y = prom, fill = Ind_gen, colour = Ind_gen)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
+  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
+  geom_errorbar(aes(ymin = prom - des, ymax = prom + des), width = 0.2, position = position_dodge(width = 0.7)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  facet_grid(vars(Pedigrí), vars(Enfoque)) +
+  labs(y = 'Heredabilidad', x = 'Densidad del marcador') +
+  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = 10),
+    axis.title = element_text(size = 11, face = 'bold'),
+    legend.title = element_text(size = 11, face = 'bold'),
+    legend.text = element_text(size = 11),
+    legend.position = 'top',
+    strip.background = element_rect(colour = 'black', fill = 'white'),
+    strip.text = element_text(size = 10, colour = 'black', face = 'bold')
+    )
+```
 
 ## Precisión de la predición mediante simulación ancestral
 
@@ -983,7 +1041,6 @@ bind_rows(Cor_ped_1_est, Cor_ped_2_est, Cor_ped_3_est) %>%
   annotate(geom = 'text', x = 3.78, y = 0.72, label = 'a', size = 2.8, colour = 'black') +
   annotate(geom = 'text', x = 4.0, y = 0.72, label = 'ab', size = 2.8, colour = 'black') +
   annotate(geom = 'text', x = 4.22, y = 0.72, label = 'b', size = 2.8, colour = 'black') +
-  facet_grid(vars(Pedigrí), vars(Enfoque)) +
   labs(y = 'Precisión de la predicción', x = 'Densidad del marcador') +
   scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
   scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
