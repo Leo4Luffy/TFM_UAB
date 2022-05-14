@@ -587,7 +587,7 @@ __Figura 5.2:__ Análisis de componentes principales a partir de la matriz H res
 \hspace*{1em}
 Las estimaciones de los componentes de varianza y de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en las Figuras 5.3 y 5.4.
 
-Se observaron valores altos de heredabilidad (mayores a 0.58), con densidades de marcadores variadas en 451 individuos genotipados (Figura 5.3), lo que indica que el tiempo de floración es un carácter muy heredable. Ambos enfoques (Bayesianos y REML), proporcionaron estimaciones de heredabilidad muy similares. Se pudo observar también que las varianzas genéticas aditivas obtenidas en los modelos de selección genómica (ssGBLUP) fueron más bajas comparadas con las obtenidas a partir del BLUP (esto es, con una densidad de marcador igual a 0). A este respecto, los métodos de selección genómica basados en información de genotipos (como es el caso del ssGBLUP) pueden revelar relaciones entre individuos que aparentemente no están relacionados en el pedigrí [@cite:74], hecho que puede resultar en una mejor estimación de la varianza genética aditiva en el ssGBLUP y una sobreestimación en el BLUP [@cite:72].
+Se observaron valores altos de heredabilidad (mayores a 0.58), con densidades de marcadores variadas en 451 individuos genotipados (Figura 5.3), lo que indica que el tiempo de floración es un carácter muy heredable. Ambos enfoques (Bayesiano y REML), proporcionaron estimaciones de heredabilidad muy similares. Se pudo observar también que las varianzas genéticas aditivas obtenidas en el ssGBLUP fueron más bajas comparadas con las obtenidas a partir del BLUP (esto es, con una densidad de marcador igual a 0). A este respecto, los métodos de selección genómica basados en información de genotipos (como es el caso del ssGBLUP) pueden revelar relaciones entre individuos que aparentemente no están relacionados en el pedigrí [@cite:74], hecho que puede resultar en una mejor estimación de la varianza genética aditiva en los modelos de selección genómica y una sobreestimación en el BLUP [@cite:72], como se evidenció en este estudio.
 
 <!--
 \hspace*{1em}
@@ -1142,9 +1142,10 @@ knitr::include_graphics('figures/param_reml.pdf', auto_pdf = TRUE)
 ```
 
 \noindent
-__Figura 5.3:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
+__Figura 5.3:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Las barras representan la media del valor de heredabilidad obtenida de las 10 réplicas de cada pedigrí y Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
-
+\hspace*{1em}
+La heredabilidad estimada, según el conjunto completo de marcadores (100.231 SNP) en distintas cantidades de individuos genotipados (Figura 5.4), varió de  0.72 a 0.74. El valor de heredabilidad aumentó con el aumento en el número de individuos genotipados (de 0 a 298 individuos), y luego dicho valor tendió a ser estable. En ambos enfoques (Bayesiano y REML) y en los tres pedigríes simulados mediante simulación ancestral, no se observaron diferencias en la estima de heredabilidad. Se evidenció también que las estimaciones de los componentes de varianzas genético aditivo y residual disminuyeron continuamente según la cantidad de individuos genotipados. Al comparar las estimas de los componentes de varianzas genético aditivo y residual, no se observó diferencias entre los tres pedigríes simulados de forma ancestral y en ambos enfoques.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
@@ -1664,7 +1665,7 @@ knitr::include_graphics('figures/param_reml_2.pdf', auto_pdf = TRUE)
 ```
 
 \noindent
-__Figura 5.4:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de individuos genotipados con una densidad aproximada de 100.000 marcadores. Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
+__Figura 5.4:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de individuos genotipados con una densidad aproximada de 100.000 marcadores. Las barras representan la media del valor de heredabilidad obtenida de las 10 réplicas de cada pedigrí y Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
 ```{r, eval=FALSE, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
