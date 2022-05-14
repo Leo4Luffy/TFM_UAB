@@ -18,7 +18,7 @@
 \contentsline {section}{\numberline {4.4}Precisión de la predición mediante simulación de descendientes}{30}{section.4.4}%
 \contentsline {chapter}{\numberline {5}Resultados}{34}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Estructura poblacional y heredabilidad en la simulación ancestral}{34}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Precisión de la predición mediante simulación ancestral}{38}{section.5.2}%
+\contentsline {section}{\numberline {5.2}Precisión de la predición mediante simulación ancestral}{39}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Precisión de la predición mediante simulación de descendientes}{40}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Discusión}{42}{chapter.6}%
 \contentsline {chapter}{\numberline {7}Conclusiones}{45}{chapter.7}%

@@ -585,7 +585,10 @@ knitr::include_graphics('figures/Graf_PCA_mH_SeqBreed.pdf', auto_pdf = TRUE)
 __Figura 5.2:__ Análisis de componentes principales a partir de la matriz H resultante de la simulación de descendientes. Aquí, la matriz H se estimó a partir de 2091 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 3 (primera réplica) mediante simulación de descendientes.
 
 \hspace*{1em}
-Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.3. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable y puede responder a la selección. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
+Las estimaciones de los componentes de varianza y de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en las Figuras 5.3 y 5.4.
+
+Se observaron valores altos de heredabilidad (mayores a 0.58), con densidades de marcadores variadas en 451 individuos genotipados (Figura 5.3), lo que indica que el tiempo de floración es un carácter muy heredable. Ambos enfoques (Bayesianos y REML), proporcionaron estimaciones de heredabilidad muy similares. Se pudo observar también que las varianzas genéticas aditivas obtenidas en los modelos de selección genómica (ssGBLUP) fueron más bajas comparadas con las obtenidas a partir del BLUP (esto es, con una densidad de marcador igual a 0). A este respecto, los métodos de selección genómica basados en información de genotipos (como es el caso del ssGBLUP) pueden revelar relaciones entre individuos que aparentemente no están relacionados en el pedigrí [@cite:74], hecho que puede resultar en una mejor estimación de la varianza genética aditiva en el ssGBLUP y una sobreestimación en el BLUP [@cite:72].
+
 <!--
 \hspace*{1em}
 \noindent
@@ -1140,6 +1143,8 @@ knitr::include_graphics('figures/param_reml.pdf', auto_pdf = TRUE)
 
 \noindent
 __Figura 5.3:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
+
+
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
