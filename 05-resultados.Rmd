@@ -586,12 +586,12 @@ __Figura 5.2:__ Análisis de componentes principales a partir de la matriz H res
 
 \hspace*{1em}
 Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.3. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable y puede responder a la selección. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
-
+<!--
 \hspace*{1em}
 \noindent
 __Tabla 5.1:__ Estimaciones de componentes de varianza y de heredabilidad para el carácter tiempo de floración mediante el método BLUP en los tres pedigríes simulados mediante simulación ancestral.
-
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
+-->
+```{r, eval=FALSE, echo = FALSE, out.width = "100%", fig.align = 'center', warning = FALSE, message=FALSE}
 
 tribble(
   ~'Parámetro', ~'Ped. 1', ~'Ped. 2', ~'Ped. 3', ~'Pedigrí_a', ~'Pedigrí_b', ~'Pedigrí_c',
@@ -622,6 +622,1046 @@ tribble(
 ```
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
+
+param_gen <- read_delim(here('figures', 'param_gen.txt'), delim = '\t') %>%
+  rename(Replica = Pedigrí) %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Ind_gen = as.factor(Ind_gen),
+    Densidad = case_when(
+      Ind_gen == '0' & Densidad == '1.000' ~ '0',
+      Ind_gen == '0' & Densidad == '10.000' ~ '0',
+      Ind_gen == '0' & Densidad == '100.000' ~ '0',
+      Ind_gen == '148' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '148' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '148' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '298' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '298' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '298' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '451' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '451' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '451' & Densidad == '100.000' ~ '100.000'
+      ),
+    Pedigrí = case_when(
+      grepl('Pedigrí 1.', Replica) ~ 'Pedigrí 1',
+      grepl('Pedigrí 2.', Replica) ~ 'Pedigrí 2',
+      grepl('Pedigrí 3.', Replica) ~ 'Pedigrí 3'
+      )
+    )
+
+###################
+# Enfoque Bayesiano
+###################
+
+# Pedigrí 1 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', subtitle = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Enfoque Bayesiano', subtitle = 'Pedigrí 1', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped1
+
+# Pedigrí 2 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Pedigrí 2', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped2
+
+# Pedigrí 3 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1), label.size = 0.04) +
+  labs(title = 'Pedigrí 3', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped3
+
+(varA_ind_gen_bay_ped1 | varE_ind_gen_bay_ped1 | Here_ind_gen_bay_ped1) / (varA_ind_gen_bay_ped2 | varE_ind_gen_bay_ped2 | Here_ind_gen_bay_ped2) / (varA_ind_gen_bay_ped3 | varE_ind_gen_bay_ped3 | Here_ind_gen_bay_ped3) -> param_Bayes
+
+knitr::include_graphics('figures/param_Bayes.pdf', auto_pdf = TRUE)
+
+##############
+# Enfoque REML
+##############
+
+# Pedigrí 1 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', subtitle = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Enfoque REML', subtitle = 'Pedigrí 1', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped1
+
+# Pedigrí 2 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 2'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Pedigrí 2', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped2
+
+# Pedigrí 3 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Ind_gen %in% c('0', '451'),
+    Enfoque == 'REML',
+    Pedigrí == 'Pedigrí 3'
+    ) %>%
+  ggplot(data = .,aes(x = Densidad, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1), label.size = 0.04) +
+  labs(title = 'Pedigrí 3', y = 'Varianza aditiva', x = 'Densidad del marcador') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped3
+
+(varA_ind_gen_reml_ped1 | varE_ind_gen_reml_ped1 | Here_ind_gen_reml_ped1) / (varA_ind_gen_reml_ped2 | varE_ind_gen_reml_ped2 | Here_ind_gen_reml_ped2) / (varA_ind_gen_reml_ped3 | varE_ind_gen_reml_ped3 | Here_ind_gen_reml_ped3) -> param_reml
+
+knitr::include_graphics('figures/param_reml.pdf', auto_pdf = TRUE)
+```
+
+\noindent
+__Figura 5.3:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
+
+```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
+
+param_gen <- read_delim(here('figures', 'param_gen.txt'), delim = '\t') %>%
+  rename(Replica = Pedigrí) %>%
+  mutate(
+    Densidad = case_when(
+      Densidad == 1 ~ '1.000',
+      Densidad == 10 ~ '10.000',
+      Densidad == 100 ~ '100.000'
+      ),
+    Ind_gen = as.factor(Ind_gen),
+    Densidad = case_when(
+      Ind_gen == '0' & Densidad == '1.000' ~ '0',
+      Ind_gen == '0' & Densidad == '10.000' ~ '0',
+      Ind_gen == '0' & Densidad == '100.000' ~ '0',
+      Ind_gen == '148' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '148' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '148' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '298' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '298' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '298' & Densidad == '100.000' ~ '100.000',
+      Ind_gen == '451' & Densidad == '1.000' ~ '1.000',
+      Ind_gen == '451' & Densidad == '10.000' ~ '10.000',
+      Ind_gen == '451' & Densidad == '100.000' ~ '100.000'
+      ),
+    Pedigrí = case_when(
+      grepl('Pedigrí 1.', Replica) ~ 'Pedigrí 1',
+      grepl('Pedigrí 2.', Replica) ~ 'Pedigrí 2',
+      grepl('Pedigrí 3.', Replica) ~ 'Pedigrí 3'
+      )
+    )
+
+###################
+# Enfoque Bayesiano
+###################
+
+# Pedigrí 1 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', subtitle = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Enfoque Bayesiano', subtitle = 'Pedigrí 1', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped1
+
+# Pedigrí 2 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Pedigrí 2', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped2
+
+# Pedigrí 3 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_bay_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_bay_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1), label.size = 0.04) +
+  labs(title = 'Pedigrí 3', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_bay_ped3
+
+(varA_ind_gen_bay_ped1 | varE_ind_gen_bay_ped1 | Here_ind_gen_bay_ped1) / (varA_ind_gen_bay_ped2 | varE_ind_gen_bay_ped2 | Here_ind_gen_bay_ped2) / (varA_ind_gen_bay_ped3 | varE_ind_gen_bay_ped3 | Here_ind_gen_bay_ped3) -> param_Bayes_2
+
+knitr::include_graphics('figures/param_Bayes_2.pdf', auto_pdf = TRUE)
+
+##############
+# Enfoque REML
+##############
+
+# Pedigrí 1 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', subtitle = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped1
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Enfoque REML', subtitle = 'Pedigrí 1', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 11, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped1
+
+# Pedigrí 2 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped2
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = 'Pedigrí 2', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped2
+
+# Pedigrí 3 ----
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(h2, na.rm = TRUE), digits = 3),
+    prom = round(mean(h2), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  scale_y_continuous(limits = c(0.0, 1.0)) +
+  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> Here_ind_gen_reml_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varE, na.rm = TRUE), digits = 3),
+    prom = round(mean(varE), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
+  labs(title = ' ', y = 'Varianza del error', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varE_ind_gen_reml_ped3
+
+param_gen %>%
+  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
+  summarise(
+    des = round(sd(varU, na.rm = TRUE), digits = 3),
+    prom = round(mean(varU), digits = 3)
+    ) %>%
+  ungroup() %>%
+  filter(
+    Densidad %in% c('0', '100.000'),
+    Enfoque == 'Bayesiano',
+    Pedigrí == 'Pedigrí 1'
+    ) %>%
+  ggplot(data = .,aes(x = Ind_gen, y = prom)) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
+  #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1), label.size = 0.04) +
+  labs(title = 'Pedigrí 3', y = 'Varianza aditiva', x = 'Individuos genotipados') +
+  theme_bw() +
+  theme(
+    axis.text.y = element_text(size = 10, face = 'bold'),
+    axis.text.x = element_text(size = 7.4, face = 'bold'),
+    axis.title = element_text(size = 10, face = 'bold'),
+    plot.title = element_text(size = 10, face = 'bold'),
+    plot.subtitle = element_text(size = 10, face = 'bold')
+    ) -> varA_ind_gen_reml_ped3
+
+(varA_ind_gen_reml_ped1 | varE_ind_gen_reml_ped1 | Here_ind_gen_reml_ped1) / (varA_ind_gen_reml_ped2 | varE_ind_gen_reml_ped2 | Here_ind_gen_reml_ped2) / (varA_ind_gen_reml_ped3 | varE_ind_gen_reml_ped3 | Here_ind_gen_reml_ped3) -> param_reml_2
+
+knitr::include_graphics('figures/param_reml_2.pdf', auto_pdf = TRUE)
+```
+
+\noindent
+__Figura 5.4:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de individuos genotipados con una densidad aproximada de 100.000 marcadores. Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
+
+```{r, eval=FALSE, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
 # Pedigrí 1 (Bayesiano) ----
 
@@ -788,74 +1828,15 @@ h2_ped3 <- ggplot(data = h2_ped_3, aes(x = h2)) +
 
 knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 ```
-
+<!--
 \noindent
-__Figura 5.3:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
-
-```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
-
-param_gen <- read_delim(here('figures', 'param_gen.txt'), delim = '\t') %>%
-  rename(Replica = Pedigrí) %>%
-  mutate(
-    Densidad = case_when(
-      Densidad == 1 ~ '1.000',
-      Densidad == 10 ~ '10.000',
-      Densidad == 100 ~ '100.000'
-      ),
-    Ind_gen = as.factor(Ind_gen),
-    Densidad = case_when(
-      Ind_gen == '0' & Densidad == '1.000' ~ '0',
-      Ind_gen == '0' & Densidad == '10.000' ~ '0',
-      Ind_gen == '0' & Densidad == '100.000' ~ '0',
-      Ind_gen == '148' & Densidad == '1.000' ~ '1.000',
-      Ind_gen == '148' & Densidad == '10.000' ~ '10.000',
-      Ind_gen == '148' & Densidad == '100.000' ~ '100.000',
-      Ind_gen == '298' & Densidad == '1.000' ~ '1.000',
-      Ind_gen == '298' & Densidad == '10.000' ~ '10.000',
-      Ind_gen == '298' & Densidad == '100.000' ~ '100.000',
-      Ind_gen == '451' & Densidad == '1.000' ~ '1.000',
-      Ind_gen == '451' & Densidad == '10.000' ~ '10.000',
-      Ind_gen == '451' & Densidad == '100.000' ~ '100.000'
-      ),
-    Pedigrí = case_when(
-      grepl('Pedigrí 1.', Replica) ~ 'Pedigrí 1',
-      grepl('Pedigrí 2.', Replica) ~ 'Pedigrí 2',
-      grepl('Pedigrí 3.', Replica) ~ 'Pedigrí 3'
-      )
-    ) %>%
-  group_by(Densidad, Ind_gen, Enfoque, Pedigrí) %>%
-  summarise(
-    des = round(sd(h2, na.rm = TRUE), digits = 3),
-    prom = round(mean(h2), digits = 3)
-    ) %>%
-  ungroup()
-
-ggplot(data = param_gen,aes(x = Densidad, y = prom, fill = Ind_gen, colour = Ind_gen)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, alpha = 0.4) +
-  #geom_jitter(position = position_jitterdodge(jitter.width = 0.2, dodge.width = 0.8), alpha = 0.4) +
-  geom_errorbar(aes(ymin = prom - des, ymax = prom + des), width = 0.2, position = position_dodge(width = 0.7)) +
-  scale_y_continuous(limits = c(0.0, 1.0)) +
-  facet_grid(vars(Pedigrí), vars(Enfoque)) +
-  labs(y = 'Heredabilidad', x = 'Densidad del marcador') +
-  scale_colour_manual(values = c('black', 'yellow', 'cyan', 'red')) +
-  scale_fill_manual(values = c('black', 'yellow', 'cyan', 'red')) +
-  theme_bw() +
-  theme(
-    axis.text = element_text(size = 10),
-    axis.title = element_text(size = 11, face = 'bold'),
-    legend.title = element_text(size = 11, face = 'bold'),
-    legend.text = element_text(size = 11),
-    legend.position = 'top',
-    strip.background = element_rect(colour = 'black', fill = 'white'),
-    strip.text = element_text(size = 10, colour = 'black', face = 'bold')
-    )
-```
+__Figura 5.4:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Figura 5.3 (para el enfoque Bayesiano y con una densidad de marcadores de 0), corresponden a la media calculada a partir de estas distribuciones.-->
 
 ## Precisión de la predición mediante simulación ancestral
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.4 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.5 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-Con relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.4 y Anexo A.3), ésta fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
+Con relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.5 y Anexo A.3), ésta fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
 En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, él desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
@@ -1059,12 +2040,12 @@ knitr::include_graphics('figures/Cor_Bay_Pen_2.pdf', auto_pdf = TRUE)
 ```
 
 \noindent
-__Figura 5.4:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación ancestral para los tres pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
+__Figura 5.5:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación ancestral para los tres pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
 
 ## Precisión de la predición mediante simulación de descendientes
 
 \hspace*{1em}
-El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.5 y Anexo A.4), observándose en éste un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (~ 0.0 %), para todos los casos de individuos genotipados. La diferencia con el escenario anterior (simulación ancestral) es que en este caso el desequilibrio fue mucho mayor, ya que los descendientes se generaron a partir de los parentales, mientras que en el caso anterior el desequilibrio es el observado en la población. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones F2 y F3 como conjuntos de validación.
+El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.6 y Anexo A.4), observándose en éste un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (~ 0.0 %), para todos los casos de individuos genotipados. La diferencia con el escenario anterior (simulación ancestral) es que en este caso el desequilibrio fue mucho mayor, ya que los descendientes se generaron a partir de los parentales, mientras que en el caso anterior el desequilibrio es el observado en la población. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones F2 y F3 como conjuntos de validación.
 
 Respecto a la cantidad de individuos genotipados, también se observo una tendencia similar al observado con la simulación ancestral. La precisión de la predicción aumento al aumentar la cantidad de individuos genotipados, observándose una estabilización al considerar un tamaño de genotipado entre solo los individuos de la generación $F_{1}$ y los individuos de las generaciones $F_{1}$ y $F_{2}$. La mayor precisión de la predicción se observó al genotipar los individuos de todas las generaciones ($F_{0}$, $F_{1}$, $F_{2}$ y $F_{3}$), logrando una ganancia esperada en la precisión mínima del 3.1% (en el pedigrí 2) y máxima del 13.0% (en el pedigrí 4), al considerar una densidad de 1.000 y 100.000 marcadores, respectivamente.
 
@@ -1130,5 +2111,5 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 ```
 
 \noindent
-__Figura 5.5:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación de descendientes para los cuatro pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
+__Figura 5.6:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación de descendientes para los cuatro pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
 

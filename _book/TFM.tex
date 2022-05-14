@@ -880,60 +880,47 @@ Se examinó si había alguna evidencia de estructura poblacional a partir de la 
 
 Los resultados de la estima de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en la Tabla 5.1 y en la Figura 5.3. Esta estima, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, varió de 0.72 a 0.84 mediante procedimientos Bayesianos, y de 0.79 a 0.84 mediante REML, valores que indican que el tiempo de floración es un carácter muy heredable y puede responder a la selección. En ambos enfoques (Bayesianos y REML), el BLUP proporcionó estimaciones de heredabilidad muy similares.
 
-\hspace*{1em}
+\begin{center}\includegraphics[width=1\linewidth]{figures/param_Bayes} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{figures/param_reml} \end{center}
 
 \noindent
-\textbf{Tabla 5.1:} Estimaciones de componentes de varianza y de heredabilidad para el carácter tiempo de floración mediante el método BLUP en los tres pedigríes simulados mediante simulación ancestral.
+\textbf{Figura 5.3:} Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
-\captionsetup[table]{labelformat=empty,skip=1pt}
-\begin{longtable}{lrrrrrr}
-\toprule
- & \multicolumn{3}{c}{Bayesiano} & \multicolumn{3}{c}{REML} \\ 
- \cmidrule(lr){2-4} \cmidrule(lr){5-7}
-Parámetro & Ped. 1\textsuperscript{1} & Ped. 2 & Ped. 3 & Ped. 1 & Ped. 2 & Ped. 3 \\ 
-\midrule
-Varianza aditiva & 0.43 & 0.50 & 0.56 & 0.47 & 0.50 & 0.56 \\ 
-Varianza ambiental & 0.16 & 0.14 & 0.11 & 0.12 & 0.13 & 0.11 \\ 
-Heredabilidad & 0.72 & 0.78 & 0.84 & 0.80 & 0.79 & 0.84 \\ 
- \bottomrule
-\end{longtable}
-\vspace{-5mm}
-\begin{minipage}{\linewidth}
-\textsuperscript{1}Ped. 1 indica Pedigrí 1 \\ 
-\end{minipage}
+\begin{center}\includegraphics[width=1\linewidth]{figures/param_Bayes_2} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/covar_h2} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{figures/param_reml_2} \end{center}
 
 \noindent
-\textbf{Figura 5.3:} Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Tabla 5.1 (para el enfoque Bayesiano), corresponden a la media calculada a partir de estas distribuciones.
+\textbf{Figura 5.4:} Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de individuos genotipados con una densidad aproximada de 100.000 marcadores. Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-ancestral}{%
 \section{Precisión de la predición mediante simulación ancestral}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-ancestral}}
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.4 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.5 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-Con relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.4 y Anexo A.3), ésta fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
+Con relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.5 y Anexo A.3), ésta fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
 En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, él desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_Bay_Pen_2} \end{center}
 
 \noindent
-\textbf{Figura 5.4:} Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación ancestral para los tres pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
+\textbf{Figura 5.5:} Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación ancestral para los tres pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
 
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}{%
 \section{Precisión de la predición mediante simulación de descendientes}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}}
 
 \hspace*{1em}
 
-El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.5 y Anexo A.4), observándose en éste un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (\textasciitilde{} 0.0 \%), para todos los casos de individuos genotipados. La diferencia con el escenario anterior (simulación ancestral) es que en este caso el desequilibrio fue mucho mayor, ya que los descendientes se generaron a partir de los parentales, mientras que en el caso anterior el desequilibrio es el observado en la población. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones F2 y F3 como conjuntos de validación.
+El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.6 y Anexo A.4), observándose en éste un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (\textasciitilde{} 0.0 \%), para todos los casos de individuos genotipados. La diferencia con el escenario anterior (simulación ancestral) es que en este caso el desequilibrio fue mucho mayor, ya que los descendientes se generaron a partir de los parentales, mientras que en el caso anterior el desequilibrio es el observado en la población. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones F2 y F3 como conjuntos de validación.
 
 Respecto a la cantidad de individuos genotipados, también se observo una tendencia similar al observado con la simulación ancestral. La precisión de la predicción aumento al aumentar la cantidad de individuos genotipados, observándose una estabilización al considerar un tamaño de genotipado entre solo los individuos de la generación \(F_{1}\) y los individuos de las generaciones \(F_{1}\) y \(F_{2}\). La mayor precisión de la predicción se observó al genotipar los individuos de todas las generaciones (\(F_{0}\), \(F_{1}\), \(F_{2}\) y \(F_{3}\)), logrando una ganancia esperada en la precisión mínima del 3.1\% (en el pedigrí 2) y máxima del 13.0\% (en el pedigrí 4), al considerar una densidad de 1.000 y 100.000 marcadores, respectivamente.
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Cor_F2_F3} \end{center}
 
 \noindent
-\textbf{Figura 5.5:} Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación de descendientes para los cuatro pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
+\textbf{Figura 5.6:} Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación de descendientes para los cuatro pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
 
 \hypertarget{discusiuxf3n}{%
 \chapter{Discusión}\label{discusiuxf3n}}

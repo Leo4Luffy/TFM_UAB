@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  12 MAY 2022 07:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  14 MAY 2022 07:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,191 +905,195 @@ Package pdftex.def Info: figures/Graf_PCA_mH_SeqBreed.pdf  used on input line 8
 LaTeX Info: Redefining \. on input line 878.
 LaTeX Info: Redefining \% on input line 878.
 [35 <./figures/Graf_PCA_mH_Molcoanc.pdf> <./figures/Graf_PCA_mH_SeqBreed.pdf>]
-Overfull \hbox (2.83324pt too wide) in alignment at lines 889--899
- [] [] [] [] [] [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 902--903
-
- []
-
-
-Overfull \hbox (17.0pt too wide) in paragraph at lines 901--904
-[]$[]$ 
- []
-
-<figures/covar_h2.pdf, id=699, 448.67625pt x 303.1325pt>
-File: figures/covar_h2.pdf Graphic file (type pdf)
-<use figures/covar_h2.pdf>
-Package pdftex.def Info: figures/covar_h2.pdf  used on input line 905.
-(pdftex.def)             Requested size: 360.0095pt x 243.22789pt.
-LaTeX Info: Redefining \. on input line 905.
-LaTeX Info: Redefining \% on input line 905.
-[36]
-LaTeX Info: Redefining \. on input line 916.
-LaTeX Info: Redefining \% on input line 916.
-[37 <./figures/covar_h2.pdf>]
-<figures/Cor_Bay_Pen_2.pdf, id=721, 460.72125pt x 308.15125pt>
+<figures/param_Bayes.pdf, id=699, 450.68375pt x 303.1325pt>
+File: figures/param_Bayes.pdf Graphic file (type pdf)
+<use figures/param_Bayes.pdf>
+Package pdftex.def Info: figures/param_Bayes.pdf  used on input line 883.
+(pdftex.def)             Requested size: 360.01796pt x 242.15016pt.
+<figures/param_reml.pdf, id=700, 450.68375pt x 303.1325pt>
+File: figures/param_reml.pdf Graphic file (type pdf)
+<use figures/param_reml.pdf>
+Package pdftex.def Info: figures/param_reml.pdf  used on input line 885.
+(pdftex.def)             Requested size: 360.01796pt x 242.15016pt.
+LaTeX Info: Redefining \. on input line 885.
+LaTeX Info: Redefining \% on input line 885.
+[36 <./figures/param_Bayes.pdf>]
+<figures/param_Bayes_2.pdf, id=714, 451.6875pt x 305.14pt>
+File: figures/param_Bayes_2.pdf Graphic file (type pdf)
+<use figures/param_Bayes_2.pdf>
+Package pdftex.def Info: figures/param_Bayes_2.pdf  used on input line 890.
+(pdftex.def)             Requested size: 360.0203pt x 243.2137pt.
+<figures/param_reml_2.pdf, id=715, 451.6875pt x 305.14pt>
+File: figures/param_reml_2.pdf Graphic file (type pdf)
+<use figures/param_reml_2.pdf>
+Package pdftex.def Info: figures/param_reml_2.pdf  used on input line 892.
+(pdftex.def)             Requested size: 360.0203pt x 243.2137pt.
+LaTeX Info: Redefining \. on input line 892.
+LaTeX Info: Redefining \% on input line 892.
+[37 <./figures/param_reml.pdf> <./figures/param_Bayes_2.pdf>]
+LaTeX Info: Redefining \. on input line 903.
+LaTeX Info: Redefining \% on input line 903.
+[38 <./figures/param_reml_2.pdf>]
+<figures/Cor_Bay_Pen_2.pdf, id=750, 460.72125pt x 308.15125pt>
 File: figures/Cor_Bay_Pen_2.pdf Graphic file (type pdf)
 <use figures/Cor_Bay_Pen_2.pdf>
-Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 919.
+Package pdftex.def Info: figures/Cor_Bay_Pen_2.pdf  used on input line 906.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 923.
-LaTeX Info: Redefining \% on input line 923.
-[38 <./figures/Cor_Bay_Pen_2.pdf>]
-<figures/Cor_F2_F3.pdf, id=734, 460.72125pt x 308.15125pt>
+LaTeX Info: Redefining \. on input line 906.
+LaTeX Info: Redefining \% on input line 906.
+[39]
+LaTeX Info: Redefining \. on input line 917.
+LaTeX Info: Redefining \% on input line 917.
+[40 <./figures/Cor_Bay_Pen_2.pdf>]
+<figures/Cor_F2_F3.pdf, id=768, 460.72125pt x 308.15125pt>
 File: figures/Cor_F2_F3.pdf Graphic file (type pdf)
 <use figures/Cor_F2_F3.pdf>
-Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 933.
+Package pdftex.def Info: figures/Cor_F2_F3.pdf  used on input line 920.
 (pdftex.def)             Requested size: 360.00085pt x 240.78488pt.
-LaTeX Info: Redefining \. on input line 933.
-LaTeX Info: Redefining \% on input line 933.
-[39]
-LaTeX Info: Redefining \. on input line 939.
-LaTeX Info: Redefining \% on input line 939.
-[40 <./figures/Cor_F2_F3.pdf>]
+LaTeX Info: Redefining \. on input line 926.
+LaTeX Info: Redefining \% on input line 926.
+[41 <./figures/Cor_F2_F3.pdf>]
 Cap\'{\i }tulo 6.
-[41
+[42
 
 ]
-LaTeX Info: Redefining \. on input line 950.
-LaTeX Info: Redefining \% on input line 950.
-[42]
-LaTeX Info: Redefining \. on input line 954.
-LaTeX Info: Redefining \% on input line 954.
+LaTeX Info: Redefining \. on input line 937.
+LaTeX Info: Redefining \% on input line 937.
 [43]
+LaTeX Info: Redefining \. on input line 941.
+LaTeX Info: Redefining \% on input line 941.
+[44]
 Cap\'{\i }tulo 7.
-[44
+[45
 
 ]
 Ap\'{e}ndice A.
 
-Package xcolor Warning: Incompatible color definition on input line 966.
+Package xcolor Warning: Incompatible color definition on input line 953.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 968.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 955.
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1024.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1024.
 
-[45
+
+Package xcolor Warning: Incompatible color definition on input line 1024.
+
+[46
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1024.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1024.
 
-<figures/gwas.pdf, id=838, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=868, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
-Package pdftex.def Info: figures/gwas.pdf  used on input line 1042.
+Package pdftex.def Info: figures/gwas.pdf  used on input line 1029.
 (pdftex.def)             Requested size: 360.01208pt x 244.2939pt.
-LaTeX Info: Redefining \. on input line 1042.
-LaTeX Info: Redefining \% on input line 1042.
-[46]
-LaTeX Info: Redefining \. on input line 1080.
-LaTeX Info: Redefining \% on input line 1080.
-[47 <./figures/gwas.pdf>]
-LaTeX Info: Redefining \. on input line 1148.
-LaTeX Info: Redefining \% on input line 1148.
-[48]
-LaTeX Info: Redefining \. on input line 1220.
-LaTeX Info: Redefining \% on input line 1220.
+LaTeX Info: Redefining \. on input line 1029.
+LaTeX Info: Redefining \% on input line 1029.
+[47]
+LaTeX Info: Redefining \. on input line 1067.
+LaTeX Info: Redefining \% on input line 1067.
+[48 <./figures/gwas.pdf>]
+LaTeX Info: Redefining \. on input line 1135.
+LaTeX Info: Redefining \% on input line 1135.
 [49]
-LaTeX Info: Redefining \. on input line 1288.
-LaTeX Info: Redefining \% on input line 1288.
+LaTeX Info: Redefining \. on input line 1207.
+LaTeX Info: Redefining \% on input line 1207.
 [50]
-LaTeX Info: Redefining \. on input line 1290.
-LaTeX Info: Redefining \% on input line 1290.
+LaTeX Info: Redefining \. on input line 1275.
+LaTeX Info: Redefining \% on input line 1275.
 [51]
-Underfull \hbox (badness 2126) in paragraph at lines 1329--1331
+LaTeX Info: Redefining \. on input line 1277.
+LaTeX Info: Redefining \% on input line 1277.
+[52]
+Underfull \hbox (badness 2126) in paragraph at lines 1316--1318
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1329--1331
+Underfull \hbox (badness 2080) in paragraph at lines 1316--1318
  \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
 ree-ding by
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1329--1331
+Underfull \hbox (badness 5203) in paragraph at lines 1316--1318
  \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
 
-[52
+[53
 
 
 ]
-Overfull \hbox (30.45624pt too wide) in paragraph at lines 1368--1370
+Overfull \hbox (30.45624pt too wide) in paragraph at lines 1355--1357
  [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
 g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
  []
 
-[53] [54]
-Underfull \hbox (badness 1231) in paragraph at lines 1455--1457
+[54] [55]
+Underfull \hbox (badness 1231) in paragraph at lines 1442--1444
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
-[55] [56]
-Underfull \hbox (badness 5345) in paragraph at lines 1494--1496
+[56] [57]
+Underfull \hbox (badness 5345) in paragraph at lines 1481--1483
  \T1/lmr/m/n/10.95 the ra-tio-na-le for es-ti-ma-ting ge-nea-lo-gi-cal coan-ces
 try from mo-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 1494--1496
+Underfull \hbox (badness 7540) in paragraph at lines 1481--1483
  \T1/lmr/m/n/10.95 le-cu-lar mar-kers^^T. \T1/lmr/m/it/10.95 Ge-ne-tics Se-lec-
 tion Evo-lu-tion \T1/lmr/m/n/10.95 43: 27. [][]$https :
  []
 
 
-Underfull \hbox (badness 3803) in paragraph at lines 1512--1514
+Underfull \hbox (badness 3803) in paragraph at lines 1499--1501
  \T1/lmr/m/n/10.95 2017. ^^SEf-fects of mar-ker den-sity and po-pu-la-tion stru
 c-tu-re on
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 1512--1514
+Underfull \hbox (badness 1072) in paragraph at lines 1499--1501
  \T1/lmr/m/n/10.95 the ge-no-mic pre-dic-tion ac-cu-racy for growth trait in Pa
 -ci-fic whi-
  []
 
-[57]
-<figures/uvalogo_regular_p_en.pdf, id=1002, 433.62pt x 389.5353pt>
+[58]
+<figures/uvalogo_regular_p_en.pdf, id=1031, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-541.
+528.
 (pdftex.def)             Requested size: 360.01698pt x 323.41525pt.
 
-Overfull \hbox (17.01698pt too wide) in paragraph at lines 1541--1542
+Overfull \hbox (17.01698pt too wide) in paragraph at lines 1528--1529
 [][] 
  []
 
-[58
+[59
 
  <./figures/uvalogo_regular_p_en.pdf>] (./TFM.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15892 strings out of 480218
- 258452 string characters out of 5895106
- 568295 words of memory out of 5000000
- 33335 multiletter control sequences out of 15000+600000
+ 15918 strings out of 480218
+ 259265 string characters out of 5895106
+ 568180 words of memory out of 5000000
+ 33358 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  60i,16n,63p,2888b,684s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1114,10 +1118,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (64 pages, 12141464 bytes).
+Output written on TFM.pdf (65 pages, 14184940 bytes).
 PDF statistics:
- 1232 PDF objects out of 1440 (max. 8388607)
- 1036 compressed objects within 11 object streams
+ 1261 PDF objects out of 1440 (max. 8388607)
+ 1055 compressed objects within 11 object streams
  228 named destinations out of 1000 (max. 500000)
- 341 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 356 words of extra memory for PDF output out of 10000 (max. 10000000)
 
