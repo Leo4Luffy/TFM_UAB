@@ -1838,7 +1838,7 @@ knitr::include_graphics('figures/covar_h2.pdf', auto_pdf = TRUE)
 \noindent
 __Figura 5.4:__ Distribuciones posteriores de componentes de varianza y de heredabilidad obtenidas mediante enfoques Bayesianos. Los valores presentados en la Figura 5.3 (para el enfoque Bayesiano y con una densidad de marcadores de 0), corresponden a la media calculada a partir de estas distribuciones.-->
 
-## Precisión de la predición mediante simulación ancestral
+## Precisión de la predición mediante simulación del pedigrí ancestral
 
 El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.5 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
