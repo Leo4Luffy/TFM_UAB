@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  17 MAY 2022 04:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  17 MAY 2022 05:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -991,7 +991,7 @@ Package xcolor Warning: Incompatible color definition on input line 1030.
 
 Package xcolor Warning: Incompatible color definition on input line 1030.
 
-<figures/gwas.pdf, id=861, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=863, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
 Package pdftex.def Info: figures/gwas.pdf  used on input line 1035.
@@ -1072,7 +1072,7 @@ Underfull \hbox (badness 1072) in paragraph at lines 1496--1498
  []
 
 [58]
-<figures/uvalogo_regular_p_en.pdf, id=1018, 433.62pt x 389.5353pt>
+<figures/uvalogo_regular_p_en.pdf, id=1020, 433.62pt x 389.5353pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
@@ -1092,7 +1092,7 @@ LaTeX Info: Redefining \% on input line 23.
 Here is how much of TeX's memory you used:
  15915 strings out of 480218
  259272 string characters out of 5895106
- 568194 words of memory out of 5000000
+ 569194 words of memory out of 5000000
  33358 multiletter control sequences out of 15000+600000
  555952 words of font info for 84 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1118,10 +1118,10 @@ nyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist
 /fonts/type1/public/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/pub
 lic/lm/lmtk10.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.p
 fb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (65 pages, 14185087 bytes).
+Output written on TFM.pdf (65 pages, 14185484 bytes).
 PDF statistics:
- 1248 PDF objects out of 1440 (max. 8388607)
- 1042 compressed objects within 11 object streams
+ 1250 PDF objects out of 1440 (max. 8388607)
+ 1044 compressed objects within 11 object streams
  225 named destinations out of 1000 (max. 500000)
  356 words of extra memory for PDF output out of 10000 (max. 10000000)
 
