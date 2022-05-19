@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es" xml:lang="es">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo 7 Discusión | Evaluación de la selección genómica de un solo paso en arroz</title>
+  <meta name="description" content="Capítulo 7 Discusión | Evaluación de la selección genómica de un solo paso en arroz" />
+  <meta name="generator" content="bookdown 0.25 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo 7 Discusión | Evaluación de la selección genómica de un solo paso en arroz" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo 7 Discusión | Evaluación de la selección genómica de un solo paso en arroz" />
+  
+  
+  
+
+<meta name="author" content="Jorge Leonardo López Martínez" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="resultados.html"/>
+<link rel="next" href="conclusiones.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">UvA PhD thesis template</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> geometry: “left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm” # use this if you want to change the margins<span></span></a><ul>
+<li class="chapter" data-level="1.0.1" data-path="index.html"><a href="index.html#book-settings"><i class="fa fa-check"></i><b>1.0.1</b> Book settings<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="resumen-summary.html"><a href="resumen-summary.html"><i class="fa fa-check"></i><b>2</b> Resumen / Summary<span></span></a></li>
+<li class="chapter" data-level="3" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html"><i class="fa fa-check"></i><b>3</b> Revisión de literatura<span></span></a><ul>
+<li class="chapter" data-level="3.1" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#breve-historia-hacia-la-selección-genómica"><i class="fa fa-check"></i><b>3.1</b> Breve historia hacia la selección genómica<span></span></a></li>
+<li class="chapter" data-level="3.2" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#la-selección-genómica"><i class="fa fa-check"></i><b>3.2</b> La selección genómica<span></span></a><ul>
+<li class="chapter" data-level="3.2.1" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#métodos-estadísticos-en-la-selección-genómica"><i class="fa fa-check"></i><b>3.2.1</b> Métodos estadísticos en la selección genómica<span></span></a></li>
+<li class="chapter" data-level="3.2.2" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#de-la-selección-genómica-de-múltiples-pasos-a-un-solo-paso"><i class="fa fa-check"></i><b>3.2.2</b> De la selección genómica de múltiples pasos a un solo paso<span></span></a></li>
+<li class="chapter" data-level="3.2.3" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#factores-que-afectan-la-habilidad-predictiva-de-la-selección-genómica"><i class="fa fa-check"></i><b>3.2.3</b> Factores que afectan la habilidad predictiva de la selección genómica<span></span></a></li>
+<li class="chapter" data-level="3.2.4" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#machine-learning-y-deep-learning"><i class="fa fa-check"></i><b>3.2.4</b> Machine learning y deep learning<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#diferencias-de-la-mejora-genética-en-animales-y-en-plantas"><i class="fa fa-check"></i><b>3.3</b> Diferencias de la mejora genética en animales y en plantas<span></span></a></li>
+<li class="chapter" data-level="3.4" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#la-mejora-genética-en-el-arroz"><i class="fa fa-check"></i><b>3.4</b> La mejora genética en el arroz<span></span></a><ul>
+<li class="chapter" data-level="3.4.1" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#importancia-de-la-mejora-genética-en-el-arroz"><i class="fa fa-check"></i><b>3.4.1</b> Importancia de la mejora genética en el arroz<span></span></a></li>
+<li class="chapter" data-level="3.4.2" data-path="revisión-de-literatura.html"><a href="revisión-de-literatura.html#breve-descripción-de-la-mejora-genética-en-plantas-con-ejemplos-en-el-arroz"><i class="fa fa-check"></i><b>3.4.2</b> Breve descripción de la mejora genética en plantas con ejemplos en el arroz<span></span></a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="objetivo.html"><a href="objetivo.html"><i class="fa fa-check"></i><b>4</b> Objetivo<span></span></a></li>
+<li class="chapter" data-level="5" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html"><i class="fa fa-check"></i><b>5</b> Materiales y métodos<span></span></a><ul>
+<li class="chapter" data-level="5.1" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html#intro2"><i class="fa fa-check"></i><b>5.1</b> Introducción<span></span></a></li>
+<li class="chapter" data-level="5.2" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html#recurso-vegetal-y-datos-fenotípicos"><i class="fa fa-check"></i><b>5.2</b> Recurso vegetal y datos fenotípicos<span></span></a></li>
+<li class="chapter" data-level="5.3" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html#predicción-basada-en-información-del-pedigrí-e-información-genómica"><i class="fa fa-check"></i><b>5.3</b> Predicción basada en información del pedigrí e información genómica<span></span></a></li>
+<li class="chapter" data-level="5.4" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html#precisión-de-la-predición-mediante-simulación-del-pedigrí-ancestral"><i class="fa fa-check"></i><b>5.4</b> Precisión de la predición mediante simulación del pedigrí ancestral<span></span></a></li>
+<li class="chapter" data-level="5.5" data-path="materiales-y-métodos.html"><a href="materiales-y-métodos.html#precisión-de-la-predición-mediante-simulación-de-descendientes"><i class="fa fa-check"></i><b>5.5</b> Precisión de la predición mediante simulación de descendientes<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="resultados.html"><a href="resultados.html"><i class="fa fa-check"></i><b>6</b> Resultados<span></span></a><ul>
+<li class="chapter" data-level="6.1" data-path="resultados.html"><a href="resultados.html#matrices-de-parentesco"><i class="fa fa-check"></i><b>6.1</b> Matrices de parentesco<span></span></a></li>
+<li class="chapter" data-level="6.2" data-path="resultados.html"><a href="resultados.html#estructura-poblacional-y-heredabilidad-en-la-simulación-ancestral"><i class="fa fa-check"></i><b>6.2</b> Estructura poblacional y heredabilidad en la simulación ancestral<span></span></a></li>
+<li class="chapter" data-level="6.3" data-path="resultados.html"><a href="resultados.html#precisión-de-la-predición-mediante-simulación-del-pedigrí-ancestral-1"><i class="fa fa-check"></i><b>6.3</b> Precisión de la predición mediante simulación del pedigrí ancestral<span></span></a></li>
+<li class="chapter" data-level="6.4" data-path="resultados.html"><a href="resultados.html#precisión-de-la-predición-mediante-simulación-de-descendientes-1"><i class="fa fa-check"></i><b>6.4</b> Precisión de la predición mediante simulación de descendientes<span></span></a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="discusión.html"><a href="discusión.html"><i class="fa fa-check"></i><b>7</b> Discusión<span></span></a></li>
+<li class="chapter" data-level="8" data-path="conclusiones.html"><a href="conclusiones.html"><i class="fa fa-check"></i><b>8</b> Conclusiones<span></span></a></li>
+<li class="appendix"><span><b>Appendix<span></span></b></span></li>
+<li class="chapter" data-level="A" data-path="anexos.html"><a href="anexos.html"><i class="fa fa-check"></i><b>A</b> Anexos<span></span></a><ul>
+<li class="chapter" data-level="A.1" data-path="anexos.html"><a href="anexos.html#función-para-el-calculo-de-la-matriz-de-parentesco-combinada"><i class="fa fa-check"></i><b>A.1</b> Función para el calculo de la matriz de parentesco combinada<span></span></a></li>
+<li class="chapter" data-level="A.2" data-path="anexos.html"><a href="anexos.html#visualización-del-gwas"><i class="fa fa-check"></i><b>A.2</b> Visualización del GWAS<span></span></a></li>
+<li class="chapter" data-level="A.3" data-path="anexos.html"><a href="anexos.html#precisión-de-la-predición-mediante-simulación-del-pedigrí-ancestral-2"><i class="fa fa-check"></i><b>A.3</b> Precisión de la predición mediante simulación del pedigrí ancestral<span></span></a></li>
+<li class="chapter" data-level="A.4" data-path="anexos.html"><a href="anexos.html#precisión-de-la-predición-mediante-simulación-de-descendientes-2"><i class="fa fa-check"></i><b>A.4</b> Precisión de la predición mediante simulación de descendientes<span></span></a></li>
+<li class="chapter" data-level="A.5" data-path="anexos.html"><a href="anexos.html#matrices-de-parentesco-1"><i class="fa fa-check"></i><b>A.5</b> Matrices de parentesco<span></span></a></li>
+</ul></li>
+<li><a href="bibliografía.html#bibliografía">Bibliografía<span></span></a></li>
+<li><a href="agradecimientos.html#agradecimientos">Agradecimientos<span></span></a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Evaluación de la selección genómica de un solo paso en arroz</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="discusión" class="section level1 hasAnchor">
+<h1><span class="header-section-number">Capítulo 7</span> Discusión<a href="discusión.html#discusión" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--Los análisis genéticos cuantitativos se han basado tradicionalmente en la metodología de los modelos mixtos. Desde el desarrollo de esta metodología, el progreso genético logrado en los programas de mejora genética ha sido en gran parte al uso del pedigrí [@cite:30], y a la matriz A que se obtiene a partir de este tipo información. La matriz A se ha utilizado ampliamente para estimar el parentesco entre individuos a través del BLUP. Sin embargo, en los últimos años, se han propuesto estimadores del parentesco distintos al basado en el pedigrí, ya que en este último se asume una relación promedio entre individuos fundadores igual a cero [@cite:71], además de que se ignora el término de muestreo Mendeliano [@cite:72]. -->
+<!--Por otro lado, a pesar del interés que en su momento hubo en el uso del pedigrí para la mejora genética de animales, el uso de este tipo de información en plantas no fue relevante [@cite:63].-->
+<!--Al proponer los métodos de selección genómica [@cite:8], y con el posterior desarrollo del GBLUP en el que se utiliza la matriz G con información de genotipos en lugar de la matriz A [@cite:39], fue posible solucionar las desventajas anteriormente mencionadas del BLUP, debido a que los métodos de selección genómica basados en información de genotipos tienen en cuenta la variación genética no explicada por el pedigrí debido a la variación del muestreo Mendeliano [@cite:40; @cite:69], además de que revelan relaciones entre individuos que aparentemente no están relacionados en el pedigrí [@cite:74].-->
+<!--A partir del estudio de @cite:73, en el que se propuso incorporar información de genotipos en el BLUP, @cite:8 plantearon los métodos de selección genómica. Siguiendo las consideraciones precedentes, @cite:39 desarrollo el GBLUP, el cual es un método de selección genómica que consiste en resolver un modelo mixto utilizando la matriz G en lugar de la matriz A. En relación con lo anterior, algunos estudios han informado la superioridad de los métodos de selección genómica sobre el BLUP en animales [@cite:75] y en plantas [@cite:68; @cite:20; @cite:11]. Esto último debido a que los métodos de selección genómica basados en información de genotipos tienen en cuenta la variación genética no explicada por el pedigrí debido a la variación del muestreo Mendeliano [@cite:40; @cite:69], además de que revelan relaciones entre individuos que aparentemente no están relacionados en el pedigrí [@cite:74].-->
+<!-- Se ha demostrado también el uso potencial de los métodos de selección genómica para la mejora genética de los cultivos de arroz a través de estudios de simulación [@cite:60].-->
+<!--Sin embargo, el costo para obtener un genotipado completo de individuos puede ser una limitante en el uso de los métodos anteriormente mencionados de selección genómica-->
+<!--[@cite:19; @cite:72; @cite:76], además que para su implementación se recomienda utilizar información de individuos sin genotipo y con genotipo en el mismo análisis de datos como forma de eliminar el sesgo asociado con la dependencia en el uso de individuos genotipados [@cite:72]-->
+<!--. Como solución a estos problemas se propuso el desarrollo del ssGBLUP, el cual es un método de selección donde la información genómica se extiende a los individuos sin genotipo a partir de una matriz de parentesco combinada con información de genotipos y del pedigrí [@cite:17; @cite:16], denominada como matriz H. En vista a esto, consideramos que la selección genómica mediante el ssGBLUP puede ser una opción interesante para la mejora genética en el arroz, debido a que permite obtener (de manera rentable) predicciones más precisas a través de una mejor estimación del parentesco entre individuos-->
+<!--, y también estimaciones más precisas de los parámetros genéticos.-->
+<p>La selección genómica fue propuesta por <span class="citation">Meuwissen, Hayes, y Goddard (<a href="bibliografía.html#ref-cite:8">2001</a>)</span> como una herramienta prometedora para superar las limitaciones de los métodos de mejora genética convencional como el BLUP, en donde se utiliza la matriz A con información de pedigríes. A diferencia del BLUP, los métodos de selección genómica basados en información de genotipos tienen en cuenta la variación genética no explicada por el pedigrí debido a la variación del muestreo Mendeliano <span class="citation">(Daetwyler et al. <a href="bibliografía.html#ref-cite:40">2007</a>; Morais-Júnior, Duarte, et al. <a href="bibliografía.html#ref-cite:69">2018</a>)</span>, además revelan relaciones entre individuos que aparentemente no están relacionados en el pedigrí <span class="citation">(Pszczola et al. <a href="bibliografía.html#ref-cite:74">2012</a>)</span>, permitiendo con esto una selección más precisa de caracteres cuantitativos de importancia económica.</p>
+
+<p>Debido al éxito en la mejora de la ganancia genética en animales, se planteó el uso de la selección genómica en plantas, y en el tiempo actual se ha establecido como un enfoque prometedor en diferentes especies de plantas <span class="citation">(Robertsen, Hjortshøj, y Janss <a href="bibliografía.html#ref-cite:63">2019</a>)</span>, entre ellas el arroz donde se ha demostrado su uso potencial a través de estudios de simulación <span class="citation">(Xu et al. <a href="bibliografía.html#ref-cite:60">2021</a>)</span>. Sin embargo, para construir modelos de selección genómica confiables se necesita de conjuntos de entrenamiento lo suficientemente grandes <span class="citation">(Imai et al. <a href="bibliografía.html#ref-cite:20">2019</a>)</span>, y el costo para obtener un genotipado completo de individuos puede ser también una limitante en el uso de esta metodología <span class="citation">(Pérez-Rodríguez et al. <a href="bibliografía.html#ref-cite:19">2017</a>; Ratcliffe et al. <a href="bibliografía.html#ref-cite:72">2017</a>)</span>.</p>
+<p>Como solución a estos problemas se propuso el desarrollo del ssGBLUP, el cual es un método de selección donde la información genómica se extiende a los individuos sin genotipo a partir de una matriz de parentesco combinada con información de genotipos y del pedigrí <span class="citation">(Legarra, Aguilar, y Misztal <a href="bibliografía.html#ref-cite:17">2009</a>; Misztal, Legarra, y Aguilar <a href="bibliografía.html#ref-cite:16">2009</a>)</span>, denominada como matriz H. En vista a esto, consideramos que la selección genómica mediante el ssGBLUP puede ser una opción interesante para la mejora genética en el arroz, además que a partir del uso de esta metodología se puede obtener predicciones más precisas a través de una mejor estimación del parentesco entre individuos, y estimaciones más precisas de los parámetros genéticos <span class="citation">(Karimi et al. <a href="bibliografía.html#ref-cite:76">2018</a>)</span>.</p>
+<!--Hasta donde sabemos, la heredabilidad de caracteres de relevancia económica en arroz no llego a ser estimada de forma tradicional mediante el uso de información de pedigrí, debido a que el uso de este tipo de información no era relevante [@cite:63]. -->
+<p>En este estudio para el carácter tiempo de floración, la estima de heredabilidad en sentido estricto, definida como la relación entre la varianza genética aditiva y la varianza fenotípica, se ubicó en los rangos informados en otros estudios como el de <span class="citation">Morais-Júnior, Breseghello, et al. (<a href="bibliografía.html#ref-cite:68">2018</a>)</span> con valores entre 0.81 a 0.89, y el de <span class="citation">Morais-Júnior, Duarte, et al. (<a href="bibliografía.html#ref-cite:69">2018</a>)</span> con valores de 0.83 a 0.99, valores que indican que se trata de un carácter muy heredable. De acuerdo con <span class="citation">Vourlaki et al. (<a href="bibliografía.html#ref-cite:26">s. f.</a>)</span>, el tiempo de floración es un carácter particularmente importante, debido a que tiene un impacto económico en la producción de arroz. A partir de los resultados obtenidos en este estudio, podemos afirmar que el número de marcadores y de individuos genotipados pudieron afectar la precisión con que se estimó la heredabilidad para el carácter tiempo de floración.</p>
+<p>El factor más importante que determina el éxito de la selección genómica es la predicción precisa del GEBV <span class="citation">(Nakaya y Isobe <a href="bibliografía.html#ref-cite:6">2012</a>)</span>. <!--Según @cite:69, la evaluación de la precisión se considera un requisito previo que permite comprender el potencial de un conjunto de datos para la predicción genómica. -->En el tiempo actual, se ha logrado grandes avances en la comprensión de los principales factores que afectan la precisión del GEBV, entre ellos el número de marcadores y de individuos genotipados <span class="citation">(Nakaya y Isobe <a href="bibliografía.html#ref-cite:6">2012</a>; Desta y Ortiz <a href="bibliografía.html#ref-cite:10">2014</a>; Morais-Júnior, Breseghello, et al. <a href="bibliografía.html#ref-cite:68">2018</a>; Bartholomé, Thathapalli-Prakash, y Cobb <a href="bibliografía.html#ref-cite:58">2021</a>)</span>. En relación con el número de marcadores, de acuerdo con <span class="citation">de los Campos et al. (<a href="bibliografía.html#ref-cite:31">2013</a>)</span> e <span class="citation">Imai et al. (<a href="bibliografía.html#ref-cite:20">2019</a>)</span>, la precisión de la predicción es más baja con un número insuficiente de marcadores debido a que la probabilidad de asociación (o desequilibrio de ligamiento) entre dichos marcadores con el QTL tiende a disminuir. Sin embargo, aunque la teoría indica que a mayor cantidad de marcadores mejor será la predicción, se ha demostrado también que a ciertas densidades es difícil mejorar significativamente dicha precisión <span class="citation">(Wang et al. <a href="bibliografía.html#ref-cite:77">2018</a>)</span>.</p>
+<p>Esto último se observó en los resultados de nuestro estudio (Figuras 5.4 y 5.5), ya que al utilizar una densidad aproximada entre 1.000 y 10.000 marcadores se evidenció una precisión similar a usar la mayor cantidad de marcadores disponibles. A este respecto, varios estudios han evaluado la posibilidad de usar menos cantidad de marcadores sin afectar notablemente la precisión de la predicción genómica. A partir de una población constituida por 369 líneas de arroz mejorado del Instituto Internacional de Investigación del Arroz (IRRI), <span class="citation">Kyselova, Tichý, y Jochová (<a href="bibliografía.html#ref-cite:32">2021</a>)</span> determinaron el número de marcadores necesario para implementar la selección genómica, seleccionando de forma aleatoria y distribuidos uniformemente en todo el genoma subconjuntos de los 73.147 marcadores disponibles, observando para casi todos los caracteres evaluados diferencias no significativas en la precisión de la predicción genómica con una cantidad mayor a 7.142 marcadores. <span class="citation">Zhu et al. (<a href="bibliografía.html#ref-cite:83">2017</a>)</span> investigaron el efecto de la densidad de marcadores en la predicción genómica de caracteres de crecimiento en bovino de carne Simmental Chino, estudio que demostró que la precisión para la selección genómica puede alcanzar una meseta a densidades bajas de marcadores. En un estudio llevado a cabo para caracteres de crecimiento en camarón blanco del Pacífico, <span class="citation">Wang et al. (<a href="bibliografía.html#ref-cite:82">2017</a>)</span> reportaron una mejora en la precisión de la predicción con un aumento en el número de marcadores, evidenciando también un efecto débil de la densidad del marcador sobre dicha precisión después de que la cantidad de marcadores alcanzara un valor de 3.200. Una tendencia similar se encuentra en otros estudios <span class="citation">(Tan et al. <a href="bibliografía.html#ref-cite:79">2017</a>; Haile et al. <a href="bibliografía.html#ref-cite:81">2018</a>; Norman et al. <a href="bibliografía.html#ref-cite:78">2018</a>; e Sousa et al. <a href="bibliografía.html#ref-cite:84">2019</a>; Lu et al. <a href="bibliografía.html#ref-cite:80">2020</a>)</span> donde se menciona que si la densidad del marcador alcanza cierto nivel, ya no es beneficioso para la precisión de la predicción genómica.</p>
+<!--Como consecuencia de lo anterior, durante los últimos años se han propuesto diferentes metodologías que permiten identificar y seleccionar subconjuntos de marcadores con asociación directa con el QTL. @cite:85, sugirieron el uso de tres métodos de aprendizaje automático (Random Forests, Gradient Boosting Machine y Extreme Gradient Method) en la identificación de subconjuntos de marcadores para la predicción genómica. Utilizando información de 38.082 marcadores y del fenotipo peso corporal en bovinos Brahman, estos autores demostraron que los métodos de aprendizaje automático eran métodos eficientes para identificar subconjuntos de SNP con asociación directa a genes que pueden afectar dicho carácter de crecimiento, demostrando también que la precisión de la predicción genómica a partir de los 3.000 marcadores identificados utilizando estos métodos era similar a la precisión obtenida en base al total de 38.082 marcadores. En otros estudios [@cite:86; @cite:84] se ha mencionado también los beneficios de identificar y seleccionar subconjuntos de marcadores para reducir el costo del genotipado mientras se mantiene la capacidad predictiva a un nivel razonable.-->
+<!-- NOTA: la eliminación de los marcadores que presentan un efecto pequeño es una buena estrategia que tiene el potencial de construir un chip SNP de baja densidad específico del rasgo y reducir los costos de genotipado en los programas de mejoramiento. Es posible seleccionar los marcadores más informativos para mejorar la precisión y construir una matriz de bajo costo para implementar la selección genómica en programas de mejoramiento basados en un panel de alta densidad. -->
+<p>De acuerdo a <span class="citation">Wang et al. (<a href="bibliografía.html#ref-cite:77">2018</a>)</span>, la predicción genómica es más precisa a mayor cantidad de individuos genotipados (o en conjuntos de entrenamiento más grandes) debido a que cuanto mayor es la cantidad de individuos genotipados, más muestras con información de fenotipos y de genotipos se pueden utilizar, y en consecuencia, la precisión de la estimación de los efectos genéticos se puede mejorar. Nuestros resultados (Figuras 5.4 y 5.5), así como los obtenidos en otros estudios <span class="citation">(Lourenco et al. <a href="bibliografía.html#ref-cite:87">2015</a>; Ratcliffe et al. <a href="bibliografía.html#ref-cite:72">2017</a>; Granado-Tajada, Varona, y Ugarte <a href="bibliografía.html#ref-cite:88">2021</a>)</span>, respaldan esta afirmación a través de una mejora en la precisión de la predicción al aumentar la cantidad de individuos genotipados. A diferencia del estudio en trigo hexaploide<!-- NOTA: que tiene 6 juegos de cromosomas. --> llevado a cabo por <span class="citation">Norman et al. (<a href="bibliografía.html#ref-cite:78">2018</a>)</span>, quienes informaron de una precisión en la predicción máxima entre 3.930 y 7.450 individuos genotipados, en nuestro estudio no se evidenció un punto en el que dicha precisión tendiera a estabilizarse. Los mismos autores <span class="citation">(Norman et al. <a href="bibliografía.html#ref-cite:78">2018</a>)</span> señalan lo difícil que es determinar el tamaño del conjunto de entrenamiento ideal, debido a que el número de individuos genotipados necesarios para ubicar un punto de rendimiento decreciente suele tener un costo prohibitivamente alto.</p>
+<p>En relación a lo anteriormente mencionado, <span class="citation">Bartholomé, Thathapalli-Prakash, y Cobb (<a href="bibliografía.html#ref-cite:58">2021</a>)</span> y <span class="citation">Granado-Tajada, Varona, y Ugarte (<a href="bibliografía.html#ref-cite:88">2021</a>)</span> afirman que en los programas de mejora genética (tanto en plantas y como en animales), no siempre son posibles grandes conjuntos de entrenamiento, y una forma de resolver este problema consiste en diseñar estrategias de genotipado para optimizar la composición de un conjunto de entrenamiento con el que se pueda lograr una buena precisión en la predicción.</p>
+<!--
+
+- single-step BLUP with varying...
+
+pag 936 (mejor stimación de par. gene.) y 937 (0 ind. genotipados implica el análisis mediante BLUP con la matriz A).
+
+--
+
+- single-step genomic prediction of fruit-quality...
+
+pag 8 a la 10, para guiarme en constuir mi discusión.
+
+--
+
+- Genomic selection: a breakthrough ...
+
+** pag 669 (la GS en arroz se ha probado recientemente), pag 670 (la GS se puede usar en arroz y estudios muestra viabilidad de la GS en arroz... recordar aquí el parrafo que el profesor Miguel me dijo que quitara o colocara en otra parte acerca de la simulacion en arroz), pag 671 (ejemplos de estudios de GS en arroz) y pag 672 (hay pocos estudios de GS en arroz).
+
+--
+
+- single-step reaction norm models ...
+
+pag 594 (el ssGBLUP es escaso en plantas)
+
+--
+
+- Will genomic selection ...
+
+pag 1304 (en el fitomejoramiento la GS no es popular aún) y ** pag 1306 (los estudios de GS son más comunes en animales que en plantas por varios motivos)
+
+- Single-step genomic and pedigree genotype x environment ...
+
+** pag 2 (la GS se esta convirtiendo en un enfoque estándar para lograr progreso genético en plantas), pag 3 (el ssGBLUP no se ha aplicado ampliamente en el fitomejoramiento), pag 13 (la matriz H como solución a la no pisbilidad de usar la GS en trigo), pag 13 (el ssGBLUP es atractivo en plantas) y pag 14 (la matriz H implica muchas cosas)
+
+--
+
+- Assesing prediction models ...
+
+pag 1 (los programas de mejora genética en arroz garantizaran la seguridad alimentaria), pag 6 (mejor precisión del ssGLUP y GBLUP que de ABLUP), pag 7 (el LD es la base de la GS... si quisiera incluir el LD, en este articulo a partir de la pagina 6 explican muchas cosas relacionadas con el LD) y pag 11 (con datos genómicos es mayor la precisión, y ejemplos de estudio donde se evidencia esto)
+
+--
+
+- Effect of hidden relatedness on single-step ...
+
+pag 4 (el genotipado completo de arboles forestlaes no es factible), pag 12 (precisión ligeramente mayor en ssGBLUP que en ABLUP) y pag 13 (matriz de relaciones realizada permite mejor estimación de los parámetros genéticos)
+
+--
+
+- The impact of genotyping different groups ...
+
+** pag 5415 (ejemplo de un objetivo dentro de la discusión)
+
+--
+
+- increasing accuracy and reducing costs ...
+
+pag 5 (pequeños subconjunto de marcadores inducen una disminución en la varianza residual), pag 18 (cuando se usan todos los marcadores, se encontraron los valores más altos de las varianzas residuales), pag 18 (baja densidad de marcadores es deseable para reducir los costos de genotipado), pag 11 (estudio hecho en arroz (creación de arreglos de SNP 6 k) con SNP representativos seleccionados) y pag 18 (los resultados del estudio evidencian que es posible seleccionar los marcadores y construir matriz de bajo costo para implementar la GS... hay varias frases en esta pagina donde indican la construcción de estas matrices)
+
+--
+
+- Genomic selection and association mapping ...
+
+** pag 12 (la GS permite reducir el ciclo de mejoramiento en arroz y aumentar el progreso genético)
+
+--
+
+- genomic selection methods for crop improvement:...
+
+pag 337 (El deterioro de las relaciones puede afectar la precisión) y pag 337 (es mejor volver a estimar los efectos del marcador o del haplotipo cada 2 o 3 generaciones)
+
+-- 
+
+- genomic selection: genome-wide...
+
+** pag 593 (la GS se ha practica en animales pero poco en plantas) y pag 598 (la ausencia de LD entre el marcador y el QTL reduce la precisión)
+
+--
+
+- Genomic selection in rice: ...
+
+pag 244 (para que la GS se use en la mejoar de plantas se debe considerar la interacción G x E)
+
+--
+
+- Genomic prediction: progress and ...
+
+** pag 5 (la implementación de la GS en arroz se ha retrasado en relación con los animales), pag 6 (interés en la implementación de la GS en arroz), pag 7 (los estudios de GS en arroz se comenzaron a publicar apenas en el 2014), pag 9 y pag 13 (el GBLUP es el método de GS de referencia debido a su simplicidad), pag 18 (con la GS se reduce el tiempo de mejora), pag 18 (métodos que se pueden implementar en compañia de la GS) y pag 24 (despues de identicar los factores que afectan la GS, el costo es limitante)
+
+--
+
+- Genomic selection in cereal breeding
+
+** pag 2 (la gs es prometedora en plantas), pag 2 y 8 (se ha ignorado el pedigrí en plantas) y pag 11 (la mejora genética en plantas podría beneficiarse de la información de pedigrí y de la información molecular).
+
+-->
+
+<!-- Para renderizar: bookdown::render_book("index.Rmd", "bookdown::pdf_book") -->
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="resultados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="conclusiones.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["TFM.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
