@@ -675,10 +675,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 1'
     ) %>%
   ggplot(data = .,aes(x = Densidad, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = 'Enfoque Bayesiano', subtitle = 'Pedigrí 1', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -753,10 +753,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Densidad, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = ' ', subtitle = 'Pedigrí 2', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -834,7 +834,7 @@ param_gen %>%
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = ' ', subtitle = 'Pedigrí 3', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -894,7 +894,7 @@ param_gen %>%
     plot.subtitle = element_text(size = 10, face = 'bold')
     ) -> varA_ind_gen_bay_ped3
 
-(varA_ind_gen_bay_ped1 | varE_ind_gen_bay_ped1 | Here_ind_gen_bay_ped1) / (varA_ind_gen_bay_ped2 | varE_ind_gen_bay_ped2 | Here_ind_gen_bay_ped2) / (varA_ind_gen_bay_ped3 | varE_ind_gen_bay_ped3 | Here_ind_gen_bay_ped3) -> param_Bayes
+(Here_ind_gen_bay_ped1) | (Here_ind_gen_bay_ped2) / (Here_ind_gen_bay_ped3) -> param_Bayes
 
 knitr::include_graphics('figures/param_Bayes.pdf', auto_pdf = TRUE)
 
@@ -917,10 +917,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 1'
     ) %>%
   ggplot(data = .,aes(x = Densidad, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = 'Enfoque REML', subtitle = 'Pedigrí 1', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -995,10 +995,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Densidad, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = ' ', subtitle = 'Pedigrí 2', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1076,7 +1076,7 @@ param_gen %>%
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Densidad del marcador') +
+  labs(title = ' ', subtitle = 'Pedigrí 3', y = 'Heredabilidad', x = 'Densidad del marcador') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1136,7 +1136,7 @@ param_gen %>%
     plot.subtitle = element_text(size = 10, face = 'bold')
     ) -> varA_ind_gen_reml_ped3
 
-(varA_ind_gen_reml_ped1 | varE_ind_gen_reml_ped1 | Here_ind_gen_reml_ped1) / (varA_ind_gen_reml_ped2 | varE_ind_gen_reml_ped2 | Here_ind_gen_reml_ped2) / (varA_ind_gen_reml_ped3 | varE_ind_gen_reml_ped3 | Here_ind_gen_reml_ped3) -> param_reml
+(Here_ind_gen_reml_ped1) | (Here_ind_gen_reml_ped2) / (Here_ind_gen_reml_ped3) -> param_reml
 
 knitr::include_graphics('figures/param_reml.pdf', auto_pdf = TRUE)
 ```
@@ -1145,7 +1145,7 @@ knitr::include_graphics('figures/param_reml.pdf', auto_pdf = TRUE)
 __Figura 5.3:__ Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Las barras representan la media del valor de heredabilidad obtenida de las 10 réplicas de cada pedigrí y Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
 \hspace*{1em}
-La heredabilidad estimada, según el conjunto completo de marcadores (100.231 SNP) en distintas cantidades de individuos genotipados (Figura 5.4), varió de  0.72 a 0.74. El valor de heredabilidad aumentó con el aumento en el número de individuos genotipados (de 0 a 298 individuos), y luego dicho valor tendió a ser estable. En ambos enfoques (Bayesiano y REML) y en los tres pedigríes simulados mediante simulación ancestral, no se observaron diferencias en la estima de heredabilidad. Se evidenció también que las estimaciones de los componentes de varianzas genético aditivo y residual disminuyeron continuamente según la cantidad de individuos genotipados. Al comparar las estimas de los componentes de varianzas genético aditivo y residual, no se observó diferencias entre los tres pedigríes simulados de forma ancestral y en ambos enfoques.
+La heredabilidad estimada, según el conjunto completo de marcadores (100.231 SNP) en distintas cantidades de individuos genotipados (Figura 5.4), varió de  0.72 a 0.74. El valor de heredabilidad presentó distintas tendencias según el pedigrí, con un aumentó en dicho valor al aumentar el número de individuos genotipados (en el pedigrí 1), y caso contrario, una disminución en el valor de heredabilidad al aumentar el número de individuos genotipados (en los pedigríes 2 y 3). En ambos enfoques (Bayesiano y REML), no se observaron diferencias en la estima de heredabilidad. Se evidenció también que las estimaciones de los componentes de varianzas genético aditivo y residual disminuyeron continuamente según la cantidad de individuos genotipados. Al comparar las estimas de los componentes de varianzas genético aditivo y residual, no se observaron diferencias entre ambos enfoques.
 
 ```{r, echo = FALSE, out.width = "100%", fig.align = 'center', message=FALSE, warning = FALSE}
 
@@ -1198,10 +1198,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 1'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = 'Enfoque Bayesiano', subtitle = 'Pedigrí 1', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1273,13 +1273,13 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = ' ', subtitle = 'Pedigrí 2', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1299,7 +1299,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
@@ -1324,7 +1324,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
@@ -1351,13 +1351,13 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = ' ', subtitle = 'Pedigrí 3', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1377,7 +1377,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
@@ -1402,7 +1402,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
@@ -1417,7 +1417,7 @@ param_gen %>%
     plot.subtitle = element_text(size = 10, face = 'bold')
     ) -> varA_ind_gen_bay_ped3
 
-(varA_ind_gen_bay_ped1 | varE_ind_gen_bay_ped1 | Here_ind_gen_bay_ped1) / (varA_ind_gen_bay_ped2 | varE_ind_gen_bay_ped2 | Here_ind_gen_bay_ped2) / (varA_ind_gen_bay_ped3 | varE_ind_gen_bay_ped3 | Here_ind_gen_bay_ped3) -> param_Bayes_2
+(Here_ind_gen_bay_ped1) | (Here_ind_gen_bay_ped2) / (Here_ind_gen_bay_ped3) -> param_Bayes_2
 
 knitr::include_graphics('figures/param_Bayes_2.pdf', auto_pdf = TRUE)
 
@@ -1440,10 +1440,10 @@ param_gen %>%
     Pedigrí == 'Pedigrí 1'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', subtitle = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = 'Enfoque REML', subtitle = 'Pedigrí 1', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1515,13 +1515,13 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
-  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
+  geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = ' ', subtitle = 'Pedigrí 2', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1541,7 +1541,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
@@ -1566,7 +1566,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 2'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
@@ -1593,13 +1593,13 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'red', fill = 'red', alpha = 0.4) +
   #geom_label(aes(label = round(prom, digits = 2)), colour = 'black', position = position_dodge(width = 1)) +
   scale_y_continuous(limits = c(0.0, 1.0)) +
-  labs(title = ' ', y = 'Heredabilidad', x = 'Individuos genotipados') +
+  labs(title = ' ', subtitle = 'Pedigrí 3', y = 'Heredabilidad', x = 'Individuos genotipados') +
   theme_bw() +
   theme(
     axis.text.y = element_text(size = 10, face = 'bold'),
@@ -1619,7 +1619,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'cyan', fill = 'cyan', alpha = 0.4) +
@@ -1644,7 +1644,7 @@ param_gen %>%
   filter(
     Densidad %in% c('0', '100.000'),
     Enfoque == 'Bayesiano',
-    Pedigrí == 'Pedigrí 1'
+    Pedigrí == 'Pedigrí 3'
     ) %>%
   ggplot(data = .,aes(x = Ind_gen, y = prom)) +
   geom_col(position = position_dodge(width = 0.7), width = 0.6, colour = 'yellow', fill = 'yellow', alpha = 0.4) +
@@ -1659,7 +1659,7 @@ param_gen %>%
     plot.subtitle = element_text(size = 10, face = 'bold')
     ) -> varA_ind_gen_reml_ped3
 
-(varA_ind_gen_reml_ped1 | varE_ind_gen_reml_ped1 | Here_ind_gen_reml_ped1) / (varA_ind_gen_reml_ped2 | varE_ind_gen_reml_ped2 | Here_ind_gen_reml_ped2) / (varA_ind_gen_reml_ped3 | varE_ind_gen_reml_ped3 | Here_ind_gen_reml_ped3) -> param_reml_2
+(Here_ind_gen_reml_ped1) | (Here_ind_gen_reml_ped2) / (Here_ind_gen_reml_ped3) -> param_reml_2
 
 knitr::include_graphics('figures/param_reml_2.pdf', auto_pdf = TRUE)
 ```
@@ -1840,11 +1840,11 @@ __Figura 5.4:__ Distribuciones posteriores de componentes de varianza y de hered
 
 ## Precisión de la predición mediante simulación del pedigrí ancestral
 
-El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción para el carácter tiempo de floración, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.5 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
+El efecto de la densidad del marcador y de la cantidad de individuos genotipados sobre la precisión de la predicción, se evaluó a través del coeficiente de correlación entre los valores fenotípicos observados y predichos. Los resultados se resumen en la Figura 5.5 y en el Anexo A.3. En general, y como era de esperar, la precisión de la predicción aumentó a medida que aumentaban tanto la densidad del marcador como la cantidad de individuos genotipados.
 
-Con relación a la precisión de la predicción debido a la densidad del marcador en la simulación ancestral (Figura 5.5 y Anexo A.3), ésta fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
+La precisión de la predicción debido a la densidad del marcador (Figura 5.5 y Anexo A.3), fue mayor cuando no se utilizó información genómica en comparación a una densidad aproximada de 1.000 (en todos los casos de individuos genotipados). Al considerar una densidad del marcador por encima de 1.000, dicha precisión tendió a aumentar hasta alcanzar la precisión de la predicción más alta cuando se usaron todos los marcadores disponibles (aunque al considerar el genotipado de 148 individuos, la precisión de la predicción usando 10.000 y 100.000 marcadores no pudo superar el caso donde no se utilizó información genómica). Sin embargo, dado el aumento marginal en la precisión de la predicción al aumentar de 10.000 a 100.000 marcadores, se puede afirmar que el límite en el aumento de la precisión se alcanzó en aproximadamente 10.000 marcadores. Por otra parte, el desvío estándar de las precisiones de predicción fue similar, independientemente del número de marcadores. Este comportamiento de la densidad del marcador sobre la precisión de la predicción curiosamente se observó por igual en los tres pedigríes simulados, tanto en el enfoque Bayesiano como en REML.
 
-En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados, situación que demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, él desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
+En cuanto a la cantidad de individuos genotipados, la precisión de la predicción aumentó sustancialmente al pasar de 148 a 451 individuos genotipados (en todos los casos de densidades de SNP). A diferencia de lo mencionado en el párrafo anterior para la densidad del marcador, no se pudo observar un punto en el que la precisión de la predicción se estabilizara en respuesta al aumento en la cantidad de individuos genotipados. Esto demuestra la importancia de un tamaño adecuado del conjunto de entrenamiento para construir modelos de predicción genómica. Adicionalmente, él desvió estándar de las precisiones disminuyo a medida que aumentaba la cantidad de individuos genotipados<!--, hecho que pone de manifiesto que la diferencia en la precisión de la predicción es más alta en conjuntos de entrenamiento más pequeños-->. Al igual que lo mencionado en el párrafo anterior para la densidad del marcador, se observó un comportamiento muy similar en la precisión de la predicción debido a la cantidad de individuos genotipados en los tres pedigríes simulados y en ambos enfoques (Bayesiano y REML).
 
 ```{r, eval = FALSE, echo = FALSE}
 
