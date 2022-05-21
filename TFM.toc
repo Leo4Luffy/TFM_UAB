@@ -1,5 +1,5 @@
 \babel@toc {spanish}{}\relax 
-\contentsline {chapter}{Dedicatoria}{1}{chapter*.2}%
+\contentsline {chapter}{Dedicado a}{1}{chapter*.2}%
 \contentsline {chapter}{\numberline {1}Resumen / Summary}{2}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Revisión de literatura}{4}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Breve historia hacia la selección genómica}{4}{section.2.1}%
