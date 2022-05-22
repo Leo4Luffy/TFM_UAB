@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  21 MAY 2022 10:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2021) (preloaded format=pdflatex 2022.3.31)  22 MAY 2022 05:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -956,11 +956,11 @@ Cap\'{\i }tulo 6.
 LaTeX Info: Redefining \. on input line 946.
 LaTeX Info: Redefining \% on input line 946.
 [44]
-LaTeX Info: Redefining \. on input line 952.
-LaTeX Info: Redefining \% on input line 952.
+LaTeX Info: Redefining \. on input line 950.
+LaTeX Info: Redefining \% on input line 950.
 [45]
-LaTeX Info: Redefining \. on input line 954.
-LaTeX Info: Redefining \% on input line 954.
+LaTeX Info: Redefining \. on input line 956.
+LaTeX Info: Redefining \% on input line 956.
 [46]
 Cap\'{\i }tulo 7.
 [47
@@ -968,64 +968,64 @@ Cap\'{\i }tulo 7.
 ]
 Ap\'{e}ndice A.
 
-Package xcolor Warning: Incompatible color definition on input line 966.
+Package xcolor Warning: Incompatible color definition on input line 968.
 
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 968.
+(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 970.
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
-
-
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1039.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1039.
+
+
+Package xcolor Warning: Incompatible color definition on input line 1039.
 
 [48
 
 ]
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1039.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1037.
+Package xcolor Warning: Incompatible color definition on input line 1039.
 
-<figures/gwas.pdf, id=887, 449.68pt x 305.14pt>
+<figures/gwas.pdf, id=892, 449.68pt x 305.14pt>
 File: figures/gwas.pdf Graphic file (type pdf)
 <use figures/gwas.pdf>
-Package pdftex.def Info: figures/gwas.pdf  used on input line 1042.
+Package pdftex.def Info: figures/gwas.pdf  used on input line 1044.
 (pdftex.def)             Requested size: 360.0pt x 244.2939pt.
-LaTeX Info: Redefining \. on input line 1042.
-LaTeX Info: Redefining \% on input line 1042.
+LaTeX Info: Redefining \. on input line 1044.
+LaTeX Info: Redefining \% on input line 1044.
 [49]
-LaTeX Info: Redefining \. on input line 1080.
-LaTeX Info: Redefining \% on input line 1080.
+LaTeX Info: Redefining \. on input line 1082.
+LaTeX Info: Redefining \% on input line 1082.
 [50 <./figures/gwas.pdf>]
-LaTeX Info: Redefining \. on input line 1148.
-LaTeX Info: Redefining \% on input line 1148.
+LaTeX Info: Redefining \. on input line 1150.
+LaTeX Info: Redefining \% on input line 1150.
 [51]
-LaTeX Info: Redefining \. on input line 1220.
-LaTeX Info: Redefining \% on input line 1220.
+LaTeX Info: Redefining \. on input line 1222.
+LaTeX Info: Redefining \% on input line 1222.
 [52]
-LaTeX Info: Redefining \. on input line 1288.
-LaTeX Info: Redefining \% on input line 1288.
-[53]
 LaTeX Info: Redefining \. on input line 1290.
 LaTeX Info: Redefining \% on input line 1290.
+[53]
+LaTeX Info: Redefining \. on input line 1292.
+LaTeX Info: Redefining \% on input line 1292.
 [54]
-Underfull \hbox (badness 2126) in paragraph at lines 1329--1331
+Underfull \hbox (badness 2126) in paragraph at lines 1331--1333
  [][]\T1/lmr/m/n/10.95 Cappetta, E., G. An-dol-fo, A. Di Mat-teo, A. Ba-ro-ne, 
 L Frus-cian-
  []
 
 
-Underfull \hbox (badness 2080) in paragraph at lines 1329--1331
+Underfull \hbox (badness 2080) in paragraph at lines 1331--1333
  \T1/lmr/m/n/10.95 te, y M. R. Er-co-lano. 2020. ^^SAc-ce-le-ra-ting to-ma-to b
 ree-ding by
  []
 
 
-Underfull \hbox (badness 5203) in paragraph at lines 1329--1331
+Underfull \hbox (badness 5203) in paragraph at lines 1331--1333
  \T1/lmr/m/n/10.95 ex-ploi-ting ge-no-mic se-lec-tion ap-proa-ches^^T. \T1/lmr/
 m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
  []
@@ -1034,7 +1034,7 @@ m/it/10.95 Plants \T1/lmr/m/n/10.95 9 (9). [][]$https :
 
 
 ]
-Overfull \hbox (30.45624pt too wide) in paragraph at lines 1368--1370
+Overfull \hbox (30.45624pt too wide) in paragraph at lines 1370--1372
  [][]\T1/lmr/m/n/10.95 Guimarães, E. P. 2009. \T1/lmr/m/it/10.95 Ri-ce Bree-din
 g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 2297-[]9 /
@@ -1042,59 +1042,59 @@ g\T1/lmr/m/n/10.95 . [][]$https : / / doi . org / 10 . 1007 / 978-[]0-[]387-[]7
 
 [56]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-387.
+389.
 (/home/leo/.TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [57]
-Underfull \hbox (badness 1231) in paragraph at lines 1452--1454
+) [57] [58]
+Underfull \hbox (badness 1231) in paragraph at lines 1460--1462
  \T1/lmr/m/n/10.95 a python tool to eva-lua-te ge-no-mic pre-dic-tion in com-pl
 ex sce-na-
  []
 
-[58]
-Underfull \hbox (badness 5345) in paragraph at lines 1491--1493
+[59]
+Underfull \hbox (badness 5345) in paragraph at lines 1499--1501
  \T1/lmr/m/n/10.95 the ra-tio-na-le for es-ti-ma-ting ge-nea-lo-gi-cal coan-ces
 try from mo-
  []
 
 
-Underfull \hbox (badness 7540) in paragraph at lines 1491--1493
+Underfull \hbox (badness 7540) in paragraph at lines 1499--1501
  \T1/lmr/m/n/10.95 le-cu-lar mar-kers^^T. \T1/lmr/m/it/10.95 Ge-ne-tics Se-lec-
 tion Evo-lu-tion \T1/lmr/m/n/10.95 43: 27. [][]$https :
  []
 
-[59]
-Underfull \hbox (badness 3803) in paragraph at lines 1509--1511
+
+Underfull \hbox (badness 3803) in paragraph at lines 1517--1519
  \T1/lmr/m/n/10.95 2017. ^^SEf-fects of mar-ker den-sity and po-pu-la-tion stru
 c-tu-re on
  []
 
 
-Underfull \hbox (badness 1072) in paragraph at lines 1509--1511
+Underfull \hbox (badness 1072) in paragraph at lines 1517--1519
  \T1/lmr/m/n/10.95 the ge-no-mic pre-dic-tion ac-cu-racy for growth trait in Pa
 -ci-fic whi-
  []
 
-[60]
+[60] [61]
 
 pdfTeX warning: pdflatex (file ./figures/uvalogo_regular_p_en.pdf): PDF inclusi
 on: found PDF version <1.7>, but at most version <1.5> allowed
-<figures/uvalogo_regular_p_en.pdf, id=1051, 225.84375pt x 328.22626pt>
+<figures/uvalogo_regular_p_en.pdf, id=1061, 225.84375pt x 328.22626pt>
 File: figures/uvalogo_regular_p_en.pdf Graphic file (type pdf)
 <use figures/uvalogo_regular_p_en.pdf>
 Package pdftex.def Info: figures/uvalogo_regular_p_en.pdf  used on input line 1
-541.
+549.
 (pdftex.def)             Requested size: 36.0022pt x 52.32195pt.
-[61
+[62
 
  <./figures/uvalogo_regular_p_en.pdf>] (./TFM.aux
 LaTeX Info: Redefining \. on input line 23.
 LaTeX Info: Redefining \% on input line 23.
 ) ) 
 Here is how much of TeX's memory you used:
- 15935 strings out of 480218
- 259589 string characters out of 5895106
- 569117 words of memory out of 5000000
+ 15938 strings out of 480218
+ 259618 string characters out of 5895106
+ 568117 words of memory out of 5000000
  33372 multiletter control sequences out of 15000+600000
  556317 words of font info for 85 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1121,10 +1121,10 @@ onts/type1/public/lm/lmsy6.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/publi
 c/lm/lmsy8.pfb></home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtk10.pfb>
 </home/leo/.TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></home/leo/.Tin
 yTeX/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on TFM.pdf (67 pages, 12670892 bytes).
+Output written on TFM.pdf (68 pages, 12672824 bytes).
 PDF statistics:
- 1292 PDF objects out of 1440 (max. 8388607)
- 1082 compressed objects within 11 object streams
- 231 named destinations out of 1000 (max. 500000)
+ 1301 PDF objects out of 1440 (max. 8388607)
+ 1090 compressed objects within 11 object streams
+ 234 named destinations out of 1000 (max. 500000)
  364 words of extra memory for PDF output out of 10000 (max. 10000000)
 
