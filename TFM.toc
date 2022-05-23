@@ -6,11 +6,11 @@
 \contentsline {section}{\numberline {2.2}La selección genómica}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Métodos estadísticos en la selección genómica}{8}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}De la selección genómica de múltiples pasos a un solo paso}{13}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}Factores que afectan la habilidad predictiva de la selección genómica}{17}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.3}Factores que afectan la precisión de la predicción de la selección genómica}{17}{subsection.2.2.3}%
 \contentsline {section}{\numberline {2.3}Diferencias de la mejora genética en animales y en plantas}{17}{section.2.3}%
 \contentsline {section}{\numberline {2.4}La mejora genética en el arroz}{20}{section.2.4}%
 \contentsline {subsection}{\numberline {2.4.1}Importancia de la mejora genética en el arroz}{20}{subsection.2.4.1}%
-\contentsline {subsection}{\numberline {2.4.2}Breve descripción de la mejora genética en plantas con ejemplos en el arroz}{21}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.2}Breve descripción de la mejora genética en plantas con ejemplos en el arroz}{20}{subsection.2.4.2}%
 \contentsline {chapter}{\numberline {3}Objetivo}{24}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Materiales y métodos}{25}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Recurso vegetal y datos fenotípicos}{25}{section.4.1}%

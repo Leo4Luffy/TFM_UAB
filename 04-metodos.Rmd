@@ -602,14 +602,14 @@ knitr::include_graphics('figures/Pedigríes.pdf', auto_pdf = TRUE)
 ```
 
 \noindent
-__Figura 4.3:__ Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1661 en el pedigrí 2 y 2451 en el pedigrí 3. 
+__Figura 4.3:__ Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1.661 en el pedigrí 2 y 2.451 en el pedigrí 3. 
 
 \hspace*{1em}
 Para estudiar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
 1. Distinta cantidad de individuos genotipados: del conjunto total de individuos genotipados (451), se seleccionaron de forma aleatoria 148 y 298 individuos, generando con ello tres subconjuntos de datos (o diferentes poblaciones de entrenamiento) que incluían 148, 298 y 451 individuos.
 
-2. Diferentes densidades de SNP: del conjunto total con 100231 SNP después del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1.000, 10.000 y 100.000 SNP.
+2. Diferentes densidades de SNP: del conjunto total con 100.231 SNP después del control de calidad, se seleccionaron de forma aleatoria mediante el uso de Plink tres subconjuntos de datos de SNP, de manera que el número de marcadores aproximado fuera igual a 1.000, 10.000 y 100.000 SNP.
 
 A continuación, usando los diferentes subconjuntos de datos descritos anteriormente, se obtuvo un total de nueve matrices H con distintas combinaciones de densidad de marcadores e individuos genotipados (Figura 4.4), usando la función `R` descrita en el anexo A.1.
 
@@ -689,7 +689,7 @@ __Figura 4.4:__ Esquema de construcción de la matriz H a partir de la matriz A 
 \hspace*{1em}
 Además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50000 iteraciones, de las cuales fueron descartadas las primeras 10000 como muestras burn-in. <!--NOTA: La estimación Bayesiana con MCMC provee cadenas con muestras aleatorias de las distribuciones marginales posteriores de cada parámetro o efecto desconocido, a partir de las cuales se pueden hacer las inferencias. Es incorrecto decir que un parámetro genético o que unos valores aditivos han sido estimados “por MCMC” o, “por Gibbs sampling”. La estimación se ha hecho a partir de las funciones de densidad posterior, y se ha usado la media o mediana de cada función para hacer la inferencia estadística; MCMC o Gibbs sampling son meros métodos de cálculo numérico. Decir que se estima un parámetro por Gibbs sampling es como decir que en lugar de predecir por BLUP unos valores aditivos, se predicen por Gauss-Seidel porque este es el método que se ha usado para resolver las ecuaciones del modelo mixto..-->En cuanto al paquete `lme4GS`, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal). 
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes `BGLR` [@cite:50] y `lme4GS` [@cite:51] del lenguaje de programación `R`, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete `BGLR`, la Cadena de Markov Monte Carlo (MCMC) se generó con 50.000 iteraciones, de las cuales fueron descartadas las primeras 10.000 como muestras burn-in. <!--NOTA: La estimación Bayesiana con MCMC provee cadenas con muestras aleatorias de las distribuciones marginales posteriores de cada parámetro o efecto desconocido, a partir de las cuales se pueden hacer las inferencias. Es incorrecto decir que un parámetro genético o que unos valores aditivos han sido estimados “por MCMC” o, “por Gibbs sampling”. La estimación se ha hecho a partir de las funciones de densidad posterior, y se ha usado la media o mediana de cada función para hacer la inferencia estadística; MCMC o Gibbs sampling son meros métodos de cálculo numérico. Decir que se estima un parámetro por Gibbs sampling es como decir que en lugar de predecir por BLUP unos valores aditivos, se predicen por Gauss-Seidel porque este es el método que se ha usado para resolver las ecuaciones del modelo mixto..-->En cuanto al paquete `lme4GS`, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete [@cite:51] indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal). 
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. De acuerdo a @cite:25, la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este estudio, los valores fenotípicos observados de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas en los conjuntos de datos) se consideraron como fenotipos faltantes <!--(fueron predichos)-->.
 
@@ -715,7 +715,7 @@ tribble(
   'F1', '10', '20', '40', '80',
   'F2', '800 (10x80)', '800 (20x40)', '800 (40x20)', '800 (80x10)',
   'F3', '800 (800x1)', '800 (800x1)', '800 (800x1)', '800 (800x1)',
-  'Total', '2061', '2071', '2091', '2131'
+  'Total', '2.061', '2.071', '2.091', '2.131'
   ) %>%
   gt() %>%
    tab_footnote(
