@@ -3,5 +3,10 @@
 
 # Conclusiones
 
+\noindent
+Tras los análisis de este estudio, podemos concluir lo siguiente:
 
+- Hasta donde sabemos, como estudio preliminar sobre el uso combinado de información de genotipos (con diferentes densidades de marcadores y de individuos genotipados) y de pedigrí en la mejora genética del arroz, el ssGBLUP demostró ser un método de selección genómica beneficioso.
+
+- La precisión de la predicción genómica mejoró con el aumento en el número de marcadores y de individuos genotipados; sin embargo, para el primer caso, no fue necesario utilizar la densidad máxima de marcadores, sino una cantidad aproximada entre 1.000 y 10.000, resultado que proporcionó evidencia de que el ssGBLUP es útil para reducir los costos de genotipado y al mismo tiempo mantener la precisión de la predicción.
 
