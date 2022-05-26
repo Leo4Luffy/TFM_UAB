@@ -96,6 +96,12 @@
 \usepackage{longtable,booktabs}
 % Make links footnotes instead of hotlinks:
 \renewcommand{\href}[2]{#2\footnote{\url{#1}}}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
 \setlength{\emergencystretch}{3em}  % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -313,8 +319,8 @@ Director:
 A la memoria de mi abuelo Jose Joaquín y mi abuela Adelfa. Dedicado a mi abuela Nery, a mi padre Jorge Alberto, a mi madre Mirna Mary y a mi hermano David Alberto. A mi familia y amigos. ¡Ellos son mi todo!
 \end{quote}
 
-\hypertarget{resumen-summary}{%
-\chapter{Resumen / Summary}\label{resumen-summary}}
+\hypertarget{resumen}{%
+\chapter{Resumen}\label{resumen}}
 
 \noindent 
 En los modelos de predicción genómica convencionales se utilizan solo los individuos con genotipo. El método del mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP) permite integrar individuos genotipados y no genotipados, siempre que estén conectados por un pedigrí. El objetivo de este estudio consistió en evaluar la utilidad de esta metodología de selección en la predicción genómica del arroz. Se usaron datos del tiempo de floración de 451 individuos de arroz de la variedad Indica genotipada con 100.231 SNP. Debido a la falta del pedigrí, se llevó a cabo simulaciones de dos tipos, hacia atrás (ancestral) y hacia adelante (descendientes). En la simulación ancestral, se usó el software Molcoanc para crear antepasados virtuales a partir de los 451 individuos genotipados. En la simulación de descendientes, se empleó el paquete de Python SeqBreed para generar descendencia de esos 451 individuos, repartidos en distintas generaciones (F1, F2 y F3). Se evaluaron distintos escenarios de densidad de marcadores (ninguno, 1.000, 10.000 y 100.000) y de individuos genotipados según el tipo de simulación: (i) simulación ancestral con ninguno, 148, 298 y 451 individuos genotipados, y (ii) simulación de descendientes con ningún individuo, solo la generación F2, la generación F2 y F3, y todos los individuos genotipados. Se usó el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Los resultados revelaron que, en ambos tipos de simulación, la precisión de la predicción mediante el ssGBLUP tiende a mejorar comparado con el mejor predictor lineal insesgado convencional (BLUP) que utiliza únicamente la información del pedigrí. En la simulación ancestral se observaron ganancias esperadas en la precisión por encima del 1\% con respecto al BLUP (al considerar una densidad del marcador de 10.000 en 298 individuos genotipados) y entre el 13\% al 18\% (al considerar una densidad del marcador de 10.000 en 451 individuos genotipados). En cuanto a la simulación de descendientes, también se pudo observar precisiones más altas al realizar la predicción mediante el ssGBLUP. Los análisis sugieren utilizar una cantidad de marcadores entre 1.000 y 10.000 para obtener una precisión equivalente a usar todos los marcadores disponibles. Por lo tanto, el uso combinado de la información genómica y del pedigrí mediante el método ssGBLUP puede ser un enfoque interesante para aumentar la precisión de la predicción en los programas de mejora genética en los cultivos de arroz.
@@ -324,7 +330,14 @@ En los modelos de predicción genómica convencionales se utilizan solo los indi
 \noindent 
 \textbf{Palabras clave:} matriz de parentesco, parámetros genéticos, precisión de la predicción, predicción genómica.
 
-\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+\newpage
+
+\noindent 
+
+\noindent 
+\textbf{Summary}
+
+\hspace*{1em}
 
 \noindent 
 In traditional genomic prediction models, only individuals with the genotype are used. The single-step genomic best linear unbiased predictor (ssGBLUP) method allows integrating genotyped and non-genotyped individuals, provided they are connected by a pedigree. The objective of this study was to evaluate the use of this selection methodology in the genomic prediction of rice. Flowering time data from 451 Indica rice individuals genotyped with 100.231 SNPs were used. Due to the absence of the pedigree, two types of simulations were carried out, backwards (ancestor) and forwards (offspring). In the ancestry simulation, Molcoanc software was used to create virtual ancestors from the 451 genotyped individuals. In the offspring simulation, the SeqBreed Python package was used to generate offspring from these 451 individuals, divided into different generations (F1, F2 and F3). Different marker density (none, 1.000, 10.000 and 100.000) and genotyped individuals scenarios were evaluated according to the type of simulation: (i) ancestors simulation with none, 148, 298 and 451 individuals genotyped, and (ii) offspring simulation with none individuals, only F2 generation, the F2 and F3 generation, and all the individuals genotyped. The correlation coefficient between the observed and predicted phenotypic values was used as a measure of predictive ability. The results revealed that in both types of simulation, the prediction accuracy using the ssGBLUP is better compared to the conventional best linear unbiased prediction (BLUP) that uses only the pedigree information. In the ancestors simulation, expected gains in precision were observed above 1\% with respect to the BLUP (considering a marker density of 10.000 in 298 genotyped individuals) and between 13\% and 18\% (considering a marker density of 10.000 in 451 genotyped individuals). In the offspring simulation, higher precisions were also observed when making the prediction using ssGBLUP. The analyzes suggest using a number of markers between 1.000 and 10.000, to obtain an accuracy equivalent to using all available markers. Therefore, the combined use of genomic and pedigree information in the ssGBLUP method may be an interesting approach to improvement prediction accuracy in rice breeding programs.
@@ -342,14 +355,11 @@ In traditional genomic prediction models, only individuals with the genotype are
 \hypertarget{breve-historia-hacia-la-selecciuxf3n-genuxf3mica}{%
 \section{Breve historia hacia la selección genómica}\label{breve-historia-hacia-la-selecciuxf3n-genuxf3mica}}
 
-La historia de la genética tanto cuantitativa como molecular se debe a la contribución de muchas personas (Figura 2.1), hecho que permitió la conexión entre ambas disciplinas y el desarrollo de lo que hoy en día se conoce como selección genómica.
+La contribución en la genética cuantitativa y molecular de distintas personas, permitieron el desarrollo de la selección genómica (Figura 2.1).
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Crono_2} \end{center}
 
-\noindent 
 \textbf{Figura 2.1:} Cronología de las disciplinas de la genética molecular y la genética cuantitativa. Varios descubrimientos permitieron la conexión entre ambas disciplinas lo que permitió el desarrollo de la selección genómica. Figura adaptada de Nelson, Pettersson, y Carlborg (\protect\hyperlink{ref-cite:2}{2012}).
-
-\hspace*{1em}
 
 La genética cuantitativa se originó hace más de un siglo en ausencia directa de datos genéticamente observables (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}). Uno de los fundadores más influyentes fue Ronald Fisher, quien proporcionó una teoría que hizo posible interpretar los descubrimientos de la genética biométrica dentro de los principios de herencia Mendeliana, permitiendo con ello unificar las escuelas de pensamiento Mendeliano y biométrico que para ese entonces estaban en constante debate. Dicha teoría, denominada como teoría del modelo infinitesimal, asume que la herencia genética es principalmente aditiva, y que la varianza genética de un carácter está determinada por un gran número de factores `Mendelianos' (hoy en día conocidos como genes), cada uno de los cuales tiene una pequeña contribución al fenotipo del carácter (Nelson, Pettersson, y Carlborg \protect\hyperlink{ref-cite:2}{2012}; Turelli \protect\hyperlink{ref-cite:9}{2017}).
 
@@ -361,10 +371,7 @@ Dichos marcadores de ADN, al representar las diferencias en el ADN heredado por 
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/MAS} \end{center}
 
-\noindent 
 \textbf{Figura 2.2:} Esquema de la MAS. En la MAS, los fenotipos y genotipos de la población de mapeo se analizan usando un modelo estadístico, identificando con ello relaciones significativas entre fenotipos y genotipos. Por último, se seleccionan los individuos favorables con base en datos de genotipo. Figura adaptada de Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}).
-
-\hspace*{1em}
 
 Si bien la MAS abrió la posibilidad de investigar la variación genética en animales y en plantas, permitiendo también identificar genes que afectaban el desempeño de caracteres económicamente importantes, la literatura científica coincide en afirmar lo limitado que fue esta metodología al no detectar marcadores de ADN con efectos genéticos menores (Blasco y Toro \protect\hyperlink{ref-cite:3}{2014}; Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}; Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}; Tong y Nikoloski \protect\hyperlink{ref-cite:7}{2021}). Y es que, como es sabido, la mayoría de los caracteres económicamente importantes son cuantitativos y complejos, lo que quiere decir que son caracteres controlados por muchos genes de pequeño efecto y/o por una combinación de genes mayores y menores, lo que hace del la MAS un método poco adecuado para este tipo de arquitectura genética de caracteres.
 
@@ -375,12 +382,11 @@ Finalmente, en el año 2.001, Theodorus Meuwissen, Ben Hayes y Michael Goddard p
 
 Se denomina selección genómica a una serie de métodos que usan numerosos marcadores de ADN, principalmente SNP, para realizar la predicción del EBV (aunque en selección genómica es común referirse al EBV como valor de cría basado en marcadores de ADN o GEBV). Blasco y Toro (\protect\hyperlink{ref-cite:3}{2014}) y Ahmadi, Bartholomé, Cao, et~al. (\protect\hyperlink{ref-cite:33}{2020}\protect\hyperlink{ref-cite:33}{a}) describen este método como un proceso en el cual se usan grandes cantidades de marcadores de ADN para construir un modelo de relaciones genotipo-fenotipo en una población de entrenamiento. Luego el modelo de selección genómica resultante se utiliza en una población de prueba que solo está genotipada, y se predice en ella el GEBV con el que se lleva a cabo la selección (Figura 2.3).
 
+\newpage
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/GS} \end{center}
 
-\noindent 
 \textbf{Figura 2.3:} Esquema de la selección genómica. La selección genómica utiliza un modelo estadístico, diseñado a partir de datos genotípicos y fenotípicos en una población de entrenamiento, para predecir el GEBV de los individuos en una población de prueba con datos genotípicos. Por último, los individuos se seleccionan de acuerdo a su GEBV. Figura adaptada de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
-
-\hspace*{1em}
 
 El uso de decenas de miles de marcadores de ADN es una de las características fundamentales de la selección genómica (Desta y Ortiz \protect\hyperlink{ref-cite:10}{2014}). Al contar con tal cantidad, la probabilidad de que algunos de estos marcadores estén en desequilibrio de ligamiento con el QTL tiende a aumentar (Meuwissen, Hayes, y Goddard \protect\hyperlink{ref-cite:8}{2001}), con lo cual, aún cuando dichos marcadores no tienen efecto directo sobre el carácter, sí que se captura una asociación entre el carácter y los marcadores.
 
@@ -391,10 +397,7 @@ En la selección genómica, la relación genotipo-fenotipo suele ser representad
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_RL} \end{center}
 
-\noindent 
 \textbf{Figura 2.4:} Relación genotipo-fenotipo de individuos (círculos amarillo y azul) para un solo marcador. \(Y_{i}\) y \(x_{i1}\) denotan los fenotipos y genotipos, y \(\mu\) y \(g_{i}\) son los parámetros a determinar. Los genotipos bialélicos se codifican como 0 y 1, y los fenotipos se distribuyen de acuerdo a una normal. Figura adaptada de Nakaya y Isobe (\protect\hyperlink{ref-cite:6}{2012}).
-
-\hspace*{1em}
 
 Dicha relación genotipo-fenotipo se puede expresar de la forma:
 
@@ -416,10 +419,7 @@ Sin embargo, con el uso decenas de miles de marcadores de ADN para predecir el G
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mod_GS} \end{center}
 
-\noindent 
 \textbf{Figura 2.5:} Enfoques estadísticos de la selección genómica. Cada uno de estos enfoques suponen distintas distribuciones de efectos de los marcadores sobre el carácter. Figura adaptada de de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) y de Tong y Nikoloski (\protect\hyperlink{ref-cite:7}{2021}).
-
-\hspace*{1em}
 
 Al proponer la teoría de la selección genómica, Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}) proporcionaron también una serie de métodos estadísticos como solución al problema planteado en el párrafo anterior, esto es, el mejor predictor lineal insesgado por ridge-regression (rrBLUP), y los métodos Bayesianos BayesA y BayesB.
 
@@ -460,12 +460,12 @@ donde \(X\), \(Z\), \(b\), \(g\) y \(\lambda\) denotan los mismos términos de l
 
 La idea de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), al sustituir la matriz A por la matriz G, consistió en precisar el parentesco real entre individuos al momento de estimar los valores de cría. Según Blasco (\protect\hyperlink{ref-cite:21}{2021}), el parentesco que proviene al usar la matriz A es un parentesco esperado, lo cual puede no reflejar el porcentaje real de genes idénticos entre dos individuos emparentados, mientras que G refleja mejor el parentesco realizado (Figura 2.6).
 
+\newpage
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/Ped} \end{center}
 
 \noindent
 \textbf{Figura 2.6:} Parentesco observado entre individuos emparentados. El coeficiente de parentesco molecular entre los individuos 4 y 5, y 5 y 6, es igual a 1.0 y 0.0, respectivamente, caso contrario al coeficiente de parentesco genealógico, el cual entre todos los individuos, por tratarse de hermanos completos, sería igual a 0.25.
-
-\hspace*{1em}
 
 Es más rápida la velocidad del cálculo del GBLUP, comparado con los métodos Bayesianos descritos anteriormente, por lo que el GBLUP es más adecuado para obtener rápidamente el GEBV. Sin embargo, los métodos Bayesianos permiten incorporar al modelo información previa proveniente de múltiples estudios, siendo esto una ventaja de los mismos sobre otros métodos como el GBLUP. En tal sentido, de los Campos et~al. (\protect\hyperlink{ref-cite:31}{2013}) proporcionan algunos ejemplos sobre qué tipo de información se podría incorporar a los efectos previos asignados a los marcadores, por mencionar algunos de ellos, la ubicación del marcador en el genoma, si dicha ubicación corresponde a una región codificante o no, y si el marcador está en una región del genoma que alberga genes que pueden afectar un carácter de interés.
 
@@ -476,10 +476,7 @@ Para implementar los métodos de selección genómica mencionados anteriormente 
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/BLUPs_2} \end{center}
 
-\noindent 
 \textbf{Figura 2.7:} Esquema de comparación del BLUP, GBLUP y ssGBLUP. El GBLUP es un proceso de tres pasos en el que los individuos, con base en su información fenotípica y de pedigrí, son evaluados inicialmente mediante el BLUP; luego, a partir de los pseudo-fenotipos resultantes de esta evaluación inicial, se lleva a cabo un análisis genómico de los individuos genotipados mediante el GBLUP. En el ssGBLUP se simplifica este proceso al incorporar la información genómica (la matriz G) desde el primer paso.
-
-\hspace*{1em}
 
 Empero, esta forma de implementar la selección genómica en múltiples pasos no es eficiente (Misztal, Aggrrey, y Muir \protect\hyperlink{ref-cite:14}{2012}), además de presentar inconvenientes como son la perdida de información y la dificultad de generalizarse a caracteres múltiples y maternos (Legarra, Aguilar, y Misztal \protect\hyperlink{ref-cite:17}{2009}; Legarra et~al. \protect\hyperlink{ref-cite:15}{2014}). Conscientes de esto, Legarra, Aguilar, y Misztal (\protect\hyperlink{ref-cite:17}{2009}) simplificaron el proceso de varios pasos al desarrollar un método de selección genómica en el que los fenotipos de los individuos genotipados y no genotipados se analizan conjuntamente para predecir su GEBV (Imai et~al. \protect\hyperlink{ref-cite:20}{2019}; Jurcic et~al. \protect\hyperlink{ref-cite:11}{2021}), método el cual se denominó como mejor predictor lineal insesgado genómico de un solo paso (ssGBLUP).
 
@@ -603,10 +600,7 @@ En términos generales, la mejora genética se puede organizar en tres procesos,
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Mej_Anim_Plan} \end{center}
 
-\noindent 
 \textbf{Figura 2.8:} Esquema de la mejora genética en animales y en plantas. Figura adaptada de Hickey et~al. (\protect\hyperlink{ref-cite:44}{2017}).
-
-\hspace*{1em}
 
 El primer requisito para la mejora genética es disponer de variación genética de los caracteres que se desean a mejorar. Tanto en animales como en plantas, la variación genética se da a través del apareamiento de individuos cuya expresión de caracteres es deseable (Caligari y Brown \protect\hyperlink{ref-cite:42}{2017}). De esta forma, mediante el proceso natural de reproducción sexual, se puede obtener una descendencia que contiene genes de interés heredados de los dos progenitores.
 
@@ -616,13 +610,16 @@ Finalmente, es necesario multiplicar o difundir el mérito genético medio obten
 
 Por otro lado, desde el momento en que la selección genómica fue propuesta por Meuwissen, Hayes, y Goddard (\protect\hyperlink{ref-cite:8}{2001}), se adapto rápidamente a la mejora genética en animales, principalmente al sector ganadero. Sin embargo, el uso de la selección genómica en plantas no se ha extendido tanto (Wang, Crossa, y Gai \protect\hyperlink{ref-cite:46}{2020}) y son varias las razones de ello:
 
-1- Los métodos de mejora genética en animales y en plantas han divergido a lo largo de los años, lo cual implica que se requiera de tiempo para que los avances y las contribuciones realizadas en un campo se trasladen al otro (Hickey et~al. \protect\hyperlink{ref-cite:44}{2017}).
-
-2- El genoma de muchas especies de plantas es más compleja al genoma de los animales. Los animales al ser individuos diploides, aportan a la descendencia solo uno de sus dos alelos, por lo cual es más fácil predecir en ellos cuan efectiva será la selección, al suponer que de los distintos componentes de la varianza genética solo se heredara la varianza debido a efectos aditivos (esto es, la heredabilidad en el sentido estricto). Caso contrario sucede en las plantas cuya respuesta a la selección puede implicar, en caso de que la especie sea poliploide o se haya propagado de forma vegetativa, otros tipos de interacción como la dominancia entre dos alelos (Holland \protect\hyperlink{ref-cite:43}{2014}).
-
-3- Es costoso invertir en infraestructura computacional y de registro tanto de datos genotípicos como fenotípicos requeridos para implementar la selección genómica. El tamaño de las poblaciones en la cría de animales son mucho más pequeños que la mayoría de poblaciones en la cría de plantas. Si bien los costos de genotipado por individuo son cada vez más bajos, el costo total de genotipado al considerar todas las plantas es aún hoy en día demasiado alto para la mayoría de programas de mejora genética en plantas (Wang, Crossa, y Gai \protect\hyperlink{ref-cite:46}{2020}).
-
-Pese a lo anterior, en la literatura científica (Lourenco et~al. \protect\hyperlink{ref-cite:87}{2015}; Zhu et~al. \protect\hyperlink{ref-cite:83}{2017}; Wang et~al. \protect\hyperlink{ref-cite:82}{2017}; Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica.
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Los métodos de mejora genética en animales y en plantas han divergido a lo largo de los años, lo cual implica que se requiera de tiempo para que los avances y las contribuciones realizadas en un campo se trasladen al otro (Hickey et~al. \protect\hyperlink{ref-cite:44}{2017}).
+\item
+  El genoma de muchas especies de plantas es más compleja al genoma de los animales. Los animales al ser individuos diploides, aportan a la descendencia solo uno de sus dos alelos, por lo cual es más fácil predecir en ellos cuan efectiva será la selección, al suponer que de los distintos componentes de la varianza genética solo se heredara la varianza debido a efectos aditivos (esto es, la heredabilidad en el sentido estricto). Caso contrario sucede en las plantas cuya respuesta a la selección puede implicar, en caso de que la especie sea poliploide o se haya propagado de forma vegetativa, otros tipos de interacción como la dominancia entre dos alelos (Holland \protect\hyperlink{ref-cite:43}{2014}).
+\item
+  Es costoso invertir en infraestructura computacional y de registro tanto de datos genotípicos como fenotípicos requeridos para implementar la selección genómica. El tamaño de las poblaciones en la cría de animales son mucho más pequeños que la mayoría de poblaciones en la cría de plantas. Si bien los costos de genotipado por individuo son cada vez más bajos, el costo total de genotipado al considerar todas las plantas es aún hoy en día demasiado alto para la mayoría de programas de mejora genética en plantas (Wang, Crossa, y Gai \protect\hyperlink{ref-cite:46}{2020}).
+  Pese a lo anterior, en la literatura científica (Lourenco et~al. \protect\hyperlink{ref-cite:87}{2015}; Zhu et~al. \protect\hyperlink{ref-cite:83}{2017}; Wang et~al. \protect\hyperlink{ref-cite:82}{2017}; Kyselova, Tichý, y Jochová \protect\hyperlink{ref-cite:32}{2021}) se evidencia el uso potencial de la selección genómica para mejorar el mérito genético medio por selección tanto en animales como en plantas. A pesar de sus diferencias, ambas disciplinas requieren de conceptos y herramientas similares de selección genómica.
+\end{enumerate}
 
 \hypertarget{la-mejora-genuxe9tica-en-el-arroz}{%
 \section{La mejora genética en el arroz}\label{la-mejora-genuxe9tica-en-el-arroz}}
@@ -634,7 +631,6 @@ El arroz es uno de los principales cultivos básicos del mundo, ya que proporcio
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_arroz} \end{center}
 
-\noindent 
 \textbf{Figura 2.9:} Evolución de la producción y uso del arroz a nivel mundial. Se utilizaron las bases de datos estadísticos de la Organización para la Alimentación y la Agricultura (FAOSTAT) para desarrollar estas figuras.
 
 \hypertarget{breve-descripciuxf3n-de-la-mejora-genuxe9tica-en-plantas-con-ejemplos-en-el-arroz}{%
@@ -646,14 +642,11 @@ Posterior al método de selección masal, se propuso un método en plantas en el
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Ap_control} \end{center}
 
-\noindent 
 \textbf{Figura 2.10:} Esquema de mejora genética de especies agrícolas. Figura adaptada de Dekkers y Hospital (\protect\hyperlink{ref-cite:59}{2002}).
-
-\hspace*{1em}
 
 En la selección fenotípica recurrente, la mejora genética se realiza a través de un esquema de rondas consecutivas de selección. En esta estrategia de apareamiento, se cruzan individuos progenitores (líneas donante y receptora) y se generan poblaciones segregantes a través de generaciones de autopolinización y selección, hasta obtener variedades mejoradas que combinan las buenas características y los avances logrados en generaciones anteriores. La característica principal de la selección fenotípica recurrente es aumentar las frecuencias de los alelos favorables (Guimarães \protect\hyperlink{ref-cite:62}{2009}).
 
-En cuanto a la introgresión, ésta al igual que la anterior, se inicia con el cruce de individuos progenitores, seguido de repetidos ciclos de retrocruzamiento y entrecruzamiento. El proposito de esta estrategia de apareamiento consiste en generar variedades mejoradas (híbridas) reuniendo en una misma planta las mejores características de los distintos cruces (Breseghello \protect\hyperlink{ref-cite:57}{2013}), aumentando también el rendimiento más allá de las variedades iniciales mediante la explotación de la heterosis (Guimarães \protect\hyperlink{ref-cite:62}{2009}).
+En cuanto a la introgresión, esta inicia con el cruce de individuos progenitores, seguido de repetidos ciclos de retrocruzamiento y entrecruzamiento. El proposito de esta estrategia de apareamiento consiste en generar variedades mejoradas (híbridas) reuniendo en una misma planta las mejores características de los distintos cruces (Breseghello \protect\hyperlink{ref-cite:57}{2013}), aumentando también el rendimiento más allá de las variedades iniciales mediante la explotación de la heterosis (Guimarães \protect\hyperlink{ref-cite:62}{2009}).
 
 En relación con las estrategias descritas en el párrafo anterior, Grenier et~al. (\protect\hyperlink{ref-cite:65}{2015}) hacen mención del programa de mejora genética en el arroz para América Latina y el Caribe, desarrollados por el centro internacional de agricultura tropical, y por la organización francesa de investigación agrícola y de cooperación internacional para el desarrollo sostenible. Los autores describen a este programa como un proceso de tres etapas realizadas de manera recurrente: evaluación de individuos derivados de una población inicial, selección con presión suave de los mejores individuos para aumentar gradualmente la frecuencia de alelos favorables, y entrecruzamiento de los individuos seleccionados para formar una nueva población con una media mejorada.
 
@@ -668,7 +661,7 @@ La mayor parte de los estudios sobre selección genómica en plantas han ignorad
 \hypertarget{objetivo}{%
 \chapter{Objetivo}\label{objetivo}}
 
-El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas. Para ello, se evaluó el efecto de la cantidad de individuos genotipados y del número de marcadores en un diseño que combinó datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestral) y hacia delante (descendientes).
+El objetivo de este estudio fue evaluar el interés de la selección genómica en un solo paso en plantas. Para ello, se estudió el efecto de la cantidad de individuos genotipados y del número de marcadores en un diseño que combinó datos reales de arroz y simulaciones de dos tipos, hacia atrás (ancestral) y hacia delante (descendientes).
 
 \hypertarget{materiales-y-muxe9todos}{%
 \chapter{Materiales y métodos}\label{materiales-y-muxe9todos}}
@@ -684,10 +677,7 @@ En la figura Figura 4.1 se presenta un análisis de componentes principales real
 
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA} \end{center}
 
-\noindent 
 \textbf{Figura 4.1:} Análisis de componentes principales en datos de arroz. Los puntos y las circuferencias de color representan los distintos grupos varietales disponibles: tipo intermedio o mezclado (ADM), aromático (ARO), aus (AUS), indica (IND) y japónica (JAP).
-
-\hspace*{1em}
 
 De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de floración, ya que en un estudio previo (Vourlaki et~al., \protect\hyperlink{ref-cite:26}{s.~f.}) se observó que en este carácter la predicción genómica podría funcionar mejor. Con la figura a continuación (Figura 4.2) se observa que la distribución empírica general de este carácter fue aproximadamente normal, lo que justificó el uso de modelos de distribución normal. Los datos fenotípicos se centraron (restando la media general) y estandarizaron (dividiendo por la desviación estándar) antes de ajustar los modelos que se describen a continuación.
 
@@ -696,46 +686,10 @@ De entre los datos de fenotipos disponibles, se eligió el carácter tiempo de f
 \noindent
 \textbf{Figura 4.2:} Distribución y media \(\pm\) desviación estándar del carácter tiempo de floración del conjunto de datos fenotípicos de arroz.
 
-\hypertarget{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}{%
-\section{Predicción basada en información del pedigrí e información genómica}\label{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}}
-
-Para llevar a cabo la predicción usando el BLUP en individuos no genotipados y el ssGBLUP tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
-
-\begin{equation}
-\textbf{y} = \mu + \textbf{Z} \textbf{g} + \textbf{e},
-\end{equation}
-
-donde \(y\) representa el valor del fenotipo (es decir, el tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(g\) con \(y\). \(1_{n}\) es un vector de unos, \(\mu\) es la media de la población, el vector \(g\) representa los efectos aleatorios genéticos aditivos, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\), siendo \(I\) representa la matriz identidad, y \(\sigma_{e}^{2}\) la varianza residual.
-
-En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información del pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
-
-En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz G (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
-
-\begin{equation}
-H =
-\begin{bmatrix}
-A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
-G A_{22}^{-1} A_{12}' & G 
-\end{bmatrix}
-,
-\end{equation}
-
-donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de A, siendo \(A_{11}\) la submatriz de los individuos sin genotipo, \(A_{22}\) la submatriz de los individuos con genotipo, y \(A_{12}\) y \(A_{21}\) las submatrices que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y nSNP representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
-
-Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el Anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
-
-La heredabilidad en sentido estricto se estimó mediante el método BLUP como:
-
-\begin{equation}
-h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
-\end{equation}
-
-donde \(\sigma^{2}_{g}\) es la varianza genética aditiva y \(\sigma^{2}_{e}\) es la varianza residual.
-
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-del-pedigruxed-ancestral}{%
 \section{Precisión de la predición mediante simulación del pedigrí ancestral}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-del-pedigruxed-ancestral}}
 
-En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en Cros et~al. (\protect\hyperlink{ref-cite:48}{2014}). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de simular esta información.
+En especies de plantas es común que los pedigríes de las poblaciones reproductoras sean completamente, o al menos parcialmente, desconocidos (las razones del porque de esto se describen en Cros et~al. (\protect\hyperlink{ref-cite:48}{2014})). Este es el caso de los conjuntos de datos del Rice SNP-Seek Database usados en este estudio. Por esta razón, se utilizó la metodología implementada en el software Molcoanc (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}) con el fin de simular esta información.
 
 Con el software Molcoanc se simulan pedigríes mediante la creación de antepasados virtuales para los individuos genotipados (esto es, la población fundadora), de tal manera que la correlación entre el parentesco genealógico calculado a partir del pedigrí generado tenga la correlación más alta posible con la matriz de parentesco molecular calculada a partir de los marcadores de ADN proporcionados (Fernández y Toro \protect\hyperlink{ref-cite:24}{2006}).
 
@@ -745,8 +699,6 @@ El software Molcoanc se utilizó para construir tres pedigríes, que se diferenc
 
 \noindent
 \textbf{Figura 4.3:} Ejemplo de pedigríes generados en la primera replica. En cada pedigrí se generaron distintas generaciones por encima de los individuos de la población fundadora. El número de individuos totales en cada pedigrí fueron: 751 individuos en el pedigrí 1, 1.661 en el pedigrí 2 y 2.451 en el pedigrí 3.
-
-\hspace*{1em}
 
 Para estudiar el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados, y así determinar el número de marcadores y de individuos en la población de entrenamiento necesarios para implementar el ssGBLUP en datos de arroz, se usaron diferentes subconjuntos de datos con la siguientes características:
 
@@ -765,18 +717,16 @@ A continuación, usando los diferentes subconjuntos de datos descritos anteriorm
 \noindent
 \textbf{Figura 4.4:} Esquema de construcción de la matriz H a partir de la matriz A y la matriz G, con base en diferentes subconjuntos de datos (o matrices G). El recuadro 1 representa tres matrices G con distinta dimensión dado el número de individuos genotipados y el recuadro 2 representa tres diferentes densidades de SNP, para cada uno de las tres matrices del recuadro 1.
 
-\hspace*{1em}
-
 Además de los casos descritos con anterioridad, también se consideró el caso en el que ningún individuo haya sido genotipado y no se usara información de marcadores de ADN.
 
-Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos anteriormente. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del lenguaje de programación \texttt{R}, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete \texttt{BGLR}, la Cadena de Markov Monte Carlo (MCMC) se generó con 50.000 iteraciones, de las cuales fueron descartadas las primeras 10.000 como muestras burn-in. En cuanto al paquete \texttt{lme4GS}, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal).
+Los componentes de varianza y los valores fenotípicos predichos se obtuvieron ajustando los modelos BLUP y ssGBLUP descritos más adelante. Para dicho ajuste se utilizaron los paquetes \texttt{BGLR} (Pérez-Rodríguez y de los Campos \protect\hyperlink{ref-cite:50}{2014}) y \texttt{lme4GS} (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) del lenguaje de programación \texttt{R}, permitiendo así la predicción mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML), respectivamente. Para la estimación de los componentes de varianza y la predicción de los valores fenotípicos usando el paquete \texttt{BGLR}, la Cadena de Markov Monte Carlo (MCMC) se generó con 50.000 iteraciones, de las cuales fueron descartadas las primeras 10.000 como muestras burn-in. En cuanto al paquete \texttt{lme4GS}, no se cambio el número de iteraciones necesarios para alcanzar la convergencia, ya que los autores del paquete (Caamal-Pat et~al. \protect\hyperlink{ref-cite:51}{2021}) indicaron que el número de iteraciones que se tiene por defecto era suficiente (comunicación personal).
 
 Se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. De acuerdo a Xua, Zhub, y Zhang (\protect\hyperlink{ref-cite:25}{2014}), la predictibilidad debe obtenerse usando una muestra de validación independiente donde los individuos predichos no deben contribuir a la estimación de parámetros. En este estudio, los valores fenotípicos observados de 48 del total de 451 individuos de arroz de la variedad indica (que corresponde a los individuos clasificados como variedades mejoradas en los conjuntos de datos) se consideraron como fenotipos faltantes .
 
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes}{%
 \section{Precisión de la predición mediante simulación de descendientes}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes}}
 
-Se evaluó el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados realizando simulación de descendientes, usando el paquete \texttt{SeqBreed} (Pérez-Enciso, Ramírez-Ayala, y Zingaretti \protect\hyperlink{ref-cite:47}{2020}) del lenguaje de programación \texttt{Python} (Van-Rossum y Drake \protect\hyperlink{ref-cite:53}{1995}). En esta sección se especuló sobre la base genética del carácter tiempo de floración, mientras que en la sección metodológica anterior se usaron los fenotipos y genotipos observados. Los pasos llevados a cabo en esta simulación se describen a continuación (Figura 4.5):
+Además del proceso anterior en el que la información de pedigrí se generó mediante simulación ancestral, otra forma que se utilizó para obtener dicha información consistió en simular los descendientes partiendo de la población fundadora con 451 individuos. Luego, se evaluó también el efecto sobre la predictibilidad del número de datos de genotipado de SNP y del número de individuos genotipados en la información simulada, usando el paquete \texttt{SeqBreed} (Pérez-Enciso, Ramírez-Ayala, y Zingaretti \protect\hyperlink{ref-cite:47}{2020}) del lenguaje de programación \texttt{Python} (Van-Rossum y Drake \protect\hyperlink{ref-cite:53}{1995}). En esta sección se especuló sobre la base genética del carácter tiempo de floración, mientras que en la sección metodológica anterior se usaron los fenotipos y genotipos observados. Los pasos llevados a cabo en esta simulación se describen a continuación (Figura 4.5):
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -825,8 +775,6 @@ Total & 2.061 & 2.071 & 2.091 & 2.131 \\
 \noindent
 \textbf{Figura 4.5:} Esquema de predicción usando simulación con el paquete \texttt{SeqBreed}. Figura adaptada de Pérez-Enciso, Ramírez-Ayala, y Zingaretti (\protect\hyperlink{ref-cite:47}{2020}).
 
-\hspace*{1em}
-
 Para identificar el efecto del número de individuos genotipados sobre la predictibilidad, fueron considerados cuatro casos:
 
 \begin{itemize}
@@ -842,6 +790,42 @@ Para identificar el efecto del número de individuos genotipados sobre la predic
 
 Por último y al igual que en la sección metodológica anteriormente descrita, se uso el coeficiente de correlación entre los valores fenotípicos observados y predichos como medida de predictibilidad. Para esto, los valores fenotípicos observados de los individuos de las generaciones \(F_{2}\) y \(F_{3}\) se consideraron como fenotipos faltantes (esto es, como conjuntos de validación).
 
+\hypertarget{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}{%
+\section{Predicción basada en información del pedigrí e información genómica}\label{predicciuxf3n-basada-en-informaciuxf3n-del-pedigruxed-e-informaciuxf3n-genuxf3mica}}
+
+Para llevar a cabo la predicción usando el BLUP en individuos no genotipados y el ssGBLUP tanto en individuos genotipados como no genotipados, se aplicó el siguiente modelo:
+
+\begin{equation}
+\textbf{y} = \mu + \textbf{Z} \textbf{g} + \textbf{e},
+\end{equation}
+
+donde \(y\) representa el valor del fenotipo (es decir, el tiempo de floración) y \(Z\) es la matriz de incidencia que relaciona \(g\) con \(y\). \(1_{n}\) es un vector de unos, \(\mu\) es la media de la población, el vector \(g\) representa los efectos aleatorios genéticos aditivos, y \(e\) es el vector de residuos con una distribución que se asume normal con media igual a \(0\) y matriz de covarianza \(I\sigma^{2}_{e}\), siendo \(I\) representa la matriz identidad, y \(\sigma_{e}^{2}\) la varianza residual.
+
+En la ecuación anterior (4.1), se asume que \(g\) sigue una distribución normal con media igual a \(0\) y matriz de covarianza \(A\sigma^{2}_{g}\) en el modelo BLUP, donde \(A\) representa la matriz de parentesco basada en información del pedigrí, y \(\sigma^{2}_{g}\) es la varianza genética aditiva.
+
+En el modelo ssGBLUP, la matriz A del modelo de la ecuación (4.1) es reemplazada por la matriz H, de la misma dimensión que la matriz A. Dicha matriz H es una función de la matriz A y de la matriz G (Misztal, Legarra, y Aguilar \protect\hyperlink{ref-cite:16}{2009}), y se define de la siguiente manera:
+
+\begin{equation}
+H =
+\begin{bmatrix}
+A_{11} + A_{12} A_{22}^{-1} ( G - A_{22} ) A_{22}^{-1}  A_{21} & A_{12} A_{22}^{-1} G \\ 
+G A_{22}^{-1} A_{12}' & G 
+\end{bmatrix}
+,
+\end{equation}
+
+donde \(A_{11}\), \(A_{12}\), \(A_{21}\) y \(A_{22}\) son submatrices de A, siendo \(A_{11}\) la submatriz de los individuos sin genotipo, \(A_{22}\) la submatriz de los individuos con genotipo, y \(A_{12}\) y \(A_{21}\) las submatrices que contienen las relaciones genéticas aditivas esperadas entre individuos con genotipo y sin genotipo. Para el calculo de la matriz H, los datos de genotipado de SNP fueron escalados. Luego, a partir de los datos escalados, se obtuvo la matriz G utilizando el método de VanRaden (\protect\hyperlink{ref-cite:39}{2007}), \(\frac{XX'}{2 \sum_{j=1}^{nSNP} p_{j} (1 - p_{j})}\), donde \(X\) es una matriz de dimensión n x nSNP que contiene los genotipos con la codificación numérica descrita anteriormente (0, 1 y 2), \(p_{j}\) es la frecuencia del \emph{j}-ésimo SNP, \(n\) corresponde al número de individuos y nSNP representa al número de SNP. Para evitar posibles problemas de singularidad, a los elementos de la diagonal de la matriz G se les sumó un valor de 0.05.
+
+Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el Anexo A.1 se presenta la función \texttt{R} (R Core Team \protect\hyperlink{ref-cite:52}{2020}) usada para construir la matriz H.
+
+La heredabilidad en sentido estricto se estimó mediante el método BLUP como:
+
+\begin{equation}
+h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
+\end{equation}
+
+donde \(\sigma^{2}_{g}\) es la varianza genética aditiva y \(\sigma^{2}_{e}\) es la varianza residual.
+
 \hypertarget{resultados}{%
 \chapter{Resultados}\label{resultados}}
 
@@ -855,31 +839,31 @@ Se examinó si había alguna evidencia de estructura poblacional a partir de la 
 \noindent
 \textbf{Figura 5.1:} Análisis de componentes principales a partir de la matriz H resultante de la simulación ancestral. Aquí, la matriz H se estimó a partir de 451 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 1 (primera réplica) mediante simulación ancestral.
 
+\newpage
+
 \begin{center}\includegraphics[width=1\linewidth]{figures/Graf_PCA_mH_SeqBreed} \end{center}
 
 \noindent
 \textbf{Figura 5.2:} Análisis de componentes principales a partir de la matriz H resultante de la simulación de descendientes. Aquí, la matriz H se estimó a partir de 2091 individuos genotipados con densidad de marcador aproximada de 1.000, 10.000 y 100.000, y en el pedigrí 3 (primera réplica) mediante simulación de descendientes.
 
-\hspace*{1em}
-
 Las estimaciones de los componentes de varianza y de heredabilidad (en sentido estricto) para el carácter tiempo de floración, mediante procedimientos Bayesianos y de máxima verosimilitud restringida (REML) en los tres pedigríes generados a partir de la simulación ancestral, se resumen en las Figuras 5.3 y 5.4.
 
 Se observaron valores altos de heredabilidad (mayores a 0.58), con densidades de marcadores variadas en 451 individuos genotipados (Figura 5.3), lo que indica que el tiempo de floración es un carácter muy heredable. Ambos enfoques (Bayesiano y REML), proporcionaron estimaciones de heredabilidad muy similares. Se pudo observar también que las varianzas genéticas aditivas obtenidas en el ssGBLUP fueron más bajas comparadas con las obtenidas a partir del BLUP (esto es, con una densidad de marcador igual a 0). A este respecto, los métodos de selección genómica basados en información de genotipos (como es el caso del ssGBLUP) pueden revelar relaciones entre individuos que aparentemente no están relacionados en el pedigrí (Pszczola et~al. \protect\hyperlink{ref-cite:74}{2012}), hecho que puede resultar en una mejor estimación de la varianza genética aditiva en los modelos de selección genómica y una sobreestimación en el BLUP (Ratcliffe et~al. \protect\hyperlink{ref-cite:72}{2017}), como se evidenció en este estudio.
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/param_Bayes} \end{center}
+\begin{center}\includegraphics[width=0.94\linewidth]{figures/param_Bayes} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/param_reml} \end{center}
+\begin{center}\includegraphics[width=0.94\linewidth]{figures/param_reml} \end{center}
 
 \noindent
 \textbf{Figura 5.3:} Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de marcadores en 451 individuos genotipados (excepto con una densidad de 0 que correspondería a ningún individuo genotipado). Las barras representan la media del valor de heredabilidad obtenida de las 10 réplicas de cada pedigrí y Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
 
-\hspace*{1em}
-
 La heredabilidad estimada, según el conjunto completo de marcadores (100.231 SNP) en distintas cantidades de individuos genotipados (Figura 5.4), varió de 0.72 a 0.74. El valor de heredabilidad presentó distintas tendencias según el pedigrí, con un aumentó en dicho valor al aumentar el número de individuos genotipados (en el pedigrí 1), y caso contrario, una disminución en el valor de heredabilidad al aumentar el número de individuos genotipados (en los pedigríes 2 y 3). En ambos enfoques (Bayesiano y REML), no se observaron diferencias en la estima de heredabilidad. Se evidenció también que las estimaciones de los componentes de varianzas genético aditivo y residual disminuyeron continuamente según la cantidad de individuos genotipados. Al comparar las estimas de los componentes de varianzas genético aditivo y residual, no se observaron diferencias entre ambos enfoques.
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/param_Bayes_2} \end{center}
+\newpage
 
-\begin{center}\includegraphics[width=1\linewidth]{figures/param_reml_2} \end{center}
+\begin{center}\includegraphics[width=0.94\linewidth]{figures/param_Bayes_2} \end{center}
+
+\begin{center}\includegraphics[width=0.94\linewidth]{figures/param_reml_2} \end{center}
 
 \noindent
 \textbf{Figura 5.4:} Estimaciones de componentes de varianza y de heredabilidad mediante enfoques Bayesiano y REML, para el carácter tiempo de floración con tamaños crecientes en el número de individuos genotipados con una densidad aproximada de 100.000 marcadores. Las barras representan la media del valor de heredabilidad obtenida de las 10 réplicas de cada pedigrí y Pedigrí 1-2-3 son los tres pedigríes simulados mediante simulación ancestral.
@@ -900,8 +884,6 @@ En cuanto a la cantidad de individuos genotipados, la precisión de la predicci�
 
 \hypertarget{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}{%
 \section{Precisión de la predición mediante simulación de descendientes}\label{precisiuxf3n-de-la-prediciuxf3n-mediante-simulaciuxf3n-de-descendientes-1}}
-
-\hspace*{1em}
 
 El efecto de la densidad del marcador sobre la precisión de la predicción también se evaluó en la simulación de descendientes (Figura 5.6 y Anexo A.4), observándose en éste un comportamiento similar al observado con la simulación ancestral, en el sentido de que fue necesario de una cantidad mínima de marcadores para obtener una precisión equivalente al usar la cantidad máxima, aunque en esta simulación dicha cantidad mínima de marcadores fue solo de aproximadamente 1.000. Se observó un aumento irrelevante en la precisión de la predicción al pasar de 1.000 a 10.000 marcadores y de 10.000 a 100.000 marcadores (\textasciitilde{} 0.0 \%), para todos los casos de individuos genotipados. La diferencia con el escenario anterior (simulación ancestral) es que en este caso el desequilibrio fue mucho mayor, ya que los descendientes se generaron a partir de los parentales, mientras que en el caso anterior el desequilibrio es el observado en la población. Las mayores ganancias esperadas en la precisión de la predicción se observaron al pasar de 0 a 1.000, 10.000 y 100.000 marcadores, demostrando con esto que las predicciones basadas en información genómica son más precisas que las predicciones basadas solo en información del pedigrí. Este comportamiento de la densidad del marcador sobre la precisión de la predicción se observó por igual en los cuatro pedigríes simulados y considerando los individuos de las generaciones F2 y F3 como conjuntos de validación.
 
@@ -942,12 +924,11 @@ A partir de los resultados obtenidos en este estudio, hemos demostrado el potenc
 \hypertarget{conclusiones}{%
 \chapter{Conclusiones}\label{conclusiones}}
 
-\noindent
 Tras los análisis de este estudio, podemos concluir lo siguiente:
 
 \begin{itemize}
 \item
-  Hasta donde sabemos, como estudio preliminar sobre el uso combinado de información de genotipos (con diferentes densidades de marcadores y de individuos genotipados) y de pedigrí en la mejora genética del arroz, el ssGBLUP demostró ser un método de selección genómica beneficioso.
+  El uso combinado de información de genotipos (con diferentes densidades de marcadores y de individuos genotipados) y de pedigrí en la mejora genética del arroz, mediante el ssGBLUP, mejora la predicción genómica.
 \item
   La precisión de la predicción genómica mejoró con el aumento en el número de marcadores y de individuos genotipados; sin embargo, para el primer caso, no fue necesario utilizar la densidad máxima de marcadores, sino una cantidad aproximada entre 1.000 y 10.000, resultado que proporcionó evidencia de que el ssGBLUP es útil para reducir los costos de genotipado y al mismo tiempo mantener la precisión de la predicción.
 \end{itemize}
