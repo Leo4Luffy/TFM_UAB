@@ -9,3 +9,5 @@ Tras los análisis de este estudio, podemos concluir lo siguiente:
 
 - La precisión de la predicción genómica mejoró con el aumento en el número de marcadores y de individuos genotipados; sin embargo, para el primer caso, no fue necesario utilizar la densidad máxima de marcadores, sino una cantidad aproximada entre 1.000 y 10.000, resultado que proporcionó evidencia de que el ssGBLUP es útil para reducir los costos de genotipado y al mismo tiempo mantener la precisión de la predicción.
 
+\clearpage\null\thispagestyle{empty}
+

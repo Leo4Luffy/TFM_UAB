@@ -24,4 +24,5 @@ In traditional genomic prediction models, only individuals with the genotype are
 \noindent 
 __Key words:__ relationship matrix, genetic parameters, prediction accuracy, genomic prediction.
 
-\newpage
+\clearpage\null\thispagestyle{empty}
+

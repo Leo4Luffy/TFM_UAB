@@ -2120,3 +2120,5 @@ knitr::include_graphics('figures/Cor_F2_F3.pdf', auto_pdf = TRUE)
 \noindent
 __Figura 5.6:__ Precisión de la predicción con tamaños crecientes en el número de marcadores y de individuos genotipados en la simulación de descendientes para los cuatro pedigríes simulados. Las barras representan la media de la precisión de la predicción de las 10 réplicas de cada pedigrí y las barras de error representan el desvío estándar como medida de variabilidad.
 
+\clearpage\null\thispagestyle{empty}
+

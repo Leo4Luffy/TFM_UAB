@@ -13,3 +13,6 @@
 <div id="refs"></div>
 
 \endgroup
+
+\clearpage\null\thispagestyle{empty}
+
