@@ -806,7 +806,7 @@ donde $A_{11}$, $A_{12}$, $A_{21}$ y $A_{22}$ son submatrices de A, siendo $A_{1
 
 Se usaron diferentes matrices H basados en diferentes matrices G, situación que se describe en las dos secciones metodológicas que se describen a continuación. En el Anexo A.1 se presenta la función `R` [@cite:52] usada para construir la matriz H.
 
-La heredabilidad en sentido estricto se estimó mediante el método BLUP como:
+La heredabilidad en sentido estricto se estimó como:
 
 \begin{equation}
 h^{2} = \frac{\sigma^{2}_{g}}{\sigma^{2}_{g} + \sigma^{2}_{e}},
