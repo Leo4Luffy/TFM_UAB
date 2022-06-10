@@ -743,7 +743,7 @@ knitr::include_graphics('figures/map_H_Molcoanc.pdf', auto_pdf = TRUE)
 |-----------------------------------------------------------------------------|--------------------------------------------------------------|
 | Datos                                                                    | Zenodo (DOI: 10.5281/zenodo.6588026)   |
 |                                                                              | <https://doi.org/10.5281/zenodo.6588026>|
-| Código                                                                   | Sitio web del proyecto (DOI: )                  |
+| Código                                                                   | Sitio web del proyecto               |
 |                                                                              | <https://leo4luffy.github.io/Repo_TFM/>|
 
 \clearpage\null\thispagestyle{empty}
